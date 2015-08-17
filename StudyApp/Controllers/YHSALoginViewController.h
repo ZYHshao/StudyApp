@@ -6,8 +6,8 @@
 //
 //
 
-#import <UIKit/UIKit.h>
 
-@interface YHSALoginViewController : UIViewController
+#import "YHBaseViewController.h"
+@interface YHSALoginViewController : YHBaseViewController
 
 @end

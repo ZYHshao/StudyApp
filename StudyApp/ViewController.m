@@ -7,7 +7,7 @@
 //启动加载页面
 
 #import "ViewController.h"
-
+#import "YHASRegistViewController.h"
 @interface ViewController ()
 
 @end
@@ -26,7 +26,7 @@
 }
 
 - (IBAction)begin:(id)sender {
-    
+    [self presentViewController:[[YHASRegistViewController alloc]init] animated:YES completion:nil];
 }
 
 @end
