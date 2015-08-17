@@ -13,17 +13,26 @@
 @end
 
 @implementation YHBaseViewController
-
+-(void)dealloc{
+    [[NSNotificationCenter defaultCenter]removeObserver:self];
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     //取消导航的影响
     self.edgesForExtendedLayout = UIRectEdgeNone;
+    //添加监听主题更换的通知
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(useYHTopicToCreatViewWithModel) name:YHTopicChangeTopicNotication object:nil];
     [self YHCreatView];
+    //加载主题
+    [self useYHTopicToCreatViewWithModel];
 }
 //子类实现如下方法
 -(void)YHCreatView{
     self.view.backgroundColor=[UIColor whiteColor];
+}
+-(void)useYHTopicToCreatViewWithModel{
+    
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

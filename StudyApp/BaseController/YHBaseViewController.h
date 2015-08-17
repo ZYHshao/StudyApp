@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "YHViewControllerProtocol.h"
-@interface YHBaseViewController : UIViewController<YHViewControllerProtocol>
+#import "YHTopicColorModel.h"
+@interface YHBaseViewController : UIViewController<YHViewControllerProtocol,YHTopicProcotol>
 
 @end

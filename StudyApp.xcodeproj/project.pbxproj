@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		18A9AC9A1B822AC800F8B69B /* YHASRegistViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18A9AC991B822AC800F8B69B /* YHASRegistViewController.xib */; };
 		23715322364E505FF9CADA86 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6888E6FF2F5B53851F13B1DE /* libPods.a */; };
 		CE8095601B81D97000730610 /* YHBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE80955F1B81D97000730610 /* YHBaseViewController.m */; };
 		CE8095651B81EC9000730610 /* YHASRegistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8095631B81EC9000730610 /* YHASRegistViewController.m */; };
-		CE8095661B81EC9000730610 /* YHASRegistViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE8095641B81EC9000730610 /* YHASRegistViewController.xib */; };
 		CEEAFD581B8167D900795B27 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CEEAFD571B8167D900795B27 /* main.m */; };
 		CEEAFD5B1B8167D900795B27 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CEEAFD5A1B8167D900795B27 /* AppDelegate.m */; };
 		CEEAFD5E1B8167D900795B27 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEEAFD5D1B8167D900795B27 /* ViewController.m */; };
@@ -111,6 +111,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		18A9AC991B822AC800F8B69B /* YHASRegistViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = YHASRegistViewController.xib; path = StudyApp/Controllers/YHASRegistViewController.xib; sourceTree = SOURCE_ROOT; };
 		6888E6FF2F5B53851F13B1DE /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		9437AF0FF7C072DED387C2D3 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		CE80955C1B81D8F300730610 /* YHViewControllerProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHViewControllerProtocol.h; sourceTree = "<group>"; };
@@ -119,7 +120,6 @@
 		CE8095611B81DE5300730610 /* StringHead.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StringHead.h; sourceTree = "<group>"; };
 		CE8095621B81EC9000730610 /* YHASRegistViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHASRegistViewController.h; sourceTree = "<group>"; };
 		CE8095631B81EC9000730610 /* YHASRegistViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YHASRegistViewController.m; sourceTree = "<group>"; };
-		CE8095641B81EC9000730610 /* YHASRegistViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = YHASRegistViewController.xib; path = ../YHASRegistViewController.xib; sourceTree = "<group>"; };
 		CEEAFD521B8167D900795B27 /* StudyApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StudyApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEEAFD561B8167D900795B27 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CEEAFD571B8167D900795B27 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -254,7 +254,7 @@
 		CE8095671B81ECCB00730610 /* Xibs */ = {
 			isa = PBXGroup;
 			children = (
-				CE8095641B81EC9000730610 /* YHASRegistViewController.xib */,
+				18A9AC991B822AC800F8B69B /* YHASRegistViewController.xib */,
 			);
 			path = Xibs;
 			sourceTree = "<group>";
@@ -641,12 +641,12 @@
 				CEEAFDE71B81A8BF00795B27 /* cj_mxz_xingxing.jpg in Resources */,
 				CEEAFE021B81A8BF00795B27 /* loading_0.png in Resources */,
 				CEEAFE1A1B81A8BF00795B27 /* pupwin_soucico.png in Resources */,
-				CE8095661B81EC9000730610 /* YHASRegistViewController.xib in Resources */,
 				CEEAFDF91B81A8BF00795B27 /* dtym_menuset_zihaojiaico.png in Resources */,
 				CEEAFDE61B81A8BF00795B27 /* bj_editico.jpg in Resources */,
 				CEEAFDFD1B81A8BF00795B27 /* ic_launcher.png in Resources */,
 				CEEAFDFF1B81A8BF00795B27 /* jiantouright.png in Resources */,
 				CEEAFE001B81A8BF00795B27 /* jindutiaoico.png in Resources */,
+				18A9AC9A1B822AC800F8B69B /* YHASRegistViewController.xib in Resources */,
 				CEEAFE141B81A8BF00795B27 /* main_titlebg.png in Resources */,
 				CEEAFE081B81A8BF00795B27 /* loading_6.png in Resources */,
 				CEEAFE1D1B81A8BF00795B27 /* q4_item_hbdd_select1.png in Resources */,

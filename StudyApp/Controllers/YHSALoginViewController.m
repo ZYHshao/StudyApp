@@ -7,10 +7,8 @@
 //
 
 #import "YHSALoginViewController.h"
-#import "YHTopicProtocol.h"
-#import "YHTopicColorModel.h"
-#import "YHTopicColorModel.h"
-@interface YHSALoginViewController ()<YHTopicProcotol>
+
+@interface YHSALoginViewController ()
 {
     UIImageView * _userNameImageView;
     UILabel     * _userNameLabel;
@@ -28,15 +26,12 @@
 
 @implementation YHSALoginViewController
 
--(void)dealloc{
-    [[NSNotificationCenter defaultCenter]removeObserver:self];
-}
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    //添加监听主题更换的通知
-    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(useYHTopicToCreatViewWithModel) name:YHTopicChangeTopicNotication object:nil];
+    
     self.title=LOGIN_CONTROLLER_TITLE;
     
 }
@@ -97,8 +92,7 @@
     _refindSecretBtn.frame = CGRectMake(SCREEN_WIDTH-LAYOUT_OFFSET_RIGHT-70, 340,70, 20);
     [_refindSecretBtn setTitle:LOGIN_REFIND_SECERT_TEXT forState:UIControlStateNormal];
     [self.view addSubview:_refindSecretBtn];
-    //加载主题
-    [self useYHTopicToCreatViewWithModel];
+   
 }
 
 //主题部分设置
