@@ -23,5 +23,5 @@
 /**
  *使用之前需先调用这个方法进行设置主题
  */
--(void)setTopicModel:(YHTopicModel)model;
+-(void)getTopicModel;
 @end

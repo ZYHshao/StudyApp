@@ -21,8 +21,15 @@
 
 
 
--(void)setTopicModel:(YHTopicModel)model{
-    switch (model) {
+-(void)getTopicModel{
+    //从本地读取
+    NSString * tp = [[NSUserDefaults standardUserDefaults]objectForKey:topic];
+    if (topic==nil) {
+        //默认为白天主题
+        tp=[NSString stringWithFormat:@"1"];
+        [[NSUserDefaults standardUserDefaults]setObject:tp forKey:topic];
+    }
+    switch ([tp intValue]) {
         case 1://白天模式
         {
             _navColor=[UIColor colorWithRed:10/255.0 green:85/255.0 blue:160/255.0 alpha:1];
