@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-
+#import "YHTopicProtocol.h"
 @interface AppDelegate ()
 
 @end

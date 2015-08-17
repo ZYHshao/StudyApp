@@ -16,6 +16,7 @@
 		CEEAFD661B8167DA00795B27 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEEAFD641B8167DA00795B27 /* LaunchScreen.xib */; };
 		CEEAFD721B8167DA00795B27 /* StudyAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CEEAFD711B8167DA00795B27 /* StudyAppTests.m */; };
 		CEEAFD7E1B816C5200795B27 /* YHSALoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEEAFD7D1B816C5200795B27 /* YHSALoginViewController.m */; };
+		CEEAFD891B8171BE00795B27 /* YHTopicColorModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CEEAFD881B8171BE00795B27 /* YHTopicColorModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,10 @@
 		CEEAFD711B8167DA00795B27 /* StudyAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StudyAppTests.m; sourceTree = "<group>"; };
 		CEEAFD7C1B816C5200795B27 /* YHSALoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHSALoginViewController.h; sourceTree = "<group>"; };
 		CEEAFD7D1B816C5200795B27 /* YHSALoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YHSALoginViewController.m; sourceTree = "<group>"; };
+		CEEAFD811B816E8E00795B27 /* YHTopicProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHTopicProtocol.h; sourceTree = "<group>"; };
+		CEEAFD871B8171BE00795B27 /* YHTopicColorModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHTopicColorModel.h; sourceTree = "<group>"; };
+		CEEAFD881B8171BE00795B27 /* YHTopicColorModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YHTopicColorModel.m; sourceTree = "<group>"; };
+		CEEAFD8B1B81738100795B27 /* YHSingletonProcotol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHSingletonProcotol.h; sourceTree = "<group>"; };
 		E31406E335AA7228F8737B6D /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -91,6 +96,9 @@
 		CEEAFD541B8167D900795B27 /* StudyApp */ = {
 			isa = PBXGroup;
 			children = (
+				CEEAFD861B8171A200795B27 /* Models */,
+				CEEAFD801B816E0600795B27 /* BaseProcotols */,
+				CEEAFD7F1B816DDD00795B27 /* Managers */,
 				CEEAFD7B1B816B7700795B27 /* Controllers */,
 				CEEAFD591B8167D900795B27 /* AppDelegate.h */,
 				CEEAFD5A1B8167D900795B27 /* AppDelegate.m */,
@@ -137,6 +145,31 @@
 				CEEAFD7D1B816C5200795B27 /* YHSALoginViewController.m */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		CEEAFD7F1B816DDD00795B27 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		CEEAFD801B816E0600795B27 /* BaseProcotols */ = {
+			isa = PBXGroup;
+			children = (
+				CEEAFD811B816E8E00795B27 /* YHTopicProtocol.h */,
+				CEEAFD8B1B81738100795B27 /* YHSingletonProcotol.h */,
+			);
+			path = BaseProcotols;
+			sourceTree = "<group>";
+		};
+		CEEAFD861B8171A200795B27 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CEEAFD871B8171BE00795B27 /* YHTopicColorModel.h */,
+				CEEAFD881B8171BE00795B27 /* YHTopicColorModel.m */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		E350D7DED779E552151A48F0 /* Pods */ = {
@@ -292,6 +325,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEEAFD5E1B8167D900795B27 /* ViewController.m in Sources */,
+				CEEAFD891B8171BE00795B27 /* YHTopicColorModel.m in Sources */,
 				CEEAFD7E1B816C5200795B27 /* YHSALoginViewController.m in Sources */,
 				CEEAFD5B1B8167D900795B27 /* AppDelegate.m in Sources */,
 				CEEAFD581B8167D900795B27 /* main.m in Sources */,
