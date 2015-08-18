@@ -18,4 +18,7 @@
 #define __PROPERTY_AT_ASSIGN__(type,object) @property(atomic,assign)type object
 #define __PROPERTY_NO_WEAK__(type,object) @property(nonatomic,weak)type object
 #define __PROPERTY_AT_WEAK__(type,object) @property(nonatomic,weak)type object
+
+#define __PROPERTY_NO_STRONG__READLY__(type,object) @property(nonatomic,strong,readonly)type object
+#define __PROPERTY_NO_ASSIGN__READLY__(type,object) @property(nonatomic,assign,readonly)type object
 #endif

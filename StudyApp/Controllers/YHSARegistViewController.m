@@ -7,6 +7,7 @@
 //
 
 #import "YHSARegistViewController.h"
+#import "YHSAHttpManager.h"
 @interface YHSARegistViewController ()<UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *schoolLabel;
 @property (weak, nonatomic) IBOutlet UITextField *schoolTextField;
@@ -53,6 +54,7 @@
     [_registBtn setTitle:REGIST_BUTTON_TEXT forState:UIControlStateNormal];
     _registBtn.layer.masksToBounds=YES;
     _registBtn.layer.cornerRadius=6;
+    [_registBtn addTarget:self action:@selector(regist) forControlEvents:UIControlEventTouchUpInside];
     //适配不同屏幕大小与滚动视图相关设置
     _scrollView.contentSize = CGSizeMake(0, 480);
     _scrollView.bounces=NO;
@@ -60,6 +62,14 @@
     _scrollView.showsVerticalScrollIndicator=NO;
     
 }
+
+-(void)regist{
+    NSDictionary * dic = @{@"college":@"123",@"phonecode":@"12345678909",@"password":@"123431",@"question":@"321",@"answer":@"321"};
+    [YHSAHttpManager YHSARequestPost:YHSARequestTypeRegist infoDic:dic Succsee:^(NSData *data) {
+        NSLog(@"%@",data);
+    } andFail:nil isbuffer:YES];
+}
+
 
 -(void)useYHTopicToCreatViewWithModel{
     YHTopicColorModel * model = [YHTopicColorModel sharedTheSingletion];

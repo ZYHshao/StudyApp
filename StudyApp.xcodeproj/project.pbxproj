@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		18A9AC9A1B822AC800F8B69B /* YHSARegistViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18A9AC991B822AC800F8B69B /* YHSARegistViewController.xib */; };
+		18F050FA1B836700008EF87D /* YHBaseCecheCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F050F91B836700008EF87D /* YHBaseCecheCenter.m */; };
+		18F050FF1B8379C2008EF87D /* YHSAHttpManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F050FE1B8379C2008EF87D /* YHSAHttpManager.m */; };
 		23715322364E505FF9CADA86 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6888E6FF2F5B53851F13B1DE /* libPods.a */; };
 		CE2B70EC1B82B9A300040C3C /* YHSAMainToolsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2B70EB1B82B9A300040C3C /* YHSAMainToolsViewController.m */; };
 		CE2B70EF1B82B9E700040C3C /* YHBaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2B70EE1B82B9E700040C3C /* YHBaseNavigationController.m */; };
@@ -119,6 +121,12 @@
 
 /* Begin PBXFileReference section */
 		18A9AC991B822AC800F8B69B /* YHSARegistViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = YHSARegistViewController.xib; path = StudyApp/Controllers/YHSARegistViewController.xib; sourceTree = SOURCE_ROOT; };
+		18F050F81B836700008EF87D /* YHBaseCecheCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHBaseCecheCenter.h; sourceTree = "<group>"; };
+		18F050F91B836700008EF87D /* YHBaseCecheCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YHBaseCecheCenter.m; sourceTree = "<group>"; };
+		18F050FB1B8369DC008EF87D /* YHBaseCecheHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHBaseCecheHeader.h; sourceTree = "<group>"; };
+		18F050FD1B8379C2008EF87D /* YHSAHttpManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YHSAHttpManager.h; path = StudyApp/Managers/YHSAHttpManager.h; sourceTree = SOURCE_ROOT; };
+		18F050FE1B8379C2008EF87D /* YHSAHttpManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YHSAHttpManager.m; path = StudyApp/Managers/YHSAHttpManager.m; sourceTree = SOURCE_ROOT; };
+		18F051001B837B05008EF87D /* YHSAHttpRequestDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHSAHttpRequestDefine.h; sourceTree = "<group>"; };
 		6888E6FF2F5B53851F13B1DE /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		9437AF0FF7C072DED387C2D3 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		CE2B70EA1B82B9A300040C3C /* YHSAMainToolsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHSAMainToolsViewController.h; sourceTree = "<group>"; };
@@ -266,6 +274,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		18F050FC1B837971008EF87D /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				18F050FD1B8379C2008EF87D /* YHSAHttpManager.h */,
+				18F050FE1B8379C2008EF87D /* YHSAHttpManager.m */,
+				18F051001B837B05008EF87D /* YHSAHttpRequestDefine.h */,
+			);
+			name = Managers;
+			path = Controllers/Managers;
+			sourceTree = "<group>";
+		};
 		CE2B70F31B82C72700040C3C /* BaseViews */ = {
 			isa = PBXGroup;
 			children = (
@@ -293,6 +312,9 @@
 				CE2B71021B8327F700040C3C /* YHBaseHttpManager.m */,
 				CE2B71041B83282A00040C3C /* YHBaseHttpRequestObject.h */,
 				CE2B71051B83282A00040C3C /* YHBaseHttpRequestObject.m */,
+				18F050F81B836700008EF87D /* YHBaseCecheCenter.h */,
+				18F050F91B836700008EF87D /* YHBaseCecheCenter.m */,
+				18F050FB1B8369DC008EF87D /* YHBaseCecheHeader.h */,
 			);
 			path = YHBaseHttpManager;
 			sourceTree = "<group>";
@@ -355,6 +377,7 @@
 				CEEAFE301B81AA3D00795B27 /* Headers */,
 				CEEAFD911B81A8AE00795B27 /* Sources */,
 				CEEAFD861B8171A200795B27 /* Models */,
+				18F050FC1B837971008EF87D /* Managers */,
 				CEEAFD7B1B816B7700795B27 /* Controllers */,
 				CEEAFD591B8167D900795B27 /* AppDelegate.h */,
 				CEEAFD5A1B8167D900795B27 /* AppDelegate.m */,
@@ -777,7 +800,9 @@
 				CE2B70EF1B82B9E700040C3C /* YHBaseNavigationController.m in Sources */,
 				CE2B70F21B82BD7600040C3C /* YHSANavigationViewController.m in Sources */,
 				CE2B71031B8327F700040C3C /* YHBaseHttpManager.m in Sources */,
+				18F050FF1B8379C2008EF87D /* YHSAHttpManager.m in Sources */,
 				CE8095601B81D97000730610 /* YHBaseViewController.m in Sources */,
+				18F050FA1B836700008EF87D /* YHBaseCecheCenter.m in Sources */,
 				CEEAFD581B8167D900795B27 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
