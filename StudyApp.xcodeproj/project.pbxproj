@@ -14,6 +14,8 @@
 		CE2B70F21B82BD7600040C3C /* YHSANavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2B70F11B82BD7600040C3C /* YHSANavigationViewController.m */; };
 		CE2B70F61B82C75700040C3C /* YHBaseButton.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2B70F51B82C75700040C3C /* YHBaseButton.m */; };
 		CE2B70FB1B8303C100040C3C /* YHBaseLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2B70FA1B8303C100040C3C /* YHBaseLabel.m */; };
+		CE2B71031B8327F700040C3C /* YHBaseHttpManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2B71021B8327F700040C3C /* YHBaseHttpManager.m */; };
+		CE2B71061B83282A00040C3C /* YHBaseHttpRequestObject.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2B71051B83282A00040C3C /* YHBaseHttpRequestObject.m */; };
 		CE8095601B81D97000730610 /* YHBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE80955F1B81D97000730610 /* YHBaseViewController.m */; };
 		CE8095651B81EC9000730610 /* YHSARegistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8095631B81EC9000730610 /* YHSARegistViewController.m */; };
 		CEEAFD581B8167D900795B27 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CEEAFD571B8167D900795B27 /* main.m */; };
@@ -131,6 +133,11 @@
 		CE2B70F81B82FB6800040C3C /* YHKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YHKit.h; path = ../Headers/YHKit.h; sourceTree = "<group>"; };
 		CE2B70F91B8303C100040C3C /* YHBaseLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHBaseLabel.h; sourceTree = "<group>"; };
 		CE2B70FA1B8303C100040C3C /* YHBaseLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YHBaseLabel.m; sourceTree = "<group>"; };
+		CE2B71011B8327F700040C3C /* YHBaseHttpManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHBaseHttpManager.h; sourceTree = "<group>"; };
+		CE2B71021B8327F700040C3C /* YHBaseHttpManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YHBaseHttpManager.m; sourceTree = "<group>"; };
+		CE2B71041B83282A00040C3C /* YHBaseHttpRequestObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHBaseHttpRequestObject.h; sourceTree = "<group>"; };
+		CE2B71051B83282A00040C3C /* YHBaseHttpRequestObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YHBaseHttpRequestObject.m; sourceTree = "<group>"; };
+		CE2B71081B83291D00040C3C /* YHBaseHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHBaseHeader.h; sourceTree = "<group>"; };
 		CE80955C1B81D8F300730610 /* YHViewControllerProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHViewControllerProtocol.h; sourceTree = "<group>"; };
 		CE80955E1B81D97000730610 /* YHBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHBaseViewController.h; sourceTree = "<group>"; };
 		CE80955F1B81D97000730610 /* YHBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YHBaseViewController.m; sourceTree = "<group>"; };
@@ -271,6 +278,33 @@
 			path = BaseViews;
 			sourceTree = "<group>";
 		};
+		CE2B70FC1B831FAA00040C3C /* BaseManagers */ = {
+			isa = PBXGroup;
+			children = (
+				CE2B71001B8327F700040C3C /* YHBaseHttpManager */,
+			);
+			path = BaseManagers;
+			sourceTree = "<group>";
+		};
+		CE2B71001B8327F700040C3C /* YHBaseHttpManager */ = {
+			isa = PBXGroup;
+			children = (
+				CE2B71011B8327F700040C3C /* YHBaseHttpManager.h */,
+				CE2B71021B8327F700040C3C /* YHBaseHttpManager.m */,
+				CE2B71041B83282A00040C3C /* YHBaseHttpRequestObject.h */,
+				CE2B71051B83282A00040C3C /* YHBaseHttpRequestObject.m */,
+			);
+			path = YHBaseHttpManager;
+			sourceTree = "<group>";
+		};
+		CE2B71071B83290A00040C3C /* BaseHeader */ = {
+			isa = PBXGroup;
+			children = (
+				CE2B71081B83291D00040C3C /* YHBaseHeader.h */,
+			);
+			path = BaseHeader;
+			sourceTree = "<group>";
+		};
 		CE80955D1B81D95700730610 /* BaseController */ = {
 			isa = PBXGroup;
 			children = (
@@ -313,13 +347,14 @@
 		CEEAFD541B8167D900795B27 /* StudyApp */ = {
 			isa = PBXGroup;
 			children = (
+				CE2B71071B83290A00040C3C /* BaseHeader */,
+				CE2B70FC1B831FAA00040C3C /* BaseManagers */,
 				CE2B70F31B82C72700040C3C /* BaseViews */,
 				CE80955D1B81D95700730610 /* BaseController */,
+				CEEAFD801B816E0600795B27 /* BaseProcotols */,
 				CEEAFE301B81AA3D00795B27 /* Headers */,
 				CEEAFD911B81A8AE00795B27 /* Sources */,
 				CEEAFD861B8171A200795B27 /* Models */,
-				CEEAFD801B816E0600795B27 /* BaseProcotols */,
-				CEEAFD7F1B816DDD00795B27 /* Managers */,
 				CEEAFD7B1B816B7700795B27 /* Controllers */,
 				CEEAFD591B8167D900795B27 /* AppDelegate.h */,
 				CEEAFD5A1B8167D900795B27 /* AppDelegate.m */,
@@ -374,13 +409,6 @@
 				CE2B70EB1B82B9A300040C3C /* YHSAMainToolsViewController.m */,
 			);
 			path = Controllers;
-			sourceTree = "<group>";
-		};
-		CEEAFD7F1B816DDD00795B27 /* Managers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Managers;
 			sourceTree = "<group>";
 		};
 		CEEAFD801B816E0600795B27 /* BaseProcotols */ = {
@@ -739,6 +767,7 @@
 			files = (
 				CE8095651B81EC9000730610 /* YHSARegistViewController.m in Sources */,
 				CE2B70EC1B82B9A300040C3C /* YHSAMainToolsViewController.m in Sources */,
+				CE2B71061B83282A00040C3C /* YHBaseHttpRequestObject.m in Sources */,
 				CEEAFD5E1B8167D900795B27 /* ViewController.m in Sources */,
 				CEEAFD891B8171BE00795B27 /* YHTopicColorModel.m in Sources */,
 				CE2B70FB1B8303C100040C3C /* YHBaseLabel.m in Sources */,
@@ -747,6 +776,7 @@
 				CEEAFD5B1B8167D900795B27 /* AppDelegate.m in Sources */,
 				CE2B70EF1B82B9E700040C3C /* YHBaseNavigationController.m in Sources */,
 				CE2B70F21B82BD7600040C3C /* YHSANavigationViewController.m in Sources */,
+				CE2B71031B8327F700040C3C /* YHBaseHttpManager.m in Sources */,
 				CE8095601B81D97000730610 /* YHBaseViewController.m in Sources */,
 				CEEAFD581B8167D900795B27 /* main.m in Sources */,
 			);

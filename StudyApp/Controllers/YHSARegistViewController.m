@@ -37,6 +37,7 @@
     
     
 }
+#pragma mark - 视图搭建部分
 -(void)YHCreatView{
     self.title = REGIST_CONTROLLER_TITLE;
     _schoolLabel.text = REGIST_SCHOOL_TEXT;
@@ -74,6 +75,11 @@
     [_registBtn setTitleColor:model.btnTextColor forState:UIControlStateNormal];
     
 }
+
+#pragma mark - 逻辑功能部分
+
+
+#pragma mark - 优化部分
 //为了不被挡住视图，做如下操作
 -(void)textFieldDidBeginEditing:(UITextField *)textField{
     if (textField.tag>302&&textField.tag<305) {
