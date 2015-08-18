@@ -7,10 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		18A9AC9A1B822AC800F8B69B /* YHASRegistViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18A9AC991B822AC800F8B69B /* YHASRegistViewController.xib */; };
+		18A9AC9A1B822AC800F8B69B /* YHSARegistViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18A9AC991B822AC800F8B69B /* YHSARegistViewController.xib */; };
 		23715322364E505FF9CADA86 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6888E6FF2F5B53851F13B1DE /* libPods.a */; };
+		CE2B70EC1B82B9A300040C3C /* YHSAMainToolsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2B70EB1B82B9A300040C3C /* YHSAMainToolsViewController.m */; };
+		CE2B70EF1B82B9E700040C3C /* YHBaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2B70EE1B82B9E700040C3C /* YHBaseNavigationController.m */; };
+		CE2B70F21B82BD7600040C3C /* YHSANavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2B70F11B82BD7600040C3C /* YHSANavigationViewController.m */; };
+		CE2B70F61B82C75700040C3C /* YHBaseButton.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2B70F51B82C75700040C3C /* YHBaseButton.m */; };
+		CE2B70FB1B8303C100040C3C /* YHBaseLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2B70FA1B8303C100040C3C /* YHBaseLabel.m */; };
 		CE8095601B81D97000730610 /* YHBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE80955F1B81D97000730610 /* YHBaseViewController.m */; };
-		CE8095651B81EC9000730610 /* YHASRegistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8095631B81EC9000730610 /* YHASRegistViewController.m */; };
+		CE8095651B81EC9000730610 /* YHSARegistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8095631B81EC9000730610 /* YHSARegistViewController.m */; };
 		CEEAFD581B8167D900795B27 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CEEAFD571B8167D900795B27 /* main.m */; };
 		CEEAFD5B1B8167D900795B27 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CEEAFD5A1B8167D900795B27 /* AppDelegate.m */; };
 		CEEAFD5E1B8167D900795B27 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEEAFD5D1B8167D900795B27 /* ViewController.m */; };
@@ -111,15 +116,27 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		18A9AC991B822AC800F8B69B /* YHASRegistViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = YHASRegistViewController.xib; path = StudyApp/Controllers/YHASRegistViewController.xib; sourceTree = SOURCE_ROOT; };
+		18A9AC991B822AC800F8B69B /* YHSARegistViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = YHSARegistViewController.xib; path = StudyApp/Controllers/YHSARegistViewController.xib; sourceTree = SOURCE_ROOT; };
 		6888E6FF2F5B53851F13B1DE /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		9437AF0FF7C072DED387C2D3 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		CE2B70EA1B82B9A300040C3C /* YHSAMainToolsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHSAMainToolsViewController.h; sourceTree = "<group>"; };
+		CE2B70EB1B82B9A300040C3C /* YHSAMainToolsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YHSAMainToolsViewController.m; sourceTree = "<group>"; };
+		CE2B70ED1B82B9E700040C3C /* YHBaseNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHBaseNavigationController.h; sourceTree = "<group>"; };
+		CE2B70EE1B82B9E700040C3C /* YHBaseNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YHBaseNavigationController.m; sourceTree = "<group>"; };
+		CE2B70F01B82BD7600040C3C /* YHSANavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHSANavigationViewController.h; sourceTree = "<group>"; };
+		CE2B70F11B82BD7600040C3C /* YHSANavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YHSANavigationViewController.m; sourceTree = "<group>"; };
+		CE2B70F41B82C75700040C3C /* YHBaseButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHBaseButton.h; sourceTree = "<group>"; };
+		CE2B70F51B82C75700040C3C /* YHBaseButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YHBaseButton.m; sourceTree = "<group>"; };
+		CE2B70F71B82CBC400040C3C /* YHViewProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHViewProtocol.h; sourceTree = "<group>"; };
+		CE2B70F81B82FB6800040C3C /* YHKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YHKit.h; path = ../Headers/YHKit.h; sourceTree = "<group>"; };
+		CE2B70F91B8303C100040C3C /* YHBaseLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHBaseLabel.h; sourceTree = "<group>"; };
+		CE2B70FA1B8303C100040C3C /* YHBaseLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YHBaseLabel.m; sourceTree = "<group>"; };
 		CE80955C1B81D8F300730610 /* YHViewControllerProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHViewControllerProtocol.h; sourceTree = "<group>"; };
 		CE80955E1B81D97000730610 /* YHBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHBaseViewController.h; sourceTree = "<group>"; };
 		CE80955F1B81D97000730610 /* YHBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YHBaseViewController.m; sourceTree = "<group>"; };
 		CE8095611B81DE5300730610 /* StringHead.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StringHead.h; sourceTree = "<group>"; };
-		CE8095621B81EC9000730610 /* YHASRegistViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHASRegistViewController.h; sourceTree = "<group>"; };
-		CE8095631B81EC9000730610 /* YHASRegistViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YHASRegistViewController.m; sourceTree = "<group>"; };
+		CE8095621B81EC9000730610 /* YHSARegistViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHSARegistViewController.h; sourceTree = "<group>"; };
+		CE8095631B81EC9000730610 /* YHSARegistViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YHSARegistViewController.m; sourceTree = "<group>"; };
 		CEEAFD521B8167D900795B27 /* StudyApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StudyApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEEAFD561B8167D900795B27 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CEEAFD571B8167D900795B27 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -242,11 +259,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CE2B70F31B82C72700040C3C /* BaseViews */ = {
+			isa = PBXGroup;
+			children = (
+				CE2B70F81B82FB6800040C3C /* YHKit.h */,
+				CE2B70F91B8303C100040C3C /* YHBaseLabel.h */,
+				CE2B70FA1B8303C100040C3C /* YHBaseLabel.m */,
+				CE2B70F41B82C75700040C3C /* YHBaseButton.h */,
+				CE2B70F51B82C75700040C3C /* YHBaseButton.m */,
+			);
+			path = BaseViews;
+			sourceTree = "<group>";
+		};
 		CE80955D1B81D95700730610 /* BaseController */ = {
 			isa = PBXGroup;
 			children = (
 				CE80955E1B81D97000730610 /* YHBaseViewController.h */,
 				CE80955F1B81D97000730610 /* YHBaseViewController.m */,
+				CE2B70ED1B82B9E700040C3C /* YHBaseNavigationController.h */,
+				CE2B70EE1B82B9E700040C3C /* YHBaseNavigationController.m */,
 			);
 			path = BaseController;
 			sourceTree = "<group>";
@@ -254,7 +285,7 @@
 		CE8095671B81ECCB00730610 /* Xibs */ = {
 			isa = PBXGroup;
 			children = (
-				18A9AC991B822AC800F8B69B /* YHASRegistViewController.xib */,
+				18A9AC991B822AC800F8B69B /* YHSARegistViewController.xib */,
 			);
 			path = Xibs;
 			sourceTree = "<group>";
@@ -282,6 +313,7 @@
 		CEEAFD541B8167D900795B27 /* StudyApp */ = {
 			isa = PBXGroup;
 			children = (
+				CE2B70F31B82C72700040C3C /* BaseViews */,
 				CE80955D1B81D95700730610 /* BaseController */,
 				CEEAFE301B81AA3D00795B27 /* Headers */,
 				CEEAFD911B81A8AE00795B27 /* Sources */,
@@ -332,10 +364,14 @@
 			isa = PBXGroup;
 			children = (
 				CE8095671B81ECCB00730610 /* Xibs */,
-				CE8095621B81EC9000730610 /* YHASRegistViewController.h */,
-				CE8095631B81EC9000730610 /* YHASRegistViewController.m */,
+				CE2B70F01B82BD7600040C3C /* YHSANavigationViewController.h */,
+				CE2B70F11B82BD7600040C3C /* YHSANavigationViewController.m */,
+				CE8095621B81EC9000730610 /* YHSARegistViewController.h */,
+				CE8095631B81EC9000730610 /* YHSARegistViewController.m */,
 				CEEAFD7C1B816C5200795B27 /* YHSALoginViewController.h */,
 				CEEAFD7D1B816C5200795B27 /* YHSALoginViewController.m */,
+				CE2B70EA1B82B9A300040C3C /* YHSAMainToolsViewController.h */,
+				CE2B70EB1B82B9A300040C3C /* YHSAMainToolsViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -350,6 +386,7 @@
 		CEEAFD801B816E0600795B27 /* BaseProcotols */ = {
 			isa = PBXGroup;
 			children = (
+				CE2B70F71B82CBC400040C3C /* YHViewProtocol.h */,
 				CEEAFD811B816E8E00795B27 /* YHTopicProtocol.h */,
 				CEEAFD8B1B81738100795B27 /* YHSingletonProcotol.h */,
 				CE80955C1B81D8F300730610 /* YHViewControllerProtocol.h */,
@@ -646,7 +683,7 @@
 				CEEAFDFD1B81A8BF00795B27 /* ic_launcher.png in Resources */,
 				CEEAFDFF1B81A8BF00795B27 /* jiantouright.png in Resources */,
 				CEEAFE001B81A8BF00795B27 /* jindutiaoico.png in Resources */,
-				18A9AC9A1B822AC800F8B69B /* YHASRegistViewController.xib in Resources */,
+				18A9AC9A1B822AC800F8B69B /* YHSARegistViewController.xib in Resources */,
 				CEEAFE141B81A8BF00795B27 /* main_titlebg.png in Resources */,
 				CEEAFE081B81A8BF00795B27 /* loading_6.png in Resources */,
 				CEEAFE1D1B81A8BF00795B27 /* q4_item_hbdd_select1.png in Resources */,
@@ -700,11 +737,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE8095651B81EC9000730610 /* YHASRegistViewController.m in Sources */,
+				CE8095651B81EC9000730610 /* YHSARegistViewController.m in Sources */,
+				CE2B70EC1B82B9A300040C3C /* YHSAMainToolsViewController.m in Sources */,
 				CEEAFD5E1B8167D900795B27 /* ViewController.m in Sources */,
 				CEEAFD891B8171BE00795B27 /* YHTopicColorModel.m in Sources */,
+				CE2B70FB1B8303C100040C3C /* YHBaseLabel.m in Sources */,
+				CE2B70F61B82C75700040C3C /* YHBaseButton.m in Sources */,
 				CEEAFD7E1B816C5200795B27 /* YHSALoginViewController.m in Sources */,
 				CEEAFD5B1B8167D900795B27 /* AppDelegate.m in Sources */,
+				CE2B70EF1B82B9E700040C3C /* YHBaseNavigationController.m in Sources */,
+				CE2B70F21B82BD7600040C3C /* YHSANavigationViewController.m in Sources */,
 				CE8095601B81D97000730610 /* YHBaseViewController.m in Sources */,
 				CEEAFD581B8167D900795B27 /* main.m in Sources */,
 			);

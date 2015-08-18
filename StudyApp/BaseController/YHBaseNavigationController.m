@@ -1,31 +1,27 @@
 //
-//  YHBaseViewController.m
+//  YHBaseNavigationController.m
 //  
 //
-//  Created by user on 15/8/17.
+//  Created by user on 15/8/18.
 //
-//
+//导航的基类
 
-#import "YHBaseViewController.h"
+#import "YHBaseNavigationController.h"
 
-@interface YHBaseViewController ()
-//自带的数据源数组
-@property(nonatomic,strong)NSMutableArray * dateArray;
+@interface YHBaseNavigationController ()
+
 @end
 
-@implementation YHBaseViewController
-
+@implementation YHBaseNavigationController
 -(void)dealloc{
     [[NSNotificationCenter defaultCenter]removeObserver:self];
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    //取消导航的影响
-    self.edgesForExtendedLayout = UIRectEdgeNone;
+    
     //添加监听主题更换的通知
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(useYHTopicToCreatViewWithModel) name:YHTopicChangeTopicNotication object:nil];
-    [self YHCreatDate];
     [self YHCreatView];
     //加载主题
     [self useYHTopicToCreatViewWithModel];
@@ -37,9 +33,8 @@
 -(void)useYHTopicToCreatViewWithModel{
     
 }
-//进行初始化
 -(void)YHCreatDate{
-    _dateArray = [[NSMutableArray alloc]init];
+    
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

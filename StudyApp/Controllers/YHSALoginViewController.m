@@ -32,10 +32,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.title=LOGIN_CONTROLLER_TITLE;
-    
 }
 -(void)YHCreatView{
+    self.title=LOGIN_CONTROLLER_TITLE;
     _userNameImageView = [[UIImageView alloc]initWithFrame:CGRectMake(LAYOUT_OFFSET_LEFT, 40,20, 20)];
     _userNameImageView.image = [UIImage imageNamed:LOGININ_USER_NAME_IMAGE];
     [self.view addSubview:_userNameImageView];

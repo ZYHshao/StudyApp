@@ -15,4 +15,5 @@
 #import "ImageHead.h"
 #import "BaseHead.h"
 #import "StringHead.h"
+#import "YHKit.h"
 #endif

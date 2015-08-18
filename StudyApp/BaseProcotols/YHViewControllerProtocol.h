@@ -9,5 +9,8 @@
 #import <Foundation/Foundation.h>
 
 @protocol YHViewControllerProtocol <NSObject>
+//加载数据
+-(void)YHCreatDate;
+//构建视图
 -(void)YHCreatView;
 @end

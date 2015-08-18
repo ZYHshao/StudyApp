@@ -39,6 +39,6 @@
 
 //字体大小
 #define TEXT_FONT_SIZE_NORMAL 17
-
+#define TEXT_FONT_SIZE_BIG_TITLE 24
 
 #endif

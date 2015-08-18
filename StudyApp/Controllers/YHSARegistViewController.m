@@ -6,8 +6,8 @@
 //
 //
 
-#import "YHASRegistViewController.h"
-@interface YHASRegistViewController ()<UITextFieldDelegate>
+#import "YHSARegistViewController.h"
+@interface YHSARegistViewController ()<UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *schoolLabel;
 @property (weak, nonatomic) IBOutlet UITextField *schoolTextField;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
@@ -26,7 +26,7 @@
 
 @end
 
-@implementation YHASRegistViewController
+@implementation YHSARegistViewController
 - (IBAction)toRegist:(id)sender {
     [[NSNotificationCenter defaultCenter] postNotificationName:YHTopicChangeTopicNotication object:nil];
 }
@@ -38,6 +38,7 @@
     
 }
 -(void)YHCreatView{
+    self.title = REGIST_CONTROLLER_TITLE;
     _schoolLabel.text = REGIST_SCHOOL_TEXT;
     _schoolTextField.placeholder = REGIST_SCHOOL_FIELD_PLACEHOLDER_TEXT;
     _phoneLabel.text = REGIST_PHONE_TEXT;
@@ -71,7 +72,6 @@
     _answerLabel.textColor = model.textColor;
     _registBtn.backgroundColor = model.btnColor;
     [_registBtn setTitleColor:model.btnTextColor forState:UIControlStateNormal];
-    NSLog(@"监听到通知");
     
 }
 //为了不被挡住视图，做如下操作

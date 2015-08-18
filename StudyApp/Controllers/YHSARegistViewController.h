@@ -8,6 +8,6 @@
 
 #import "YHBaseViewController.h"
 
-@interface YHASRegistViewController : YHBaseViewController
+@interface YHSARegistViewController : YHBaseViewController
 
 @end

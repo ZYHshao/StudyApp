@@ -9,6 +9,12 @@
 #ifndef StudyApp_StringHead_h
 #define StudyApp_StringHead_h
 
+
+//=============================引导界面=========================//
+#define LOADER_REGIST_BUTTON_TEXT @"免费注册"
+#define LOADER_NEXT_BUTTON_TEXT @"跳过"
+#define LOADER_LOGIN_BUTTON_TEXT @"已有账号，立即登录"
+
 //=============================登陆界面=========================//
 #define LOGIN_CONTROLLER_TITLE @"登陆"
 #define LOGIN_USERNAME_LABEL @"通行证:"
@@ -20,6 +26,7 @@
 #define LOGIN_REGIST_BTN_TEXT @"立即注册"
 #define LOGIN_REFIND_SECERT_TEXT @"找回密码"
 //==============================注册界面========================//
+#define REGIST_CONTROLLER_TITLE @"注册"
 #define REGIST_SCHOOL_TEXT @"所在院校:"
 #define REGIST_SCHOOL_FIELD_PLACEHOLDER_TEXT @"请选择您的所在院校"
 #define REGIST_PHONE_TEXT @"手机号码:"
@@ -33,4 +40,15 @@
 #define REGIST_ANSWER_TEXT @"提示问题答案:"
 #define REGIST_ANSWER_FIELD_PLACEHOLDER_TEXT @"请输入您的提示问题答案"
 #define REGIST_BUTTON_TEXT @"注册"
+//===============================主工具界面=======================//
+#define MAIN_CONTROLLER_TITLE @"VIPExam考试库"
+#define MAIN_MYTEXT_TEXT @"模拟自测"
+#define MAIN_WRONG_NOTES_TEXT @"错题记录"
+#define MAIN_WRONG_TEXT_TEXT @"错题组卷"
+#define MAIN_MY_COLLECT_TEXT @"我的收藏"
+#define MAIN_MY_ANALYSE_TEXT @"成绩分析"
+#define MAIN_STUDY_PIAN_TEXT @"学习计划"
+#define MAIN_MY_NOTES_TEXT @"我的笔记"
+#define MAIN_TEXT_INFOMATION_TEXT @"开始咨询"
+#define MAIN_SYSTEMSET_TEXT @"系统设置"
 #endif

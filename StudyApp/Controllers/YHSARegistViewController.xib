@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="15A178w" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="YHASRegistViewController">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="YHSARegistViewController">
             <connections>
                 <outlet property="answerLabel" destination="H2d-MK-gsv" id="R59-Ca-7vY"/>
                 <outlet property="answerTextField" destination="12U-gN-Jtb" id="ONH-8J-0o5"/>
@@ -30,7 +30,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Eo-2x-btj">
-                    <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="*" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KI5-A6-TsT">
                             <rect key="frame" x="20" y="19" width="20" height="20"/>
@@ -51,7 +51,7 @@
                                 <constraint firstAttribute="width" constant="85" id="pQV-OQ-5xg"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="*" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eU3-gA-KsV">
@@ -73,7 +73,7 @@
                                 <constraint firstAttribute="height" constant="25" id="jdw-Yd-DU5"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <textField opaque="NO" clipsSubviews="YES" tag="302" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入您的手机号码" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4Qg-jP-5wF">
@@ -108,7 +108,7 @@
                                 <constraint firstAttribute="width" constant="85" id="lMZ-yG-Wch"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <textField opaque="NO" clipsSubviews="YES" tag="303" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入您的密码" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QlJ-eI-pYd">
@@ -143,14 +143,13 @@
                                 <constraint firstAttribute="width" constant="85" id="zCa-Cr-LJv"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <textField opaque="NO" clipsSubviews="YES" tag="304" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请再次输入您的密码" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gdG-gO-sPg">
                             <rect key="frame" x="20" y="237" width="288" height="30"/>
                             <animations/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="30" id="9Qf-Xh-uZ5"/>
                                 <constraint firstAttribute="width" constant="288" id="ezF-3r-G87"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -178,7 +177,7 @@
                                 <constraint firstAttribute="width" constant="119" id="bU3-rw-iME"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <textField opaque="NO" clipsSubviews="YES" tag="305" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请选择您的提示问题" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7zT-Ys-L80">
@@ -213,7 +212,7 @@
                                 <constraint firstAttribute="height" constant="25" id="prx-uu-qOk"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <textField opaque="NO" clipsSubviews="YES" tag="306" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入您的提示问题答案             " minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="12U-gN-Jtb">
@@ -297,11 +296,11 @@
                         <constraint firstItem="4Qg-jP-5wF" firstAttribute="top" secondItem="2Eo-2x-btj" secondAttribute="top" constant="105" id="RF1-Z8-zCC"/>
                         <constraint firstItem="0c3-be-I3h" firstAttribute="bottom" secondItem="gdG-gO-sPg" secondAttribute="bottom" constant="-33" id="RSS-py-ADx"/>
                         <constraint firstItem="d9I-qh-hfR" firstAttribute="leading" secondItem="1dp-rI-wXw" secondAttribute="trailing" constant="1" id="S1I-bW-PfM"/>
+                        <constraint firstItem="0c3-be-I3h" firstAttribute="top" secondItem="QlJ-eI-pYd" secondAttribute="bottom" constant="8" symbolic="YES" id="Swz-bF-KBh"/>
                         <constraint firstItem="1dp-rI-wXw" firstAttribute="leading" secondItem="2Eo-2x-btj" secondAttribute="leading" constant="20" id="TbU-zE-cOL"/>
                         <constraint firstAttribute="centerX" secondItem="gdG-gO-sPg" secondAttribute="centerX" constant="-4" id="VVO-vt-3mB"/>
                         <constraint firstItem="KI5-A6-TsT" firstAttribute="leading" secondItem="2Eo-2x-btj" secondAttribute="leading" constant="20" id="Zw2-Eb-Rbv"/>
                         <constraint firstItem="gPa-wE-Xe4" firstAttribute="leading" secondItem="2Eo-2x-btj" secondAttribute="leading" constant="20" id="bvW-xq-juL"/>
-                        <constraint firstItem="gdG-gO-sPg" firstAttribute="top" secondItem="2Eo-2x-btj" secondAttribute="top" constant="237" id="cA9-i5-foY"/>
                         <constraint firstItem="6xn-P8-8fC" firstAttribute="leading" secondItem="n8m-o4-1tu" secondAttribute="trailing" constant="1" id="crS-oa-hpi"/>
                         <constraint firstAttribute="centerX" secondItem="VoB-PF-te5" secondAttribute="centerX" constant="-4" id="dAQ-PZ-yJb"/>
                         <constraint firstItem="4Qg-jP-5wF" firstAttribute="bottom" secondItem="vu0-mL-Imy" secondAttribute="bottom" constant="33" id="dSc-Wh-BHO"/>
@@ -324,7 +323,6 @@
                         <constraint firstItem="7zT-Ys-L80" firstAttribute="bottom" secondItem="d9I-qh-hfR" secondAttribute="bottom" constant="33" id="uyV-8K-wEc"/>
                         <constraint firstItem="12U-gN-Jtb" firstAttribute="bottom" secondItem="eho-nY-syF" secondAttribute="bottom" constant="32" id="wlc-IU-IDI"/>
                         <constraint firstItem="6xn-P8-8fC" firstAttribute="bottom" secondItem="QlJ-eI-pYd" secondAttribute="bottom" constant="-33" id="yEj-t4-fbA"/>
-                        <constraint firstItem="gdG-gO-sPg" firstAttribute="centerY" secondItem="2Eo-2x-btj" secondAttribute="centerY" id="zKG-tV-oWm"/>
                         <constraint firstItem="4PW-gE-nxb" firstAttribute="top" secondItem="12U-gN-Jtb" secondAttribute="bottom" constant="45" id="zMP-Mg-8Lf"/>
                     </constraints>
                 </scrollView>
@@ -333,11 +331,10 @@
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="2Eo-2x-btj" secondAttribute="trailing" id="3SZ-DJ-qRo"/>
-                <constraint firstAttribute="bottom" secondItem="2Eo-2x-btj" secondAttribute="bottom" id="YdP-AW-oBM"/>
+                <constraint firstItem="2Eo-2x-btj" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="BqB-tp-7f3"/>
+                <constraint firstAttribute="bottom" secondItem="2Eo-2x-btj" secondAttribute="bottom" id="Ddr-es-Xqa"/>
                 <constraint firstItem="2Eo-2x-btj" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="qmj-cg-y9h"/>
-                <constraint firstItem="2Eo-2x-btj" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="64" id="zYo-eB-PRa"/>
             </constraints>
-            <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
             <point key="canvasLocation" x="175" y="340"/>
         </view>
     </objects>
