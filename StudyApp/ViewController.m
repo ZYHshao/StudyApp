@@ -11,6 +11,7 @@
 #import "YHSANavigationViewController.h"
 #import "YHSALoginViewController.h"
 #import "YHSARegistViewController.h"
+
 @interface ViewController ()
 {
     UIScrollView * _loaderScorllView;
@@ -43,7 +44,7 @@
     UIImageView * logo = [[UIImageView alloc]initWithFrame:CGRectMake(SCREEN_WIDTH/2-100, 100, 200, 100)];
     logo.image = [UIImage imageNamed:LOADER_LOGO_IMAGE];
     [page2 addSubview:logo];
-    __weak ViewController * tmpCon = self;
+    __BLOCK__WEAK__SELF__(tmpCon);
     YHBaseButton * regist = [[YHBaseButton alloc]initWithFrame:CGRectMake(SCREEN_WIDTH/2-100, 320, 200, 60) backgroundImage:nil backgroundColor:[UIColor colorWithRed:10/255.0 green:85/255.0 blue:160/255.0 alpha:1] textColor:[UIColor whiteColor] titleText:LOADER_REGIST_BUTTON_TEXT andClickBlock:^(YHBaseButton *btn) {
         //跳转注册
         YHSANavigationViewController * nav = [[YHSANavigationViewController alloc]initWithRootViewController:[[YHSAMainToolsViewController alloc]init]];
@@ -62,6 +63,7 @@
     
     YHBaseButton * login = [[YHBaseButton alloc]initWithFrame:CGRectMake(SCREEN_WIDTH/2-90, SCREEN_HEIGHT-50, 180, 20) backgroundImage:nil backgroundColor:nil textColor:[UIColor colorWithRed:10/255.0 green:85/255.0 blue:160/255.0 alpha:1] titleText:LOADER_LOGIN_BUTTON_TEXT andClickBlock:^(YHBaseButton *btn) {
         //跳转登陆
+       
     }];
     [page2 addSubview:login];
     [page2 addSubview:next];

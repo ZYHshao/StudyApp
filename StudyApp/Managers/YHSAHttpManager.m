@@ -19,7 +19,7 @@
     obj.pramaDic = dic;
     [[YHSAHttpManager sharedTheSingletion] YHBaseHttpRequestGETFromRequestObject:obj requestSuccess:^(NSData *data) {
         succsee(data);
-    } requestField:^(NSError *error) {
+    } requestField:^(YHBaseError *error) {
         fail(error);
     } isCeche:buffer toCechePath:YHBaseCecheMain];
 }
@@ -33,12 +33,17 @@
     obj.pramaDic = dic;
     [[YHSAHttpManager sharedTheSingletion]YHBaseHttpRequestPOSTFromRequestObject:obj withParamDictionary:dic requestSuccess:^(NSData *data) {
         succsee(data);
-    } requestField:^(NSError *error) {
+    } requestField:^(YHBaseError *error) {
         fail(error);
     } isCeche:buffer toCechePath:YHBaseCecheMain];
 }
 
-
++(float)getCacheSize{
+    return [[YHBaseCecheCenter sharedTheSingletion] getSizeFromCachePath:YHBaseCecheMain];
+}
++(void)removeCache{
+    [[YHBaseCecheCenter sharedTheSingletion] removeCacheFromPath:YHBaseCecheMain];
+}
 
 +(NSString *)getUrlString:(YHSARequestType)type{
     switch (type) {
@@ -53,4 +58,6 @@
 +(NSString *)getRegistID:(YHSARequestType)type{
     return nil;
 }
+
+
 @end

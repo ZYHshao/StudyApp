@@ -27,7 +27,7 @@
     
 }
 -(void)useYHTopicToCreatViewWithModel{
-    YHTopicColorModel * model = [YHTopicColorModel sharedTheSingletion];
+    YHTopicColorManager * model = [YHTopicColorManager sharedTheSingletion];
     //获取主题
     [model getTopicModel];
     self.navigationBar.barTintColor = model.navColor;

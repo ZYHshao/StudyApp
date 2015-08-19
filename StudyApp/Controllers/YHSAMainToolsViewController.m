@@ -55,7 +55,7 @@
 }
 
 -(void)useYHTopicToCreatViewWithModel{
-    YHTopicColorModel * model = [YHTopicColorModel sharedTheSingletion];
+    YHTopicColorManager * model = [YHTopicColorManager sharedTheSingletion];
     [model getTopicModel];
     self.view.backgroundColor = model.bgColor;
     for (int i=0; i<_titleLabelArray.count; i++) {

@@ -9,7 +9,7 @@
 #import "YHBaseHttpManager.h"
 #import "YHSAHttpRequestDefine.h"
 typedef void (^succseeBlock)(NSData * data);
-typedef void (^failBlock) (NSError * error);
+typedef void (^failBlock) (YHBaseError * error);
 @interface YHSAHttpManager : YHBaseHttpManager
 /**
  *进行GET请求
@@ -19,5 +19,12 @@ typedef void (^failBlock) (NSError * error);
  *进行POST请求
  */
 +(void)YHSARequestPost:(YHSARequestType)reType infoDic:(NSDictionary *)dic Succsee:(succseeBlock)succsee  andFail:(failBlock)fail isbuffer:(BOOL)buffer;
-
+/**
+ *获取缓存大小
+ */
++(float)getCacheSize;
+/**
+ *清除缓存
+ */
++(void)removeCache;
 @end

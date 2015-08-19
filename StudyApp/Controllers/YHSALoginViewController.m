@@ -96,7 +96,7 @@
 
 //主题部分设置
 -(void)useYHTopicToCreatViewWithModel{
-    YHTopicColorModel * model = [YHTopicColorModel sharedTheSingletion];
+    YHTopicColorManager * model = [YHTopicColorManager sharedTheSingletion];
     //获取主题
     [model getTopicModel];
     _userNameLabel.textColor = model.textColor;

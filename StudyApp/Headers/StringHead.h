@@ -9,6 +9,12 @@
 #ifndef StudyApp_StringHead_h
 #define StudyApp_StringHead_h
 
+//=============================公用组件=========================//
+//alertView
+#define PUBLIC_PART_ALERT_TITLE @"温馨提示"
+#define PUBLIC_PART_ALERT_CANCLE_BTN @"取消"
+#define PUBLIC_PART_ALERT_SELECT_BTN @"确定"
+
 
 //=============================引导界面=========================//
 #define LOADER_REGIST_BUTTON_TEXT @"免费注册"
@@ -51,4 +57,21 @@
 #define MAIN_MY_NOTES_TEXT @"我的笔记"
 #define MAIN_TEXT_INFOMATION_TEXT @"开始咨询"
 #define MAIN_SYSTEMSET_TEXT @"系统设置"
+
+//=============================接口字段==========================//
+#define INTERFACE_FIELD_REGIST_COLLEAGE @"college"
+#define INTERFACE_FIELD_REGIST_PHONECODE @"phonecode"
+#define INTERFACE_FIELD_REGIST_PASSWORD @"password"
+#define INTERFACE_FIELD_REGIST_QUESTION @"question"
+#define INTERFACE_FIELD_REGIST_ANSWER @"answer"
+//============================接口返回字段========================//
+
+#define INTERFACE_RETURN_REGIST_SUCCESS @"8"
+#define INTERFACE_RETURN_REGIST_FAILED @"2"
+
+
+
+
+
+
 #endif
