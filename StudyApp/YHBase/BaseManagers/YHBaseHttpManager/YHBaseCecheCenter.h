@@ -8,8 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import "YHBaseCecheHeader.h"
-#import "YHSingletonProcotol.h"
-@interface YHBaseCecheCenter : NSObject<YHSingletonProcotol>
+
+@interface YHBaseCecheCenter : YHBaseManager
 
 //缓存地址，根据需求选用
 /*

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1834917F1B84CC4400A0F322 /* YHBaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1834917E1B84CC4400A0F322 /* YHBaseManager.m */; };
+		1834918B1B84D18C00A0F322 /* YHSASystemSettingManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 183491881B84D18C00A0F322 /* YHSASystemSettingManager.m */; };
+		1834918C1B84D18C00A0F322 /* YHSAUserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1834918A1B84D18C00A0F322 /* YHSAUserManager.m */; };
 		18F050FF1B8379C2008EF87D /* YHSAHttpManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F050FE1B8379C2008EF87D /* YHSAHttpManager.m */; };
 		23715322364E505FF9CADA86 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6888E6FF2F5B53851F13B1DE /* libPods.a */; };
 		CE2B70EC1B82B9A300040C3C /* YHSAMainToolsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2B70EB1B82B9A300040C3C /* YHSAMainToolsViewController.m */; };
@@ -130,6 +133,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1834917D1B84CC4400A0F322 /* YHBaseManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHBaseManager.h; sourceTree = "<group>"; };
+		1834917E1B84CC4400A0F322 /* YHBaseManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YHBaseManager.m; sourceTree = "<group>"; };
+		183491871B84D18C00A0F322 /* YHSASystemSettingManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YHSASystemSettingManager.h; path = StudyApp/Managers/YHSASystemSettingManager.h; sourceTree = SOURCE_ROOT; };
+		183491881B84D18C00A0F322 /* YHSASystemSettingManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YHSASystemSettingManager.m; path = StudyApp/Managers/YHSASystemSettingManager.m; sourceTree = SOURCE_ROOT; };
+		183491891B84D18C00A0F322 /* YHSAUserManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YHSAUserManager.h; path = StudyApp/Managers/YHSAUserManager.h; sourceTree = SOURCE_ROOT; };
+		1834918A1B84D18C00A0F322 /* YHSAUserManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YHSAUserManager.m; path = StudyApp/Managers/YHSAUserManager.m; sourceTree = SOURCE_ROOT; };
+		1834918D1B84D1BD00A0F322 /* YHSASystemManagerHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YHSASystemManagerHeader.h; path = StudyApp/Managers/YHSASystemManagerHeader.h; sourceTree = SOURCE_ROOT; };
 		18F050FD1B8379C2008EF87D /* YHSAHttpManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YHSAHttpManager.h; path = StudyApp/Managers/YHSAHttpManager.h; sourceTree = SOURCE_ROOT; };
 		18F050FE1B8379C2008EF87D /* YHSAHttpManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YHSAHttpManager.m; path = StudyApp/Managers/YHSAHttpManager.m; sourceTree = SOURCE_ROOT; };
 		6888E6FF2F5B53851F13B1DE /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -313,6 +323,11 @@
 				CE924A2E1B84888F00F7B647 /* YHSAHttpRequestDefine.h */,
 				18F050FD1B8379C2008EF87D /* YHSAHttpManager.h */,
 				18F050FE1B8379C2008EF87D /* YHSAHttpManager.m */,
+				1834918D1B84D1BD00A0F322 /* YHSASystemManagerHeader.h */,
+				183491871B84D18C00A0F322 /* YHSASystemSettingManager.h */,
+				183491881B84D18C00A0F322 /* YHSASystemSettingManager.m */,
+				183491891B84D18C00A0F322 /* YHSAUserManager.h */,
+				1834918A1B84D18C00A0F322 /* YHSAUserManager.m */,
 			);
 			name = Managers;
 			path = Controllers/Managers;
@@ -362,6 +377,8 @@
 		CE9249EE1B84868300F7B647 /* BaseManagers */ = {
 			isa = PBXGroup;
 			children = (
+				1834917D1B84CC4400A0F322 /* YHBaseManager.h */,
+				1834917E1B84CC4400A0F322 /* YHBaseManager.m */,
 				CE9249EF1B84868300F7B647 /* YHBaseErrorCenter */,
 				CE9249F41B84868300F7B647 /* YHBaseHttpManager */,
 				CE9249FC1B84868300F7B647 /* YHBaseTopicManager */,
@@ -889,7 +906,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1834918B1B84D18C00A0F322 /* YHSASystemSettingManager.m in Sources */,
 				CE8095651B81EC9000730610 /* YHSARegistViewController.m in Sources */,
+				1834918C1B84D18C00A0F322 /* YHSAUserManager.m in Sources */,
 				CE924A1F1B84868300F7B647 /* YHBaseAlertView.m in Sources */,
 				CE2B70EC1B82B9A300040C3C /* YHSAMainToolsViewController.m in Sources */,
 				CE924A1C1B84868300F7B647 /* YHBaseJOSNAnalytical.m in Sources */,
@@ -909,6 +928,7 @@
 				CE9249E21B8473D500F7B647 /* YHSARegustGetDataModel.m in Sources */,
 				CE2B70F21B82BD7600040C3C /* YHSANavigationViewController.m in Sources */,
 				18F050FF1B8379C2008EF87D /* YHSAHttpManager.m in Sources */,
+				1834917F1B84CC4400A0F322 /* YHBaseManager.m in Sources */,
 				CE924A1D1B84868300F7B647 /* YHBaseStringTools.m in Sources */,
 				CEEAFD581B8167D900795B27 /* main.m in Sources */,
 				CE924A171B84868300F7B647 /* YHBaseErrorCenter.m in Sources */,

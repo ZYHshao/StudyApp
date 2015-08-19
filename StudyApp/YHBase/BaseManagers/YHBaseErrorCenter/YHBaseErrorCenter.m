@@ -13,13 +13,19 @@
     static YHBaseErrorCenter * manager = nil;
     static dispatch_once_t predicate;
     dispatch_once(&predicate, ^{
-        manager = [[YHBaseErrorCenter alloc] init];
-        //添加监听
-        [[NSNotificationCenter defaultCenter]addObserver:manager selector:@selector(handleError:) name:YHBASE_ERROR_CENTER_NOTICATION object:nil];
+        manager = [[[self class] alloc] init];
     });
     return manager;
 }
-
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        //添加监听
+        [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(handleError:) name:YHBASE_ERROR_CENTER_NOTICATION object:nil];
+    }
+    return self;
+}
 -(void)handleError:(NSNotification*)obj{
     NSDictionary * userInfo = obj.userInfo;
     YHBaseError * error = [userInfo objectForKey:@"error"];

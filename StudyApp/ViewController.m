@@ -60,10 +60,11 @@
         [self presentViewController:nav animated:YES completion:nil];
     }];
     next.titleLabel.font = [UIFont boldSystemFontOfSize:20];
-    
     YHBaseButton * login = [[YHBaseButton alloc]initWithFrame:CGRectMake(SCREEN_WIDTH/2-90, SCREEN_HEIGHT-50, 180, 20) backgroundImage:nil backgroundColor:nil textColor:[UIColor colorWithRed:10/255.0 green:85/255.0 blue:160/255.0 alpha:1] titleText:LOADER_LOGIN_BUTTON_TEXT andClickBlock:^(YHBaseButton *btn) {
         //跳转登陆
-       
+        YHSANavigationViewController * nav = [[YHSANavigationViewController alloc]initWithRootViewController:[[YHSAMainToolsViewController alloc]init]];
+        [nav pushViewController:[[YHSALoginViewController alloc]init] animated:NO];
+        [tmpCon presentViewController:nav animated:YES completion:nil];
     }];
     [page2 addSubview:login];
     [page2 addSubview:next];

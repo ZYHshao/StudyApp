@@ -48,15 +48,36 @@
 +(NSString *)getUrlString:(YHSARequestType)type{
     switch (type) {
         case YHSARequestTypeRegist:
+        {
             return YHSA_REGIST_INTERFACE_POST_PATH;
+        }
             break;
-            
+        case YHSARequestTypelogin:
+        {
+            return YHSA_LOGIN_INTERFACE_POST_PATH;
+        }
+            break;
         default:
+            return @"";
             break;
     }
 }
 +(NSString *)getRegistID:(YHSARequestType)type{
-    return nil;
+    switch (type) {
+        case YHSARequestTypeRegist:
+        {
+            return YHSA_REQUEST_TYPE_REGIST;
+        }
+            break;
+        case YHSARequestTypelogin:
+        {
+            return YHSA_REQUEST_TYPE_LOGIN;
+        }
+            break;
+        default:
+            return @"";
+            break;
+    }
 }
 
 

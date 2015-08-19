@@ -59,17 +59,23 @@
 #define MAIN_SYSTEMSET_TEXT @"系统设置"
 
 //=============================接口字段==========================//
+//注册
 #define INTERFACE_FIELD_REGIST_COLLEAGE @"college"
 #define INTERFACE_FIELD_REGIST_PHONECODE @"phonecode"
 #define INTERFACE_FIELD_REGIST_PASSWORD @"password"
 #define INTERFACE_FIELD_REGIST_QUESTION @"question"
 #define INTERFACE_FIELD_REGIST_ANSWER @"answer"
+
+//登陆
+#define INTERFACE_FIELD_LOGIN_PHONECODE @"phonecode"
+#define INTERFACE_FIELD_LOGIN_PASSWORD @"password"
 //============================接口返回字段========================//
 
 #define INTERFACE_RETURN_REGIST_SUCCESS @"8"
 #define INTERFACE_RETURN_REGIST_FAILED @"2"
 
-
+#define INTERFACE_RETURN_LOGIN_SUCCESS @"8"
+#define INTERFACE_RETURN_LOGIN_FAILED @"2"
 
 
 

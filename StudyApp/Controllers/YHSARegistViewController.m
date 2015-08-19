@@ -11,6 +11,7 @@
 #import "YHSARegustGetDataModel.h"
 #import "YHSAActivityIndicatorView.h"
 #import "YHSALoginViewController.h"
+
 @interface YHSARegistViewController ()<UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *schoolLabel;
 @property (weak, nonatomic) IBOutlet UITextField *schoolTextField;
@@ -130,7 +131,7 @@
             [YHBaseAlertView showWithStyle:YHBaseAlertViewSimple title:PUBLIC_PART_ALERT_TITLE text:@"注册失败:用户名已经存在" cancleBtn:PUBLIC_PART_ALERT_SELECT_BTN selectBtn:nil andSelectFunc:nil];
         }
         [[YHSAActivityIndicatorView sharedTheSingletion]unShow];
-    } andFail:^(NSError *error) {
+    } andFail:^(YHBaseError *error) {
           [[YHSAActivityIndicatorView sharedTheSingletion]unShow];
         //处理个性，总体会在异常中心处理
     } isbuffer:NO];

@@ -9,15 +9,24 @@
 #import "YHBaseHttpManager.h"
 
 @implementation YHBaseHttpManager
-
 +(instancetype)sharedTheSingletion{
     static YHBaseHttpManager * manager = nil;
     static dispatch_once_t predicate;
     dispatch_once(&predicate, ^{
-        manager = [[YHBaseHttpManager alloc] init];
-        manager.requestArray = [[NSMutableArray alloc]init];
+        manager = [[[self class] alloc] init];
     });
     return manager;
+}
+
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        
+       self.requestArray = [[NSMutableArray alloc]init];
+
+    }
+    return self;
 }
 
 -(void)YHBaseHttpRequestGETFromRequestObject:(YHBaseHttpRequestObject *)obj requestSuccess:(void (^)(NSData * data))successBlock requestField:(void (^)(YHBaseError * error))fieldBlock isCeche:(BOOL)ceche toCechePath:(YHBaseCechePath)path{

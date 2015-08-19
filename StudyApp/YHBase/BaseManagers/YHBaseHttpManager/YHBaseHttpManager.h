@@ -8,10 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import <AFNetworking/AFNetworking.h>
-#import "YHSingletonProcotol.h"
 #import "YHBaseHttpRequestObject.h"
 #import "YHBaseCecheCenter.h"
-@interface YHBaseHttpManager : NSObject<YHSingletonProcotol>
+@interface YHBaseHttpManager : YHBaseManager
 /**
  *请求数据，用于存储正在进行的请求
  */

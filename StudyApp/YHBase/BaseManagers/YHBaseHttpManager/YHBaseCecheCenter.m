@@ -13,11 +13,10 @@
     static YHBaseCecheCenter * manager = nil;
     static dispatch_once_t predicate;
     dispatch_once(&predicate, ^{
-        manager = [[YHBaseCecheCenter alloc] init];
+        manager = [[[self class] alloc] init];
     });
     return manager;
 }
-
 - (instancetype)init
 {
     self = [super init];
