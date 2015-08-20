@@ -8,7 +8,7 @@
 
 #import "YHBaseModel.h"
 
-@interface YHSARegustGetDataModel : YHBaseModel
+@interface YHSARequestGetDataModel : YHBaseModel
 __PROPERTY_NO_STRONG__(NSString *, msg);
 __PROPERTY_NO_STRONG__(NSNumber *, resultCode);
 __PROPERTY_NO_STRONG__(NSString *, resultMsg);

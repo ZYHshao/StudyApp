@@ -27,6 +27,7 @@
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(useYHTopicToCreatViewWithModel) name:YHTopicChangeTopicNotication object:nil];
     [self YHCreatDate];
     [self YHCreatView];
+    
     //加载主题
     [self useYHTopicToCreatViewWithModel];
 }

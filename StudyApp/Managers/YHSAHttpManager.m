@@ -57,6 +57,16 @@
             return YHSA_LOGIN_INTERFACE_POST_PATH;
         }
             break;
+        case YHSARequestTypeReFoundSecret:
+        {
+            return YHSA_REFOUND_SECRET_INTERFACE_POST_PATH;
+        }
+            break;
+        case YHSARequestTypeMockExamListFirst:
+        {
+            return YHSA_MOCKEXAM_LIST_FIRST_POST_PATH;
+        }
+            break;
         default:
             return @"";
             break;
@@ -72,6 +82,16 @@
         case YHSARequestTypelogin:
         {
             return YHSA_REQUEST_TYPE_LOGIN;
+        }
+            break;
+        case YHSARequestTypeReFoundSecret:
+        {
+            return YHSA_REQUEST_TYPE_REFOUNDSECRET;
+        }
+            break;
+        case YHSARequestTypeMockExamListFirst:
+        {
+            return YHSA_REQUEST_TYPE_MOCKEXAM;
         }
             break;
         default:

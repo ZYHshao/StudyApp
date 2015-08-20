@@ -7,13 +7,16 @@
 //
 
 #import "YHSAMainToolsViewController.h"
-
+#import "YHSAUserManager.h"
+#import "YHSALoginViewController.h"
+#import "YHSAMockExamController.h"
 @interface YHSAMainToolsViewController ()
 {
     //循环创建控件，将其引用存在数组中
     NSArray * _imageArray;
     NSArray * _titleTextArray;
     NSMutableArray * _titleLabelArray;
+    NSArray * _controllersArray;
 }
 @end
 
@@ -36,14 +39,32 @@
                         MAIN_MY_COLLECT_TEXT,MAIN_MY_ANALYSE_TEXT,MAIN_STUDY_PIAN_TEXT,
                         MAIN_MY_NOTES_TEXT,MAIN_TEXT_INFOMATION_TEXT,MAIN_SYSTEMSET_TEXT];
     _titleLabelArray = [[NSMutableArray alloc]init];
+    _controllersArray = @[@"YHSAMockExamController",@"",@"",@"",@"",@"",@"",@"",@""];
 }
 
 -(void)YHCreatView{
     self.title = MAIN_CONTROLLER_TITLE;
     float btnWid = (SCREEN_WIDTH-LAYOUT_OFFSET_LEFT-LAYOUT_OFFSET_RIGHT)/3-20;
+    __BLOCK__WEAK__SELF__(__self);
     for (int i = 0; i < 9; i++) {
         YHBaseButton * btn = [[YHBaseButton alloc]initWithFrame:CGRectMake(LAYOUT_OFFSET_LEFT+10+i%3*(btnWid+20), 40+i/3*(btnWid+50), btnWid, btnWid) backgroundImage:[UIImage imageNamed:_imageArray[i]] backgroundColor:nil textColor:nil titleText:nil andClickBlock:^(YHBaseButton *btn) {
             //界面跳转处理
+            //判断是否是登陆必须项
+            if ( (i>=1)&&(i<=6)) {
+                if (![YHSAUserManager sharedTheSingletion].isLogin) {
+                    [YHBaseAlertView showWithStyle:YHBaseAlertViewNormal title:PUBLIC_PART_ALERT_TITLE text:@"该功能需要您登陆方可使用" cancleBtn:PUBLIC_PART_ALERT_CANCLE_BTN selectBtn:@"登陆" andSelectFunc:^{
+                       //跳转登陆
+                        [[__self navigationController]pushViewController:[[YHSALoginViewController alloc]init] animated:YES];
+                    }];
+                    return ;
+                }
+            }
+            //相应功能跳转
+            //动态跳转
+            Class cls = NSClassFromString(_controllersArray[i]);
+            UIViewController * temC = [[cls alloc]init];
+            [[__self navigationController]pushViewController:temC animated:YES];
+            
             }];
         [self.view addSubview:btn];
         

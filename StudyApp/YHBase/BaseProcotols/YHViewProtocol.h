@@ -11,6 +11,7 @@
 @protocol YHViewProtocol <NSObject>
 //视图的自定义重载写在这个方法中
 -(void)reloadView;
+@optional
 /**
  *设置圆角度
  */

@@ -48,6 +48,7 @@
     }else{
         [self YHBaseHttpRequestGETFromRequestObject:obj requestSuccess:^(NSData * data) {
             successBlock(data);
+            [[YHBaseCecheCenter sharedTheSingletion]writeCecheFile:data withFileID:obj.requestIdentity toPath:path];
         } requestField:^(YHBaseError *error) {
             fieldBlock(error);
         }];
@@ -75,6 +76,7 @@
         
         [self YHBaseHttpRequestPOSTFromRequestObject:obj withParamDictionary:paramDic requestSuccess:^(NSData *data) {
             successBlock(data);
+            [[YHBaseCecheCenter sharedTheSingletion]writeCecheFile:data withFileID:obj.requestIdentity toPath:path];
         } requestField:^(YHBaseError * error) {
             fieldBlock(error);
         }];

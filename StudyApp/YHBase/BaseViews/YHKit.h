@@ -13,4 +13,5 @@
 #import "YHBaseHeader.h"
 #import "YHBaseAlertView.h"
 #import "YHBaseActivityIndicatorView.h"
+#import "YHBaseTableView.h"
 #endif

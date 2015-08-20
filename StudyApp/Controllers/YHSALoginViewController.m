@@ -9,7 +9,7 @@
 #import "YHSALoginViewController.h"
 #import "YHSARegistViewController.h"
 #import "YHSAHttpManager.h"
-#import "YHSARegustGetDataModel.h"
+#import "YHSARequestGetDataModel.h"
 #import "YHSAActivityIndicatorView.h"
 #import "YHSAUserManager.h"
 #import "YHSASystemSettingManager.h"
@@ -184,7 +184,7 @@
     [YHSAHttpManager YHSARequestPost:YHSARequestTypelogin infoDic:dic Succsee:^(NSData *data) {
         [[YHSAActivityIndicatorView sharedTheSingletion]unShow];
         NSDictionary * dataDic = [NSDictionary dictionaryWithDictionary:[YHBaseJOSNAnalytical dictionaryWithJSData:data]];
-        YHSARegustGetDataModel * model = [[YHSARegustGetDataModel alloc]init];
+        YHSARequestGetDataModel * model = [[YHSARequestGetDataModel alloc]init];
         [model creatModelWithDic:dataDic];
         if ([model.resultCode intValue]==[INTERFACE_RETURN_LOGIN_SUCCESS intValue]) {
             //存信息
@@ -193,7 +193,7 @@
             
             //跳转登陆界面
             __BLOCK__WEAK__SELF__(__self);
-            [YHBaseAlertView showWithStyle:YHBaseAlertViewNormal title:PUBLIC_PART_ALERT_TITLE text:@"恭喜您登陆成功!" cancleBtn:@"切换账号" selectBtn:@"立即登陆" andSelectFunc:^{
+            [YHBaseAlertView showWithStyle:YHBaseAlertViewNormal title:PUBLIC_PART_ALERT_TITLE text:@"恭喜您登陆成功!" cancleBtn:@"切换账号" selectBtn:@"开始使用" andSelectFunc:^{
                 //登陆状态的切换
                 YHSAUserManager * userManager =  [YHSAUserManager sharedTheSingletion];
                 userManager.userName = _userNameTestField.text;

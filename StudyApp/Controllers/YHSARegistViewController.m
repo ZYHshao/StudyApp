@@ -8,7 +8,7 @@
 
 #import "YHSARegistViewController.h"
 #import "YHSAHttpManager.h"
-#import "YHSARegustGetDataModel.h"
+#import "YHSARequestGetDataModel.h"
 #import "YHSAActivityIndicatorView.h"
 #import "YHSALoginViewController.h"
 
@@ -118,7 +118,7 @@
     [YHSAHttpManager YHSARequestPost:YHSARequestTypeRegist infoDic:dic Succsee:^(NSData *data) {
        //解析数据
         NSDictionary * dataDic = [NSDictionary dictionaryWithDictionary:[YHBaseJOSNAnalytical dictionaryWithJSData:data]];
-        YHSARegustGetDataModel * model = [[YHSARegustGetDataModel alloc]init];
+        YHSARequestGetDataModel * model = [[YHSARequestGetDataModel alloc]init];
         [model creatModelWithDic:dataDic];
         if ([model.resultCode intValue]==[INTERFACE_RETURN_REGIST_SUCCESS intValue]) {
             //跳转登陆界面

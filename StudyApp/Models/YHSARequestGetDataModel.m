@@ -6,8 +6,8 @@
 //
 //
 
-#import "YHSARegustGetDataModel.h"
+#import "YHSARequestGetDataModel.h"
 
-@implementation YHSARegustGetDataModel
+@implementation YHSARequestGetDataModel
 
 @end

@@ -71,6 +71,12 @@
 #define REFOUND_NEWSECRET_TEXT_FIELD_PLACEHOLDER_TEXT @"请输入您的新密码"
 #define REFOUND_COMMIT_BUTTON_TITLE @"提 交"
 
+
+
+//===============================模拟考试界面======================//
+#define MOCK_EXAM_CONTROLLER_TITLE @"考试分类"
+#define MOCK_EXAM_SEARCH_BAR_PLACEHOLDER_TEXT @"请输入考试名称"
+
 //=============================接口字段==========================//
 //注册
 #define INTERFACE_FIELD_REGIST_COLLEAGE @"college"
@@ -82,6 +88,17 @@
 //登陆
 #define INTERFACE_FIELD_LOGIN_PHONECODE @"phonecode"
 #define INTERFACE_FIELD_LOGIN_PASSWORD @"password"
+
+//修改密码
+#define INTERFACE_FIELD_CHANGE_SECRET_PHONECADE @"phonecode"
+#define INTERFACE_FIELD_CHANGE_SECRET_QUESTION @"question"
+#define INTERFACE_FIELD_CHANGE_SECRET_ANSWER @"answer"
+#define INTERFACE_FIELD_CHANGE_SELECT_NEWPASS @"password"
+
+//模拟考试一级界面
+#define INTERFACE_FIELD_MOCKEXAM_CODE @"code"
+#define INTERFACE_FIELD_MOCKEXAM_PAGEINDEX @"PageIndex"
+#define INTERFACE_FIELD_MOCKEXAM_PAGESIZE @"PageSize"
 //============================接口返回字段========================//
 
 #define INTERFACE_RETURN_REGIST_SUCCESS @"8"
@@ -91,6 +108,12 @@
 #define INTERFACE_RETURN_LOGIN_FAILED @"2"
 
 
+#define INTERFACE_RETURN_CHANGE_SECRET_SUCCESS @"8"
+#define INTERFACE_RETURN_CHANGE_SECRET_FAILED @"2"
 
+#define INTERFACE_RETURN_MOCKEXAM_SUCCESS @"8"
+#define INTERFACE_RETURN_MOCKEXAM_FAILED @"2"
 
+//============================tableViewCell ID================//
+#define TABLEVIEW_CELL_ID_MOCK_EXAM_FIRST @"moceExamFirst"
 #endif
