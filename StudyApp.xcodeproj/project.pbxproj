@@ -34,6 +34,8 @@
 		CE924A291B84883D00F7B647 /* YHTopicColorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CE924A281B84883D00F7B647 /* YHTopicColorManager.m */; };
 		CE924A2B1B84885000F7B647 /* YHSARegistViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE924A2A1B84885000F7B647 /* YHSARegistViewController.xib */; };
 		CE924A2F1B84888F00F7B647 /* YHSAErrorCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = CE924A2D1B84888F00F7B647 /* YHSAErrorCenter.m */; };
+		CEDA4E301B85629400D64C44 /* YHSAReFoundViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEDA4E2E1B85629400D64C44 /* YHSAReFoundViewController.m */; };
+		CEDA4E311B85629400D64C44 /* YHSAReFoundViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEDA4E2F1B85629400D64C44 /* YHSAReFoundViewController.xib */; };
 		CEEAFD581B8167D900795B27 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CEEAFD571B8167D900795B27 /* main.m */; };
 		CEEAFD5B1B8167D900795B27 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CEEAFD5A1B8167D900795B27 /* AppDelegate.m */; };
 		CEEAFD5E1B8167D900795B27 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEEAFD5D1B8167D900795B27 /* ViewController.m */; };
@@ -197,6 +199,9 @@
 		CE924A2C1B84888F00F7B647 /* YHSAErrorCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YHSAErrorCenter.h; path = StudyApp/Managers/YHSAErrorCenter.h; sourceTree = SOURCE_ROOT; };
 		CE924A2D1B84888F00F7B647 /* YHSAErrorCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YHSAErrorCenter.m; path = StudyApp/Managers/YHSAErrorCenter.m; sourceTree = SOURCE_ROOT; };
 		CE924A2E1B84888F00F7B647 /* YHSAHttpRequestDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YHSAHttpRequestDefine.h; path = StudyApp/Managers/YHSAHttpRequestDefine.h; sourceTree = SOURCE_ROOT; };
+		CEDA4E2D1B85629400D64C44 /* YHSAReFoundViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YHSAReFoundViewController.h; path = Xibs/YHSAReFoundViewController.h; sourceTree = "<group>"; };
+		CEDA4E2E1B85629400D64C44 /* YHSAReFoundViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YHSAReFoundViewController.m; path = Xibs/YHSAReFoundViewController.m; sourceTree = "<group>"; };
+		CEDA4E2F1B85629400D64C44 /* YHSAReFoundViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YHSAReFoundViewController.xib; sourceTree = "<group>"; };
 		CEEAFD521B8167D900795B27 /* StudyApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StudyApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEEAFD561B8167D900795B27 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CEEAFD571B8167D900795B27 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -336,6 +341,7 @@
 		CE8095671B81ECCB00730610 /* Xibs */ = {
 			isa = PBXGroup;
 			children = (
+				CEDA4E2F1B85629400D64C44 /* YHSAReFoundViewController.xib */,
 				CE924A2A1B84885000F7B647 /* YHSARegistViewController.xib */,
 			);
 			path = Xibs;
@@ -559,6 +565,8 @@
 				CEEAFD7D1B816C5200795B27 /* YHSALoginViewController.m */,
 				CE2B70EA1B82B9A300040C3C /* YHSAMainToolsViewController.h */,
 				CE2B70EB1B82B9A300040C3C /* YHSAMainToolsViewController.m */,
+				CEDA4E2D1B85629400D64C44 /* YHSAReFoundViewController.h */,
+				CEDA4E2E1B85629400D64C44 /* YHSAReFoundViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -837,6 +845,7 @@
 				CEEAFE0D1B81A8BF00795B27 /* main_ctjl.png in Resources */,
 				CEEAFE191B81A8BF00795B27 /* pupwin_settingico.png in Resources */,
 				CEEAFDFE1B81A8BF00795B27 /* jiantoudown.jpg in Resources */,
+				CEDA4E311B85629400D64C44 /* YHSAReFoundViewController.xib in Resources */,
 				CEEAFE251B81A8BF00795B27 /* sjym_tab_jj_ico1.png in Resources */,
 				CEEAFDF61B81A8BF00795B27 /* dtym_menuset_yjmsico1.png in Resources */,
 				CEEAFD631B8167DA00795B27 /* Images.xcassets in Resources */,
@@ -907,6 +916,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1834918B1B84D18C00A0F322 /* YHSASystemSettingManager.m in Sources */,
+				CEDA4E301B85629400D64C44 /* YHSAReFoundViewController.m in Sources */,
 				CE8095651B81EC9000730610 /* YHSARegistViewController.m in Sources */,
 				1834918C1B84D18C00A0F322 /* YHSAUserManager.m in Sources */,
 				CE924A1F1B84868300F7B647 /* YHBaseAlertView.m in Sources */,

@@ -58,6 +58,19 @@
 #define MAIN_TEXT_INFOMATION_TEXT @"开始咨询"
 #define MAIN_SYSTEMSET_TEXT @"系统设置"
 
+
+//================================密码找回界面=====================//
+#define REFOUND_CONTROLLER_TITLE @"找回密码"
+#define REFOUND_PHONE_TEXT @"您的手机号:"
+#define REFOUND_PHONR_TEXT_FIELD_PLACEHOLDER_TEXT @"请输入您的手机号"
+#define REFOUND_QUESTION_TEXT @"密码提示问题:"
+#define REFOUND_QUESTION_TEXT_FIELD_PLACEHOLDER_TEXT @"请输入您的密码提示问题"
+#define REFOUND_ANSWER_TEXT @"提示问题答案:" 
+#define REFOUND_ANSWER_TEXT_FIELD_PLACEHOLDER_TEXT @"请输入您的提示问题答案"
+#define REFOUND_NEWSECRET_TEXT @"设定您的新密码:"
+#define REFOUND_NEWSECRET_TEXT_FIELD_PLACEHOLDER_TEXT @"请输入您的新密码"
+#define REFOUND_COMMIT_BUTTON_TITLE @"提 交"
+
 //=============================接口字段==========================//
 //注册
 #define INTERFACE_FIELD_REGIST_COLLEAGE @"college"

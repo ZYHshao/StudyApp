@@ -111,19 +111,6 @@
                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <textField opaque="NO" clipsSubviews="YES" tag="303" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入您的密码" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QlJ-eI-pYd">
-                            <rect key="frame" x="20" y="171" width="288" height="30"/>
-                            <animations/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="30" id="1Xn-8b-Yg2"/>
-                                <constraint firstAttribute="width" constant="288" id="AeQ-Qf-01H"/>
-                            </constraints>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
-                            <connections>
-                                <outlet property="delegate" destination="-1" id="tMv-V2-FA8"/>
-                            </connections>
-                        </textField>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="*" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gPa-wE-Xe4">
                             <rect key="frame" x="20" y="215" width="20" height="20"/>
                             <animations/>
@@ -243,14 +230,6 @@
                                 <action selector="toRegist:" destination="-1" eventType="touchUpInside" id="Nfx-ws-tHm"/>
                             </connections>
                         </button>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="liebiaoxuanzejiantou.png" translatesAutoresizingMaskIntoConstraints="NO" id="cfE-rv-ReV">
-                            <rect key="frame" x="279" y="308" width="20" height="20"/>
-                            <animations/>
-                            <constraints>
-                                <constraint firstAttribute="width" constant="20" id="Go7-S9-hD5"/>
-                                <constraint firstAttribute="height" constant="20" id="S3t-6V-bXS"/>
-                            </constraints>
-                        </imageView>
                         <textField opaque="NO" clipsSubviews="YES" tag="301" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请选择您的所在学校" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VoB-PF-te5">
                             <rect key="frame" x="20" y="41" width="288" height="30"/>
                             <animations/>
@@ -264,14 +243,19 @@
                                 <outlet property="delegate" destination="-1" id="3RJ-du-VKR"/>
                             </connections>
                         </textField>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="liebiaoxuanzejiantou.png" translatesAutoresizingMaskIntoConstraints="NO" id="kUL-J0-aqc">
-                            <rect key="frame" x="279" y="46" width="20" height="20"/>
+                        <textField opaque="NO" clipsSubviews="YES" tag="303" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入您的密码" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QlJ-eI-pYd">
+                            <rect key="frame" x="20" y="171" width="288" height="30"/>
                             <animations/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="20" id="Crm-dv-KpB"/>
-                                <constraint firstAttribute="height" constant="20" id="ROm-Zi-LqA"/>
+                                <constraint firstAttribute="height" constant="30" id="1Xn-8b-Yg2"/>
+                                <constraint firstAttribute="width" constant="288" id="AeQ-Qf-01H"/>
                             </constraints>
-                        </imageView>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            <connections>
+                                <outlet property="delegate" destination="-1" id="tMv-V2-FA8"/>
+                            </connections>
+                        </textField>
                     </subviews>
                     <animations/>
                     <constraints>
@@ -280,12 +264,10 @@
                         <constraint firstItem="H2d-MK-gsv" firstAttribute="leading" secondItem="eho-nY-syF" secondAttribute="trailing" constant="1" id="47x-yH-cNH"/>
                         <constraint firstItem="n8m-o4-1tu" firstAttribute="bottom" secondItem="QlJ-eI-pYd" secondAttribute="bottom" constant="-32" id="50o-nJ-2kH"/>
                         <constraint firstItem="1Fs-fg-Z2Z" firstAttribute="leading" secondItem="KI5-A6-TsT" secondAttribute="trailing" constant="1" id="5nn-6E-Y6e"/>
-                        <constraint firstItem="cfE-rv-ReV" firstAttribute="top" secondItem="7zT-Ys-L80" secondAttribute="top" constant="5" id="Aht-PP-Ldy"/>
                         <constraint firstAttribute="trailing" secondItem="12U-gN-Jtb" secondAttribute="trailing" constant="12" id="Ake-Bd-EDv"/>
                         <constraint firstAttribute="centerX" secondItem="12U-gN-Jtb" secondAttribute="centerX" constant="-4" id="AvL-U7-nQQ"/>
                         <constraint firstItem="7zT-Ys-L80" firstAttribute="top" secondItem="2Eo-2x-btj" secondAttribute="top" constant="303" id="Fwa-yw-HpT"/>
                         <constraint firstAttribute="centerX" secondItem="4PW-gE-nxb" secondAttribute="centerX" id="Gct-iu-Hh2"/>
-                        <constraint firstItem="kUL-J0-aqc" firstAttribute="leading" secondItem="VoB-PF-te5" secondAttribute="trailing" constant="-29" id="Gjm-6o-QdR"/>
                         <constraint firstAttribute="trailing" secondItem="4Qg-jP-5wF" secondAttribute="trailing" constant="12" id="KQ1-8E-jwg"/>
                         <constraint firstAttribute="centerX" secondItem="7zT-Ys-L80" secondAttribute="centerX" constant="-4" id="KSL-cg-wNm"/>
                         <constraint firstAttribute="bottom" secondItem="4PW-gE-nxb" secondAttribute="bottom" constant="30" id="Nkd-5c-roj"/>
@@ -314,11 +296,9 @@
                         <constraint firstItem="7zT-Ys-L80" firstAttribute="bottom" secondItem="1dp-rI-wXw" secondAttribute="bottom" constant="32" id="ia9-SP-8k3"/>
                         <constraint firstItem="12U-gN-Jtb" firstAttribute="bottom" secondItem="H2d-MK-gsv" secondAttribute="bottom" constant="33" id="ihh-kH-BBj"/>
                         <constraint firstItem="12U-gN-Jtb" firstAttribute="top" secondItem="2Eo-2x-btj" secondAttribute="top" constant="369" id="ivB-Xy-lTH"/>
-                        <constraint firstItem="cfE-rv-ReV" firstAttribute="leading" secondItem="7zT-Ys-L80" secondAttribute="trailing" constant="-29" id="jp1-TR-QzA"/>
                         <constraint firstItem="4Qg-jP-5wF" firstAttribute="bottom" secondItem="eU3-gA-KsV" secondAttribute="bottom" constant="32" id="lee-1K-He5"/>
                         <constraint firstItem="1Fs-fg-Z2Z" firstAttribute="bottom" secondItem="VoB-PF-te5" secondAttribute="bottom" constant="-33" id="lyZ-cm-DRl"/>
                         <constraint firstItem="QlJ-eI-pYd" firstAttribute="top" secondItem="2Eo-2x-btj" secondAttribute="top" constant="171" id="qGE-O4-3i2"/>
-                        <constraint firstItem="kUL-J0-aqc" firstAttribute="top" secondItem="VoB-PF-te5" secondAttribute="top" constant="5" id="qW6-30-qa1"/>
                         <constraint firstItem="vu0-mL-Imy" firstAttribute="leading" secondItem="eU3-gA-KsV" secondAttribute="trailing" constant="1" id="qfQ-1L-pmV"/>
                         <constraint firstItem="7zT-Ys-L80" firstAttribute="bottom" secondItem="d9I-qh-hfR" secondAttribute="bottom" constant="33" id="uyV-8K-wEc"/>
                         <constraint firstItem="12U-gN-Jtb" firstAttribute="bottom" secondItem="eho-nY-syF" secondAttribute="bottom" constant="32" id="wlc-IU-IDI"/>
@@ -338,9 +318,6 @@
             <point key="canvasLocation" x="175" y="340"/>
         </view>
     </objects>
-    <resources>
-        <image name="liebiaoxuanzejiantou.png" width="34" height="34"/>
-    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

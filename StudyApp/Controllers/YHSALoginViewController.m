@@ -13,6 +13,7 @@
 #import "YHSAActivityIndicatorView.h"
 #import "YHSAUserManager.h"
 #import "YHSASystemSettingManager.h"
+#import "YHSAReFoundViewController.h"
 @interface YHSALoginViewController ()<UITextFieldDelegate>
 {
     UIImageView * _userNameImageView;
@@ -111,6 +112,7 @@
     _refindSecretBtn = [UIButton buttonWithType:UIButtonTypeSystem];
     _refindSecretBtn.frame = CGRectMake(SCREEN_WIDTH-LAYOUT_OFFSET_RIGHT-70, 340,70, 20);
     [_refindSecretBtn setTitle:LOGIN_REFIND_SECERT_TEXT forState:UIControlStateNormal];
+    [_refindSecretBtn addTarget:self action:@selector(reFoundSecret) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:_refindSecretBtn];
    
 }
@@ -139,6 +141,10 @@
 #pragma mark - 点击逻辑
 -(void)registClick{
     [self.navigationController pushViewController:[[YHSARegistViewController alloc]init] animated:YES];
+}
+
+-(void)reFoundSecret{
+    [self.navigationController pushViewController:[[YHSAReFoundViewController alloc]init] animated:YES];
 }
 -(void)changeAuto:(UIButton *)btn{
     if (btn.selected) {
