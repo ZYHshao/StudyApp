@@ -9,6 +9,7 @@
 #import "YHSAMockExamController.h"
 #import "YHSAHttpManager.h"
 #import "YHSAMockExamMainListModel.h"
+#import "YHSAMockExamSubjectViewController.h"
 @interface YHSAMockExamController ()<UITableViewDataSource,UITableViewDelegate,UISearchBarDelegate>
 {
     YHBaseTableView * _tableView;
@@ -68,26 +69,28 @@
 -(void)creatRequest{
     //拼接参数地址
     NSDictionary * dic =@{INTERFACE_FIELD_MOCKEXAM_CODE:@"0",INTERFACE_FIELD_MOCKEXAM_PAGEINDEX:@"0",INTERFACE_FIELD_MOCKEXAM_PAGESIZE:@"100"};
-    //开启刷新状态
-    [_tableView.header beginRefreshing];
+   
+ 
     [YHSAHttpManager YHSARequestPost:YHSARequestTypeMockExamListFirst infoDic:dic Succsee:^(NSData *data) {
         //数据处理
-        [_tableView.header endRefreshing];
+     
         NSDictionary * dataDic = [YHBaseJOSNAnalytical dictionaryWithJSData:data];
         YHSAMockExamMainListModel * model = [[YHSAMockExamMainListModel alloc]init];
         [model creatModelWithDic:dataDic];
         if ([model.resultCode intValue] == [INTERFACE_RETURN_MOCKEXAM_SUCCESS intValue]) {
             //数据正确 进行数据封装
-            for (int i=0; i<model.data.count; i++) {
+            for (int i=0; i<[model.data count]; i++) {
                 YHSAMockExamMainListDataModel * dataModel = [[YHSAMockExamMainListDataModel alloc]init];
                 [dataModel creatModelWithDic:[model.data objectAtIndex:i]];
                 [_dataArray addObject:dataModel];
             }
+        }else if([model.resultCode intValue] == [INTERFACE_RETURN_MOCKEXAM_FAILED intValue]){
+            //做数据失败的处理
         }
         [_tableView reloadData];
     } andFail:^(YHBaseError *error) {
-        [_tableView.header endRefreshing];
-    } isbuffer:YES];
+      
+    } isbuffer:NO];
 }
 -(void)reDownData{
     NSDictionary * dic =@{INTERFACE_FIELD_MOCKEXAM_CODE:@"0",INTERFACE_FIELD_MOCKEXAM_PAGEINDEX:@"0",INTERFACE_FIELD_MOCKEXAM_PAGESIZE:@"100"};
@@ -102,7 +105,7 @@
         if ([model.resultCode intValue] == [INTERFACE_RETURN_MOCKEXAM_SUCCESS intValue]) {
             //数据正确 进行数据封装
             [_dataArray removeAllObjects];
-            for (int i=0; i<model.data.count; i++) {
+            for (int i=0; i<[model.data count]; i++) {
                 YHSAMockExamMainListDataModel * dataModel = [[YHSAMockExamMainListDataModel alloc]init];
                 [dataModel creatModelWithDic:[model.data objectAtIndex:i]];
                 [_dataArray addObject:dataModel];
@@ -124,6 +127,7 @@
     UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:TABLEVIEW_CELL_ID_MOCK_EXAM_FIRST];
     if (cell==nil) {
         cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:TABLEVIEW_CELL_ID_MOCK_EXAM_FIRST];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
     YHSAMockExamMainListDataModel * model = _dataArray[indexPath.row];
     cell.textLabel.text = model.typename;
@@ -132,6 +136,50 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     //进行传值跳转
+    YHSAMockExamMainListDataModel * model = _dataArray[indexPath.row];
+    NSDictionary * dic =@{INTERFACE_FIELD_MOCKEXAM_CODE:[NSString stringWithFormat:@"%@",model.typecode],INTERFACE_FIELD_MOCKEXAM_PAGEINDEX:@"0",INTERFACE_FIELD_MOCKEXAM_PAGESIZE:@"10"};
+    //开启等待状态
+    [[YHBaseActivityIndicatorView sharedTheSingletion]show];
+    [YHSAHttpManager YHSARequestPost:YHSARequestTypeMockExamListFirst infoDic:dic Succsee:^(NSData *data) {
+        //数据处理
+        NSDictionary * dataDic = [YHBaseJOSNAnalytical dictionaryWithJSData:data];
+        YHSAMockExamMainListModel * tmpModel = [[YHSAMockExamMainListModel alloc]init];
+        [tmpModel creatModelWithDic:dataDic];
+        if ([tmpModel.resultCode intValue] == [INTERFACE_RETURN_MOCKEXAM_SUCCESS intValue]) {
+            NSMutableArray * temArray=[[NSMutableArray alloc]init];
+            //进行分类级别的判断
+            YHSAMockExamSubjectViewController * con = [[YHSAMockExamSubjectViewController alloc]init];
+            con.dataModel = model;
+            if ([tmpModel.status intValue]==1) {//还是分类目录界别
+                //数据正确 进行数据封装
+                    for (int i=0; i<[tmpModel.data count]; i++) {
+                    YHSAMockExamMainListDataModel * dataModel = [[YHSAMockExamMainListDataModel alloc]init];
+                    [dataModel creatModelWithDic:[tmpModel.data objectAtIndex:i]];
+                    [temArray addObject:dataModel];
+                }
+                con.status=1;
+              
+            }else{
+                //已经是试卷目录级别
+                NSArray * subArray = [tmpModel.data objectForKey:@"pageData"];
+                for (int i=0; i<subArray.count; i++) {
+                    YHSAMockExamMainListDataModel * dataModel = [[YHSAMockExamMainListDataModel alloc]init];
+                    [dataModel creatModelWithDic:[subArray objectAtIndex:i]];
+                    [temArray addObject:dataModel];
+                }
+                con.examCount=[[tmpModel.data objectForKey:@"pageCount"] intValue];
+                con.status=0;
+            }
+            con.dataArray = [NSMutableArray arrayWithArray:temArray];
+            [self.navigationController  pushViewController:con animated:YES];
+        }else if([tmpModel.resultCode intValue] == [INTERFACE_RETURN_MOCKEXAM_FAILED intValue]){
+            //做数据失败的处理
+           
+        }
+          [[YHBaseActivityIndicatorView sharedTheSingletion]unShow];
+    } andFail:^(YHBaseError *error) {
+        [[YHBaseActivityIndicatorView sharedTheSingletion]unShow];
+    } isbuffer:NO];
 }
 
 //收键盘相关

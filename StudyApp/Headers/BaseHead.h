@@ -18,8 +18,7 @@
 
 //
 ////===================================系统配置字符串===========================//
-////主题风格
-#define TOPIC @"topic"
+
 
 
 
@@ -41,4 +40,7 @@
 #define TEXT_FONT_SIZE_NORMAL 17
 #define TEXT_FONT_SIZE_BIG_TITLE 24
 
+
+//请求时每页获取的数据条数
+#define REQUEST_PAGE_SIZE 10
 #endif

@@ -15,6 +15,7 @@
 __PROPERTY_NO_ASSIGN__(BOOL, isMemorizePasswd);
 __PROPERTY_NO_STRONG__(NSString *, defaultUserName);
 __PROPERTY_NO_STRONG__(NSString *, defaultUserSecret);
-
+__PROPERTY_NO_ASSIGN__(int, topic);
+__PROPERTY_NO_ASSIGN__(BOOL, autoUpdataExamBank);
 
 @end

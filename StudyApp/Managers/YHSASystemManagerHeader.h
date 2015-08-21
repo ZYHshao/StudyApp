@@ -12,4 +12,6 @@
 #define YHSA_SYSTEM_SETTING_IS_MEMORIZE @"isMemorize"
 #define YHSA_SYSTEM_SETTING_DEFAULT_USERNAME @"defaultUserName"
 #define YHSA_SYSTEM_SETTING_DEFAULT_USERSECRET @"defaultUserSecret"
+#define YHSA_SYSTEM_SETTING_TOPIC @"tipic"
+#define YHSA_SYSTEM_SETTING_AUTOUPDA_EXAMBANK @"aotuUpdaExamBank"
 #endif

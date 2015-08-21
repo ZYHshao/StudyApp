@@ -25,4 +25,10 @@
  *使用之前需先调用这个方法进行设置主题
  */
 -(void)getTopicModel;
+
+
+/**
+ *发送更改主题的通知
+ */
++(void)postTopicChangeMessage;
 @end

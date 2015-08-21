@@ -39,4 +39,6 @@ __PROPERTY_NO_STRONG__(NSString *, alreadyReloadText);
 -(void)shouldRefresh:(void (^)())block;
 //允许加载
 -(void)shouldReload:(void (^)())block;
+//加载完所有数据
+-(void)ReloadEnd;
 @end

@@ -48,4 +48,9 @@
     [footer setTitle:_shouldReloadText forState:MJRefreshStatePulling];
     [footer setTitle:_alreadyReloadText forState:MJRefreshStateRefreshing];
 }
+//结束上拉加载
+-(void)ReloadEnd{
+    self.footer=nil;
+}
+
 @end

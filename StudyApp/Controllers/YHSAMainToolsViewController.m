@@ -10,6 +10,7 @@
 #import "YHSAUserManager.h"
 #import "YHSALoginViewController.h"
 #import "YHSAMockExamController.h"
+#import "YHSASystemSettingViewController.h"
 @interface YHSAMainToolsViewController ()
 {
     //循环创建控件，将其引用存在数组中
@@ -39,7 +40,7 @@
                         MAIN_MY_COLLECT_TEXT,MAIN_MY_ANALYSE_TEXT,MAIN_STUDY_PIAN_TEXT,
                         MAIN_MY_NOTES_TEXT,MAIN_TEXT_INFOMATION_TEXT,MAIN_SYSTEMSET_TEXT];
     _titleLabelArray = [[NSMutableArray alloc]init];
-    _controllersArray = @[@"YHSAMockExamController",@"",@"",@"",@"",@"",@"",@"",@""];
+    _controllersArray = @[@"YHSAMockExamController",@"",@"",@"",@"",@"",@"",@"",@"YHSASystemSettingViewController"];
 }
 
 -(void)YHCreatView{

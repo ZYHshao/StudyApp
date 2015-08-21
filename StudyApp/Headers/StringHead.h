@@ -77,6 +77,20 @@
 #define MOCK_EXAM_CONTROLLER_TITLE @"考试分类"
 #define MOCK_EXAM_SEARCH_BAR_PLACEHOLDER_TEXT @"请输入考试名称"
 
+
+//===============================模拟考试二级目录页面==============//
+
+
+
+//===============================系统设置界面=====================//
+#define SYSTEM_SETTING_CONTROLLER_TITLE @"系统设置"
+#define SYSTEM_SETTING_SWITCH_TOPIC @"切换夜间模式"
+#define SYSTEM_SETTING_SWITCH_UPDATA @"自动更新题库"
+#define SYSTEM_SETTING_RETURN_IDEA @"意见反馈"
+#define SYSTEM_SETTING_ABOUT_WE @"关于我们"
+
+
+
 //=============================接口字段==========================//
 //注册
 #define INTERFACE_FIELD_REGIST_COLLEAGE @"college"
@@ -96,7 +110,7 @@
 #define INTERFACE_FIELD_CHANGE_SELECT_NEWPASS @"password"
 
 //模拟考试一级界面
-#define INTERFACE_FIELD_MOCKEXAM_CODE @"code"
+#define INTERFACE_FIELD_MOCKEXAM_CODE @"Code"
 #define INTERFACE_FIELD_MOCKEXAM_PAGEINDEX @"PageIndex"
 #define INTERFACE_FIELD_MOCKEXAM_PAGESIZE @"PageSize"
 //============================接口返回字段========================//
@@ -116,4 +130,5 @@
 
 //============================tableViewCell ID================//
 #define TABLEVIEW_CELL_ID_MOCK_EXAM_FIRST @"moceExamFirst"
+#define TABLEVIEW_CELL_ID_SYSTEM_SETTING @"systemSetting"
 #endif

@@ -19,7 +19,7 @@ typedef enum {
 #ifdef TEXT
 
 #define YHSA_REGIST_INTERFACE_POST_PATH @"http://app.vipexam.org/reg.htm"
-#define YHSA_LOGIN_INTERFACE_POST_PATH @"http://app.vipexam.org/ login.htm"
+#define YHSA_LOGIN_INTERFACE_POST_PATH @"http://app.vipexam.org/login.htm"
 
 #else
 //==========================正式地址============================//

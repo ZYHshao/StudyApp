@@ -7,7 +7,7 @@
 //
 
 #import "YHTopicColorManager.h"
-
+#import "YHSASystemSettingManager.h"
 
 @implementation YHTopicColorManager
 +(instancetype)sharedTheSingletion{
@@ -23,14 +23,14 @@
 
 -(void)getTopicModel{
     //从本地读取
-    NSString * tp = [[NSUserDefaults standardUserDefaults]objectForKey:TOPIC];
-    if (tp==nil) {
+    int  tp = [YHSASystemSettingManager sharedTheSingletion].topic;
+    if (tp==0) {
         //默认为白天主题
-        tp=[NSString stringWithFormat:@"%d",dayTime];
-        [[NSUserDefaults standardUserDefaults]setObject:tp forKey:TOPIC];
+        tp=dayTime;
+        [YHSASystemSettingManager sharedTheSingletion].topic = tp;
     }
-    switch ([tp intValue]) {
-        case 1://白天模式
+    switch (tp) {
+        case dayTime://白天模式
         {
             _navColor=[UIColor colorWithRed:10/255.0 green:85/255.0 blue:160/255.0 alpha:1];
             _bgColor=[UIColor colorWithRed:1 green:1 blue:1 alpha:1];
@@ -40,13 +40,21 @@
             _navTextColor= [UIColor whiteColor];
         }
             break;
-        case 2://夜间模式
+        case nightTime://夜间模式
         {
-            
+            _navColor=[UIColor colorWithRed:10/255.0 green:85/255.0 blue:160/255.0 alpha:1];
+            _bgColor=[UIColor colorWithRed:0 green:0 blue:0 alpha:1];
+            _btnColor=[UIColor colorWithRed:10/255.0 green:85/255.0 blue:160/255.0 alpha:1];
+            _textColor=[UIColor colorWithRed:1 green:1 blue:1 alpha:1];
+            _btnTextColor=[UIColor colorWithRed:1 green:1 blue:1 alpha:1];
+            _navTextColor= [UIColor whiteColor];
         }
             break;
         default:
             break;
     }
+}
++(void)postTopicChangeMessage{
+    [[NSNotificationCenter defaultCenter]postNotificationName:YHTopicChangeTopicNotication object:nil];
 }
 @end
