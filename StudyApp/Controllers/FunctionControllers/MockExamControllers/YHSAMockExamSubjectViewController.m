@@ -8,6 +8,7 @@
 
 #import "YHSAMockExamSubjectViewController.h"
 #import "YHSAHttpManager.h"
+#import "YHSAMockExamDetailsViewController.h"
 @interface YHSAMockExamSubjectViewController ()<UITableViewDelegate,UITableViewDataSource>
 {
     YHBaseTableView *_tableView;
@@ -59,7 +60,12 @@
                 }
             }else{
                 NSRange range = {0,10};
-                [_dataArray removeObjectsInRange:range];
+                if (_dataArray.count>=10) {
+                    [_dataArray removeObjectsInRange:range];
+                }else{
+                    [_dataArray removeAllObjects];
+                }
+                
                 NSArray * subArray = [model.data objectForKey:@"pageData"];
                 for (int i=0; i<subArray.count; i++) {
                     YHSAMockExamMainListDataModel * dataModel = [[YHSAMockExamMainListDataModel alloc]init];
@@ -233,6 +239,10 @@
 
 -(void)pushTwo:(YHSAMockExamMainListDataModel *)model{
     //试卷详情的跳转
+    YHSAMockExamDetailsViewController * con = [[YHSAMockExamDetailsViewController alloc]init];
+    con.examID = model.examid;
+    [self.navigationController pushViewController:con animated:YES];
+    
 }
 /*
 #pragma mark - Navigation

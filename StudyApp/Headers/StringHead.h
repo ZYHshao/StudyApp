@@ -78,9 +78,16 @@
 #define MOCK_EXAM_SEARCH_BAR_PLACEHOLDER_TEXT @"请输入考试名称"
 
 
-//===============================模拟考试二级目录页面==============//
-
-
+//===============================试卷详情页面==============//
+#define MOCK_EXAM_DETAILS_CONTROLLER_TITLE @"试卷详情"
+#define MOCK_EXAM_DETAILS_START_BUTTON_TITLE @"开始答卷"
+#define MOCK_EXAM_DETAILS_COLLECT_BUTTON_TITLE @"收藏试卷"
+#define MOCK_EXAM_DETAILS_QUESTION_COUNT_LABEL_TEXT @"试卷题数:%d"
+#define MOCK_EXAM_DETAILS_TYPE_LABEL_TEXT @"试卷类型:%@"
+#define MOCK_EXAM_DETAILS_DATE_LABEL_TEXT @"发布日期:%@"
+#define MOCK_EXAM_DETAILS_SOURCE_LABEL_TEXT @"试卷分数:%d"
+#define MOCK_EXAM_DETAILS_AUTHOR_LABEL_TEXT @"提供者:%@"
+#define MOCK_EXAM_DETAILS_SUBJECT_LABEL_TEXT @"所属科目:%@"
 
 //===============================系统设置界面=====================//
 #define SYSTEM_SETTING_CONTROLLER_TITLE @"系统设置"
@@ -113,6 +120,9 @@
 #define INTERFACE_FIELD_MOCKEXAM_CODE @"Code"
 #define INTERFACE_FIELD_MOCKEXAM_PAGEINDEX @"PageIndex"
 #define INTERFACE_FIELD_MOCKEXAM_PAGESIZE @"PageSize"
+
+//试卷详情
+#define INTERFACE_FIELD_MOCKEXAM_EXAMID @"examid"
 //============================接口返回字段========================//
 
 #define INTERFACE_RETURN_REGIST_SUCCESS @"8"
@@ -128,6 +138,8 @@
 #define INTERFACE_RETURN_MOCKEXAM_SUCCESS @"8"
 #define INTERFACE_RETURN_MOCKEXAM_FAILED @"2"
 
+#define INTERFACE_RETURN_MOCKEXAM__DETAILS_SUCCESS @"8"
+#define INTERFACE_RETURN_MOCKEXAM__DETAILE_FAILED @"2"
 //============================tableViewCell ID================//
 #define TABLEVIEW_CELL_ID_MOCK_EXAM_FIRST @"moceExamFirst"
 #define TABLEVIEW_CELL_ID_SYSTEM_SETTING @"systemSetting"

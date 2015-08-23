@@ -10,6 +10,9 @@
 		1834917F1B84CC4400A0F322 /* YHBaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1834917E1B84CC4400A0F322 /* YHBaseManager.m */; };
 		1834918B1B84D18C00A0F322 /* YHSASystemSettingManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 183491881B84D18C00A0F322 /* YHSASystemSettingManager.m */; };
 		1834918C1B84D18C00A0F322 /* YHSAUserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1834918A1B84D18C00A0F322 /* YHSAUserManager.m */; };
+		183571171B89F999007AEF18 /* YHSAMockExamDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 183571151B89F999007AEF18 /* YHSAMockExamDetailsViewController.m */; };
+		1835711A1B8A1152007AEF18 /* YHSAMockExamDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183571191B8A1152007AEF18 /* YHSAMockExamDetailsViewController.xib */; };
+		183571201B8A1204007AEF18 /* YHSAMockExamDetailsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1835711F1B8A1204007AEF18 /* YHSAMockExamDetailsModel.m */; };
 		18F050FF1B8379C2008EF87D /* YHSAHttpManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F050FE1B8379C2008EF87D /* YHSAHttpManager.m */; };
 		23715322364E505FF9CADA86 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6888E6FF2F5B53851F13B1DE /* libPods.a */; };
 		CE0A89621B85AF9A00BA1F5F /* YHBaseTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE0A89611B85AF9A00BA1F5F /* YHBaseTableView.m */; };
@@ -147,6 +150,11 @@
 		183491891B84D18C00A0F322 /* YHSAUserManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YHSAUserManager.h; path = StudyApp/Managers/YHSAUserManager.h; sourceTree = SOURCE_ROOT; };
 		1834918A1B84D18C00A0F322 /* YHSAUserManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YHSAUserManager.m; path = StudyApp/Managers/YHSAUserManager.m; sourceTree = SOURCE_ROOT; };
 		1834918D1B84D1BD00A0F322 /* YHSASystemManagerHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YHSASystemManagerHeader.h; path = StudyApp/Managers/YHSASystemManagerHeader.h; sourceTree = SOURCE_ROOT; };
+		183571141B89F999007AEF18 /* YHSAMockExamDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHSAMockExamDetailsViewController.h; sourceTree = "<group>"; };
+		183571151B89F999007AEF18 /* YHSAMockExamDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YHSAMockExamDetailsViewController.m; sourceTree = "<group>"; };
+		183571191B8A1152007AEF18 /* YHSAMockExamDetailsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YHSAMockExamDetailsViewController.xib; sourceTree = "<group>"; };
+		1835711E1B8A1204007AEF18 /* YHSAMockExamDetailsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHSAMockExamDetailsModel.h; sourceTree = "<group>"; };
+		1835711F1B8A1204007AEF18 /* YHSAMockExamDetailsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YHSAMockExamDetailsModel.m; sourceTree = "<group>"; };
 		18F050FD1B8379C2008EF87D /* YHSAHttpManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YHSAHttpManager.h; path = StudyApp/Managers/YHSAHttpManager.h; sourceTree = SOURCE_ROOT; };
 		18F050FE1B8379C2008EF87D /* YHSAHttpManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YHSAHttpManager.m; path = StudyApp/Managers/YHSAHttpManager.m; sourceTree = SOURCE_ROOT; };
 		6888E6FF2F5B53851F13B1DE /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -335,6 +343,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		183571131B89F922007AEF18 /* Xibs */ = {
+			isa = PBXGroup;
+			children = (
+				183571191B8A1152007AEF18 /* YHSAMockExamDetailsViewController.xib */,
+			);
+			path = Xibs;
+			sourceTree = "<group>";
+		};
 		18F050FC1B837971008EF87D /* Managers */ = {
 			isa = PBXGroup;
 			children = (
@@ -366,10 +382,13 @@
 		CE328F9B1B86C825001018AE /* MockExamControllers */ = {
 			isa = PBXGroup;
 			children = (
+				183571131B89F922007AEF18 /* Xibs */,
 				CE328F9C1B86C825001018AE /* YHSAMockExamController.h */,
 				CE328F9D1B86C825001018AE /* YHSAMockExamController.m */,
 				CE328F9E1B86C825001018AE /* YHSAMockExamSubjectViewController.h */,
 				CE328F9F1B86C825001018AE /* YHSAMockExamSubjectViewController.m */,
+				183571141B89F999007AEF18 /* YHSAMockExamDetailsViewController.h */,
+				183571151B89F999007AEF18 /* YHSAMockExamDetailsViewController.m */,
 			);
 			path = MockExamControllers;
 			sourceTree = "<group>";
@@ -626,6 +645,8 @@
 				CE9249E11B8473D500F7B647 /* YHSARequestGetDataModel.m */,
 				CE0A89661B85C54800BA1F5F /* YHSAMockExamMainListModel.h */,
 				CE0A89671B85C54800BA1F5F /* YHSAMockExamMainListModel.m */,
+				1835711E1B8A1204007AEF18 /* YHSAMockExamDetailsModel.h */,
+				1835711F1B8A1204007AEF18 /* YHSAMockExamDetailsModel.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -885,6 +906,7 @@
 				CEEAFE171B81A8BF00795B27 /* pull_to_refresh_arrow.png in Resources */,
 				CEEAFE281B81A8BF00795B27 /* sjym_tab_showda_ico.jpg in Resources */,
 				CEEAFE231B81A8BF00795B27 /* sjym_dx_xz.jpg in Resources */,
+				1835711A1B8A1152007AEF18 /* YHSAMockExamDetailsViewController.xib in Resources */,
 				CEEAFDED1B81A8BF00795B27 /* dian1.png in Resources */,
 				CEEAFE1F1B81A8BF00795B27 /* sjym_da_error.jpg in Resources */,
 				CEEAFDE51B81A8BF00795B27 /* bijieditico.jpg in Resources */,
@@ -986,6 +1008,7 @@
 				CE924A1B1B84868300F7B647 /* YHBaseModel.m in Sources */,
 				CEEAFD7E1B816C5200795B27 /* YHSALoginViewController.m in Sources */,
 				CEEAFD5B1B8167D900795B27 /* AppDelegate.m in Sources */,
+				183571171B89F999007AEF18 /* YHSAMockExamDetailsViewController.m in Sources */,
 				CE9249E21B8473D500F7B647 /* YHSARequestGetDataModel.m in Sources */,
 				CE2B70F21B82BD7600040C3C /* YHSANavigationViewController.m in Sources */,
 				CE328FA91B86D285001018AE /* YHSASystemSettingViewController.m in Sources */,
@@ -998,6 +1021,7 @@
 				CE924A171B84868300F7B647 /* YHBaseErrorCenter.m in Sources */,
 				CE0A89681B85C54800BA1F5F /* YHSAMockExamMainListModel.m in Sources */,
 				CE924A141B84868300F7B647 /* YHBaseNavigationController.m in Sources */,
+				183571201B8A1204007AEF18 /* YHSAMockExamDetailsModel.m in Sources */,
 				CE924A181B84868300F7B647 /* YHBaseCecheCenter.m in Sources */,
 				CE924A161B84868300F7B647 /* YHBaseError.m in Sources */,
 			);

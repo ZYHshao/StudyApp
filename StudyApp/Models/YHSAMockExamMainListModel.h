@@ -10,7 +10,6 @@
 
 @interface YHSAMockExamMainListModel : YHSARequestGetDataModel
 //这个数组中存放的是YHSAMockExamMainListDataModel对象的字典
-__PROPERTY_NO_STRONG__(id, data);
 __PROPERTY_NO_ASSIGN__(NSNumber*, status);
 
 

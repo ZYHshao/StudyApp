@@ -38,6 +38,7 @@
             _textColor=[UIColor colorWithRed:0 green:0 blue:0 alpha:1];
             _btnTextColor=[UIColor colorWithRed:1 green:1 blue:1 alpha:1];
             _navTextColor= [UIColor whiteColor];
+            _borderLineColor = [UIColor colorWithRed:160/255.0 green:160/255.0 blue:160/255.0 alpha:1];
         }
             break;
         case nightTime://夜间模式
@@ -48,6 +49,7 @@
             _textColor=[UIColor colorWithRed:1 green:1 blue:1 alpha:1];
             _btnTextColor=[UIColor colorWithRed:1 green:1 blue:1 alpha:1];
             _navTextColor= [UIColor whiteColor];
+            _borderLineColor = [UIColor colorWithRed:240/255.0 green:240/255.0 blue:240/255.0 alpha:1];
         }
             break;
         default:
