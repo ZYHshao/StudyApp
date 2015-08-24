@@ -11,6 +11,7 @@
 #import "YHSAHttpManager.h"
 #import "YHSAMockExamDetailsModel.h"
 #import "YHSAMockExamAnswerQuestionViewController.h"
+#import "YHSAActivityIndicatorView.h"
 @interface YHSAMockExamDetailsViewController ()
 @property (weak, nonatomic) IBOutlet YHBaseLabel *examTitleLabel;
 @property (weak, nonatomic) IBOutlet YHBaseButton *startExamButton;
@@ -37,7 +38,7 @@ __PROPERTY_NO_STRONG__(YHSAMockExamDetailsModel *, dataModel);
 
 -(void)YHCreatDate{
     //参数字典
-    [[YHBaseActivityIndicatorView sharedTheSingletion]show];
+    [[YHSAActivityIndicatorView sharedTheSingletion]show];
     NSDictionary * dic = @{INTERFACE_FIELD_MOCKEXAM_EXAMID:_examID};
     [YHSAHttpManager YHSARequestPost:YHSARequestTypeMockExamDetails infoDic:dic Succsee:^(NSData *data) {
         YHSARequestGetDataModel * model = [[YHSARequestGetDataModel alloc]init];
@@ -49,9 +50,9 @@ __PROPERTY_NO_STRONG__(YHSAMockExamDetailsModel *, dataModel);
             [_dataModel creatModelWithDic:[model.data firstObject]];
         }
         [self YHCreatView];
-        [[YHBaseActivityIndicatorView sharedTheSingletion]unShow];
+        [[YHSAActivityIndicatorView sharedTheSingletion]unShow];
     } andFail:^(YHBaseError *error) {
-        [[YHBaseActivityIndicatorView sharedTheSingletion]unShow];
+        [[YHSAActivityIndicatorView sharedTheSingletion]unShow];
     } isbuffer:NO];
 }
 

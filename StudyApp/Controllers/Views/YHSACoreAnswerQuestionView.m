@@ -29,6 +29,14 @@
     // Drawing code
 }
 */
+
+
+-(void)clearData{
+    NSArray * arr = _titleView.subviews;
+    for (UIView *view in arr) {
+        [view removeFromSuperview];
+    }
+}
 //把数据的读取和加载部分放在这个方法中
 -(void)creatViewWithData:(id)data{
     NSArray * arr = _titleView.subviews;

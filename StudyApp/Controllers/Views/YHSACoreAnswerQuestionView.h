@@ -12,4 +12,6 @@
 //主题部分
 -(void)setTopic;
 __PROPERTY_NO_ASSIGN__(int, index);
+//清空数据
+-(void)clearData;
 @end

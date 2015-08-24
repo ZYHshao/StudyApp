@@ -9,6 +9,7 @@
 #import "YHSAMockExamSubjectViewController.h"
 #import "YHSAHttpManager.h"
 #import "YHSAMockExamDetailsViewController.h"
+#import "YHSAActivityIndicatorView.h"
 @interface YHSAMockExamSubjectViewController ()<UITableViewDelegate,UITableViewDataSource>
 {
     YHBaseTableView *_tableView;
@@ -193,7 +194,7 @@
 -(void)pushOne:(YHSAMockExamMainListDataModel*)model{
     NSDictionary * dic =@{INTERFACE_FIELD_MOCKEXAM_CODE:[NSString stringWithFormat:@"%@",model.typecode],INTERFACE_FIELD_MOCKEXAM_PAGEINDEX:@"0",INTERFACE_FIELD_MOCKEXAM_PAGESIZE:@"10"};
     //开启等待状态
-    [[YHBaseActivityIndicatorView sharedTheSingletion]show];
+    [[YHSAActivityIndicatorView sharedTheSingletion]show];
     [YHSAHttpManager YHSARequestPost:YHSARequestTypeMockExamListFirst infoDic:dic Succsee:^(NSData *data) {
         //数据处理
         NSDictionary * dataDic = [YHBaseJOSNAnalytical dictionaryWithJSData:data];
@@ -230,9 +231,9 @@
             //做数据失败的处理
             
         }
-        [[YHBaseActivityIndicatorView sharedTheSingletion]unShow];
+        [[YHSAActivityIndicatorView sharedTheSingletion]unShow];
     } andFail:^(YHBaseError *error) {
-        [[YHBaseActivityIndicatorView sharedTheSingletion]unShow];
+        [[YHSAActivityIndicatorView sharedTheSingletion]unShow];
     } isbuffer:NO];
 
 }

@@ -11,6 +11,7 @@
 #import "YHSAHttpManager.h"
 #import "YHSAAnswerQuestionModel.h"
 #import "YHTopicColorManager.h"
+#import "YHSACoreAnswerQuestionView.h"
 #define WIDTH self.frame.size.width
 #define HIGHT self.frame.size.height
 @interface YHSACoreAnswerQuestionScrollView()<UIScrollViewDelegate>
@@ -76,7 +77,7 @@
             //进行数据展示
             [__self showData];
         } andFail:^(YHBaseError *error) {
-            [[YHBaseActivityIndicatorView sharedTheSingletion]unShow];
+            [[YHSAActivityIndicatorView sharedTheSingletion]unShow];
         } isbuffer:NO];
     }
 }
@@ -85,20 +86,20 @@
 
 //进行数据的展示
 -(void)showData{
-    if (_dataArray.count>=1&&_currentPage==0) {
+    if (_currentPage==0&&_dataArray.count==1) {
         [_leftView setIndex:1];
         [_leftView creatViewWithData:_dataArray[0]];
-    }else if (_dataArray.count>=2&&_currentPage==1){
+    }else if (_dataArray.count==2&&_currentPage==1){
         [_leftView setIndex:1];
         [_middleView setIndex:2];
         [_leftView creatViewWithData:_dataArray[0]];
         [_middleView creatViewWithData:_dataArray[1]];
-    }else if (_dataArray.count>=3&&_currentPage+1==_dataArray.count){
+    }else if (_currentPage>=2&&_dataArray.count==_currentPage+1){
         [_leftView setIndex:_currentPage];
         [_middleView setIndex:_currentPage+1];
         [_leftView creatViewWithData:_dataArray[_currentPage-1]];
         [_middleView creatViewWithData:_dataArray[_currentPage]];
-    }else if (_dataArray.count>=3&&_currentPage+1<_dataArray.count){
+    }else if (_dataArray.count>=2&&_dataArray.count>_currentPage+1){
         [_leftView setIndex:_currentPage];
         [_middleView setIndex:_currentPage+1];
         [_rightView setIndex:_currentPage+2];
@@ -115,6 +116,9 @@
     YHTopicColorManager * manager = [YHTopicColorManager sharedTheSingletion];
     [manager getTopicModel];
     self.backgroundColor = manager.bgColor;
+    [_leftView setTopic];
+    [_middleView setTopic];
+    [_rightView setTopic];
 }
 
 #pragma mark - scrollView delegate
@@ -148,9 +152,12 @@
     [_middleView setFrame:CGRectMake(_currentPage*WIDTH,0 , WIDTH, HIGHT)];
     [_rightView setFrame:CGRectMake((_currentPage+1)*WIDTH, 0, WIDTH, HIGHT)];
     //数据重构
+    [_leftView clearData];
+    [_middleView clearData];
+    [_rightView clearData];
     //如果数组中数据不够，进行下载 注意page是从0开始 参数是从1开始
-    if (_currentPage+1>_dataArray.count) {
-        [self requestData:_currentPage+2];
+    if (_currentPage+1>_dataArray.count&&_currentPage+1<=[_dataModel.questioncount intValue]) {
+        [self requestData:_currentPage+1 ];
     }else{
         [self showData];
     }
