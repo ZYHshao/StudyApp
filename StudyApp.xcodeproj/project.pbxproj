@@ -23,6 +23,14 @@
 		CE328FA11B86C825001018AE /* YHSAMockExamSubjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE328F9F1B86C825001018AE /* YHSAMockExamSubjectViewController.m */; };
 		CE328FA61B86C908001018AE /* YHTopicColorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CE328FA51B86C908001018AE /* YHTopicColorManager.m */; };
 		CE328FA91B86D285001018AE /* YHSASystemSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE328FA81B86D285001018AE /* YHSASystemSettingViewController.m */; };
+		CE4BC2A11B8AB316005BDD20 /* YHBaseScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE4BC2A01B8AB316005BDD20 /* YHBaseScrollView.m */; };
+		CE4BC2A41B8AB3AA005BDD20 /* YHSACoreAnswerQuestionScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE4BC2A31B8AB3AA005BDD20 /* YHSACoreAnswerQuestionScrollView.m */; };
+		CE4BC2A71B8AB458005BDD20 /* YHBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE4BC2A61B8AB458005BDD20 /* YHBaseView.m */; };
+		CE4BC2AA1B8AC046005BDD20 /* YHSACoreAnswerQuestionView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE4BC2A91B8AC046005BDD20 /* YHSACoreAnswerQuestionView.m */; };
+		CE4BC2AD1B8AC121005BDD20 /* YHSAMockExamAnswerQuestionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE4BC2AC1B8AC121005BDD20 /* YHSAMockExamAnswerQuestionViewController.m */; };
+		CE4BC2B01B8AE4CC005BDD20 /* YHSAAnswerQuestionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CE4BC2AF1B8AE4CC005BDD20 /* YHSAAnswerQuestionModel.m */; };
+		CE4BC2B31B8AFB8B005BDD20 /* YHBaseGeometryTools.m in Sources */ = {isa = PBXBuildFile; fileRef = CE4BC2B21B8AFB8B005BDD20 /* YHBaseGeometryTools.m */; };
+		CE4BC2B61B8B07EC005BDD20 /* YHBaseTypesettingEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = CE4BC2B51B8B07EC005BDD20 /* YHBaseTypesettingEngine.m */; };
 		CE8095651B81EC9000730610 /* YHSARegistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8095631B81EC9000730610 /* YHSARegistViewController.m */; };
 		CE9249E21B8473D500F7B647 /* YHSARequestGetDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9249E11B8473D500F7B647 /* YHSARequestGetDataModel.m */; };
 		CE924A141B84868300F7B647 /* YHBaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9249E91B84868300F7B647 /* YHBaseNavigationController.m */; };
@@ -175,6 +183,22 @@
 		CE328FA51B86C908001018AE /* YHTopicColorManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YHTopicColorManager.m; sourceTree = "<group>"; };
 		CE328FA71B86D285001018AE /* YHSASystemSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHSASystemSettingViewController.h; sourceTree = "<group>"; };
 		CE328FA81B86D285001018AE /* YHSASystemSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YHSASystemSettingViewController.m; sourceTree = "<group>"; };
+		CE4BC29F1B8AB316005BDD20 /* YHBaseScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHBaseScrollView.h; sourceTree = "<group>"; };
+		CE4BC2A01B8AB316005BDD20 /* YHBaseScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YHBaseScrollView.m; sourceTree = "<group>"; };
+		CE4BC2A21B8AB3AA005BDD20 /* YHSACoreAnswerQuestionScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHSACoreAnswerQuestionScrollView.h; sourceTree = "<group>"; };
+		CE4BC2A31B8AB3AA005BDD20 /* YHSACoreAnswerQuestionScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YHSACoreAnswerQuestionScrollView.m; sourceTree = "<group>"; };
+		CE4BC2A51B8AB458005BDD20 /* YHBaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHBaseView.h; sourceTree = "<group>"; };
+		CE4BC2A61B8AB458005BDD20 /* YHBaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YHBaseView.m; sourceTree = "<group>"; };
+		CE4BC2A81B8AC046005BDD20 /* YHSACoreAnswerQuestionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHSACoreAnswerQuestionView.h; sourceTree = "<group>"; };
+		CE4BC2A91B8AC046005BDD20 /* YHSACoreAnswerQuestionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YHSACoreAnswerQuestionView.m; sourceTree = "<group>"; };
+		CE4BC2AB1B8AC121005BDD20 /* YHSAMockExamAnswerQuestionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHSAMockExamAnswerQuestionViewController.h; sourceTree = "<group>"; };
+		CE4BC2AC1B8AC121005BDD20 /* YHSAMockExamAnswerQuestionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YHSAMockExamAnswerQuestionViewController.m; sourceTree = "<group>"; };
+		CE4BC2AE1B8AE4CC005BDD20 /* YHSAAnswerQuestionModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHSAAnswerQuestionModel.h; sourceTree = "<group>"; };
+		CE4BC2AF1B8AE4CC005BDD20 /* YHSAAnswerQuestionModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YHSAAnswerQuestionModel.m; sourceTree = "<group>"; };
+		CE4BC2B11B8AFB8B005BDD20 /* YHBaseGeometryTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHBaseGeometryTools.h; sourceTree = "<group>"; };
+		CE4BC2B21B8AFB8B005BDD20 /* YHBaseGeometryTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YHBaseGeometryTools.m; sourceTree = "<group>"; };
+		CE4BC2B41B8B07EC005BDD20 /* YHBaseTypesettingEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHBaseTypesettingEngine.h; sourceTree = "<group>"; };
+		CE4BC2B51B8B07EC005BDD20 /* YHBaseTypesettingEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YHBaseTypesettingEngine.m; sourceTree = "<group>"; };
 		CE8095611B81DE5300730610 /* StringHead.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StringHead.h; sourceTree = "<group>"; };
 		CE8095621B81EC9000730610 /* YHSARegistViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHSARegistViewController.h; sourceTree = "<group>"; };
 		CE8095631B81EC9000730610 /* YHSARegistViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YHSARegistViewController.m; sourceTree = "<group>"; };
@@ -389,6 +413,8 @@
 				CE328F9F1B86C825001018AE /* YHSAMockExamSubjectViewController.m */,
 				183571141B89F999007AEF18 /* YHSAMockExamDetailsViewController.h */,
 				183571151B89F999007AEF18 /* YHSAMockExamDetailsViewController.m */,
+				CE4BC2AB1B8AC121005BDD20 /* YHSAMockExamAnswerQuestionViewController.h */,
+				CE4BC2AC1B8AC121005BDD20 /* YHSAMockExamAnswerQuestionViewController.m */,
 			);
 			path = MockExamControllers;
 			sourceTree = "<group>";
@@ -518,6 +544,10 @@
 				CE924A081B84868300F7B647 /* YHBaseJOSNAnalytical.m */,
 				CE924A091B84868300F7B647 /* YHBaseStringTools.h */,
 				CE924A0A1B84868300F7B647 /* YHBaseStringTools.m */,
+				CE4BC2B11B8AFB8B005BDD20 /* YHBaseGeometryTools.h */,
+				CE4BC2B21B8AFB8B005BDD20 /* YHBaseGeometryTools.m */,
+				CE4BC2B41B8B07EC005BDD20 /* YHBaseTypesettingEngine.h */,
+				CE4BC2B51B8B07EC005BDD20 /* YHBaseTypesettingEngine.m */,
 			);
 			path = BaseTools;
 			sourceTree = "<group>";
@@ -526,6 +556,8 @@
 			isa = PBXGroup;
 			children = (
 				CE924A261B84875100F7B647 /* YHKit.h */,
+				CE4BC2A51B8AB458005BDD20 /* YHBaseView.h */,
+				CE4BC2A61B8AB458005BDD20 /* YHBaseView.m */,
 				CE924A0C1B84868300F7B647 /* YHBaseActivityIndicatorView.h */,
 				CE924A0D1B84868300F7B647 /* YHBaseActivityIndicatorView.m */,
 				CE924A0E1B84868300F7B647 /* YHBaseAlertView.h */,
@@ -536,6 +568,8 @@
 				CE924A131B84868300F7B647 /* YHBaseLabel.m */,
 				CE0A89601B85AF9A00BA1F5F /* YHBaseTableView.h */,
 				CE0A89611B85AF9A00BA1F5F /* YHBaseTableView.m */,
+				CE4BC29F1B8AB316005BDD20 /* YHBaseScrollView.h */,
+				CE4BC2A01B8AB316005BDD20 /* YHBaseScrollView.m */,
 			);
 			path = BaseViews;
 			sourceTree = "<group>";
@@ -545,6 +579,10 @@
 			children = (
 				CE924A231B8486C800F7B647 /* YHSAActivityIndicatorView.h */,
 				CE924A241B8486C800F7B647 /* YHSAActivityIndicatorView.m */,
+				CE4BC2A21B8AB3AA005BDD20 /* YHSACoreAnswerQuestionScrollView.h */,
+				CE4BC2A31B8AB3AA005BDD20 /* YHSACoreAnswerQuestionScrollView.m */,
+				CE4BC2A81B8AC046005BDD20 /* YHSACoreAnswerQuestionView.h */,
+				CE4BC2A91B8AC046005BDD20 /* YHSACoreAnswerQuestionView.m */,
 			);
 			name = Views;
 			path = Controllers/Views;
@@ -647,6 +685,8 @@
 				CE0A89671B85C54800BA1F5F /* YHSAMockExamMainListModel.m */,
 				1835711E1B8A1204007AEF18 /* YHSAMockExamDetailsModel.h */,
 				1835711F1B8A1204007AEF18 /* YHSAMockExamDetailsModel.m */,
+				CE4BC2AE1B8AE4CC005BDD20 /* YHSAAnswerQuestionModel.h */,
+				CE4BC2AF1B8AE4CC005BDD20 /* YHSAAnswerQuestionModel.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -997,6 +1037,8 @@
 				CE924A1C1B84868300F7B647 /* YHBaseJOSNAnalytical.m in Sources */,
 				CE924A2F1B84888F00F7B647 /* YHSAErrorCenter.m in Sources */,
 				CE924A211B84868300F7B647 /* YHBaseLabel.m in Sources */,
+				CE4BC2AD1B8AC121005BDD20 /* YHSAMockExamAnswerQuestionViewController.m in Sources */,
+				CE4BC2B61B8B07EC005BDD20 /* YHBaseTypesettingEngine.m in Sources */,
 				CEEAFD5E1B8167D900795B27 /* ViewController.m in Sources */,
 				CE924A201B84868300F7B647 /* YHBaseButton.m in Sources */,
 				CE328FA61B86C908001018AE /* YHTopicColorManager.m in Sources */,
@@ -1007,15 +1049,21 @@
 				CE924A191B84868300F7B647 /* YHBaseHttpManager.m in Sources */,
 				CE924A1B1B84868300F7B647 /* YHBaseModel.m in Sources */,
 				CEEAFD7E1B816C5200795B27 /* YHSALoginViewController.m in Sources */,
+				CE4BC2B31B8AFB8B005BDD20 /* YHBaseGeometryTools.m in Sources */,
 				CEEAFD5B1B8167D900795B27 /* AppDelegate.m in Sources */,
 				183571171B89F999007AEF18 /* YHSAMockExamDetailsViewController.m in Sources */,
 				CE9249E21B8473D500F7B647 /* YHSARequestGetDataModel.m in Sources */,
 				CE2B70F21B82BD7600040C3C /* YHSANavigationViewController.m in Sources */,
 				CE328FA91B86D285001018AE /* YHSASystemSettingViewController.m in Sources */,
+				CE4BC2B01B8AE4CC005BDD20 /* YHSAAnswerQuestionModel.m in Sources */,
 				18F050FF1B8379C2008EF87D /* YHSAHttpManager.m in Sources */,
 				1834917F1B84CC4400A0F322 /* YHBaseManager.m in Sources */,
 				CE328FA01B86C825001018AE /* YHSAMockExamController.m in Sources */,
 				CE924A1D1B84868300F7B647 /* YHBaseStringTools.m in Sources */,
+				CE4BC2A41B8AB3AA005BDD20 /* YHSACoreAnswerQuestionScrollView.m in Sources */,
+				CE4BC2A71B8AB458005BDD20 /* YHBaseView.m in Sources */,
+				CE4BC2AA1B8AC046005BDD20 /* YHSACoreAnswerQuestionView.m in Sources */,
+				CE4BC2A11B8AB316005BDD20 /* YHBaseScrollView.m in Sources */,
 				CEEAFD581B8167D900795B27 /* main.m in Sources */,
 				CE0A89621B85AF9A00BA1F5F /* YHBaseTableView.m in Sources */,
 				CE924A171B84868300F7B647 /* YHBaseErrorCenter.m in Sources */,

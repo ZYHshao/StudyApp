@@ -14,7 +14,8 @@ typedef enum {
     YHSARequestTypelogin,
     YHSARequestTypeReFoundSecret,
     YHSARequestTypeMockExamListFirst,
-    YHSARequestTypeMockExamDetails
+    YHSARequestTypeMockExamDetails,
+    YHSARequestTypeMockExamQuestion
 }YHSARequestType;
 //=========================测试地址=============================//
 #ifdef TEXT
@@ -29,6 +30,7 @@ typedef enum {
 #define YHSA_REFOUND_SECRET_INTERFACE_POST_PATH @"http://app.vipexam.org/interface/modify.ashx"
 #define YHSA_MOCKEXAM_LIST_FIRST_POST_PATH @"http://app.vipexam.org/interface/Typelist.ashx"
 #define YHSA_MOCKEXAM_DETAILS_POST_PATH @"http://app.vipexam.org/interface/Examinfo.ashx"
+#define YHSA_MOCKEXAM_QUESTION_POST_PATH @"http://app.vipexam.org/interface/Examlist.ashx"
 #endif
 
 //==========================请求id的定义========================//
@@ -37,4 +39,5 @@ typedef enum {
 #define YHSA_REQUEST_TYPE_REFOUNDSECRET @"3"
 #define YHSA_REQUEST_TYPE_MOCKEXAM @"4"
 #define YHSA_REQUEST_TYPE_MOCKEXAM_DETAILS @"5"
+#define YHSA_REQUEST_TYPE_MOCKEXAM_QUESTION @"6"
 #endif

@@ -10,6 +10,7 @@
 #import "YHSAMockExamDetailsModel.h"
 #import "YHSAHttpManager.h"
 #import "YHSAMockExamDetailsModel.h"
+#import "YHSAMockExamAnswerQuestionViewController.h"
 @interface YHSAMockExamDetailsViewController ()
 @property (weak, nonatomic) IBOutlet YHBaseLabel *examTitleLabel;
 @property (weak, nonatomic) IBOutlet YHBaseButton *startExamButton;
@@ -97,6 +98,12 @@ __PROPERTY_NO_STRONG__(YHSAMockExamDetailsModel *, dataModel);
     // Dispose of any resources that can be recreated.
 }
 - (IBAction)clickButton:(YHBaseButton *)sender {
+    if (sender == _startExamButton) {
+        //跳转答题界面
+        YHSAMockExamAnswerQuestionViewController * con = [[YHSAMockExamAnswerQuestionViewController alloc]init];
+        con.dataModel = _dataModel;
+        [self.navigationController pushViewController:con animated:YES];
+    }
 }
 
 /*

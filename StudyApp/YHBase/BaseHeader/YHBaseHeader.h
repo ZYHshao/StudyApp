@@ -13,7 +13,8 @@
 #import "YHBaseJOSNAnalytical.h"
 #import "YHBaseError.h"
 #import "YHBaseErrorCenter.h"
-
+#import "YHBaseGeometryTools.h"
+#import "YHBaseTypesettingEngine.h"
 //=============================快捷定义宏=========================//
 #define __PROPERTY_NO_COPY__(type,object) @property(nonatomic,copy)type object
 #define __PROPERTY_AT_COPY__(type,object) @property(atomic,copy)type object
@@ -34,6 +35,14 @@
 //定义这个宏方便在block中使用self指针
 #define __BLOCK__WEAK__SELF__(sel) __weak id sel =  self
 
+
+//判断系统版本的宏
+#define DEVICE_IOS6 (([[[UIDevice currentDevice] systemVersion] floatValue] >= 6.0)&&\
+                    ([[[UIDevice currentDevice] systemVersion] floatValue] <= 7.0))
+#define DEVICE_IOS7 (([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0)&&\
+                    ([[[UIDevice currentDevice] systemVersion] floatValue] <= 8.0))
+#define DEVICE_IOS8 (([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0)&&\
+                    ([[[UIDevice currentDevice] systemVersion] floatValue] <= 9.0))
 
 //=============================注册的通知========================//
 //错误中心监听的通知

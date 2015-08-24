@@ -133,17 +133,18 @@
     manager.responseSerializer= [AFHTTPResponseSerializer serializer];
    [manager POST:obj.urlString parameters:obj.pramaDic success:^(AFHTTPRequestOperation *operation, id responseObject) {
        NSData * da = [operation.responseString dataUsingEncoding:NSUTF8StringEncoding];
-       successBlock(da);
        [_requestArray removeObject:obj];
+       successBlock(da);
    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
        YHBaseError * er = [[YHBaseError alloc]initWithType:YHBaseErrorRequestLocal];
        //发送通知给异常处理中心
        [YHBaseErrorCenter sharedTheSingletion];
        NSNotification * notice = [NSNotification notificationWithName:YHBASE_ERROR_CENTER_NOTICATION object:nil userInfo:@{@"error":er}];
        [[NSNotificationCenter defaultCenter]postNotification:notice];
+        [_requestArray removeObject:obj];
        fieldBlock(er);
        
-       [_requestArray removeObject:obj];
+      
    }];
 }
 

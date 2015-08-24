@@ -21,4 +21,8 @@ typedef enum {
  *检测字符串长度是否符合
  */
 BOOL YHBaseCheckString(YHBaseStringCompareType compareType,NSString * str,int length);
+
+
+
+
 @end

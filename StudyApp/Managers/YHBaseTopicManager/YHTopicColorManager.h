@@ -21,6 +21,7 @@
 @property(nonatomic,readonly)UIColor * btnTextColor;
 @property(nonatomic,readonly)UIColor * navTextColor;
 @property(nonatomic,readonly)UIColor * borderLineColor;
+@property(nonatomic,readonly)UIColor * greyBgColor;
 /**
  *使用之前需先调用这个方法进行设置主题
  */

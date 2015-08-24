@@ -89,6 +89,10 @@
 #define MOCK_EXAM_DETAILS_AUTHOR_LABEL_TEXT @"提供者:%@"
 #define MOCK_EXAM_DETAILS_SUBJECT_LABEL_TEXT @"所属科目:%@"
 
+
+//===============================核心答题界面======================//
+#define MOCK_EXAM_ANSWER_QUESTION_CONTROLLER_TITLE @"试卷原题"
+
 //===============================系统设置界面=====================//
 #define SYSTEM_SETTING_CONTROLLER_TITLE @"系统设置"
 #define SYSTEM_SETTING_SWITCH_TOPIC @"切换夜间模式"
@@ -123,6 +127,10 @@
 
 //试卷详情
 #define INTERFACE_FIELD_MOCKEXAM_EXAMID @"examid"
+
+//试卷题目
+#define INTERFACE_FIELD_MOCKEXAM_QUESTION_EXAMID @"id"
+#define INTERFACE_FIELD_MOCKEXAM_QUESTION_PAGEINDEX @"PageIndex"
 //============================接口返回字段========================//
 
 #define INTERFACE_RETURN_REGIST_SUCCESS @"8"
@@ -137,6 +145,9 @@
 
 #define INTERFACE_RETURN_MOCKEXAM_SUCCESS @"8"
 #define INTERFACE_RETURN_MOCKEXAM_FAILED @"2"
+
+#define INTERFACE_RETURN_MOCKEXAM__QUESTION_SUCCESS @"8"
+#define INTERFACE_RETURN_MOCKEXAM__QUESTION_FAILED @"2"
 
 #define INTERFACE_RETURN_MOCKEXAM__DETAILS_SUCCESS @"8"
 #define INTERFACE_RETURN_MOCKEXAM__DETAILE_FAILED @"2"

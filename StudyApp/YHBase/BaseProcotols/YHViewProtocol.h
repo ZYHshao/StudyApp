@@ -20,4 +20,8 @@
  *设置边框
  */
 -(void)setBorderWidth:(CGFloat)width andColor:(UIColor*)color;
+/**
+ *统一加载数据的方法
+ */
+-(void)creatViewWithData:(id)data;
 @end

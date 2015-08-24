@@ -72,6 +72,11 @@
             return YHSA_MOCKEXAM_DETAILS_POST_PATH;
         }
             break;
+        case YHSARequestTypeMockExamQuestion:
+        {
+            return YHSA_MOCKEXAM_QUESTION_POST_PATH;
+        }
+            break;
         default:
             return @"";
             break;
@@ -102,6 +107,11 @@
         case YHSARequestTypeMockExamDetails:
         {
             return YHSA_REQUEST_TYPE_MOCKEXAM_DETAILS;
+        }
+            break;
+        case YHSARequestTypeMockExamQuestion:
+        {
+            return YHSA_REQUEST_TYPE_MOCKEXAM_QUESTION;
         }
             break;
         default:
