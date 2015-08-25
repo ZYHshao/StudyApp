@@ -28,5 +28,6 @@
 #define MAIN_MY_NOTES_IMAGE @"main_wdbj.png"
 #define MAIN_TEXT_INFOMATION_IMAGE @"main_kszx.png"
 #define MAIN_SYSTEMSET_IMAGE @"main_setting.png"
-
+//====================模拟考试================//
+#define MOCK_EXAM_DRAFT_IMAGE @"sjym_tab_jj_ico2.png"
 #endif

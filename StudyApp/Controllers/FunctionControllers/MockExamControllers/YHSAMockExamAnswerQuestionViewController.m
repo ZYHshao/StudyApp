@@ -13,6 +13,8 @@
 {
     //核心的滑动视图
     YHSACoreAnswerQuestionScrollView * _coreScrollView;
+    YHBaseSelfServiceDrawControlView * _draftView;
+    BOOL _draftIsOpen;
 }
 @end
 
@@ -37,7 +39,34 @@
     _coreScrollView.dataModel=_dataModel;
     [_coreScrollView reloadView];
     [self.view addSubview:_coreScrollView];
-   
+    //创建导航按钮
+    [self creatBarButton];
+    _draftView = [[YHBaseSelfServiceDrawControlView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT-64)];
+    [_draftView setDrawSettingOfWidth:3 andColor:[UIColor redColor]];
+    [_draftView setDrawSize:CGSizeMake(1000, 1000)];
+    _draftView.backgroundColor = [UIColor colorWithRed:155/255.0 green:155/255.0 blue:155/255.0 alpha:0.3];
+    [_draftView setDrawViewBackgroundColor:[UIColor colorWithRed:155/255.0 green:155/255.0 blue:155/255.0 alpha:0.3]];
+    _draftView.alpha=0;
+    [self.view addSubview:_draftView];
+}
+
+
+-(void)creatBarButton{
+    UIBarButtonItem * draft = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:MOCK_EXAM_DRAFT_IMAGE] style:UIBarButtonItemStylePlain target:self action:@selector(draft)];
+    self.navigationItem.rightBarButtonItem = draft;
+}
+-(void)draft{
+    if (_draftIsOpen) {
+        [UIView animateWithDuration:0.3 animations:^{
+            _draftView.alpha=0;
+        }];
+        _draftIsOpen=NO;
+    }else{
+        [UIView animateWithDuration:0.3 animations:^{
+            _draftView.alpha=1;
+        }];
+        _draftIsOpen=YES;
+    }
 }
 -(void)useYHTopicToCreatViewWithModel{
     [_coreScrollView setTopic];

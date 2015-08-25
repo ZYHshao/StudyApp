@@ -13,6 +13,7 @@
 		183571171B89F999007AEF18 /* YHSAMockExamDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 183571151B89F999007AEF18 /* YHSAMockExamDetailsViewController.m */; };
 		1835711A1B8A1152007AEF18 /* YHSAMockExamDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183571191B8A1152007AEF18 /* YHSAMockExamDetailsViewController.xib */; };
 		183571201B8A1204007AEF18 /* YHSAMockExamDetailsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1835711F1B8A1204007AEF18 /* YHSAMockExamDetailsModel.m */; };
+		189833C21B8C9C0F00ABC49E /* sjym_tab_jj_ico2.png in Resources */ = {isa = PBXBuildFile; fileRef = 189833C11B8C9C0F00ABC49E /* sjym_tab_jj_ico2.png */; };
 		18F050FF1B8379C2008EF87D /* YHSAHttpManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F050FE1B8379C2008EF87D /* YHSAHttpManager.m */; };
 		23715322364E505FF9CADA86 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6888E6FF2F5B53851F13B1DE /* libPods.a */; };
 		CE0A89621B85AF9A00BA1F5F /* YHBaseTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE0A89611B85AF9A00BA1F5F /* YHBaseTableView.m */; };
@@ -168,6 +169,7 @@
 		183571191B8A1152007AEF18 /* YHSAMockExamDetailsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YHSAMockExamDetailsViewController.xib; sourceTree = "<group>"; };
 		1835711E1B8A1204007AEF18 /* YHSAMockExamDetailsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHSAMockExamDetailsModel.h; sourceTree = "<group>"; };
 		1835711F1B8A1204007AEF18 /* YHSAMockExamDetailsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YHSAMockExamDetailsModel.m; sourceTree = "<group>"; };
+		189833C11B8C9C0F00ABC49E /* sjym_tab_jj_ico2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sjym_tab_jj_ico2.png; sourceTree = "<group>"; };
 		18F050FD1B8379C2008EF87D /* YHSAHttpManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YHSAHttpManager.h; path = StudyApp/Managers/YHSAHttpManager.h; sourceTree = SOURCE_ROOT; };
 		18F050FE1B8379C2008EF87D /* YHSAHttpManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YHSAHttpManager.m; path = StudyApp/Managers/YHSAHttpManager.m; sourceTree = SOURCE_ROOT; };
 		6888E6FF2F5B53851F13B1DE /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -741,6 +743,7 @@
 		CEEAFD921B81A8BF00795B27 /* drawable-hdpi */ = {
 			isa = PBXGroup;
 			children = (
+				189833C11B8C9C0F00ABC49E /* sjym_tab_jj_ico2.png */,
 				CEEAFD931B81A8BF00795B27 /* aboutme_logo.png */,
 				CEEAFD941B81A8BF00795B27 /* appico.png */,
 				CEEAFD951B81A8BF00795B27 /* back.png */,
@@ -901,6 +904,7 @@
 				TargetAttributes = {
 					CEEAFD511B8167D900795B27 = {
 						CreatedOnToolsVersion = 6.4;
+						DevelopmentTeam = Z7M6K337YL;
 					};
 					CEEAFD6A1B8167DA00795B27 = {
 						CreatedOnToolsVersion = 6.4;
@@ -1003,6 +1007,7 @@
 				CEEAFD631B8167DA00795B27 /* Images.xcassets in Resources */,
 				CEEAFE151B81A8BF00795B27 /* main_wdbj.png in Resources */,
 				CEEAFDEF1B81A8BF00795B27 /* dtk_wwc_wd.png in Resources */,
+				189833C21B8C9C0F00ABC49E /* sjym_tab_jj_ico2.png in Resources */,
 				CEEAFDEA1B81A8BF00795B27 /* contenttitlebar_jiantouxia.png in Resources */,
 				CEEAFE051B81A8BF00795B27 /* loading_3.png in Resources */,
 				CEEAFDE71B81A8BF00795B27 /* cj_mxz_xingxing.jpg in Resources */,
@@ -1244,6 +1249,7 @@
 			baseConfigurationReference = 9437AF0FF7C072DED387C2D3 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/StudyApp/StudyAppPCH.pch";
 				INFOPLIST_FILE = StudyApp/Info.plist;
@@ -1258,6 +1264,7 @@
 			baseConfigurationReference = E31406E335AA7228F8737B6D /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/StudyApp/StudyAppPCH.pch";
 				INFOPLIST_FILE = StudyApp/Info.plist;
