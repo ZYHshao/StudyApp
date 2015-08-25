@@ -154,4 +154,5 @@
 //============================tableViewCell ID================//
 #define TABLEVIEW_CELL_ID_MOCK_EXAM_FIRST @"moceExamFirst"
 #define TABLEVIEW_CELL_ID_SYSTEM_SETTING @"systemSetting"
+#define TABLEVIEW_CELL_ID_ANSWER_QUESTION  @"answerQuestion"
 #endif

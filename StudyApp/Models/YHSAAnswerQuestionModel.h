@@ -39,4 +39,6 @@ __PROPERTY_NO_STRONG__(NSString *, discriptionImg);
 __PROPERTY_NO_STRONG__(NSString *, listionUrl);
 //音频原文
 __PROPERTY_NO_STRONG__(NSString *, listionTxt);
+//题目类型
+__PROPERTY_NO_STRONG__(NSString *, typename);
 @end
