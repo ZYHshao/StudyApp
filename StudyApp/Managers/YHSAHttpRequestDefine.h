@@ -15,7 +15,10 @@ typedef enum {
     YHSARequestTypeReFoundSecret,
     YHSARequestTypeMockExamListFirst,
     YHSARequestTypeMockExamDetails,
-    YHSARequestTypeMockExamQuestion
+    YHSARequestTypeMockExamQuestion,
+    YHSARequestTypeOptionsPost,
+    YHSARequestTypeExamInfo,
+    YHSARequestTypeExamInfoDetail
 }YHSARequestType;
 //=========================测试地址=============================//
 #ifdef TEXT
@@ -31,6 +34,9 @@ typedef enum {
 #define YHSA_MOCKEXAM_LIST_FIRST_POST_PATH @"http://app.vipexam.org/interface/Typelist.ashx"
 #define YHSA_MOCKEXAM_DETAILS_POST_PATH @"http://app.vipexam.org/interface/Examinfo.ashx"
 #define YHSA_MOCKEXAM_QUESTION_POST_PATH @"http://app.vipexam.org/interface/Examlist.ashx"
+#define YHSA_OPTIONS_POST_PATH @"http://app.vipexam.org/interface/Advice.ashx"
+#define YHSA_EXAM_INFO_LIST_POST_PATH @"http://app.vipexam.org/interface/message.ashx"
+#define YHSA_EXAM_INFO_DETAIL_POST_PATH @"http://app.vipexam.org/interface/message.ashx"
 #endif
 
 //==========================请求id的定义========================//
@@ -40,4 +46,7 @@ typedef enum {
 #define YHSA_REQUEST_TYPE_MOCKEXAM @"4"
 #define YHSA_REQUEST_TYPE_MOCKEXAM_DETAILS @"5"
 #define YHSA_REQUEST_TYPE_MOCKEXAM_QUESTION @"6"
+#define YHSA_REQUEST_TYPE_OPTIONS_POST @"7"
+#define YHSA_REQUEST_TYPE_EXAM_INFO @"8"
+#define YHSA_REQUEST_TYPE_EXAM_INFO_DETAIL @"8"
 #endif

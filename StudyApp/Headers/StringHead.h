@@ -55,7 +55,7 @@
 #define MAIN_MY_ANALYSE_TEXT @"成绩分析"
 #define MAIN_STUDY_PIAN_TEXT @"学习计划"
 #define MAIN_MY_NOTES_TEXT @"我的笔记"
-#define MAIN_TEXT_INFOMATION_TEXT @"开始咨询"
+#define MAIN_TEXT_INFOMATION_TEXT @"考试资讯"
 #define MAIN_SYSTEMSET_TEXT @"系统设置"
 
 
@@ -100,7 +100,24 @@
 #define SYSTEM_SETTING_RETURN_IDEA @"意见反馈"
 #define SYSTEM_SETTING_ABOUT_WE @"关于我们"
 
+//===============================意见反馈界面====================//
+#define OPTION_POST_CONTROLLER_TITLE @"意见反馈"
+#define OPTION_POST_TEXTVIEW_PLACEHOLDER_TEXT @"您遇到的问题或建议(必填)"
+#define OPTION_POST_BUTTON_TITLE @"提交意见"
 
+//===============================关于我们界面=====================//
+#define ABOUT_US_CONTROLLER_TITLE @"关于我们"
+#define ABOUT_US_WEB @"官方网站: www.VIPExam.com"
+#define ABOUT_US_WEIBO @"官方微博: @VIPExam"
+#define ABOUT_US_QQ @"用户Q群: 123456789"
+#define ABOUT_US_PHONE @"联系电话: 12345677890"
+#define ABOUT_US_TEL @"客服电话: 122-232-221"
+#define ABOUT_US_ADRESS @"联系地址: 地址地址地址地址"
+#define ABOUT_US_ABOUT_US @"    VIPExam考试库专业的手机考试平台，绝对实用的手机考试软件！涵盖工程类、金融类、财会类、资格类、医药类、计算机类、外贸类共7大类100多种考试。"
+
+//===============================考试资讯界面======================//
+#define EXAM_INFO_CONTROLLER_TITLE @"考试资讯"
+#define EXAM_INFO_DETAIL_CONTROLLER_TITLE @"资讯详情"
 
 //=============================接口字段==========================//
 //注册
@@ -131,6 +148,16 @@
 //试卷题目
 #define INTERFACE_FIELD_MOCKEXAM_QUESTION_EXAMID @"id"
 #define INTERFACE_FIELD_MOCKEXAM_QUESTION_PAGEINDEX @"PageIndex"
+
+//意见提交
+#define INTERFACE_FIELD_OPTION_POST_PHONECODE @"phonecode"
+#define INTERFACE_FIELD_OPTION_POST_CONTENT @"content"
+
+//考试资讯
+#define INTERFACE_FIELD_EXAM_INFO_PAGEINDEX @"pageIndex"
+#define INTERFACE_FIELD_EXAM_INFO_PAGESIZE @"pagesize"
+#define INTERFACE_FIELD_EXAM_INFO_DETAIL_MSGID @"msgid"
+
 //============================接口返回字段========================//
 
 #define INTERFACE_RETURN_REGIST_SUCCESS @"8"
@@ -151,8 +178,15 @@
 
 #define INTERFACE_RETURN_MOCKEXAM__DETAILS_SUCCESS @"8"
 #define INTERFACE_RETURN_MOCKEXAM__DETAILE_FAILED @"2"
+
+#define INTERFACE_RETURN_OPTION_POST_SUCCESS @"8"
+#define INTERFACE_RETURN_OPTION_POST_FAILED @"2"
+
+#define INTERFACE_RETURN_EXAM_INFO_SUCCESS @"8"
+#define INTERFACE_RETURN_EXAM_INFO_FAILED @"2"
 //============================tableViewCell ID================//
 #define TABLEVIEW_CELL_ID_MOCK_EXAM_FIRST @"moceExamFirst"
 #define TABLEVIEW_CELL_ID_SYSTEM_SETTING @"systemSetting"
 #define TABLEVIEW_CELL_ID_ANSWER_QUESTION  @"answerQuestion"
+#define TABLEVIEW_CELL_ID_EXAM_INFO @"enamInfo"
 #endif

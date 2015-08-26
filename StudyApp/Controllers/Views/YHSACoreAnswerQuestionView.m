@@ -271,7 +271,7 @@
         cell.theImageView.hidden=YES;
     }
     cell.indexLabel.text = [NSString stringWithFormat:@"%c",(int)indexPath.row+'A'];
-    cell.contentLabel.text = _tableViewDataArray[indexPath.row];
+    cell.contentLabel.text = _tableViewDataArray[indexPath.row+1];
     //位置设置
     CGSize size = [YHBaseGeometryTools getLabelSize:cell.contentLabel inConstrainedSize:CGSizeMake(cell.contentLabel.frame.size.width, MAXFLOAT)];
     cell.contentLabel.frame=CGRectMake(cell.contentLabel.frame.origin.x, cell.contentLabel.frame.origin.y, cell.contentLabel.frame.size.width, size.height);

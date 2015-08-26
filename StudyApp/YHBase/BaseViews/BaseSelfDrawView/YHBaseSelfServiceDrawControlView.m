@@ -86,7 +86,7 @@
         //获取两个偏移量
         CGFloat offsetX = point.x-_startPoint.x;
         CGFloat offsetY = point.y-_startPoint.y;
-        NSLog(@"%f,%f",offsetX,offsetY);
+//        NSLog(@"%f,%f",offsetX,offsetY);
         if (offsetX>0) {//往右移动
             if (originalRect.origin.x+offsetX<0) {
                 _drawView.frame=CGRectMake(originalRect.origin.x+offsetX, _drawView.frame.origin.y, _drawView.frame.size.width, _drawView.frame.size.height);

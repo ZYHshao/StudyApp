@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="15A178w" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="YHSAExamInfoDetailViewController">
+            <connections>
+                <outlet property="dateLabel" destination="eIn-lj-Jlk" id="u5X-E4-lYT"/>
+                <outlet property="titleLabel" destination="ZNo-Ua-6o3" id="RgG-2j-U2T"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="webView" destination="UG7-Hn-OH8" id="HBI-DB-nTw"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZNo-Ua-6o3">
+                    <rect key="frame" x="20" y="20" width="280" height="30"/>
+                    <animations/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="wpe-7L-4FN"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eIn-lj-Jlk">
+                    <rect key="frame" x="20" y="58" width="280" height="21"/>
+                    <animations/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="9MM-3D-K5V"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UG7-Hn-OH8">
+                    <rect key="frame" x="20" y="93" width="280" height="453"/>
+                    <animations/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </webView>
+            </subviews>
+            <animations/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="ZNo-Ua-6o3" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" id="5C0-6A-L88"/>
+                <constraint firstAttribute="bottom" secondItem="UG7-Hn-OH8" secondAttribute="bottom" constant="22" id="7sT-cL-DVX"/>
+                <constraint firstItem="eIn-lj-Jlk" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="58" id="8yV-9N-UAS"/>
+                <constraint firstItem="ZNo-Ua-6o3" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="Jmj-7K-8An"/>
+                <constraint firstItem="UG7-Hn-OH8" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="93" id="LHr-eR-vH0"/>
+                <constraint firstAttribute="trailing" secondItem="UG7-Hn-OH8" secondAttribute="trailing" constant="20" id="OmZ-EN-KTe"/>
+                <constraint firstAttribute="trailing" secondItem="ZNo-Ua-6o3" secondAttribute="trailing" constant="20" id="Tdt-0m-les"/>
+                <constraint firstAttribute="trailing" secondItem="eIn-lj-Jlk" secondAttribute="trailing" constant="20" id="hAq-fq-gVT"/>
+                <constraint firstItem="eIn-lj-Jlk" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="lOu-zH-TcH"/>
+                <constraint firstItem="UG7-Hn-OH8" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="nrs-2T-E1G"/>
+            </constraints>
+            <point key="canvasLocation" x="305" y="380"/>
+        </view>
+    </objects>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>

@@ -77,6 +77,21 @@
             return YHSA_MOCKEXAM_QUESTION_POST_PATH;
         }
             break;
+        case YHSARequestTypeOptionsPost:
+        {
+            return YHSA_OPTIONS_POST_PATH;
+        }
+            break;
+        case YHSARequestTypeExamInfo:
+        {
+            return YHSA_EXAM_INFO_LIST_POST_PATH;
+        }
+            break;
+        case YHSARequestTypeExamInfoDetail:
+        {
+            return YHSA_EXAM_INFO_DETAIL_POST_PATH;
+        }
+            break;
         default:
             return @"";
             break;
@@ -112,6 +127,21 @@
         case YHSARequestTypeMockExamQuestion:
         {
             return YHSA_REQUEST_TYPE_MOCKEXAM_QUESTION;
+        }
+            break;
+        case YHSARequestTypeOptionsPost:
+        {
+            return YHSA_REQUEST_TYPE_OPTIONS_POST;
+        }
+            break;
+        case YHSARequestTypeExamInfo:
+        {
+            return YHSA_REQUEST_TYPE_EXAM_INFO;
+        }
+            break;
+        case YHSARequestTypeExamInfoDetail:
+        {
+            return YHSA_REQUEST_TYPE_EXAM_INFO_DETAIL;
         }
             break;
         default:

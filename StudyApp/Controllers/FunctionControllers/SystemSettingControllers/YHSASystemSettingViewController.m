@@ -8,6 +8,10 @@
 
 #import "YHSASystemSettingViewController.h"
 #import "YHSASystemSettingManager.h"
+#import "YHSAOptionsViewController.h"
+#import "YHSAUserManager.h"
+#import "YHSALoginViewController.h"
+#import "YHSAAboutUsViewController.h"
 @interface YHSASystemSettingViewController ()<UITableViewDataSource,UITableViewDelegate>
 {
     YHBaseTableView * _tableView;
@@ -92,6 +96,7 @@
     UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:TABLEVIEW_CELL_ID_SYSTEM_SETTING];
     if (cell==nil) {
         cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:TABLEVIEW_CELL_ID_SYSTEM_SETTING];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
         cell.textLabel.text = _dataArray[indexPath.row];
         switch (indexPath.row) {
@@ -108,10 +113,44 @@
             }
                 break;
             default:
+            {
+                cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+            }
                 break;
         }
         return cell;
 }
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    switch (indexPath.row) {
+        case 2://联系我们
+        {
+            //判断是否登陆
+            if ([YHSAUserManager sharedTheSingletion].isLogin) {
+                [self.navigationController pushViewController:[[YHSAOptionsViewController alloc]init] animated:YES];
+            }else{
+                __BLOCK__WEAK__SELF__(__self);
+                [YHBaseAlertView showWithStyle:YHBaseAlertViewNormal title:PUBLIC_PART_ALERT_TITLE text:@"该功能需要您登陆方可使用" cancleBtn:PUBLIC_PART_ALERT_CANCLE_BTN selectBtn:@"登陆" andSelectFunc:^{
+                    //跳转登陆
+                    [[__self navigationController]pushViewController:[[YHSALoginViewController alloc]init] animated:YES];
+                }];
+
+            }
+            
+        }
+            break;
+        case 3://关于我们
+        {
+            [self.navigationController pushViewController:[[YHSAAboutUsViewController alloc]init] animated:YES];
+            
+        }
+            break;
+            
+        default:
+            break;
+    }
+}
+
 /*
 #pragma mark - Navigation
 

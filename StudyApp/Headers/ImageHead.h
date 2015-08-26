@@ -30,4 +30,7 @@
 #define MAIN_SYSTEMSET_IMAGE @"main_setting.png"
 //====================模拟考试================//
 #define MOCK_EXAM_DRAFT_IMAGE @"sjym_tab_jj_ico2.png"
+
+//====================关于我们==================//
+#define ABOUT_US_LOGO_IMAGE @"aboutme_logo.png"
 #endif
