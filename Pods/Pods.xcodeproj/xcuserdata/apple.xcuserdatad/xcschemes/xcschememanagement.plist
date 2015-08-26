@@ -9,6 +9,16 @@
 			<key>orderHint</key>
 			<integer>2</integer>
 		</dict>
+		<key>Pods-DTCoreText.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>6</integer>
+		</dict>
+		<key>Pods-DTFoundation.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>7</integer>
+		</dict>
 		<key>Pods-MJRefresh.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -47,6 +57,11 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>17365C3E1A6D2F2D256E0E34</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>1A0E998E672CB1C38BE4490F</key>
 		<dict>
 			<key>primary</key>
@@ -58,6 +73,36 @@
 			<true/>
 		</dict>
 		<key>4FDB325F55CA6187708D6D1F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>57034DB02BE53E2077A8B52D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>58E43ED8FD29B649A933EA02</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>6209202D0932DA42C8E428F8</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>6DFB2E76BBFC42E96B56872C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>7439BC61ECABDD461BEB11D3</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>8FCEB5D3E151FF514204F5EC</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -221,7 +221,7 @@
        CGSize size = [YHBaseGeometryTools getLabelSize:_tableViewHeaderLabel inConstrainedSize:CGSizeMake(tableView.frame.size.width-20, MAXFLOAT)];
         return size.height+20;
     }else{
-        return 0;
+        return 20;
     }
 }
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
@@ -233,7 +233,8 @@
             _tableViewHeadView.frame=CGRectMake(0, 0, tableView.frame.size.width, _tableViewHeaderLabel.frame.size.height+20);
         return _tableViewHeadView;
     }else{
-        return nil;
+        _tableViewHeadView.frame=CGRectMake(0, 0,tableView.frame.size.width,20);
+        return _tableViewHeadView;
     }
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
