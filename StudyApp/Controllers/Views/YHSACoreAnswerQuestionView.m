@@ -9,15 +9,13 @@
 #import "YHSACoreAnswerQuestionView.h"
 #import "YHSAAnswerQuestionModel.h"
 #import "YHTopicColorManager.h"
-#import <SDWebImage/UIImageView+WebCache.h>
 #import "YHSAAnswerQuestionTableViewCell.h"
-#import <UIImageView+WebCache.h>
 @interface YHSACoreAnswerQuestionView()<UITableViewDataSource,UITableViewDelegate>
 {
     //题目视图
     YHBaseScrollView * _titleScrollView;
     //题目label,加载时动态确定大小
-    YHBaseView * _titleView;
+    YHBaseHtmlView * _titleView;
     //选项答题视图
     YHBaseTableView * _answerTableView;
     //tableView的数据源数组
@@ -50,37 +48,18 @@
 
 -(void)clearData{
     _answerTableView.frame=CGRectMake(0,(self.frame.size.height-64)/4*3-60, self.frame.size.width, (self.frame.size.height-64)/4+60);
-    NSArray * arr = _titleView.subviews;
-    for (UIView *view in arr) {
-        [view removeFromSuperview];
-    }
     [_tableViewImageArray removeAllObjects];
     [_tableViewDataArray removeAllObjects];
     [_answerTableView reloadData];
 }
 //把数据的读取和加载部分放在这个方法中
 -(void)creatViewWithData:(id)data{
-    NSArray * arr = _titleView.subviews;
-    for (UIView *view in arr) {
-        [view removeFromSuperview];
-    }
     YHSAAnswerQuestionModel * model = data;
-    YHBaseTypesettingEngine * engine = [[YHBaseTypesettingEngine alloc]initWithText:[NSString stringWithFormat:@"%@:%@",model.typename,model.content]];
-    YHBaseTypesettingEngineModel * enM = [[YHBaseTypesettingEngineModel alloc]init];
-    enM.field = @"[*]";
-    enM.type = YHBaseTypesettingImage;
-    [engine setModelArray:@[enM]];
-    [engine startEngineInSize:CGSizeMake(_titleScrollView.frame.size.width-40, _titleScrollView.frame.size.height)];
-    _titleView.frame = CGRectMake(0, 20, _titleScrollView.frame.size.width, [engine getTheTypesettingView].frame.size.height);
-    [_titleView addSubview:[engine getTheTypesettingView]];
-    NSArray * imageArray = [NSArray arrayWithArray:[engine getTheTypesettingNode:YHBaseTypesettingImage]];
-    //进行图片的加载
-    NSArray * urlArray = [model.contentImg componentsSeparatedByString:@","];
-    for (int i=0; i<imageArray.count; i++) {
-        UIImageView * img = imageArray[i];
-        [img sd_setImageWithURL:[NSURL URLWithString:urlArray[i]]];
-    }
-    //这里多加60 
+    
+    [_titleView reSetHtmlStr:[NSString stringWithFormat:@"%@:%@",model.typename,model.content]];
+    //计算大小
+    
+        //这里多加60
     _titleScrollView.contentSize = CGSizeMake(0, _titleView.frame.size.height+60);
     
     
@@ -147,8 +126,8 @@
     _titleScrollView.bounces = NO;
     _titleScrollView.showsHorizontalScrollIndicator = NO;
     _titleScrollView.showsVerticalScrollIndicator = NO;
-    
-    _titleView = [[YHBaseView alloc]init];
+    //这里的高度随便设 可以自适应
+    _titleView = [[YHBaseHtmlView alloc]initWithFrame:CGRectMake(0, 0, _titleScrollView.frame.size.width, 100)];
     [_titleScrollView addSubview:_titleView];
     [self addSubview:_titleScrollView];
     
@@ -225,7 +204,7 @@
     }
 }
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
-    if ([_tableViewDataArray[0] length]>0) {
+    if (_tableViewDataArray.count>0&&[_tableViewDataArray[0] length]>0) {
         //计算文字高度
            _tableViewHeaderLabel.text=[NSString stringWithFormat:@"%d.%@",_index,_tableViewDataArray[0]];
            CGSize size = [YHBaseGeometryTools getLabelSize:_tableViewHeaderLabel inConstrainedSize:CGSizeMake(tableView.frame.size.width-20, MAXFLOAT)];
@@ -266,7 +245,7 @@
     if ([_tableViewImageArray[indexPath.row] length]>0) {
         cell.theImageView.hidden=NO;
         cell.theImageView.image=nil;
-        [cell.theImageView sd_setImageWithURL:[NSURL URLWithString:_tableViewImageArray[indexPath.row]]];
+#warning 这里设置cell的图片 删了
     }else{
         cell.theImageView.image=nil;
         cell.theImageView.hidden=YES;

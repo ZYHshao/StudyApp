@@ -33,6 +33,7 @@ PODS:
     - DTFoundation/Core
   - Masonry (0.6.2)
   - MJRefresh (2.2.0)
+  - RegexKitLite (4.0)
   - SDWebImage (3.7.2):
     - SDWebImage/Core (= 3.7.2)
   - SDWebImage/Core (3.7.2)
@@ -42,6 +43,7 @@ DEPENDENCIES:
   - DTCoreText (~> 1.6.16)
   - Masonry (~> 0.6.2)
   - MJRefresh (~> 2.2.0)
+  - RegexKitLite (~> 4.0)
   - SDWebImage (~> 3.7.2)
 
 SPEC CHECKSUMS:
@@ -50,6 +52,7 @@ SPEC CHECKSUMS:
   DTFoundation: bf431de2292484461ff7d92295fdae7dc15a3820
   Masonry: 362e8a1cc0beada4a4c4832d5e863da2a51533be
   MJRefresh: 65a2bf14abb6feeaed8696aa1551f70e15ab0a08
+  RegexKitLite: c0e4c12e6e7de0769f3a3ed679f0f61604170661
   SDWebImage: 71b7cdc1d1721d6a82ed62889030225f2c249e29
 
-COCOAPODS: 0.35.0
+COCOAPODS: 0.38.2

@@ -46,14 +46,26 @@
         [fileManager createDirectoryAtPath:cechePath withIntermediateDirectories:YES attributes:nil error:nil];
     }
     //拼接文件路径
-    NSString * writePath = [cechePath stringByAppendingFormat:@"/%@",fileID];
+    NSMutableString * tempStr = [[NSMutableString alloc]init];
+    for (int i=0; i<fileID.length; i++) {
+        if (([fileID characterAtIndex:i]<='9'&&[fileID characterAtIndex:i]>='0')||([fileID characterAtIndex:i]<='z'&&[fileID characterAtIndex:i]>='a')||([fileID characterAtIndex:i]<='Z'&&[fileID characterAtIndex:i]>='A')) {
+            [tempStr appendFormat:@"%c",[fileID characterAtIndex:i]];
+        }
+    }
+    NSString * writePath = [cechePath stringByAppendingFormat:@"/%@",tempStr];
     [data writeToFile:writePath atomically:YES];
 //    NSLog(@"写缓存");
 }
 
 -(NSData *)readCecheFile:(NSString *)fileID fromPath:(YHBaseCechePath)path{
     NSString * cechePath = [self getCechePath:path];
-    NSString * readPath = [cechePath stringByAppendingFormat:@"/%@",fileID];
+    NSMutableString * tempStr = [[NSMutableString alloc]init];
+    for (int i=0; i<fileID.length; i++) {
+        if (([fileID characterAtIndex:i]<='9'&&[fileID characterAtIndex:i]>='0')||([fileID characterAtIndex:i]<='z'&&[fileID characterAtIndex:i]>='a')||([fileID characterAtIndex:i]<='Z'&&[fileID characterAtIndex:i]>='A')) {
+            [tempStr appendFormat:@"%c",[fileID characterAtIndex:i]];
+        }
+    }
+    NSString * readPath = [cechePath stringByAppendingFormat:@"/%@",tempStr];
     NSFileManager * fileManager = [NSFileManager defaultManager];
     //判断文件是否
     if (![fileManager fileExistsAtPath:readPath]) {

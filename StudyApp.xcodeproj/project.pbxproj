@@ -14,6 +14,9 @@
 		1835711A1B8A1152007AEF18 /* YHSAMockExamDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183571191B8A1152007AEF18 /* YHSAMockExamDetailsViewController.xib */; };
 		183571201B8A1204007AEF18 /* YHSAMockExamDetailsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1835711F1B8A1204007AEF18 /* YHSAMockExamDetailsModel.m */; };
 		189833C21B8C9C0F00ABC49E /* sjym_tab_jj_ico2.png in Resources */ = {isa = PBXBuildFile; fileRef = 189833C11B8C9C0F00ABC49E /* sjym_tab_jj_ico2.png */; };
+		1898773B1B8F44EA00E8CAA0 /* YHBaseHtmlView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1898773A1B8F44EA00E8CAA0 /* YHBaseHtmlView.m */; };
+		1898773E1B8F456000E8CAA0 /* RCLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1898773D1B8F456000E8CAA0 /* RCLabel.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		189877411B8F529800E8CAA0 /* YHBaseData.m in Sources */ = {isa = PBXBuildFile; fileRef = 189877401B8F529800E8CAA0 /* YHBaseData.m */; };
 		18F050FF1B8379C2008EF87D /* YHSAHttpManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F050FE1B8379C2008EF87D /* YHSAHttpManager.m */; };
 		23715322364E505FF9CADA86 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6888E6FF2F5B53851F13B1DE /* libPods.a */; };
 		CE0A89621B85AF9A00BA1F5F /* YHBaseTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE0A89611B85AF9A00BA1F5F /* YHBaseTableView.m */; };
@@ -182,6 +185,12 @@
 		1835711E1B8A1204007AEF18 /* YHSAMockExamDetailsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHSAMockExamDetailsModel.h; sourceTree = "<group>"; };
 		1835711F1B8A1204007AEF18 /* YHSAMockExamDetailsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YHSAMockExamDetailsModel.m; sourceTree = "<group>"; };
 		189833C11B8C9C0F00ABC49E /* sjym_tab_jj_ico2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sjym_tab_jj_ico2.png; sourceTree = "<group>"; };
+		189877391B8F44EA00E8CAA0 /* YHBaseHtmlView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHBaseHtmlView.h; sourceTree = "<group>"; };
+		1898773A1B8F44EA00E8CAA0 /* YHBaseHtmlView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YHBaseHtmlView.m; sourceTree = "<group>"; };
+		1898773C1B8F456000E8CAA0 /* RCLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCLabel.h; sourceTree = "<group>"; };
+		1898773D1B8F456000E8CAA0 /* RCLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCLabel.m; sourceTree = "<group>"; };
+		1898773F1B8F529800E8CAA0 /* YHBaseData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHBaseData.h; sourceTree = "<group>"; };
+		189877401B8F529800E8CAA0 /* YHBaseData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YHBaseData.m; sourceTree = "<group>"; };
 		18F050FD1B8379C2008EF87D /* YHSAHttpManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YHSAHttpManager.h; path = StudyApp/Managers/YHSAHttpManager.h; sourceTree = SOURCE_ROOT; };
 		18F050FE1B8379C2008EF87D /* YHSAHttpManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YHSAHttpManager.m; path = StudyApp/Managers/YHSAHttpManager.m; sourceTree = SOURCE_ROOT; };
 		6888E6FF2F5B53851F13B1DE /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -641,6 +650,8 @@
 				CE4BC2B51B8B07EC005BDD20 /* YHBaseTypesettingEngine.m */,
 				CE3B27E61B8C52EE005EAE6F /* YHBaseCoreGraphicsTools.h */,
 				CE3B27E71B8C52EE005EAE6F /* YHBaseCoreGraphicsTools.m */,
+				1898773F1B8F529800E8CAA0 /* YHBaseData.h */,
+				189877401B8F529800E8CAA0 /* YHBaseData.m */,
 			);
 			path = BaseTools;
 			sourceTree = "<group>";
@@ -666,6 +677,10 @@
 				CE4BC2A01B8AB316005BDD20 /* YHBaseScrollView.m */,
 				CE905ADB1B8D5CA700E72515 /* YHBaseTextView.h */,
 				CE905ADC1B8D5CA700E72515 /* YHBaseTextView.m */,
+				1898773C1B8F456000E8CAA0 /* RCLabel.h */,
+				1898773D1B8F456000E8CAA0 /* RCLabel.m */,
+				189877391B8F44EA00E8CAA0 /* YHBaseHtmlView.h */,
+				1898773A1B8F44EA00E8CAA0 /* YHBaseHtmlView.m */,
 			);
 			path = BaseViews;
 			sourceTree = "<group>";
@@ -1173,9 +1188,11 @@
 				CE905AEB1B8DAB1800E72515 /* YHSAExamInfoViewController.m in Sources */,
 				CE4BC2B01B8AE4CC005BDD20 /* YHSAAnswerQuestionModel.m in Sources */,
 				18F050FF1B8379C2008EF87D /* YHSAHttpManager.m in Sources */,
+				1898773B1B8F44EA00E8CAA0 /* YHBaseHtmlView.m in Sources */,
 				CE905B0A1B8DBB6600E72515 /* YHSAExamListTableViewCell.m in Sources */,
 				CE3B27E41B8C0D28005EAE6F /* YHSAAnswerQuestionTableViewCell.m in Sources */,
 				1834917F1B84CC4400A0F322 /* YHBaseManager.m in Sources */,
+				1898773E1B8F456000E8CAA0 /* RCLabel.m in Sources */,
 				CE905B0F1B8DC66C00E72515 /* YHSAExamInfoDetailViewController.m in Sources */,
 				CE328FA01B86C825001018AE /* YHSAMockExamController.m in Sources */,
 				CE924A1D1B84868300F7B647 /* YHBaseStringTools.m in Sources */,
@@ -1183,6 +1200,7 @@
 				CE4BC2A71B8AB458005BDD20 /* YHBaseView.m in Sources */,
 				CE4BC2AA1B8AC046005BDD20 /* YHSACoreAnswerQuestionView.m in Sources */,
 				CE4BC2A11B8AB316005BDD20 /* YHBaseScrollView.m in Sources */,
+				189877411B8F529800E8CAA0 /* YHBaseData.m in Sources */,
 				CE3B27F21B8C6303005EAE6F /* YHBaseSelfServiceDrawControlView.m in Sources */,
 				CEEAFD581B8167D900795B27 /* main.m in Sources */,
 				CE0A89621B85AF9A00BA1F5F /* YHBaseTableView.m in Sources */,

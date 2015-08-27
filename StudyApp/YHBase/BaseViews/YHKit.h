@@ -19,4 +19,5 @@
 #import "YHBaseSelfServiceDrawView.h"
 #import "YHBaseSelfServiceDrawControlView.h"
 #import "YHBaseTextView.h"
+#import "YHBaseHtmlView.h"
 #endif
