@@ -23,27 +23,19 @@
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="bQV-8V-y4r">
-                        <rect key="frame" x="50" y="10" width="262" height="30"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <view contentMode="scaleToFill" id="KWX-cs-EVD" customClass="YHBaseHtmlView">
+                        <rect key="frame" x="50" y="10" width="260" height="53"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <animations/>
-                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="29B-1p-f6k">
-                        <rect key="frame" x="50" y="48" width="220" height="39"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <animations/>
-                    </imageView>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
                 </subviews>
                 <animations/>
             </tableViewCellContentView>
             <animations/>
             <connections>
-                <outlet property="contentLabel" destination="bQV-8V-y4r" id="NB8-26-ymB"/>
                 <outlet property="indexLabel" destination="PL9-Hs-eOb" id="eJf-sI-zFQ"/>
-                <outlet property="theImageView" destination="29B-1p-f6k" id="DSl-Bo-EQ9"/>
+                <outlet property="theContentView" destination="KWX-cs-EVD" id="eVE-LT-yWc"/>
             </connections>
             <point key="canvasLocation" x="532" y="390"/>
         </tableViewCell>

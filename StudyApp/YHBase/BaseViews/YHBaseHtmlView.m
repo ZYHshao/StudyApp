@@ -9,7 +9,7 @@
 #import "YHBaseHtmlView.h"
 #import "RCLabel.h"
 
-@interface YHBaseHtmlView()<RTLabelSizeDelegate,YHRTLabelImageDelegate>
+@interface YHBaseHtmlView()<YHRTLabelImageDelegate>
 {
     RCLabel * _rcLabel;
     //保存属性 用于异步加载完成后刷新
@@ -28,11 +28,22 @@
     // Drawing code
 }
 */
+- (instancetype)initWithCoder:(NSCoder *)coder
+{
+    self = [super initWithCoder:coder];
+    if (self) {
+        _rcLabel = [[RCLabel alloc]init];
+        [self addSubview:_rcLabel];
+
+    }
+    return self;
+}
+
 - (instancetype)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
     if (self) {
-        _rcLabel = [[RCLabel alloc]initWithFrame:self.frame];
+        _rcLabel = [[RCLabel alloc]initWithFrame:frame];
         [self addSubview:_rcLabel];
     }
     return self;
@@ -40,22 +51,24 @@
 -(void)reSetHtmlStr:(NSString *)htmlStr{
     _srt = htmlStr;
     _rcLabel.imageDelegate=self;
-    _rcLabel.sizeDelegate=self;
+    _rcLabel.frame=CGRectMake(0, 0, self.frame.size.width, 0);
     _origenComponent = [RCLabel extractTextStyle:htmlStr IsLocation:NO withRCLabel:_rcLabel];
     _rcLabel.componentsAndPlainText = _origenComponent;
    
     CGSize size = [_rcLabel optimumSize];
     _rcLabel.frame=CGRectMake(0, 0, _rcLabel.frame.size.width, size.height);
-    self.frame=_rcLabel.frame;
+    self.frame=CGRectMake(self.frame.origin.x, self.frame.origin.y, _rcLabel.frame.size.width, size.height);
 }
 -(void)YHRTLabelImageSuccess:(RCLabel *)label{
-    NSLog(@"图片下载完成");
     _origenComponent = [RCLabel extractTextStyle:_srt IsLocation:NO withRCLabel:_rcLabel];
     _rcLabel.componentsAndPlainText = _origenComponent;
-
+    
+    CGSize size = [_rcLabel optimumSize];
+    _rcLabel.frame=CGRectMake(0, 0, _rcLabel.frame.size.width, size.height);
+    self.frame=_rcLabel.frame;
+    if ([self.delegate respondsToSelector:@selector(YHBaseHtmlView:SizeChanged:)]) {
+        [self.delegate YHBaseHtmlView:self SizeChanged:self.frame.size];
+    }
 }
 
--(void)rtLabel:(id)rtLabel didChangedSize:(CGSize)size{
-    NSLog(@"21");
-}
 @end

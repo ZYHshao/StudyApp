@@ -10,7 +10,7 @@
 
 @interface YHSAAnswerQuestionTableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *indexLabel;
-@property (weak, nonatomic) IBOutlet UILabel *contentLabel;
-@property (weak, nonatomic) IBOutlet UIImageView *theImageView;
+
+@property (weak, nonatomic) IBOutlet YHBaseHtmlView *theContentView;
 
 @end

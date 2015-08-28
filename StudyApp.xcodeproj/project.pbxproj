@@ -71,6 +71,7 @@
 		CE924A251B8486C800F7B647 /* YHSAActivityIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE924A241B8486C800F7B647 /* YHSAActivityIndicatorView.m */; };
 		CE924A2B1B84885000F7B647 /* YHSARegistViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE924A2A1B84885000F7B647 /* YHSARegistViewController.xib */; };
 		CE924A2F1B84888F00F7B647 /* YHSAErrorCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = CE924A2D1B84888F00F7B647 /* YHSAErrorCenter.m */; };
+		CEC8EB8D1B90634700C5D148 /* YHBaseAVPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = CEC8EB8C1B90634700C5D148 /* YHBaseAVPlayer.m */; };
 		CEDA4E301B85629400D64C44 /* YHSAReFoundViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEDA4E2E1B85629400D64C44 /* YHSAReFoundViewController.m */; };
 		CEDA4E311B85629400D64C44 /* YHSAReFoundViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEDA4E2F1B85629400D64C44 /* YHSAReFoundViewController.xib */; };
 		CEEAFD581B8167D900795B27 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CEEAFD571B8167D900795B27 /* main.m */; };
@@ -303,6 +304,8 @@
 		CE924A2C1B84888F00F7B647 /* YHSAErrorCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YHSAErrorCenter.h; path = StudyApp/Managers/YHSAErrorCenter.h; sourceTree = SOURCE_ROOT; };
 		CE924A2D1B84888F00F7B647 /* YHSAErrorCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YHSAErrorCenter.m; path = StudyApp/Managers/YHSAErrorCenter.m; sourceTree = SOURCE_ROOT; };
 		CE924A2E1B84888F00F7B647 /* YHSAHttpRequestDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YHSAHttpRequestDefine.h; path = StudyApp/Managers/YHSAHttpRequestDefine.h; sourceTree = SOURCE_ROOT; };
+		CEC8EB8B1B90634700C5D148 /* YHBaseAVPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHBaseAVPlayer.h; sourceTree = "<group>"; };
+		CEC8EB8C1B90634700C5D148 /* YHBaseAVPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YHBaseAVPlayer.m; sourceTree = "<group>"; };
 		CEDA4E2D1B85629400D64C44 /* YHSAReFoundViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YHSAReFoundViewController.h; path = Xibs/YHSAReFoundViewController.h; sourceTree = "<group>"; };
 		CEDA4E2E1B85629400D64C44 /* YHSAReFoundViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YHSAReFoundViewController.m; path = Xibs/YHSAReFoundViewController.m; sourceTree = "<group>"; };
 		CEDA4E2F1B85629400D64C44 /* YHSAReFoundViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YHSAReFoundViewController.xib; sourceTree = "<group>"; };
@@ -550,6 +553,7 @@
 		CE9249E61B84861C00F7B647 /* YHBase */ = {
 			isa = PBXGroup;
 			children = (
+				CEC8EB8A1B90631700C5D148 /* BaseAVFoundation */,
 				CE9249E71B84868300F7B647 /* BaseController */,
 				CE9249EC1B84868300F7B647 /* BaseHeader */,
 				CE9249EE1B84868300F7B647 /* BaseManagers */,
@@ -698,6 +702,15 @@
 			);
 			name = Views;
 			path = Controllers/Views;
+			sourceTree = "<group>";
+		};
+		CEC8EB8A1B90631700C5D148 /* BaseAVFoundation */ = {
+			isa = PBXGroup;
+			children = (
+				CEC8EB8B1B90634700C5D148 /* YHBaseAVPlayer.h */,
+				CEC8EB8C1B90634700C5D148 /* YHBaseAVPlayer.m */,
+			);
+			path = BaseAVFoundation;
 			sourceTree = "<group>";
 		};
 		CEEAFD491B8167D900795B27 = {
@@ -1164,6 +1177,7 @@
 				CE2B70EC1B82B9A300040C3C /* YHSAMainToolsViewController.m in Sources */,
 				CE905B131B8DC95C00E72515 /* YHSAExamInfoDetailModel.m in Sources */,
 				CE924A1C1B84868300F7B647 /* YHBaseJOSNAnalytical.m in Sources */,
+				CEC8EB8D1B90634700C5D148 /* YHBaseAVPlayer.m in Sources */,
 				CE924A2F1B84888F00F7B647 /* YHSAErrorCenter.m in Sources */,
 				CE924A211B84868300F7B647 /* YHBaseLabel.m in Sources */,
 				CE4BC2AD1B8AC121005BDD20 /* YHSAMockExamAnswerQuestionViewController.m in Sources */,

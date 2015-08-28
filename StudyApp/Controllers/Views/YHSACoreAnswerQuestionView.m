@@ -10,7 +10,7 @@
 #import "YHSAAnswerQuestionModel.h"
 #import "YHTopicColorManager.h"
 #import "YHSAAnswerQuestionTableViewCell.h"
-@interface YHSACoreAnswerQuestionView()<UITableViewDataSource,UITableViewDelegate>
+@interface YHSACoreAnswerQuestionView()<UITableViewDataSource,UITableViewDelegate,YHBaseHtmlViewProcotop>
 {
     //题目视图
     YHBaseScrollView * _titleScrollView;
@@ -23,7 +23,7 @@
     //选项图片数组
     NSMutableArray * _tableViewImageArray;
     //tableView的头视图
-    UILabel * _tableViewHeaderLabel;
+    YHBaseHtmlView * _tableViewHeaderLabel;
     UIView * _tableViewHeadView;
     //手势视图
     UIView * _gestureView;
@@ -48,6 +48,7 @@
 
 -(void)clearData{
     _answerTableView.frame=CGRectMake(0,(self.frame.size.height-64)/4*3-60, self.frame.size.width, (self.frame.size.height-64)/4+60);
+    _titleScrollView.contentOffset=CGPointMake(0, 0);
     [_tableViewImageArray removeAllObjects];
     [_tableViewDataArray removeAllObjects];
     [_answerTableView reloadData];
@@ -74,8 +75,13 @@
     [_tableViewImageArray removeAllObjects];
     [_tableViewDataArray removeAllObjects];
     //先加题目
-    [_tableViewDataArray addObject:model.secondcontent];
-    //添加选项
+    if (model.secondcontent==nil) {
+        [_tableViewDataArray addObject:@""];
+    }else{
+        [_tableViewDataArray addObject:model.secondcontent];
+
+    }
+       //添加选项
     if (model.option1.length>0) {
         [_tableViewDataArray addObject:model.option1];
     }
@@ -91,32 +97,32 @@
     if (model.option5.length>0) {
         [_tableViewDataArray addObject:model.option5];
     }
-    //添加图片
-    if (model.optionImg1.length>0) {
-        [_tableViewImageArray addObject:model.optionImg1];
-    }else{
-         [_tableViewImageArray addObject:@""];
-    }
-    if (model.optionImg2.length>0) {
-        [_tableViewImageArray addObject:model.optionImg2];
-    }else{
-        [_tableViewImageArray addObject:@""];
-    }
-    if (model.optionImg3.length>0) {
-        [_tableViewImageArray addObject:model.optionImg3];
-    }else{
-        [_tableViewImageArray addObject:@""];
-    }
-    if (model.optionImg4.length>0) {
-        [_tableViewImageArray addObject:model.optionImg4];
-    }else{
-        [_tableViewImageArray addObject:@""];
-    }
-    if (model.optionImg5.length>0) {
-        [_tableViewImageArray addObject:model.optionImg5];
-    }else{
-        [_tableViewImageArray addObject:@""];
-    }
+//    //添加图片
+//    if (model.optionImg1.length>0) {
+//        [_tableViewImageArray addObject:model.optionImg1];
+//    }else{
+//         [_tableViewImageArray addObject:@""];
+//    }
+//    if (model.optionImg2.length>0) {
+//        [_tableViewImageArray addObject:model.optionImg2];
+//    }else{
+//        [_tableViewImageArray addObject:@""];
+//    }
+//    if (model.optionImg3.length>0) {
+//        [_tableViewImageArray addObject:model.optionImg3];
+//    }else{
+//        [_tableViewImageArray addObject:@""];
+//    }
+//    if (model.optionImg4.length>0) {
+//        [_tableViewImageArray addObject:model.optionImg4];
+//    }else{
+//        [_tableViewImageArray addObject:@""];
+//    }
+//    if (model.optionImg5.length>0) {
+//        [_tableViewImageArray addObject:model.optionImg5];
+//    }else{
+//        [_tableViewImageArray addObject:@""];
+//    }
     [_answerTableView reloadData];
     
    
@@ -128,6 +134,7 @@
     _titleScrollView.showsVerticalScrollIndicator = NO;
     //这里的高度随便设 可以自适应
     _titleView = [[YHBaseHtmlView alloc]initWithFrame:CGRectMake(0, 0, _titleScrollView.frame.size.width, 100)];
+    _titleView.delegate=self;
     [_titleScrollView addSubview:_titleView];
     [self addSubview:_titleScrollView];
     
@@ -141,9 +148,8 @@
     [self addSubview:_answerTableView];
     
     if (_tableViewHeaderLabel==nil) {
-        _tableViewHeaderLabel = [[UILabel alloc]init];
-        _tableViewHeaderLabel.numberOfLines=0;
-      
+        _tableViewHeaderLabel = [[YHBaseHtmlView alloc]initWithFrame:CGRectMake(0, 20,_answerTableView.frame.size.width,0)];
+        _tableViewHeaderLabel.delegate=self;
     }
     _tableViewHeadView = [[UIView alloc]init];
     [_tableViewHeadView addSubview:_tableViewHeaderLabel];
@@ -180,7 +186,6 @@
     _answerTableView.backgroundColor = manager.bgColor;
     _tableViewHeaderLabel.backgroundColor = manager.bgColor;
     _tableViewHeadView.backgroundColor =manager.bgColor;
-    _tableViewHeaderLabel.textColor=manager.textColor;
 }
 
 
@@ -196,9 +201,8 @@
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
     if (_tableViewDataArray.count>1&&[_tableViewDataArray[0] length]>0) {
         //计算文字高度
-        _tableViewHeaderLabel.text=[NSString stringWithFormat:@"%d.%@",_index,_tableViewDataArray[0]];
-       CGSize size = [YHBaseGeometryTools getLabelSize:_tableViewHeaderLabel inConstrainedSize:CGSizeMake(tableView.frame.size.width-20, MAXFLOAT)];
-        return size.height+20;
+        [_tableViewHeaderLabel reSetHtmlStr:[NSString stringWithFormat:@"%d.%@",_index,_tableViewDataArray[0]]];
+        return _tableViewHeaderLabel.frame.size.height+20;
     }else{
         return 20;
     }
@@ -206,9 +210,7 @@
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
     if (_tableViewDataArray.count>0&&[_tableViewDataArray[0] length]>0) {
         //计算文字高度
-           _tableViewHeaderLabel.text=[NSString stringWithFormat:@"%d.%@",_index,_tableViewDataArray[0]];
-           CGSize size = [YHBaseGeometryTools getLabelSize:_tableViewHeaderLabel inConstrainedSize:CGSizeMake(tableView.frame.size.width-20, MAXFLOAT)];
-           _tableViewHeaderLabel.frame=CGRectMake(10, 20, tableView.frame.size.width-20, size.height);
+           [_tableViewHeaderLabel reSetHtmlStr:[NSString stringWithFormat:@"%d.%@",_index,_tableViewDataArray[0]]];
             _tableViewHeadView.frame=CGRectMake(0, 0, tableView.frame.size.width, _tableViewHeaderLabel.frame.size.height+20);
         return _tableViewHeadView;
     }else{
@@ -218,17 +220,11 @@
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     //计算cell大小
-    CGFloat imageHight;
-    UILabel * label = [[UILabel alloc]init];
-    label.font=[UIFont systemFontOfSize:14];
-    label.text = _tableViewDataArray[indexPath.row];
-    CGSize size = [YHBaseGeometryTools getLabelSize:label inConstrainedSize:CGSizeMake(262, MAXFLOAT)];
-    if ([_tableViewImageArray[indexPath.row] length]>0) {
-        imageHight = 40+10;
-    }else{
-        imageHight = 0;
-    }
-    CGFloat cellH = imageHight+size.height+10+10;
+    
+    YHBaseHtmlView * temView = [[YHBaseHtmlView alloc]initWithFrame:CGRectMake(0, 0, tableView.frame.size.width-60, 100)];
+    [temView reSetHtmlStr:_tableViewDataArray[indexPath.row+1]];
+    
+    CGFloat cellH = temView.frame.size.height+20;
     if (cellH<44) {
         return 44;
     }else{
@@ -241,27 +237,25 @@
         cell = [[[NSBundle mainBundle]loadNibNamed:@"YHSAAnswerQuestionTableViewCell" owner:self  options:nil] lastObject];
         cell.indexLabel.layer.masksToBounds = YES;
         cell.indexLabel.layer.cornerRadius = 10;
-    }
-    if ([_tableViewImageArray[indexPath.row] length]>0) {
-        cell.theImageView.hidden=NO;
-        cell.theImageView.image=nil;
-#warning 这里设置cell的图片 删了
-    }else{
-        cell.theImageView.image=nil;
-        cell.theImageView.hidden=YES;
+        cell.theContentView.delegate=self;
     }
     cell.indexLabel.text = [NSString stringWithFormat:@"%c",(int)indexPath.row+'A'];
-    cell.contentLabel.text = _tableViewDataArray[indexPath.row+1];
+    [cell.theContentView reSetHtmlStr:_tableViewDataArray[indexPath.row+1]];
     //位置设置
-    CGSize size = [YHBaseGeometryTools getLabelSize:cell.contentLabel inConstrainedSize:CGSizeMake(cell.contentLabel.frame.size.width, MAXFLOAT)];
-    cell.contentLabel.frame=CGRectMake(cell.contentLabel.frame.origin.x, cell.contentLabel.frame.origin.y, cell.contentLabel.frame.size.width, size.height);
-    cell.theImageView.frame=CGRectMake(cell.theImageView.frame.origin.x, 20+size.height, cell.theImageView.frame.size.width, cell.theImageView.frame.size.height);
     return cell;
 }
 
 
 
-
+#pragma mark - htmlView delegate
+-(void)YHBaseHtmlView:(YHBaseHtmlView *)htmlView SizeChanged:(CGSize)size{
+    if (htmlView==_titleView) {
+        _titleScrollView.contentSize = CGSizeMake(0, _titleView.frame.size.height+60);
+    }else{//有关tableView的
+        [_answerTableView reloadData];
+    }
+    
+}
 
 
 

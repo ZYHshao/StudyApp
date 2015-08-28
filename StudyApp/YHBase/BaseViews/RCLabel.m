@@ -1518,7 +1518,11 @@ CGFloat MyGetWidthCallback( void* refCon ){
                                     UIImage * tempImg = [UIImage imageWithData:data];
                                     component.img=tempImg;
                                     if ([[rcLabel imageDelegate]respondsToSelector:@selector(YHRTLabelImageSuccess:)]) {
-                                        [[rcLabel imageDelegate] YHRTLabelImageSuccess:rcLabel];
+                                        //在主线程中执行回调
+                                        dispatch_async(dispatch_get_main_queue(), ^{
+                                             [[rcLabel imageDelegate] YHRTLabelImageSuccess:rcLabel];
+                                        });
+                            
                                     }
                                    
                                 }
