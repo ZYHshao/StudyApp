@@ -13,10 +13,15 @@
 		183571171B89F999007AEF18 /* YHSAMockExamDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 183571151B89F999007AEF18 /* YHSAMockExamDetailsViewController.m */; };
 		1835711A1B8A1152007AEF18 /* YHSAMockExamDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183571191B8A1152007AEF18 /* YHSAMockExamDetailsViewController.xib */; };
 		183571201B8A1204007AEF18 /* YHSAMockExamDetailsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1835711F1B8A1204007AEF18 /* YHSAMockExamDetailsModel.m */; };
+		1867693A1B92A98F001BD7F2 /* loadingbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = 186769361B92A98F001BD7F2 /* loadingbutton.png */; };
+		1867693B1B92A98F001BD7F2 /* pausebutton.png in Resources */ = {isa = PBXBuildFile; fileRef = 186769371B92A98F001BD7F2 /* pausebutton.png */; };
+		1867693C1B92A98F001BD7F2 /* playbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = 186769381B92A98F001BD7F2 /* playbutton.png */; };
+		1867693D1B92A98F001BD7F2 /* stopbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = 186769391B92A98F001BD7F2 /* stopbutton.png */; };
 		189833C21B8C9C0F00ABC49E /* sjym_tab_jj_ico2.png in Resources */ = {isa = PBXBuildFile; fileRef = 189833C11B8C9C0F00ABC49E /* sjym_tab_jj_ico2.png */; };
 		1898773B1B8F44EA00E8CAA0 /* YHBaseHtmlView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1898773A1B8F44EA00E8CAA0 /* YHBaseHtmlView.m */; };
 		1898773E1B8F456000E8CAA0 /* RCLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1898773D1B8F456000E8CAA0 /* RCLabel.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		189877411B8F529800E8CAA0 /* YHBaseData.m in Sources */ = {isa = PBXBuildFile; fileRef = 189877401B8F529800E8CAA0 /* YHBaseData.m */; };
+		18A232D31B9205AF00733E88 /* AudioStreamer.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A232D21B9205AF00733E88 /* AudioStreamer.m */; };
 		18F050FF1B8379C2008EF87D /* YHSAHttpManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F050FE1B8379C2008EF87D /* YHSAHttpManager.m */; };
 		23715322364E505FF9CADA86 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6888E6FF2F5B53851F13B1DE /* libPods.a */; };
 		CE0A89621B85AF9A00BA1F5F /* YHBaseTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE0A89611B85AF9A00BA1F5F /* YHBaseTableView.m */; };
@@ -185,6 +190,10 @@
 		183571191B8A1152007AEF18 /* YHSAMockExamDetailsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YHSAMockExamDetailsViewController.xib; sourceTree = "<group>"; };
 		1835711E1B8A1204007AEF18 /* YHSAMockExamDetailsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHSAMockExamDetailsModel.h; sourceTree = "<group>"; };
 		1835711F1B8A1204007AEF18 /* YHSAMockExamDetailsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YHSAMockExamDetailsModel.m; sourceTree = "<group>"; };
+		186769361B92A98F001BD7F2 /* loadingbutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loadingbutton.png; sourceTree = "<group>"; };
+		186769371B92A98F001BD7F2 /* pausebutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pausebutton.png; sourceTree = "<group>"; };
+		186769381B92A98F001BD7F2 /* playbutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = playbutton.png; sourceTree = "<group>"; };
+		186769391B92A98F001BD7F2 /* stopbutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stopbutton.png; sourceTree = "<group>"; };
 		189833C11B8C9C0F00ABC49E /* sjym_tab_jj_ico2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sjym_tab_jj_ico2.png; sourceTree = "<group>"; };
 		189877391B8F44EA00E8CAA0 /* YHBaseHtmlView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHBaseHtmlView.h; sourceTree = "<group>"; };
 		1898773A1B8F44EA00E8CAA0 /* YHBaseHtmlView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YHBaseHtmlView.m; sourceTree = "<group>"; };
@@ -192,6 +201,8 @@
 		1898773D1B8F456000E8CAA0 /* RCLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCLabel.m; sourceTree = "<group>"; };
 		1898773F1B8F529800E8CAA0 /* YHBaseData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHBaseData.h; sourceTree = "<group>"; };
 		189877401B8F529800E8CAA0 /* YHBaseData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YHBaseData.m; sourceTree = "<group>"; };
+		18A232D11B9205AF00733E88 /* AudioStreamer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioStreamer.h; sourceTree = "<group>"; };
+		18A232D21B9205AF00733E88 /* AudioStreamer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioStreamer.m; sourceTree = "<group>"; };
 		18F050FD1B8379C2008EF87D /* YHSAHttpManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YHSAHttpManager.h; path = StudyApp/Managers/YHSAHttpManager.h; sourceTree = SOURCE_ROOT; };
 		18F050FE1B8379C2008EF87D /* YHSAHttpManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YHSAHttpManager.m; path = StudyApp/Managers/YHSAHttpManager.m; sourceTree = SOURCE_ROOT; };
 		6888E6FF2F5B53851F13B1DE /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -707,6 +718,8 @@
 		CEC8EB8A1B90631700C5D148 /* BaseAVFoundation */ = {
 			isa = PBXGroup;
 			children = (
+				18A232D11B9205AF00733E88 /* AudioStreamer.h */,
+				18A232D21B9205AF00733E88 /* AudioStreamer.m */,
 				CEC8EB8B1B90634700C5D148 /* YHBaseAVPlayer.h */,
 				CEC8EB8C1B90634700C5D148 /* YHBaseAVPlayer.m */,
 			);
@@ -831,6 +844,10 @@
 		CEEAFD921B81A8BF00795B27 /* drawable-hdpi */ = {
 			isa = PBXGroup;
 			children = (
+				186769361B92A98F001BD7F2 /* loadingbutton.png */,
+				186769371B92A98F001BD7F2 /* pausebutton.png */,
+				186769381B92A98F001BD7F2 /* playbutton.png */,
+				186769391B92A98F001BD7F2 /* stopbutton.png */,
 				189833C11B8C9C0F00ABC49E /* sjym_tab_jj_ico2.png */,
 				CEEAFD931B81A8BF00795B27 /* aboutme_logo.png */,
 				CEEAFD941B81A8BF00795B27 /* appico.png */,
@@ -1071,7 +1088,9 @@
 				CEEAFE1B1B81A8BF00795B27 /* pupwindowsbg.9.png in Resources */,
 				CEEAFDF21B81A8BF00795B27 /* dtk_ywc_error.png in Resources */,
 				CEEAFE2D1B81A8BF00795B27 /* xinghao.png in Resources */,
+				1867693D1B92A98F001BD7F2 /* stopbutton.png in Resources */,
 				CEEAFE271B81A8BF00795B27 /* sjym_tab_next_ico1.png in Resources */,
+				1867693C1B92A98F001BD7F2 /* playbutton.png in Resources */,
 				CEEAFE011B81A8BF00795B27 /* liebiaoxuanzejiantou.png in Resources */,
 				CEEAFE2A1B81A8BF00795B27 /* sjym_tab_syt_ico.jpg in Resources */,
 				CEEAFE041B81A8BF00795B27 /* loading_2.png in Resources */,
@@ -1100,6 +1119,7 @@
 				CEEAFDEF1B81A8BF00795B27 /* dtk_wwc_wd.png in Resources */,
 				189833C21B8C9C0F00ABC49E /* sjym_tab_jj_ico2.png in Resources */,
 				CEEAFDEA1B81A8BF00795B27 /* contenttitlebar_jiantouxia.png in Resources */,
+				1867693B1B92A98F001BD7F2 /* pausebutton.png in Resources */,
 				CEEAFE051B81A8BF00795B27 /* loading_3.png in Resources */,
 				CEEAFDE71B81A8BF00795B27 /* cj_mxz_xingxing.jpg in Resources */,
 				CE924A2B1B84885000F7B647 /* YHSARegistViewController.xib in Resources */,
@@ -1113,6 +1133,7 @@
 				CEEAFE001B81A8BF00795B27 /* jindutiaoico.png in Resources */,
 				CEEAFE141B81A8BF00795B27 /* main_titlebg.png in Resources */,
 				CEEAFE081B81A8BF00795B27 /* loading_6.png in Resources */,
+				1867693A1B92A98F001BD7F2 /* loadingbutton.png in Resources */,
 				CEEAFE1D1B81A8BF00795B27 /* q4_item_hbdd_select1.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1197,6 +1218,7 @@
 				183571171B89F999007AEF18 /* YHSAMockExamDetailsViewController.m in Sources */,
 				CE9249E21B8473D500F7B647 /* YHSARequestGetDataModel.m in Sources */,
 				CE2B70F21B82BD7600040C3C /* YHSANavigationViewController.m in Sources */,
+				18A232D31B9205AF00733E88 /* AudioStreamer.m in Sources */,
 				CE905AE11B8D617100E72515 /* YHSAOptionsViewController.m in Sources */,
 				CE328FA91B86D285001018AE /* YHSASystemSettingViewController.m in Sources */,
 				CE905AEB1B8DAB1800E72515 /* YHSAExamInfoViewController.m in Sources */,

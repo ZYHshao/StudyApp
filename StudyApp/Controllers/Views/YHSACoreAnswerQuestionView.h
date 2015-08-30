@@ -8,6 +8,7 @@
 
 #import "YHBaseView.h"
 
+
 @interface YHSACoreAnswerQuestionView : YHBaseView
 //主题部分
 -(void)setTopic;

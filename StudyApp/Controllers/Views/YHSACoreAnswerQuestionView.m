@@ -49,6 +49,7 @@
 -(void)clearData{
     _answerTableView.frame=CGRectMake(0,(self.frame.size.height-64)/4*3-60, self.frame.size.width, (self.frame.size.height-64)/4+60);
     _titleScrollView.contentOffset=CGPointMake(0, 0);
+    [_tableViewHeaderLabel reSetHtmlStr:@""];
     [_tableViewImageArray removeAllObjects];
     [_tableViewDataArray removeAllObjects];
     [_answerTableView reloadData];

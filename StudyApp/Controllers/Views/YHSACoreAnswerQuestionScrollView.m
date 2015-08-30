@@ -86,6 +86,9 @@
 
 //进行数据的展示
 -(void)showData{
+    if ([self.dataDelegate respondsToSelector:@selector(YHSACoreAnswerQuestionScrollViewEndScroll)]) {
+        [self.dataDelegate YHSACoreAnswerQuestionScrollViewEndScroll];
+    }
     if (_currentPage==0&&_dataArray.count==1) {
         [_leftView setIndex:1];
         [_leftView creatViewWithData:_dataArray[0]];
@@ -137,6 +140,7 @@
         [self reloadViewData];
     }
     scrollView.userInteractionEnabled = YES;
+   
 }
 
 //为了防止连续滑动产生的bug，这里做一个处理
@@ -160,6 +164,7 @@
         [self requestData:_currentPage+1 ];
     }else{
         [self showData];
+        
     }
 }
 

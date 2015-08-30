@@ -17,7 +17,7 @@
 #import "YHBaseTypesettingEngine.h"
 #import "YHBaseCoreGraphicsTools.h"
 #import "YHBaseData.h"
-
+#import "YHBaseAVPlayer.h"
 //=============================快捷定义宏=========================//
 #define __PROPERTY_NO_COPY__(type,object) @property(nonatomic,copy)type object
 #define __PROPERTY_AT_COPY__(type,object) @property(atomic,copy)type object
@@ -50,4 +50,6 @@
 //=============================注册的通知========================//
 //错误中心监听的通知
 #define YHBASE_ERROR_CENTER_NOTICATION @"YHBaseErrorCenterNotication"
+//播放引擎播放状态的通知
+#define YHBASE_AVFOUNDATION_PLAYER_STATE @"YHBaseAVFoundationPlayState"
 #endif
