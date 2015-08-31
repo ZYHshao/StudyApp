@@ -13,7 +13,8 @@
 //===================================系统通知=================================//
 //主题改变时发送的通知
 #define YHTopicChangeTopicNotication @"YHTopicChangeTopicNotication"
-
+//答题逻辑的通知
+#define YHSAAnswerQuestionManagerNotication @"YHSAAnswerQuestionManagerNotication"
 
 
 //

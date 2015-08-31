@@ -33,6 +33,8 @@
     int _questionType;
     //文字题的输入框
     YHBaseTextView * _answerTextView;
+    
+
 }
 @end
 
@@ -255,6 +257,7 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     if (_questionType==3||_questionType==4) {
         UITableViewCell * cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
         [cell.contentView addSubview:_answerTextView];
         return cell;
         
@@ -286,7 +289,18 @@
 
 #pragma mark - 这里做答题的处理
 
-
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    //判断题目的类型
+    if (_questionType==1) {//单选题
+         YHSAAnswerQuestionTableViewCell * cell = (YHSAAnswerQuestionTableViewCell *)[tableView cellForRowAtIndexPath:indexPath];
+        cell.indexLabel.backgroundColor = [UIColor greenColor];
+        
+    }else if (_questionType==2){//多选题
+        
+    }else if (_questionType==3||_questionType==4){//文字题
+        
+    }
+}
 
 
 

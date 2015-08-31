@@ -27,8 +27,6 @@
     YHBaseListView * _listView;
     NSArray * _toolsTitleArray;
     NSArray * _toolsImageArray;
-    //答题管理对象
-    YHSAAnswerQuestionManager * _answerManager;
 }
 @end
 
@@ -62,15 +60,16 @@
                          MOCK_EXAM_MORE_TOOLS_ANSWER_PAGER_IMAGE,
                          MOCK_EXAM_MORE_TOOLS_DRAFT_IMAGE,
                          MOCK_EXAM_MORE_TOOLS_SETTING];
-    _answerManager = [[YHSAAnswerQuestionManager alloc]init];
+    YHSAAnswerQuestionManager * manager = [YHSAAnswerQuestionManager sharedTheSingletion];
     //进行初始化 所有题都是未答题状态
-    NSMutableArray * _answerStateArray = [[NSMutableArray alloc]init];
+    [manager clearData];
     for (int i=0; i<(int)_dataModel.questioncount; i++) {
         YHSAAnswerStateModel * model = [[YHSAAnswerStateModel alloc]init];
         model.hadAnswer=NO;
-        [_answerStateArray addObject:model];
+        [manager.dataArray addObject:model];
     }
-    _answerManager.dataArray=_answerStateArray;
+    manager.testTime=3600;
+    [manager startTimer];
 }
 -(void)YHCreatView{
     _coreScrollView = [[YHSACoreAnswerQuestionScrollView alloc]initWithFrame:self.view.frame];
@@ -227,13 +226,7 @@
         case 3:
         {
             [_listView closeList];
-            NSMutableArray * array = [[NSMutableArray alloc]init];
-            for (int i=0; i<98; i++) {
-                [array addObject:@"1"];
-            }
-            _answerManager.dataArray=array;
             YHSAAnswerPagerViewController * con = [[YHSAAnswerPagerViewController alloc]init];
-            con.answerManager = _answerManager;
             [self.navigationController pushViewController:con animated:YES];
         }
             break;
@@ -252,6 +245,10 @@
             break;
     }
 }
+
+
+
+
 /*
 #pragma mark - Navigation
 
