@@ -17,6 +17,7 @@
     UIColor * _lineColor;
     UIColor * _drawViewColor;
     YHBaseButton * _deletBtn;
+    YHBaseButton * _closeBtn;
     CGRect originalRect;
 
 }
@@ -65,6 +66,10 @@
             [__self clearView];
         }];
         [self addSubview:_deletBtn];
+        _closeBtn = [[YHBaseButton alloc]initWithFrame:CGRectMake(60, 20, 60, 30) backgroundImage:nil backgroundColor:nil textColor:[UIColor whiteColor] titleText:@"收起" andClickBlock:^(YHBaseButton *btn) {
+            [self close];
+        }];
+        [self addSubview:_closeBtn];
         };
     return self;
 }
@@ -150,6 +155,14 @@
     [_drawView setDrawLineColor:color];
     _lineColor =color;
 }
-
-
+-(void)open{
+    [UIView animateWithDuration:0.3 animations:^{
+        self.alpha=1;
+    }];
+}
+-(void)close{
+    [UIView animateWithDuration:0.3 animations:^{
+        self.alpha=0;
+    }];
+}
 @end

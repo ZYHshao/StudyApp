@@ -92,7 +92,12 @@
 
 //===============================核心答题界面======================//
 #define MOCK_EXAM_ANSWER_QUESTION_CONTROLLER_TITLE @"试卷原题"
-
+#define MOCK_EXAM_ANSWER_QUESTION_TOOLS_LOOK_ANSWER @"查看答案"
+#define MOCK_EXAM_ANSWER_QUESTION_TOOLS_HAND_TEST @"交卷"
+#define MOCK_EXAM_ANSWER_QUESTION_TOOLS_DRAFT @"草稿纸"
+#define MOCK_EXAM_ANSWER_QUESTION_TOOLS_COLLECT @"添加收藏"
+#define MOCK_EXAM_ANSWER_QUESTION_TOOLS_ANSWER_PAGER @"答题卡"
+#define MOCK_EXAM_ANSWER_QUESTION_TOOLS_MORE @"更多"
 
 //===============================系统设置界面=====================//
 #define SYSTEM_SETTING_CONTROLLER_TITLE @"系统设置"

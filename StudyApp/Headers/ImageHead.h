@@ -33,6 +33,17 @@
 #define MOCK_EXAM_PREPARE_IMAGE @"playbutton.png"
 #define MOCK_EXAM_PLAYING_IMAGE @"pausebutton.png"
 #define MOCK_EXAM_LOADING_IMAGE @"loadingbutton.png"
+#define MOCK_EXAM_MORE_TOOLS_IMAGE @"contenttitlebar_menuico.png"
+
+#define MOCK_EXAM_MORE_TOOLS_LOOK_ANSWER_IMAGE @"sjym_tab_showda_ico1.png"
+#define MOCK_EXAM_MORE_TOOLS_HAND_TEST_IMAGE @"sjym_tab_jj_ico1.png"
+#define MOCK_EXAM_MORE_TOOLS_COLLECT_IMAGE @"pupwin_soucico.png"
+#define MOCK_EXAM_MORE_TOOLS_ANSWER_PAGER_IMAGE @"pupwin_datika.png"
+#warning 没有素材 需要替换
+#define MOCK_EXAM_MORE_TOOLS_DRAFT_IMAGE @"pupwin_datika.png"
+#define MOCK_EXAM_MORE_TOOLS_SETTING @"pupwin_settingico.png"
+
+
 //====================关于我们==================//
 #define ABOUT_US_LOGO_IMAGE @"aboutme_logo.png"
 #endif

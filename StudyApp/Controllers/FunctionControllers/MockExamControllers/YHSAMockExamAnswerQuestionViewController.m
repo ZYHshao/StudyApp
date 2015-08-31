@@ -10,17 +10,20 @@
 #import "YHSACoreAnswerQuestionScrollView.h"
 #import "YHSACoreAnswerQuestionView.h"
 #import "YHSAAnswerQuestionModel.h"
-@interface YHSAMockExamAnswerQuestionViewController ()<YHSACoreAnswerQuestionScrollViewDelegate>
+@interface YHSAMockExamAnswerQuestionViewController ()<YHSACoreAnswerQuestionScrollViewDelegate,YHBaseListViewDelegate>
 {
     //核心的滑动视图
     YHSACoreAnswerQuestionScrollView * _coreScrollView;
     YHBaseSelfServiceDrawControlView * _draftView;
-    BOOL _draftIsOpen;
     //播放音频的按钮
     UIBarButtonItem * _audioButton;
     UIBarButtonItem * _draftButton;
     //核心音频组件
     YHBaseAVPlayer * _avPlayer;
+    //更多功能菜单
+    YHBaseListView * _listView;
+    NSArray * _toolsTitleArray;
+    NSArray * _toolsImageArray;
 }
 @end
 
@@ -42,6 +45,18 @@
     //创建播放器
     _avPlayer = [[YHBaseAVPlayer alloc]init];
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(changePlayer:) name:YHBASE_AVFOUNDATION_PLAYER_STATE object:nil];
+    _toolsTitleArray = @[MOCK_EXAM_ANSWER_QUESTION_TOOLS_LOOK_ANSWER,
+                        MOCK_EXAM_ANSWER_QUESTION_TOOLS_HAND_TEST,
+                        MOCK_EXAM_ANSWER_QUESTION_TOOLS_COLLECT,
+                        MOCK_EXAM_ANSWER_QUESTION_TOOLS_ANSWER_PAGER,
+                        MOCK_EXAM_ANSWER_QUESTION_TOOLS_DRAFT,
+                        MOCK_EXAM_ANSWER_QUESTION_TOOLS_MORE];
+    _toolsImageArray = @[MOCK_EXAM_MORE_TOOLS_LOOK_ANSWER_IMAGE,
+                         MOCK_EXAM_MORE_TOOLS_HAND_TEST_IMAGE,
+                         MOCK_EXAM_MORE_TOOLS_COLLECT_IMAGE,
+                         MOCK_EXAM_MORE_TOOLS_ANSWER_PAGER_IMAGE,
+                         MOCK_EXAM_MORE_TOOLS_DRAFT_IMAGE,
+                         MOCK_EXAM_MORE_TOOLS_SETTING];
 }
 -(void)YHCreatView{
     _coreScrollView = [[YHSACoreAnswerQuestionScrollView alloc]initWithFrame:self.view.frame];
@@ -52,6 +67,19 @@
     [self.view addSubview:_coreScrollView];
     //创建导航按钮
     [self creatBarButton];
+    
+    //创建菜单视图
+    _listView = [[YHBaseListView alloc]initWithFrame:CGRectMake(self.view.frame.size.width-140, 20, 120, 100)];
+    _listView.delegate =self;
+    //创建按钮
+    NSMutableArray * array = [[NSMutableArray alloc]init];
+    for (int i=0; i<6; i++) {
+        YHBaseListViewItem * item = [[YHBaseListViewItem alloc]initWithTitle:_toolsTitleArray[i] titleImage:_toolsImageArray[i]];
+        [array addObject:item];
+    }
+    _listView.itemsArray = array;
+    [self.view addSubview:_listView];
+    
     _draftView = [[YHBaseSelfServiceDrawControlView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT-64)];
     [_draftView setDrawSettingOfWidth:3 andColor:[UIColor redColor]];
     [_draftView setDrawSize:CGSizeMake(1000, 1000)];
@@ -63,27 +91,44 @@
 
 
 -(void)creatBarButton{
-     _draftButton= [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:MOCK_EXAM_DRAFT_IMAGE] style:UIBarButtonItemStylePlain target:self action:@selector(draft)];
+     _draftButton= [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:MOCK_EXAM_MORE_TOOLS_IMAGE] style:UIBarButtonItemStylePlain target:self action:@selector(moreTools)];
     _audioButton = [[UIBarButtonItem alloc]init];
     _audioButton.target=self;
     _audioButton.action = @selector(playAudio);
     _audioButton.image = [[UIImage imageNamed:MOCK_EXAM_PREPARE_IMAGE] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
 }
--(void)draft{
-    if (_draftIsOpen) {
-        [UIView animateWithDuration:0.3 animations:^{
-            _draftView.alpha=0;
-        }];
-        _draftIsOpen=NO;
+
+
+
+
+
+
+
+
+#pragma mark - more tools
+-(void)moreTools{
+    if (_listView.isShow) {
+        [_listView closeList];
     }else{
-        [UIView animateWithDuration:0.3 animations:^{
-            _draftView.alpha=1;
-        }];
-        _draftIsOpen=YES;
+        [_listView openList];
     }
+}
+
+
+
+
+-(void)draft{
+    [_draftView open];
 }
 -(void)useYHTopicToCreatViewWithModel{
     [_coreScrollView setTopic];
+    YHTopicColorManager * manager = [YHTopicColorManager sharedTheSingletion];
+    [manager getTopicModel];
+    self.view.backgroundColor = manager.bgColor;
+    _listView.backgroundColor = manager.listBgColor;
+    for (YHBaseListViewItem * item in _listView.itemsArray) {
+        item.titleLabel.textColor = manager.btnTextColor;
+    }
     
 }
 #pragma mark - coreScroll Deleagte
@@ -145,7 +190,45 @@
             break;
     }
 }
-
+#pragma mark - listView delegate
+-(void)YHBaseListViewClickAtIndex:(int)index{
+    NSLog(@"%d",index);
+    switch (index) {
+        case 0:
+        {
+            [_listView closeList];
+        }
+            break;
+        case 1:
+        {
+            [_listView closeList];
+        }
+            break;
+        case 2:
+        {
+            [_listView closeList];
+        }
+            break;
+        case 3:
+        {
+            [_listView closeList];
+        }
+            break;
+        case 4://稿纸
+        {
+            [self draft];
+            [_listView closeList];
+        }
+            break;
+        case 5:
+        {
+            [_listView closeList];
+        }
+            break;
+        default:
+            break;
+    }
+}
 /*
 #pragma mark - Navigation
 

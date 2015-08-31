@@ -20,4 +20,6 @@
 #import "YHBaseSelfServiceDrawControlView.h"
 #import "YHBaseTextView.h"
 #import "YHBaseHtmlView.h"
+#import "YHBaseListView.h"
+#import "YHBaseListViewItem.h"
 #endif

@@ -30,4 +30,7 @@
  *清空画板
  */
 -(void)clearView;
+
+-(void)open;
+-(void)close;
 @end
