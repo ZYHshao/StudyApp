@@ -41,4 +41,6 @@ __PROPERTY_NO_STRONG__(NSString *, listionUrl);
 __PROPERTY_NO_STRONG__(NSString *, listionTxt);
 //题目类型
 __PROPERTY_NO_STRONG__(NSString *, typename);
+//题目类型
+__PROPERTY_NO_STRONG__(NSNumber *, type);
 @end

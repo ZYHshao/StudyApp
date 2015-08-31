@@ -29,6 +29,10 @@
     UIView * _gestureView;
     //手势
     UIPanGestureRecognizer * _panGesture;
+    //题目类型 1 单选 2 多选 3 单行文本  4 多行文本
+    int _questionType;
+    //文字题的输入框
+    YHBaseTextView * _answerTextView;
 }
 @end
 
@@ -76,6 +80,9 @@
     [_tableViewImageArray removeAllObjects];
     [_tableViewDataArray removeAllObjects];
     //先加题目
+    
+    _questionType = [model.type intValue];
+    
     if (model.secondcontent==nil) {
         [_tableViewDataArray addObject:@""];
     }else{
@@ -140,7 +147,7 @@
     [self addSubview:_titleScrollView];
     
     //初始位置设置在题目视图下
-    _answerTableView = [[YHBaseTableView alloc]initWithFrame:CGRectMake(0,(self.frame.size.height-64)/4*3-60, self.frame.size.width, (self.frame.size.height-64)/4+60) style:UITableViewStylePlain];
+    _answerTableView = [[YHBaseTableView alloc]initWithFrame:CGRectMake(0,(self.frame.size.height-64)/4*3-60, self.frame.size.width, (self.frame.size.height-64)/4+60) style:UITableViewStyleGrouped];
     _answerTableView.dataSource=self;
     _answerTableView.delegate=self;
     _answerTableView.bounces=NO;
@@ -156,6 +163,10 @@
     [_tableViewHeadView addSubview:_tableViewHeaderLabel];
     //对透视图的手势控制
     [self creatGesture];
+    
+    
+    _answerTextView = [[YHBaseTextView alloc]initWithFrame:CGRectMake(5, 5, self.frame.size.width-10, 60)];
+    _answerTextView.placeHolder=@"请填写您的答案";
 }
 
 #pragma mark - 分屏的手势
@@ -197,7 +208,12 @@
     return 1;
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return _tableViewDataArray.count-1;
+    if (_questionType==3||_questionType==4) {//文本题
+        return 1;
+    }else{
+        return _tableViewDataArray.count-1;
+    }
+   
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
     if (_tableViewDataArray.count>1&&[_tableViewDataArray[0] length]>0) {
@@ -221,29 +237,39 @@
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     //计算cell大小
-    
-    YHBaseHtmlView * temView = [[YHBaseHtmlView alloc]initWithFrame:CGRectMake(0, 0, tableView.frame.size.width-60, 100)];
-    [temView reSetHtmlStr:_tableViewDataArray[indexPath.row+1]];
-    
-    CGFloat cellH = temView.frame.size.height+20;
-    if (cellH<44) {
-        return 44;
+    if (_questionType==3||_questionType==4) {
+        return 70;
     }else{
-        return cellH;
+        YHBaseHtmlView * temView = [[YHBaseHtmlView alloc]initWithFrame:CGRectMake(0, 0, tableView.frame.size.width-60, 100)];
+        [temView reSetHtmlStr:_tableViewDataArray[indexPath.row+1]];
+        
+        CGFloat cellH = temView.frame.size.height+20;
+        if (cellH<44) {
+            return 44;
+        }else{
+            return cellH;
+        }
+
     }
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    YHSAAnswerQuestionTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:TABLEVIEW_CELL_ID_ANSWER_QUESTION];
-    if (cell==nil) {
-        cell = [[[NSBundle mainBundle]loadNibNamed:@"YHSAAnswerQuestionTableViewCell" owner:self  options:nil] lastObject];
-        cell.indexLabel.layer.masksToBounds = YES;
-        cell.indexLabel.layer.cornerRadius = 10;
-        cell.theContentView.delegate=self;
+    if (_questionType==3||_questionType==4) {
+        UITableViewCell * cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
+        [cell.contentView addSubview:_answerTextView];
+        return cell;
+        
+    }else{
+        YHSAAnswerQuestionTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:TABLEVIEW_CELL_ID_ANSWER_QUESTION];
+        if (cell==nil) {
+            cell = [[[NSBundle mainBundle]loadNibNamed:@"YHSAAnswerQuestionTableViewCell" owner:self  options:nil] lastObject];
+            cell.indexLabel.layer.masksToBounds = YES;
+            cell.indexLabel.layer.cornerRadius = 10;
+            cell.theContentView.delegate=self;
+        }
+        cell.indexLabel.text = [NSString stringWithFormat:@"%c",(int)indexPath.row+'A'];
+        [cell.theContentView reSetHtmlStr:_tableViewDataArray[indexPath.row+1]];
+        return cell;
     }
-    cell.indexLabel.text = [NSString stringWithFormat:@"%c",(int)indexPath.row+'A'];
-    [cell.theContentView reSetHtmlStr:_tableViewDataArray[indexPath.row+1]];
-    //位置设置
-    return cell;
 }
 
 
@@ -258,7 +284,7 @@
     
 }
 
-
+#pragma mark - 这里做答题的处理
 
 
 
