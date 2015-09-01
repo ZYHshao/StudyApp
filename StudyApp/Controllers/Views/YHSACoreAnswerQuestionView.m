@@ -397,6 +397,16 @@
         model.hadAnswer=NO;
     }
 }
+//移动answerTableView
+-(BOOL)textViewShouldBeginEditing:(UITextView *)textView{
+    [UIView animateWithDuration:0.3 animations:^{
+        //移动答题tableView
+        _answerTableView.frame=CGRectMake(0,(self.frame.size.height-64)/4,self.frame.size.width, (self.frame.size.height-64)/4*3);
+        
+    }];
+    return YES;
+}
+
 
 
 

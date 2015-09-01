@@ -15,6 +15,8 @@
     YHBaseView * _headView;
     //主体视图
     YHBaseScrollView * _bodyView;
+    //存放按钮的数组
+    NSMutableArray * _btnArray;
 }
 @end
 
@@ -35,7 +37,7 @@
 }
 
 -(void)YHCreatDate{
-    
+    _btnArray = [[NSMutableArray alloc]init];
 }
 
 
@@ -63,7 +65,6 @@
         YHSAAnswerStateModel * model = answerManager.dataArray[i];
         YHBaseButton * btn = [YHBaseButton buttonWithType:UIButtonTypeSystem];
         btn.frame=CGRectMake(10+((self.view.frame.size.width-20)/5)*(i%5)+((self.view.frame.size.width-20)/5)/2-25,5+60*(i/5), 50, 50);
-        btn.backgroundColor=[UIColor colorWithRed:233/255.0 green:233/255.0 blue:233/255.0 alpha:1];
         [btn setCornerRaidus:25];
         [btn setBorderWidth:1 andColor:[UIColor grayColor]];
         [btn setTitle:[NSString stringWithFormat:@"%d",i+1] forState:UIControlStateNormal];
@@ -78,12 +79,39 @@
         btn.index=i;
         [btn addTarget:self action:@selector(click:) forControlEvents:UIControlEventTouchUpInside];
         [_bodyView addSubview:btn];
+        [_btnArray addObject:btn];
     }
     _bodyView.contentSize=CGSizeMake(_bodyView.frame.size.width, 5+60*(answerManager.dataArray.count/5)+50);
 }
 
+-(void)click:(YHBaseButton *)btn{
+    if (![[[YHSAAnswerQuestionManager sharedTheSingletion].dataArray objectAtIndex:btn.index] hadLoadDown]) {
+        [YHBaseAlertView showWithStyle:YHBaseAlertViewSimple title:PUBLIC_PART_ALERT_TITLE text:@"您只能查看您已经预览过的题目" cancleBtn:PUBLIC_PART_ALERT_SELECT_BTN selectBtn:nil andSelectFunc:nil];
+        return;
+    }
+    NSDictionary * info = @{@"index":[NSString stringWithFormat:@"%d",btn.index]};
+    NSNotification * noti = [[NSNotification alloc]initWithName:YHSAAnswerQuestionManagerNotication object:nil userInfo:info];
+    //发送通知
+    [[NSNotificationCenter defaultCenter]postNotification:noti];
+    //调整按钮颜色
+    [self reloadBtnColor];
+}
+-(void)reloadBtnColor{
+    YHSAAnswerQuestionManager * answerManager = [YHSAAnswerQuestionManager sharedTheSingletion];
+    for (int i=0; i<_btnArray.count; i++) {
+        YHSAAnswerStateModel * model = answerManager.dataArray[i];
+        YHBaseButton * btn = (YHBaseButton*)_btnArray[i];
+        if (model.hadAnswer) {
+            [btn setBackgroundColor:[UIColor cyanColor]];
+        }else{
+            [btn setBackgroundColor:[UIColor whiteColor]];
+        }
+        if (answerManager.currentIndex==i) {
+            [btn setBackgroundColor:[UIColor blueColor]];
+        }
 
-
+    }
+}
 
 
 /*

@@ -10,6 +10,10 @@
 
 @interface YHSAAnswerStateModel : YHBaseModel
 /**
+ *标志这道题是否已经下载完成
+ */
+__PROPERTY_NO_ASSIGN__(BOOL, hadLoadDown);
+/**
  *是否已经作答
  */
 __PROPERTY_NO_ASSIGN__(BOOL, hadAnswer);
