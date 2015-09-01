@@ -10,7 +10,9 @@
 #import "YHSAAnswerQuestionModel.h"
 #import "YHTopicColorManager.h"
 #import "YHSAAnswerQuestionTableViewCell.h"
-@interface YHSACoreAnswerQuestionView()<UITableViewDataSource,UITableViewDelegate,YHBaseHtmlViewProcotop>
+#import "YHSAAnswerQuestionManager.h"
+#import "YHSAAnswerStateModel.h"
+@interface YHSACoreAnswerQuestionView()<UITableViewDataSource,UITableViewDelegate,YHBaseHtmlViewProcotop,UITextViewDelegate>
 {
     //题目视图
     YHBaseScrollView * _titleScrollView;
@@ -34,7 +36,8 @@
     //文字题的输入框
     YHBaseTextView * _answerTextView;
     
-
+    //当前题目的模型
+    __strong YHSAAnswerQuestionModel * _currentModel;
 }
 @end
 
@@ -63,7 +66,7 @@
 //把数据的读取和加载部分放在这个方法中
 -(void)creatViewWithData:(id)data{
     YHSAAnswerQuestionModel * model = data;
-    
+    _currentModel = model;
     [_titleView reSetHtmlStr:[NSString stringWithFormat:@"%@:%@",model.typename,model.content]];
     //计算大小
     
@@ -169,6 +172,7 @@
     
     _answerTextView = [[YHBaseTextView alloc]initWithFrame:CGRectMake(5, 5, self.frame.size.width-10, 60)];
     _answerTextView.placeHolder=@"请填写您的答案";
+    _answerTextView.delegate=self;
 }
 
 #pragma mark - 分屏的手势
@@ -255,10 +259,20 @@
     }
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    YHSAAnswerStateModel * stateModel = [YHSAAnswerQuestionManager sharedTheSingletion].dataArray[_index-1];
     if (_questionType==3||_questionType==4) {
-        UITableViewCell * cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
-        cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        [cell.contentView addSubview:_answerTextView];
+        UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"normalCell"];
+        if (cell==nil) {
+            cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
+            [cell.contentView addSubview:_answerTextView];
+        }
+        //判断是否已经做答过
+        if (stateModel.hadAnswer) {
+            _answerTextView.text = [stateModel.info objectForKey:@"ans"];
+        }else{
+            _answerTextView.text=@"";
+        }
         return cell;
         
     }else{
@@ -271,6 +285,22 @@
         }
         cell.indexLabel.text = [NSString stringWithFormat:@"%c",(int)indexPath.row+'A'];
         [cell.theContentView reSetHtmlStr:_tableViewDataArray[indexPath.row+1]];
+        //判断是否已经答过
+        if (stateModel.hadAnswer) {
+            NSString * ansStr = [stateModel.info objectForKey:@"ans"];
+            BOOL had=NO;
+            for (int i=0; i<ansStr.length; i++) {
+                if (indexPath.row+'A' == [ansStr characterAtIndex:i]) {
+                    cell.indexLabel.backgroundColor = [UIColor cyanColor];
+                    had=YES;
+                }
+            }
+            if (had==NO) {
+                cell.indexLabel.backgroundColor=[UIColor grayColor];
+            }
+        }else{
+             cell.indexLabel.backgroundColor = [UIColor grayColor];
+        }
         return cell;
     }
 }
@@ -290,20 +320,83 @@
 #pragma mark - 这里做答题的处理
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    //进行数据的存储
     //判断题目的类型
     if (_questionType==1) {//单选题
-         YHSAAnswerQuestionTableViewCell * cell = (YHSAAnswerQuestionTableViewCell *)[tableView cellForRowAtIndexPath:indexPath];
-        cell.indexLabel.backgroundColor = [UIColor greenColor];
-        
+        YHSAAnswerStateModel * model = [[YHSAAnswerStateModel alloc]init];
+        model.hadAnswer = YES;
+        //判断是否正确
+        if ([[NSString stringWithFormat:@"%c",(int)indexPath.row+'A'] isEqualToString:_currentModel.Answer]) {
+            model.isCorrect=YES;
+        }else{
+            model.isCorrect=NO;
+        }
+        NSDictionary * tmpDic = @{@"type":_currentModel.type,@"ans":[NSString stringWithFormat:@"%c",(int)indexPath.row+'A']};
+        model.info=tmpDic;
+        [[YHSAAnswerQuestionManager sharedTheSingletion].dataArray replaceObjectAtIndex:_index-1 withObject:model];
     }else if (_questionType==2){//多选题
+        //先取model
+        YHSAAnswerStateModel * model = [[YHSAAnswerQuestionManager sharedTheSingletion].dataArray objectAtIndex:_index-1];
+        NSString * ansStr = [model.info objectForKey:@"ans"];
+        NSMutableString * newAnsStr = [[NSMutableString alloc]init];
+        //先判断是否已经有这个选项
+        BOOL hadChara = NO;
+        for (int i=0; i<ansStr.length; i++) {
+            if ([ansStr characterAtIndex:i]=='A'+(int)indexPath.row) {
+                //取消选中
+                hadChara = YES;
+            }else{
+                [newAnsStr appendString:[NSString stringWithFormat:@"%c",[ansStr characterAtIndex:i]]];
+            }
+        }
+        //如果没有这个选项 进行添加
+        if (!hadChara) {
+            [newAnsStr appendString:[NSString stringWithFormat:@"%c",'A'+(int)indexPath.row]];
+        }
+        //判断答案是否正确
+        NSArray * temArr = [_currentModel.Answer componentsSeparatedByString:@","];
+        NSMutableString * comStr = [[NSMutableString alloc]init];
+        for (int i=0; i<temArr.count; i++) {
+            [comStr appendString:temArr[i]];
+        }
+        //进行从小到大的字符排序
+        NSString * finalStr = YHBaseSequenceString(YHBaseStringCompareLonger, newAnsStr);
+        if (finalStr.length!=0) {
+            model.hadAnswer=YES;
+        }else{
+            model.hadAnswer=NO;
+        }
+        //进行数据的存储
+        if ([finalStr isEqualToString:comStr]) {//答案正确
+            model.isCorrect=YES;
+        }else{
+            model.isCorrect=NO;
+        }
+        NSDictionary * temDic = @{@"type":_currentModel.type,@"ans":finalStr};
+        model.info = temDic;
         
     }else if (_questionType==3||_questionType==4){//文字题
-        
+       //在textView的代理方法中处理
     }
+    [_answerTableView reloadData];
 }
 
 
-
+-(void)textViewDidChange:(UITextView *)textView{
+     YHSAAnswerStateModel * model = [[YHSAAnswerQuestionManager sharedTheSingletion].dataArray objectAtIndex:_index-1];
+    if (_answerTextView.text.length!=0) {
+        model.hadAnswer=YES;
+        if ([_currentModel.Answer isEqualToString:_answerTextView.text]) {
+            model.isCorrect=YES;
+        }else{
+            model.isCorrect=NO;
+        }
+        NSDictionary * temDic = @{@"type":_currentModel.type,@"ans":_answerTextView.text};
+        model.info = temDic;
+    }else{
+        model.hadAnswer=NO;
+    }
+}
 
 
 

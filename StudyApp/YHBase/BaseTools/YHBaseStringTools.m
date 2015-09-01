@@ -44,4 +44,56 @@ BOOL YHBaseCheckString(YHBaseStringCompareType compareType,NSString * str,int le
     }
 }
 
+NSString * YHBaseSequenceString(YHBaseStringCompareType sequenceType, NSString * str){
+    NSMutableString * muStr = [[NSMutableString alloc]init];
+    NSMutableArray * array = [[NSMutableArray alloc]init];
+    for (int i=0; i<str.length;i++ ) {
+        [array addObject:[NSString stringWithFormat:@"%c",[str characterAtIndex:i]]];
+    }
+    switch (sequenceType) {
+        
+        case YHBaseStringCompareEqual:
+            return str;
+            break;
+        case YHBaseStringCompareLonger://从小到大
+        {
+            for (int i=0; i<array.count; i++) {
+                for (int j=i+1; j<array.count; j++) {
+                    if ([array[i] characterAtIndex:0]>[array[j] characterAtIndex:0]) {
+                        [array exchangeObjectAtIndex:i withObjectAtIndex:j];
+                    }
+                }
+            }
+            for (int i=0; i<array.count; i++) {
+                [muStr appendString:array[i]];
+            }
+            return muStr;
+        }
+            break;
+        case YHBaseStringCompareShorter://从大到小
+        {
+            for (int i=0; i<array.count; i++) {
+                for (int j=i+1; j<array.count; j++) {
+                    if ([array[i] charValue]<[array[j] charValue]) {
+                        [array exchangeObjectAtIndex:i withObjectAtIndex:j];
+                    }
+                }
+            }
+            for (int i=0; i<array.count; i++) {
+                [muStr appendString:array[i]];
+            }
+            return muStr;
+        }
+            break;
+        default:
+            return str;
+            break;
+    }
+}
+
+
+
+
+
+
 @end

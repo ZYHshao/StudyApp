@@ -30,7 +30,9 @@
     // Dispose of any resources that can be recreated.
 }
 
-
+-(void)dealloc{
+    [[YHSAAnswerQuestionManager sharedTheSingletion]clearData];
+}
 
 -(void)YHCreatDate{
     

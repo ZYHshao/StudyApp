@@ -60,8 +60,12 @@
     _placeHolderLabel.numberOfLines=0;
     //添加监听
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(changeEdit) name:UITextViewTextDidChangeNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(changeEdit) name:UITextViewTextDidEndEditingNotification object:nil];
 }
-
+-(void)setText:(NSString *)text{
+    [super setText:text];
+    [self changeEdit];
+}
 -(void)changeEdit{
     if (self.text.length>0) {
         _placeHolderLabel.hidden=YES;

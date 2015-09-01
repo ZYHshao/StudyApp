@@ -26,8 +26,8 @@
         __block int t=_currentTime;
         __BLOCK__WEAK__SELF__(__self);
         [[YHBaseTimerManager sharedTheSingletion]registerAction:^{
-            if (t>=_testTime) {
-                [__self stop];
+            if (_testTime>0&&t>=_testTime) {
+                [__self stopTimer];
                 if ([self.delegate respondsToSelector:@selector(YHSAAnswerQuestionManagerTimeOut)]) {
                     [self.delegate YHSAAnswerQuestionManagerTimeOut];
                 }

@@ -1803,7 +1803,7 @@ CGFloat MyGetWidthCallback( void* refCon ){
         const CGPoint *positions = CTRunGetPositionsPtr(run);
         
         
-        if (location.x <= width + positions[0].x) {
+        if (positions!=NULL&&location.x <= width + positions[0].x) {
             isClicked = YES;
             break;
         } 

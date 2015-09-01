@@ -47,7 +47,7 @@
             [_actionArray removeObject:action];
             continue;
         }
-        NSAssert((60%action.timer)!=0, @"the timer must been devisible to 60");
+        NSAssert((60%action.timer)==0, @"the timer must been devisible to 60");
         if (action.isValid&&(_count%(60/action.timer))==0) {
             action.callback();
         }

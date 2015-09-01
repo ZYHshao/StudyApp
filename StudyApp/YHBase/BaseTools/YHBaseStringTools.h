@@ -21,8 +21,10 @@ typedef enum {
  *检测字符串长度是否符合
  */
 BOOL YHBaseCheckString(YHBaseStringCompareType compareType,NSString * str,int length);
-
-
+/**
+ *将字符串中进行进行排序 参数可以设置从大到小和从小到大 设置为equal则返回原字符串
+ */
+NSString * YHBaseSequenceString(YHBaseStringCompareType sequenceType, NSString * str);
 
 
 @end

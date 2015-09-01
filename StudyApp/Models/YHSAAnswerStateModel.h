@@ -18,7 +18,10 @@ __PROPERTY_NO_ASSIGN__(BOOL, hadAnswer);
  */
 __PROPERTY_NO_ASSIGN__(BOOL, isCorrect);
 /**
- *数据字典 可以根据需求存答题信息
+ *数据字典 可以根据需求存答题信息 
+ *字典按照如下数据结构
+ * type 对应题目类型 1234
+ * ans 对应ABCD或者文字 ABCD可多选
  */
 __PROPERTY_NO_STRONG__(NSDictionary *, info);
 @end
