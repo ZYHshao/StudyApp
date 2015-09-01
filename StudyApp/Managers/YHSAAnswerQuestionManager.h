@@ -14,6 +14,10 @@
 -(void)YHSAAnswerQuestionManagerTimeOut;
 @end
 @interface YHSAAnswerQuestionManager : YHBaseManager
+
+
+//当前的题号
+__PROPERTY_NO_ASSIGN__(int, currentIndex);
 //答题状态对象
 __PROPERTY_NO_STRONG__(NSMutableArray * , dataArray);
 //总时间 为0则为不计时 /s

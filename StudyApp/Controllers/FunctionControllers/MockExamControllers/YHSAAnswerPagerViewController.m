@@ -31,7 +31,7 @@
 }
 
 -(void)dealloc{
-    [[YHSAAnswerQuestionManager sharedTheSingletion]clearData];
+   
 }
 
 -(void)YHCreatDate{
@@ -57,16 +57,29 @@
 
 
 -(void)creatBtn{
-    for (int i=0; i<_answerManager.dataArray.count; i++) {
-        YHSAAnswerStateModel * model = _answerManager.dataArray[i];
+    YHSAAnswerQuestionManager * answerManager = [YHSAAnswerQuestionManager sharedTheSingletion];
+    
+    for (int i=0; i<answerManager.dataArray.count; i++) {
+        YHSAAnswerStateModel * model = answerManager.dataArray[i];
         YHBaseButton * btn = [YHBaseButton buttonWithType:UIButtonTypeSystem];
         btn.frame=CGRectMake(10+((self.view.frame.size.width-20)/5)*(i%5)+((self.view.frame.size.width-20)/5)/2-25,5+60*(i/5), 50, 50);
         btn.backgroundColor=[UIColor colorWithRed:233/255.0 green:233/255.0 blue:233/255.0 alpha:1];
         [btn setCornerRaidus:25];
         [btn setBorderWidth:1 andColor:[UIColor grayColor]];
+        [btn setTitle:[NSString stringWithFormat:@"%d",i+1] forState:UIControlStateNormal];
+        if (model.hadAnswer) {
+            [btn setBackgroundColor:[UIColor cyanColor]];
+        }else{
+            [btn setBackgroundColor:[UIColor whiteColor]];
+        }
+        if (answerManager.currentIndex==i) {
+            [btn setBackgroundColor:[UIColor blueColor]];
+        }
+        btn.index=i;
+        [btn addTarget:self action:@selector(click:) forControlEvents:UIControlEventTouchUpInside];
         [_bodyView addSubview:btn];
     }
-    _bodyView.contentSize=CGSizeMake(_bodyView.frame.size.width, 5+60*(_answerManager.dataArray.count/5)+50);
+    _bodyView.contentSize=CGSizeMake(_bodyView.frame.size.width, 5+60*(answerManager.dataArray.count/5)+50);
 }
 
 

@@ -36,6 +36,7 @@
         } timer:1 andName:@"YHSAAnswerQuestionManagerTime"];
         [[YHBaseTimerManager sharedTheSingletion]setValid:NO toName:@"YHSAAnswerQuestionManagerTime"];
         _currentTime=0;
+        _currentIndex=0;
         
     }
     return self;
@@ -49,6 +50,7 @@
 }
 
 -(void)clearData{
+    _currentIndex=0;
     _currentTime=0;
     _testTime=0;
     _delegate=nil;

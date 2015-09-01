@@ -32,6 +32,7 @@
 
 @implementation YHSAMockExamAnswerQuestionViewController
 -(void)dealloc{
+    [[YHSAAnswerQuestionManager sharedTheSingletion]clearData];
     [[NSNotificationCenter defaultCenter]removeObserver:self name:YHBASE_ERROR_CENTER_NOTICATION object:nil];
 }
 - (void)viewDidLoad {
@@ -63,7 +64,7 @@
     YHSAAnswerQuestionManager * manager = [YHSAAnswerQuestionManager sharedTheSingletion];
     //进行初始化 所有题都是未答题状态
     [manager clearData];
-    for (int i=0; i<(int)_dataModel.questioncount; i++) {
+    for (int i=0; i<[_dataModel.questioncount intValue]; i++) {
         YHSAAnswerStateModel * model = [[YHSAAnswerStateModel alloc]init];
         model.hadAnswer=NO;
         [manager.dataArray addObject:model];
@@ -245,7 +246,6 @@
             break;
     }
 }
-
 
 
 

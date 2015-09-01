@@ -12,6 +12,7 @@
 #import "YHSAAnswerQuestionModel.h"
 #import "YHTopicColorManager.h"
 #import "YHSACoreAnswerQuestionView.h"
+#import "YHSAAnswerQuestionManager.h"
 #define WIDTH self.frame.size.width
 #define HIGHT self.frame.size.height
 @interface YHSACoreAnswerQuestionScrollView()<UIScrollViewDelegate>
@@ -140,7 +141,8 @@
         [self reloadViewData];
     }
     scrollView.userInteractionEnabled = YES;
-   
+   //数据处理
+    [YHSAAnswerQuestionManager sharedTheSingletion].currentIndex=_currentPage;
 }
 
 //为了防止连续滑动产生的bug，这里做一个处理
