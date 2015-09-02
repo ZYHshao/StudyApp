@@ -125,6 +125,11 @@
 #define EXAM_INFO_CONTROLLER_TITLE @"考试资讯"
 #define EXAM_INFO_DETAIL_CONTROLLER_TITLE @"资讯详情"
 
+
+//===============================答题卡界面=======================//
+#define EXAM_ANSWER_PAGER_CONTROLLER_TITLE @"答题卡"
+#define EXAM_ANSWER_PAGER_CERTAIN_BTN_TEXT @"确定交卷"
+
 //=============================接口字段==========================//
 //注册
 #define INTERFACE_FIELD_REGIST_COLLEAGE @"college"
@@ -163,6 +168,13 @@
 #define INTERFACE_FIELD_EXAM_INFO_PAGEINDEX @"pageIndex"
 #define INTERFACE_FIELD_EXAM_INFO_PAGESIZE @"pagesize"
 #define INTERFACE_FIELD_EXAM_INFO_DETAIL_MSGID @"msgid"
+//提交试卷
+#define INTERFACE_FIELD_POST_EXAM_MAIN @"jsonData"
+#define INTERFACE_FIELD_POST_EXAM_PHONECODE @"phonecode"
+#define INTERFACE_FIELD_POST_EXAM_EXAM_ID @"examid"
+#define INTERFACE_FIELD_POST_EXAM_QUESTION_ID @"questionid"
+#define INTERFACE_FIELD_POST_EXAM_ANSWER @"answer"
+#define INTERFACE_FIELD_POST_EXAM_SORCE @"score"
 
 //============================接口返回字段========================//
 

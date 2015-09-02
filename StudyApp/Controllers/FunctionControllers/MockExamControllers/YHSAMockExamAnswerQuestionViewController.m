@@ -64,6 +64,7 @@
     YHSAAnswerQuestionManager * manager = [YHSAAnswerQuestionManager sharedTheSingletion];
     //进行初始化 所有题都是未答题状态
     [manager clearData];
+    manager.examID = _dataModel.examid;
     for (int i=0; i<[_dataModel.questioncount intValue]; i++) {
         YHSAAnswerStateModel * model = [[YHSAAnswerStateModel alloc]init];
         model.hadAnswer=NO;
@@ -73,6 +74,7 @@
     [manager startTimer];
 }
 -(void)YHCreatView{
+    self.title = MOCK_EXAM_ANSWER_QUESTION_CONTROLLER_TITLE;
     _coreScrollView = [[YHSACoreAnswerQuestionScrollView alloc]initWithFrame:self.view.frame];
     _coreScrollView.dataDelegate=self;
     _coreScrollView.viewClass = [YHSACoreAnswerQuestionView class];

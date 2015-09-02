@@ -20,6 +20,8 @@
 #import "YHBaseAVPlayer.h"
 #import "YHBaseTimerNode.h"
 #import "YHBaseTimerManager.h"
+#import "NSDictionary+YHBaseJson.h"
+#import "NSArray+YHBaseJson.h"
 //=============================快捷定义宏=========================//
 #define __PROPERTY_NO_COPY__(type,object) @property(nonatomic,copy)type object
 #define __PROPERTY_AT_COPY__(type,object) @property(atomic,copy)type object

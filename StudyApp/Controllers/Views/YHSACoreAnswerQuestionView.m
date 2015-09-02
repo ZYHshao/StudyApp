@@ -324,6 +324,8 @@
     //判断题目的类型
     if (_questionType==1) {//单选题
         YHSAAnswerStateModel * model = [[YHSAAnswerStateModel alloc]init];
+        model.questionID = _currentModel.id;
+        model.sccore = _currentModel.score;
         model.hadAnswer = YES;
         //判断是否正确
         if ([[NSString stringWithFormat:@"%c",(int)indexPath.row+'A'] isEqualToString:_currentModel.Answer]) {
@@ -337,6 +339,8 @@
     }else if (_questionType==2){//多选题
         //先取model
         YHSAAnswerStateModel * model = [[YHSAAnswerQuestionManager sharedTheSingletion].dataArray objectAtIndex:_index-1];
+        model.questionID = _currentModel.id;
+        model.sccore = _currentModel.score;
         NSString * ansStr = [model.info objectForKey:@"ans"];
         NSMutableString * newAnsStr = [[NSMutableString alloc]init];
         //先判断是否已经有这个选项
@@ -384,6 +388,8 @@
 
 -(void)textViewDidChange:(UITextView *)textView{
      YHSAAnswerStateModel * model = [[YHSAAnswerQuestionManager sharedTheSingletion].dataArray objectAtIndex:_index-1];
+    model.questionID = _currentModel.id;
+    model.sccore = _currentModel.score;
     if (_answerTextView.text.length!=0) {
         model.hadAnswer=YES;
         if ([_currentModel.Answer isEqualToString:_answerTextView.text]) {

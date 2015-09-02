@@ -9,10 +9,17 @@
 #import "YHSAAnswerPagerViewController.h"
 #import "YHSAAnswerQuestionManager.h"
 #import "YHSAAnswerStateModel.h"
+#import "YHSAUserManager.h"
+#import "YHSALoginViewController.h"
+#import "YHSAHttpManager.h"
 @interface YHSAAnswerPagerViewController ()
 {
     //标头视图
-    YHBaseView * _headView;
+    YHBaseView * _headView1;//未交卷
+    YHBaseView * _headView2;//已经交卷
+    
+    YHBaseLabel * _headView1InfoLabel;
+    
     //主体视图
     YHBaseScrollView * _bodyView;
     //存放按钮的数组
@@ -32,7 +39,18 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void)viewWillAppear:(BOOL)animated{
+    //添加一个更新时间的动作
+    [[YHBaseTimerManager sharedTheSingletion]registerAction:^{
+        _headView1InfoLabel.text = [NSString stringWithFormat:@"已答%d题，用时%d分%d秒",[[YHSAAnswerQuestionManager sharedTheSingletion] hadAnswerCount],[YHSAAnswerQuestionManager sharedTheSingletion].currentTime/60,[YHSAAnswerQuestionManager sharedTheSingletion].currentTime%60];
+    } timer:1 andName:@"update"];
+}
+-(void)viewWillDisappear:(BOOL)animated{
+    [[YHBaseTimerManager sharedTheSingletion]removeActionForName:@"update"];
+}
+
 -(void)dealloc{
+   
    
 }
 
@@ -42,19 +60,48 @@
 
 
 -(void)YHCreatView{
-    _headView = [[YHBaseView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 50)];
-    [self.view addSubview:_headView];
+    self.title=EXAM_ANSWER_PAGER_CONTROLLER_TITLE;
+    _headView1 = [[YHBaseView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 50)];
+    _headView2 = [[YHBaseView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 50)];
+    //创建两个视图
+    [self creatHeadView];
+    if ([YHSAAnswerQuestionManager sharedTheSingletion].hadHeanIn) {
+        [self.view addSubview:_headView2];
+    }else{
+        [self.view addSubview:_headView1];
+    }
+   
     
     _bodyView = [[YHBaseScrollView alloc]initWithFrame:CGRectMake(0, 50, self.view.frame.size.width, self.view.frame.size.height-64-50)];
     //创建按钮
     [self creatBtn];
     [self.view addSubview:_bodyView];
+    //创建确定交卷的
+    UIBarButtonItem * cetttainItem = [[UIBarButtonItem alloc]init];
+    cetttainItem.title = EXAM_ANSWER_PAGER_CERTAIN_BTN_TEXT;
+    [cetttainItem setTarget:self];
+    [cetttainItem setAction:@selector(certainClick)];
+    self.navigationItem.rightBarButtonItem = cetttainItem;
 }
+
+
+-(void)creatHeadView{
+    _headView1InfoLabel = [[YHBaseLabel alloc]initWithFrame:CGRectMake(self.view.frame.size.width/2-100, 5, 200, 40)];
+    _headView1InfoLabel.textAlignment = NSTextAlignmentCenter;
+    [_headView1 addSubview:_headView1InfoLabel];
+}
+
+
+
 
 -(void)useYHTopicToCreatViewWithModel{
     YHTopicColorManager * manager = [YHTopicColorManager sharedTheSingletion];
     [manager getTopicModel];
     self.view.backgroundColor = manager.bgColor;
+    _headView1.backgroundColor=manager.bgColor;
+    _headView2.backgroundColor=manager.bgColor;
+    _headView1InfoLabel.backgroundColor=manager.bgColor;
+    _headView1InfoLabel.textColor=manager.textColor;
 }
 
 
@@ -112,8 +159,60 @@
 
     }
 }
+#pragma mark - 提交试卷
+-(void)certainClick{
+    if (![YHSAUserManager sharedTheSingletion].isLogin) {
+        [YHBaseAlertView showWithStyle:YHBaseAlertViewSimple title:PUBLIC_PART_ALERT_TITLE text:@"该功能需要您登陆方可使用" cancleBtn:PUBLIC_PART_ALERT_CANCLE_BTN selectBtn:nil andSelectFunc:nil];
+        return ;
+        
+    }
+    
+    
+    YHSAAnswerQuestionManager * manager = [YHSAAnswerQuestionManager sharedTheSingletion];
+    __BLOCK__WEAK__SELF__(__self);
+    [YHBaseAlertView  showWithStyle:YHBaseAlertViewNormal title:PUBLIC_PART_ALERT_TITLE text:@"是否确定提交试卷" cancleBtn:PUBLIC_PART_ALERT_CANCLE_BTN selectBtn:PUBLIC_PART_ALERT_SELECT_BTN andSelectFunc:^{
+        //提交试卷
+        for (int i=0; i<manager.dataArray.count; i++) {
+            YHSAAnswerStateModel * model = manager.dataArray[i];
+            if (model.hadAnswer==NO) {
+                [YHBaseAlertView showWithStyle:YHBaseAlertViewSimple title:PUBLIC_PART_ALERT_TITLE text:@"请您答完所有的题目后再提交哦" cancleBtn:PUBLIC_PART_ALERT_SELECT_BTN selectBtn:nil andSelectFunc:nil];
+                return ;
+            }
+        }
+        //进行数据的提交
+        [__self postExam];
+        
+    }];
+}
+-(void)postExam{
+    //进行遍历取数据
+    YHSAAnswerQuestionManager * manager = [YHSAAnswerQuestionManager sharedTheSingletion];
+    NSArray * dataArray = manager.dataArray;
+    NSMutableArray * postArray = [[NSMutableArray alloc]init];
+    for (int i = 0; i<dataArray.count; i++) {
+        YHSAAnswerStateModel * model = (YHSAAnswerStateModel *)dataArray[i];
+        NSString * answerStr;
+        if ([[model.info objectForKey:@"type"]intValue]==2) {
+            answerStr=YHBaseInsertCharater(@",", [model.info objectForKey:@"ans"]);
+        }else{
+            answerStr= [model.info objectForKey:@"ans"];
+        }
+        NSDictionary * dic = @{INTERFACE_FIELD_POST_EXAM_PHONECODE:[YHSAUserManager sharedTheSingletion].userName,INTERFACE_FIELD_POST_EXAM_EXAM_ID:manager.examID,INTERFACE_FIELD_POST_EXAM_QUESTION_ID:model.questionID,INTERFACE_FIELD_POST_EXAM_ANSWER:answerStr,INTERFACE_FIELD_POST_EXAM_SORCE:model.sccore};
+        [postArray addObject:dic];
+    }
+    NSDictionary * dic = @{INTERFACE_FIELD_POST_EXAM_MAIN:[postArray transToJsonString:YHBaseJosnStyleNoneSpace|YHBaseJosnStyleNoneWarp|YHBaseJosnStyleSinglequotationMark|YHBaseJosnStyleNoneKeyMark]};
+    
+    //进行提交网络请求
+    [YHSAHttpManager YHSARequestPost:YHSARequestTypeExamPost infoDic:dic Succsee:^(NSData *data) {
+        NSDictionary * info = [YHBaseJOSNAnalytical dictionaryWithJSData:data];
+        NSLog(@"%@",info);
+#warning 这里服务端有问题 等测
+    } andFail:^(YHBaseError *error) {
+        
+    } isbuffer:NO];
+    
 
-
+}
 /*
 #pragma mark - Navigation
 

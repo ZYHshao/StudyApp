@@ -92,6 +92,11 @@
             return YHSA_EXAM_INFO_DETAIL_POST_PATH;
         }
             break;
+        case YHSARequestTypeExamPost:
+        {
+            return YHSA_EXAM_POST_PATH;
+        }
+            break;
         default:
             return @"";
             break;
@@ -142,6 +147,11 @@
         case YHSARequestTypeExamInfoDetail:
         {
             return YHSA_REQUEST_TYPE_EXAM_INFO_DETAIL;
+        }
+            break;
+        case YHSARequestTypeExamPost:
+        {
+            return YHSA_REQUEST_TYPE_EXAM_POST;
         }
             break;
         default:

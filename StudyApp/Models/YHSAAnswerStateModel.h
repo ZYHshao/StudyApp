@@ -22,6 +22,14 @@ __PROPERTY_NO_ASSIGN__(BOOL, hadAnswer);
  */
 __PROPERTY_NO_ASSIGN__(BOOL, isCorrect);
 /**
+ *题目的编号
+ */
+__PROPERTY_NO_STRONG__(NSString *, questionID);
+/**
+ *题目的分值
+ */
+__PROPERTY_NO_STRONG__(NSNumber *, sccore);
+/**
  *数据字典 可以根据需求存答题信息 
  *字典按照如下数据结构
  * type 对应题目类型 1234

@@ -36,7 +36,7 @@
     return self;
 }
 -(void)timerAction{
-    if (_count<60) {
+    if (_count<59) {
         _count++;
     }else{
         _count=0;
@@ -90,7 +90,10 @@
 }
 -(void)removeActionForName:(NSString *)name{
     for (YHBaseTimerNode *a in _actionArray) {
-        a.shouldRemove=YES;
+        if ([a.name isEqualToString: name]) {
+                a.shouldRemove=YES;
+        }
+    
     }
 }
 

@@ -131,6 +131,7 @@
     [_requestArray addObject:obj];
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     manager.responseSerializer= [AFHTTPResponseSerializer serializer];
+   // manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
    [manager POST:obj.urlString parameters:obj.pramaDic success:^(AFHTTPRequestOperation *operation, id responseObject) {
        NSData * da = [operation.responseString dataUsingEncoding:NSUTF8StringEncoding];
        [_requestArray removeObject:obj];
@@ -147,5 +148,8 @@
       
    }];
 }
+
+
+
 
 @end

@@ -91,6 +91,16 @@ NSString * YHBaseSequenceString(YHBaseStringCompareType sequenceType, NSString *
     }
 }
 
+NSString * YHBaseInsertCharater(NSString * chara ,NSString * str){
+    NSMutableString * newStr = [[NSMutableString alloc]init];
+    for (int i=0; i<str.length; i++) {
+        if (i<str.length-1) {
+            [newStr appendString:[NSString stringWithFormat:@"%c",[str characterAtIndex:i]]];
+            [newStr appendString:chara];
+        }
+    }
+    return newStr;
+}
 
 
 

@@ -24,7 +24,6 @@
 -(void)reloadView{
     self.frame = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
     self.backgroundColor = [UIColor colorWithRed:1 green:1 blue:1 alpha:0.4];
-    
     _activityImage = [[UIImageView alloc]initWithFrame:CGRectMake(SCREEN_WIDTH/2-20, SCREEN_HEIGHT/2-20, 40, 40)];
     //加动画帧
     NSMutableArray * arr = [[NSMutableArray alloc]init];

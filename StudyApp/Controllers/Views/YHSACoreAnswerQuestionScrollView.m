@@ -123,7 +123,7 @@
         [_middleView creatViewWithData:_dataArray[_currentPage]];
         [_rightView creatViewWithData:_dataArray[_currentPage+1]];
     }else if (_currentPage==[_dataModel.questioncount intValue]-1){
-        [_rightView setIndex:_currentPage];
+        [_rightView setIndex:_currentPage+1];
         [_rightView creatViewWithData:_dataArray[_currentPage]];
     }
     [self setTopic];

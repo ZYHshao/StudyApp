@@ -9,6 +9,8 @@
 #import "YHSARequestGetDataModel.h"
 
 @interface YHSAAnswerQuestionModel : YHSARequestGetDataModel
+//题目ID
+__PROPERTY_NO_STRONG__(NSString *, id);
 //题干
 __PROPERTY_NO_STRONG__(NSString *, content);
 //题干图片
@@ -43,4 +45,6 @@ __PROPERTY_NO_STRONG__(NSString *, listionTxt);
 __PROPERTY_NO_STRONG__(NSString *, typename);
 //题目类型
 __PROPERTY_NO_STRONG__(NSNumber *, type);
+//本题分值
+__PROPERTY_NO_STRONG__(NSNumber *, score);
 @end

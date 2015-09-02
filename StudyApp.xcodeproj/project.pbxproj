@@ -42,6 +42,8 @@
 		CE4BC2AD1B8AC121005BDD20 /* YHSAMockExamAnswerQuestionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE4BC2AC1B8AC121005BDD20 /* YHSAMockExamAnswerQuestionViewController.m */; };
 		CE4BC2B31B8AFB8B005BDD20 /* YHBaseGeometryTools.m in Sources */ = {isa = PBXBuildFile; fileRef = CE4BC2B21B8AFB8B005BDD20 /* YHBaseGeometryTools.m */; };
 		CE4BC2B61B8B07EC005BDD20 /* YHBaseTypesettingEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = CE4BC2B51B8B07EC005BDD20 /* YHBaseTypesettingEngine.m */; };
+		CE7C5A5A1B96D2E300E35DB7 /* NSDictionary+YHBaseJson.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7C5A591B96D2E300E35DB7 /* NSDictionary+YHBaseJson.m */; };
+		CE7C5A5D1B96D64400E35DB7 /* NSArray+YHBaseJson.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7C5A5C1B96D64400E35DB7 /* NSArray+YHBaseJson.m */; };
 		CE8095651B81EC9000730610 /* YHSARegistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8095631B81EC9000730610 /* YHSARegistViewController.m */; };
 		CE905ADD1B8D5CA700E72515 /* YHBaseTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE905ADC1B8D5CA700E72515 /* YHBaseTextView.m */; };
 		CE905AE11B8D617100E72515 /* YHSAOptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE905ADF1B8D617100E72515 /* YHSAOptionsViewController.m */; };
@@ -249,6 +251,10 @@
 		CE4BC2B21B8AFB8B005BDD20 /* YHBaseGeometryTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YHBaseGeometryTools.m; sourceTree = "<group>"; };
 		CE4BC2B41B8B07EC005BDD20 /* YHBaseTypesettingEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHBaseTypesettingEngine.h; sourceTree = "<group>"; };
 		CE4BC2B51B8B07EC005BDD20 /* YHBaseTypesettingEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YHBaseTypesettingEngine.m; sourceTree = "<group>"; };
+		CE7C5A581B96D2E300E35DB7 /* NSDictionary+YHBaseJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+YHBaseJson.h"; sourceTree = "<group>"; };
+		CE7C5A591B96D2E300E35DB7 /* NSDictionary+YHBaseJson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+YHBaseJson.m"; sourceTree = "<group>"; };
+		CE7C5A5B1B96D64400E35DB7 /* NSArray+YHBaseJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+YHBaseJson.h"; sourceTree = "<group>"; };
+		CE7C5A5C1B96D64400E35DB7 /* NSArray+YHBaseJson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+YHBaseJson.m"; sourceTree = "<group>"; };
 		CE8095611B81DE5300730610 /* StringHead.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StringHead.h; sourceTree = "<group>"; };
 		CE8095621B81EC9000730610 /* YHSARegistViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHSARegistViewController.h; sourceTree = "<group>"; };
 		CE8095631B81EC9000730610 /* YHSARegistViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YHSARegistViewController.m; sourceTree = "<group>"; };
@@ -565,6 +571,18 @@
 			path = BaseSelfDrawView;
 			sourceTree = "<group>";
 		};
+		CE7C5A571B96D24A00E35DB7 /* BaseCategory */ = {
+			isa = PBXGroup;
+			children = (
+				CE7C5A581B96D2E300E35DB7 /* NSDictionary+YHBaseJson.h */,
+				CE7C5A591B96D2E300E35DB7 /* NSDictionary+YHBaseJson.m */,
+				CE7C5A5B1B96D64400E35DB7 /* NSArray+YHBaseJson.h */,
+				CE7C5A5C1B96D64400E35DB7 /* NSArray+YHBaseJson.m */,
+			);
+			name = BaseCategory;
+			path = BaseViews/BaseCategory;
+			sourceTree = "<group>";
+		};
 		CE8095671B81ECCB00730610 /* Xibs */ = {
 			isa = PBXGroup;
 			children = (
@@ -596,6 +614,7 @@
 				CE9249FD1B84868300F7B647 /* BaseModel */,
 				CE924A001B84868300F7B647 /* BaseProcotols */,
 				CE924A061B84868300F7B647 /* BaseTools */,
+				CE7C5A571B96D24A00E35DB7 /* BaseCategory */,
 				CE924A0B1B84868300F7B647 /* BaseViews */,
 			);
 			path = YHBase;
@@ -1238,10 +1257,12 @@
 			files = (
 				1834918B1B84D18C00A0F322 /* YHSASystemSettingManager.m in Sources */,
 				CEDA4E301B85629400D64C44 /* YHSAReFoundViewController.m in Sources */,
+				CE7C5A5D1B96D64400E35DB7 /* NSArray+YHBaseJson.m in Sources */,
 				CE8095651B81EC9000730610 /* YHSARegistViewController.m in Sources */,
 				CE905ADD1B8D5CA700E72515 /* YHBaseTextView.m in Sources */,
 				CEE651D21B94479300A3E74C /* YHSAMockExamMainListModel.m in Sources */,
 				CEE651D31B94479300A3E74C /* YHSARequestGetDataModel.m in Sources */,
+				CE7C5A5A1B96D2E300E35DB7 /* NSDictionary+YHBaseJson.m in Sources */,
 				CEE651CF1B94479300A3E74C /* YHSAExamInfoDetailModel.m in Sources */,
 				CE328FA11B86C825001018AE /* YHSAMockExamSubjectViewController.m in Sources */,
 				1834918C1B84D18C00A0F322 /* YHSAUserManager.m in Sources */,

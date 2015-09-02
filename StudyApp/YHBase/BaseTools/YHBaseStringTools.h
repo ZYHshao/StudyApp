@@ -26,5 +26,9 @@ BOOL YHBaseCheckString(YHBaseStringCompareType compareType,NSString * str,int le
  */
 NSString * YHBaseSequenceString(YHBaseStringCompareType sequenceType, NSString * str);
 
+/**
+ *已规定的字符插入字符串中字符之间
+ */
+NSString * YHBaseInsertCharater(NSString * chara ,NSString * str);
 
 @end
