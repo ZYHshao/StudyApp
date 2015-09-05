@@ -20,7 +20,9 @@ typedef enum {
     YHSARequestTypeExamInfo,
     YHSARequestTypeExamInfoDetail,
     YHSARequestTypeExamPost,
-    YHSARequestTypeGetStudyNote
+    YHSARequestTypeGetStudyNote,
+    YHSARequestTypeAddStudyNote,
+    YHSARequestTypeEditStudyNote
 }YHSARequestType;
 //=========================测试地址=============================//
 #ifdef TEXT
@@ -41,6 +43,8 @@ typedef enum {
 #define YHSA_EXAM_INFO_DETAIL_POST_PATH @"http://app.vipexam.org/interface/message.ashx"
 #define YHSA_EXAM_POST_PATH @"http://app.vipexam.org/interface/submitExam.ashx"
 #define YHSA_GET_STUDY_NOTE_POST_PATH @"http://app.vipexam.org/interface/myNotes.ashx"
+#define YHSA_ADD_STUDT_NOTE_POST_PATH @"http://app.vipexam.org/interface/myNotes.ashx"
+#define YHSA_EDIT_STUDT_NOTE_POST_PATH @"http://app.vipexam.org/interface/myNotes.ashx"
 #endif
 
 //==========================请求id的定义========================//
@@ -55,4 +59,6 @@ typedef enum {
 #define YHSA_REQUEST_TYPE_EXAM_INFO_DETAIL @"9"
 #define YHSA_REQUEST_TYPE_EXAM_POST @"10"
 #define YHSA_REQUEST_TYPE_GET_STUDY_NOTE_POST @"11"
+#define YHSA_REQUEST_TYPE_ADD_STUDY_NOTE_POST @"12"
+#define YHSA_REQUEST_TYPE_EDIT_STUDY_NOTE_POST @"13"
 #endif

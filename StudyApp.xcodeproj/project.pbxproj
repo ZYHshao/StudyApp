@@ -22,6 +22,7 @@
 		186F6B271B992DAA00894496 /* YHSAStudyNoteListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 186F6B251B992DAA00894496 /* YHSAStudyNoteListTableViewCell.xib */; };
 		187C4D6A1B9A7EC90060A055 /* YHSAEditStudyNoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 187C4D681B9A7EC90060A055 /* YHSAEditStudyNoteViewController.m */; };
 		187C4D6B1B9A7EC90060A055 /* YHSAEditStudyNoteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 187C4D691B9A7EC90060A055 /* YHSAEditStudyNoteViewController.xib */; };
+		187EDADC1B9B23B600BFAF2F /* YHBaseDateTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 187EDADB1B9B23B600BFAF2F /* YHBaseDateTools.m */; };
 		189833C21B8C9C0F00ABC49E /* sjym_tab_jj_ico2.png in Resources */ = {isa = PBXBuildFile; fileRef = 189833C11B8C9C0F00ABC49E /* sjym_tab_jj_ico2.png */; };
 		1898773B1B8F44EA00E8CAA0 /* YHBaseHtmlView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1898773A1B8F44EA00E8CAA0 /* YHBaseHtmlView.m */; };
 		1898773E1B8F456000E8CAA0 /* RCLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1898773D1B8F456000E8CAA0 /* RCLabel.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -217,6 +218,8 @@
 		187C4D671B9A7EC90060A055 /* YHSAEditStudyNoteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHSAEditStudyNoteViewController.h; sourceTree = "<group>"; };
 		187C4D681B9A7EC90060A055 /* YHSAEditStudyNoteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YHSAEditStudyNoteViewController.m; sourceTree = "<group>"; };
 		187C4D691B9A7EC90060A055 /* YHSAEditStudyNoteViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YHSAEditStudyNoteViewController.xib; sourceTree = "<group>"; };
+		187EDADA1B9B23B600BFAF2F /* YHBaseDateTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHBaseDateTools.h; sourceTree = "<group>"; };
+		187EDADB1B9B23B600BFAF2F /* YHBaseDateTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YHBaseDateTools.m; sourceTree = "<group>"; };
 		189833C11B8C9C0F00ABC49E /* sjym_tab_jj_ico2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sjym_tab_jj_ico2.png; sourceTree = "<group>"; };
 		189877391B8F44EA00E8CAA0 /* YHBaseHtmlView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHBaseHtmlView.h; sourceTree = "<group>"; };
 		1898773A1B8F44EA00E8CAA0 /* YHBaseHtmlView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YHBaseHtmlView.m; sourceTree = "<group>"; };
@@ -744,6 +747,8 @@
 				CE3B27E71B8C52EE005EAE6F /* YHBaseCoreGraphicsTools.m */,
 				1898773F1B8F529800E8CAA0 /* YHBaseData.h */,
 				189877401B8F529800E8CAA0 /* YHBaseData.m */,
+				187EDADA1B9B23B600BFAF2F /* YHBaseDateTools.h */,
+				187EDADB1B9B23B600BFAF2F /* YHBaseDateTools.m */,
 			);
 			path = BaseTools;
 			sourceTree = "<group>";
@@ -1334,6 +1339,7 @@
 				CE2B70F21B82BD7600040C3C /* YHSANavigationViewController.m in Sources */,
 				18A232D31B9205AF00733E88 /* AudioStreamer.m in Sources */,
 				CE905AE11B8D617100E72515 /* YHSAOptionsViewController.m in Sources */,
+				187EDADC1B9B23B600BFAF2F /* YHBaseDateTools.m in Sources */,
 				CEE651D61B9447C500A3E74C /* YHSAAnswerStateModel.m in Sources */,
 				CE328FA91B86D285001018AE /* YHSASystemSettingViewController.m in Sources */,
 				CE905AEB1B8DAB1800E72515 /* YHSAExamInfoViewController.m in Sources */,

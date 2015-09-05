@@ -13,4 +13,5 @@ typedef enum {
 }YHSAEditStudyNoteViewControllerType;
 @interface YHSAEditStudyNoteViewController : YHBaseViewController
 __PROPERTY_NO_ASSIGN__(YHSAEditStudyNoteViewControllerType, type);
+__PROPERTY_NO_STRONG__(NSNumber *, noteId);
 @end

@@ -120,6 +120,17 @@
     return cell;
 }
 
+#pragma mark - 删除与修改笔记操作
+-(void)YHSAStudyNoteListTableViewCellClickRevise:(int)indexRow{
+    YHSAGetStudyNotelListModel * model = _dataArray[indexRow];
+    YHSAEditStudyNoteViewController * con = [[YHSAEditStudyNoteViewController alloc]init];
+    con.type=YHSAEditStudyNoteViewControllerTypeEdit;
+    con.noteId=model.id;
+    [self.navigationController pushViewController:con animated:YES];
+
+}
+
+
 /*
 #pragma mark - Navigation
 

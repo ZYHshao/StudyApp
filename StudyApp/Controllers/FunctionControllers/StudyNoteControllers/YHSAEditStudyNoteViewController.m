@@ -7,7 +7,10 @@
 //
 
 #import "YHSAEditStudyNoteViewController.h"
-
+#import "YHSAUserManager.h"
+#import "YHSAHttpManager.h"
+#import "YHSAActivityIndicatorView.h"
+#import "YHSARequestGetDataModel.h"
 @interface YHSAEditStudyNoteViewController ()<UITextViewDelegate,UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *titleTextField;
 @property (weak, nonatomic) IBOutlet YHBaseTextView *contentTextView;
@@ -17,6 +20,50 @@
 
 @implementation YHSAEditStudyNoteViewController
 - (IBAction)clickBtn:(UIButton *)sender {
+    //进行内容的检查
+    if (_titleTextField.text.length==0||_contentTextView.text.length==0) {
+        [YHBaseAlertView showWithStyle:YHBaseAlertViewSimple title:PUBLIC_PART_ALERT_TITLE text:@"所填内容不能为空" cancleBtn:PUBLIC_PART_ALERT_SELECT_BTN selectBtn:nil andSelectFunc:nil];
+        return;
+    }
+    //进行添加或者修改的操作
+    if (_type==YHSAEditStudyNoteViewControllerTypeNew) {
+        NSDictionary * dic = @{INTERFACE_FIELD_POST_GET_STUDY_NOTES_PHONECODE:[YHSAUserManager sharedTheSingletion].userName,INTERFACE_FIELD_POST_STUDY_NOTES_TITLE:_titleTextField.text,INTERFACE_FIELD_POST_STUDY_NOTES_CONTENT:_contentTextView.text,INTERFACE_FIELD_POST_STUDY_NOTES_STATUS:INTERFACE_FIELD_POST_ADD_STUDY_NOTES_STATUS,INTERFACE_FIELD_POST_STUDY_NOTES_QUESTION_ID:[YHBaseDateTools getCurrentTime]};
+        [[YHSAActivityIndicatorView sharedTheSingletion]show];
+        [YHSAHttpManager YHSARequestPost:YHSARequestTypeAddStudyNote infoDic:dic Succsee:^(NSData *data) {
+            [[YHSAActivityIndicatorView sharedTheSingletion]unShow];
+            NSDictionary * dataDic = [YHBaseJOSNAnalytical dictionaryWithJSData:data];
+            YHSARequestGetDataModel * model = [[YHSARequestGetDataModel alloc]init];
+            [model creatModelWithDic:dataDic];
+            if ([model.resultCode intValue]==[INTERFACE_RETURN_ADD_STUDY_NOTE_SUCCESS intValue]) {
+                __BLOCK__WEAK__SELF__(__self);
+                [YHBaseAlertView showWithStyle:YHBaseAlertViewNormal title:PUBLIC_PART_ALERT_TITLE text:@"添加笔记成功!" cancleBtn:PUBLIC_PART_ALERT_CANCLE_BTN selectBtn:PUBLIC_PART_ALERT_SELECT_BTN andSelectFunc:^{
+                    [[__self navigationController]popViewControllerAnimated:YES];
+                }];
+                
+            }
+        } andFail:^(YHBaseError *error) {
+             [[YHSAActivityIndicatorView sharedTheSingletion]unShow];
+        } isbuffer:NO];
+    }else if (_type==YHSAEditStudyNoteViewControllerTypeEdit){
+#warning 这里接口有问题 总是更新失败
+        NSDictionary * dic = @{INTERFACE_FIELD_POST_GET_STUDY_NOTES_PHONECODE:[YHSAUserManager sharedTheSingletion].userName,INTERFACE_FIELD_POST_STUDY_NOTES_TITLE:_titleTextField.text,INTERFACE_FIELD_POST_STUDY_NOTES_CONTENT:_contentTextView.text,INTERFACE_FIELD_POST_STUDY_NOTES_STATUS:INTERFACE_FIELD_POST_EDIT_STUDY_NOTES_STATUS,INTERFACE_FIELD_POST_STUDY_NOTES_QUESTION_ID:[YHBaseDateTools getCurrentTime],INTERFACE_FIELD_POST_STUDY_NOTES_ID:_noteId};
+        [[YHSAActivityIndicatorView sharedTheSingletion]show];
+        [YHSAHttpManager YHSARequestPost:YHSARequestTypeEditStudyNote infoDic:dic Succsee:^(NSData *data) {
+            [[YHSAActivityIndicatorView sharedTheSingletion]unShow];
+            NSDictionary * dataDic = [YHBaseJOSNAnalytical dictionaryWithJSData:data];
+            YHSARequestGetDataModel * model = [[YHSARequestGetDataModel alloc]init];
+            [model creatModelWithDic:dataDic];
+            if ([model.resultCode intValue]==[INTERFACE_RETURN_ADD_STUDY_NOTE_SUCCESS intValue]) {
+                __BLOCK__WEAK__SELF__(__self);
+                [YHBaseAlertView showWithStyle:YHBaseAlertViewNormal title:PUBLIC_PART_ALERT_TITLE text:@"修改笔记成功!" cancleBtn:PUBLIC_PART_ALERT_CANCLE_BTN selectBtn:PUBLIC_PART_ALERT_SELECT_BTN andSelectFunc:^{
+                    [[__self navigationController]popViewControllerAnimated:YES];
+                }];
+                
+            }
+        } andFail:^(YHBaseError *error) {
+            [[YHSAActivityIndicatorView sharedTheSingletion]unShow];
+        } isbuffer:NO];
+    }
 }
 
 - (void)viewDidLoad {

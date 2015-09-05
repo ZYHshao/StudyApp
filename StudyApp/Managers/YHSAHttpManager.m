@@ -102,6 +102,16 @@
             return YHSA_GET_STUDY_NOTE_POST_PATH;
         }
             break;
+        case YHSARequestTypeAddStudyNote:
+        {
+            return YHSA_ADD_STUDT_NOTE_POST_PATH;
+        }
+            break;
+        case YHSARequestTypeEditStudyNote:
+        {
+            return YHSA_EDIT_STUDT_NOTE_POST_PATH;
+        }
+            break;
         default:
             return @"";
             break;
@@ -162,6 +172,16 @@
         case YHSARequestTypeGetStudyNote:
         {
             return YHSA_REQUEST_TYPE_GET_STUDY_NOTE_POST;
+        }
+            break;
+        case YHSARequestTypeAddStudyNote:
+        {
+            return YHSA_REQUEST_TYPE_ADD_STUDY_NOTE_POST;
+        }
+            break;
+        case YHSARequestTypeEditStudyNote:
+        {
+            return YHSA_REQUEST_TYPE_EDIT_STUDY_NOTE_POST;
         }
             break;
         default:
