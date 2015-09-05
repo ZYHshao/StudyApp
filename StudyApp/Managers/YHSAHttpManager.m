@@ -97,6 +97,11 @@
             return YHSA_EXAM_POST_PATH;
         }
             break;
+        case YHSARequestTypeGetStudyNote:
+        {
+            return YHSA_GET_STUDY_NOTE_POST_PATH;
+        }
+            break;
         default:
             return @"";
             break;
@@ -152,6 +157,11 @@
         case YHSARequestTypeExamPost:
         {
             return YHSA_REQUEST_TYPE_EXAM_POST;
+        }
+            break;
+        case YHSARequestTypeGetStudyNote:
+        {
+            return YHSA_REQUEST_TYPE_GET_STUDY_NOTE_POST;
         }
             break;
         default:

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="YHSAStudyNoteListTableViewCell" rowHeight="69" id="KGk-i7-Jjw" customClass="YHSAStudyNoteListTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="69"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s3d-kU-5vx">
+                        <rect key="frame" x="10" y="5" width="300" height="32"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="32" id="8ql-5E-TJ8"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oxV-pQ-9gy">
+                        <rect key="frame" x="10" y="35" width="162" height="25"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="162" id="X1C-fH-Sao"/>
+                            <constraint firstAttribute="height" constant="25" id="bXS-pN-efy"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K8l-mH-RCD">
+                        <rect key="frame" x="180" y="38" width="55" height="17"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="55" id="P1b-cH-lqw"/>
+                            <constraint firstAttribute="height" constant="17" id="PLV-PE-MBD"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <state key="normal" title="修改" image="bj_editico.jpg">
+                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                        <connections>
+                            <action selector="reviseClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="0QK-mb-wmr"/>
+                        </connections>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fF3-27-sNO">
+                        <rect key="frame" x="250" y="38" width="55" height="17"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="17" id="5bw-iF-eUl"/>
+                            <constraint firstAttribute="width" constant="55" id="PPu-eD-owe"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <state key="normal" title="删除" image="bi_delico.jpg">
+                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                        <connections>
+                            <action selector="deleteClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="ooE-9f-bvA"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="oxV-pQ-9gy" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="27" id="39g-MD-3Sb"/>
+                    <constraint firstItem="s3d-kU-5vx" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="2" id="C1P-c4-AKV"/>
+                    <constraint firstItem="fF3-27-sNO" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="30" id="Fyl-5h-AIP"/>
+                    <constraint firstItem="oxV-pQ-9gy" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="2" id="IAA-Eu-Tl2"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="s3d-kU-5vx" secondAttribute="trailing" constant="2" id="dqj-Ho-kiY"/>
+                    <constraint firstItem="s3d-kU-5vx" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="-3" id="laQ-sK-E3C"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="K8l-mH-RCD" secondAttribute="trailing" constant="77" id="mBE-LD-VLt"/>
+                    <constraint firstItem="K8l-mH-RCD" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="30" id="nPS-7r-JyK"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="fF3-27-sNO" secondAttribute="trailing" constant="7" id="zZn-Co-Jdv"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="dateLabel" destination="oxV-pQ-9gy" id="fzv-jW-dq0"/>
+                <outlet property="deleteButton" destination="fF3-27-sNO" id="xmp-Ul-axZ"/>
+                <outlet property="reviseButton" destination="K8l-mH-RCD" id="37C-GZ-5rV"/>
+                <outlet property="theTitleLabel" destination="s3d-kU-5vx" id="Z5S-ud-9NP"/>
+            </connections>
+            <point key="canvasLocation" x="356" y="174.5"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="bi_delico.jpg" width="25" height="27"/>
+        <image name="bj_editico.jpg" width="27" height="27"/>
+    </resources>
+</document>

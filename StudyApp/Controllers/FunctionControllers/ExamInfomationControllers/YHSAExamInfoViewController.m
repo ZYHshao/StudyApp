@@ -35,6 +35,14 @@
 -(void)YHCreatView{
     self.title = EXAM_INFO_CONTROLLER_TITLE;
     _tableView = [[YHBaseTableView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height-64) style:UITableViewStylePlain];
+    __BLOCK__WEAK__SELF__(__self);
+    [_tableView shouldRefresh:^{
+        //刷新数据
+        [__self reFreshData];
+    }];
+    [_tableView shouldReload:^{
+        [__self reloadMoreData];
+    }];
     _tableView.dataSource=self;
     _tableView.delegate=self;
     _currentPage = 1;
@@ -47,6 +55,78 @@
     self.view.backgroundColor = manager.bgColor;
     _tableView.backgroundColor = manager.bgColor;
 }
+
+//刷新数据
+-(void)reFreshData{
+    NSDictionary * dic = @{INTERFACE_FIELD_EXAM_INFO_PAGEINDEX:@"1",INTERFACE_FIELD_EXAM_INFO_PAGESIZE:[NSString stringWithFormat:@"%d",REQUEST_PAGE_SIZE]};
+    //进行数据源数据的请求
+    [[YHSAActivityIndicatorView sharedTheSingletion]show];
+    [YHSAHttpManager YHSARequestPost:YHSARequestTypeExamInfo infoDic:dic Succsee:^(NSData *data) {
+        [_tableView.header endRefreshing];
+        NSDictionary * dataDic = [YHBaseJOSNAnalytical dictionaryWithJSData:data];
+        YHSAExamInfoListModel * tmpModel = [[YHSAExamInfoListModel alloc]init];
+        [tmpModel creatModelWithDic:dataDic];
+        tmpModel.pageData = [tmpModel.data objectForKey:@"pageData"];
+        tmpModel.pageCount = [tmpModel.data objectForKey:@"pageCount"];
+        if ([tmpModel.resultCode intValue]==[INTERFACE_RETURN_EXAM_INFO_SUCCESS intValue]) {
+            //包装数据
+            for (int i=0; i<tmpModel.pageData.count; i++) {
+                YHSAExamInfoListDataModel * model = [[YHSAExamInfoListDataModel alloc]init];
+                [model creatModelWithDic:[tmpModel.pageData objectAtIndex:i]];
+                [_dataArray replaceObjectAtIndex:i withObject:model];
+            }
+            if (_tableView!=nil) {
+                [_tableView reloadData];
+            }
+        }else if([tmpModel.resultCode intValue]==[INTERFACE_RETURN_EXAM_INFO_FAILED intValue]){
+            //请求失败
+        }
+        [[YHSAActivityIndicatorView sharedTheSingletion]unShow];
+    } andFail:^(YHBaseError *error) {
+        [_tableView.header endRefreshing];
+        [[YHSAActivityIndicatorView sharedTheSingletion]unShow];
+    } isbuffer:NO];
+
+}
+
+//下拉加载
+-(void)reloadMoreData{
+    _currentPage++;
+    NSDictionary * dic = @{INTERFACE_FIELD_EXAM_INFO_PAGEINDEX:[NSString stringWithFormat:@"%d",_currentPage],INTERFACE_FIELD_EXAM_INFO_PAGESIZE:[NSString stringWithFormat:@"%d",REQUEST_PAGE_SIZE]};
+    //进行数据源数据的请求
+    [[YHSAActivityIndicatorView sharedTheSingletion]show];
+    [YHSAHttpManager YHSARequestPost:YHSARequestTypeExamInfo infoDic:dic Succsee:^(NSData *data) {
+        [_tableView.footer endRefreshing];
+        NSDictionary * dataDic = [YHBaseJOSNAnalytical dictionaryWithJSData:data];
+        YHSAExamInfoListModel * tmpModel = [[YHSAExamInfoListModel alloc]init];
+        [tmpModel creatModelWithDic:dataDic];
+        tmpModel.pageData = [tmpModel.data objectForKey:@"pageData"];
+        tmpModel.pageCount = [tmpModel.data objectForKey:@"pageCount"];
+        if ([tmpModel.resultCode intValue]==[INTERFACE_RETURN_EXAM_INFO_SUCCESS intValue]) {
+            //包装数据
+            if ([tmpModel.pageCount intValue]<=_currentPage) {
+                [_tableView ReloadEnd];
+                return ;
+            }
+            for (int i=0; i<tmpModel.pageData.count; i++) {
+                YHSAExamInfoListDataModel * model = [[YHSAExamInfoListDataModel alloc]init];
+                [model creatModelWithDic:[tmpModel.pageData objectAtIndex:i]];
+                [_dataArray addObject:model];
+            }
+            if (_tableView!=nil) {
+                [_tableView reloadData];
+            }
+        }else if([tmpModel.resultCode intValue]==[INTERFACE_RETURN_EXAM_INFO_FAILED intValue]){
+            //请求失败
+        }
+        [[YHSAActivityIndicatorView sharedTheSingletion]unShow];
+    } andFail:^(YHBaseError *error) {
+        [_tableView.footer endRefreshing];
+        [[YHSAActivityIndicatorView sharedTheSingletion]unShow];
+    } isbuffer:NO];
+
+}
+
 -(void)YHCreatDate{
     _dataArray = [[NSMutableArray alloc]init];
     NSDictionary * dic = @{INTERFACE_FIELD_EXAM_INFO_PAGEINDEX:@"1",INTERFACE_FIELD_EXAM_INFO_PAGESIZE:[NSString stringWithFormat:@"%d",REQUEST_PAGE_SIZE]};

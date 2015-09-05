@@ -43,7 +43,8 @@
 #define MOCK_EXAM_MORE_TOOLS_DRAFT_IMAGE @"pupwin_datika.png"
 #define MOCK_EXAM_MORE_TOOLS_SETTING @"pupwin_settingico.png"
 
-
+//======================我的笔记===================//
+#define STUDY_NOTE_NEW_IMAGE @"bijieditico.jpg"
 //====================关于我们==================//
 #define ABOUT_US_LOGO_IMAGE @"aboutme_logo.png"
 #endif

@@ -16,6 +16,12 @@
 		1867693B1B92A98F001BD7F2 /* pausebutton.png in Resources */ = {isa = PBXBuildFile; fileRef = 186769371B92A98F001BD7F2 /* pausebutton.png */; };
 		1867693C1B92A98F001BD7F2 /* playbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = 186769381B92A98F001BD7F2 /* playbutton.png */; };
 		1867693D1B92A98F001BD7F2 /* stopbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = 186769391B92A98F001BD7F2 /* stopbutton.png */; };
+		186F6B1F1B991FC000894496 /* YHSAStudyNoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 186F6B1E1B991FC000894496 /* YHSAStudyNoteViewController.m */; };
+		186F6B221B9928C100894496 /* YHSAGetStudyNotelListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 186F6B211B9928C100894496 /* YHSAGetStudyNotelListModel.m */; };
+		186F6B261B992DAA00894496 /* YHSAStudyNoteListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 186F6B241B992DAA00894496 /* YHSAStudyNoteListTableViewCell.m */; };
+		186F6B271B992DAA00894496 /* YHSAStudyNoteListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 186F6B251B992DAA00894496 /* YHSAStudyNoteListTableViewCell.xib */; };
+		187C4D6A1B9A7EC90060A055 /* YHSAEditStudyNoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 187C4D681B9A7EC90060A055 /* YHSAEditStudyNoteViewController.m */; };
+		187C4D6B1B9A7EC90060A055 /* YHSAEditStudyNoteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 187C4D691B9A7EC90060A055 /* YHSAEditStudyNoteViewController.xib */; };
 		189833C21B8C9C0F00ABC49E /* sjym_tab_jj_ico2.png in Resources */ = {isa = PBXBuildFile; fileRef = 189833C11B8C9C0F00ABC49E /* sjym_tab_jj_ico2.png */; };
 		1898773B1B8F44EA00E8CAA0 /* YHBaseHtmlView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1898773A1B8F44EA00E8CAA0 /* YHBaseHtmlView.m */; };
 		1898773E1B8F456000E8CAA0 /* RCLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1898773D1B8F456000E8CAA0 /* RCLabel.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -201,6 +207,16 @@
 		186769371B92A98F001BD7F2 /* pausebutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pausebutton.png; sourceTree = "<group>"; };
 		186769381B92A98F001BD7F2 /* playbutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = playbutton.png; sourceTree = "<group>"; };
 		186769391B92A98F001BD7F2 /* stopbutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stopbutton.png; sourceTree = "<group>"; };
+		186F6B1D1B991FC000894496 /* YHSAStudyNoteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHSAStudyNoteViewController.h; sourceTree = "<group>"; };
+		186F6B1E1B991FC000894496 /* YHSAStudyNoteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YHSAStudyNoteViewController.m; sourceTree = "<group>"; };
+		186F6B201B9928C100894496 /* YHSAGetStudyNotelListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHSAGetStudyNotelListModel.h; sourceTree = "<group>"; };
+		186F6B211B9928C100894496 /* YHSAGetStudyNotelListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YHSAGetStudyNotelListModel.m; sourceTree = "<group>"; };
+		186F6B231B992DAA00894496 /* YHSAStudyNoteListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHSAStudyNoteListTableViewCell.h; sourceTree = "<group>"; };
+		186F6B241B992DAA00894496 /* YHSAStudyNoteListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YHSAStudyNoteListTableViewCell.m; sourceTree = "<group>"; };
+		186F6B251B992DAA00894496 /* YHSAStudyNoteListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YHSAStudyNoteListTableViewCell.xib; sourceTree = "<group>"; };
+		187C4D671B9A7EC90060A055 /* YHSAEditStudyNoteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHSAEditStudyNoteViewController.h; sourceTree = "<group>"; };
+		187C4D681B9A7EC90060A055 /* YHSAEditStudyNoteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YHSAEditStudyNoteViewController.m; sourceTree = "<group>"; };
+		187C4D691B9A7EC90060A055 /* YHSAEditStudyNoteViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YHSAEditStudyNoteViewController.xib; sourceTree = "<group>"; };
 		189833C11B8C9C0F00ABC49E /* sjym_tab_jj_ico2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sjym_tab_jj_ico2.png; sourceTree = "<group>"; };
 		189877391B8F44EA00E8CAA0 /* YHBaseHtmlView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHBaseHtmlView.h; sourceTree = "<group>"; };
 		1898773A1B8F44EA00E8CAA0 /* YHBaseHtmlView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YHBaseHtmlView.m; sourceTree = "<group>"; };
@@ -473,6 +489,18 @@
 			path = Xibs;
 			sourceTree = "<group>";
 		};
+		186F6B1C1B991F9200894496 /* StudyNoteControllers */ = {
+			isa = PBXGroup;
+			children = (
+				186F6B1D1B991FC000894496 /* YHSAStudyNoteViewController.h */,
+				186F6B1E1B991FC000894496 /* YHSAStudyNoteViewController.m */,
+				187C4D671B9A7EC90060A055 /* YHSAEditStudyNoteViewController.h */,
+				187C4D681B9A7EC90060A055 /* YHSAEditStudyNoteViewController.m */,
+				187C4D691B9A7EC90060A055 /* YHSAEditStudyNoteViewController.xib */,
+			);
+			path = StudyNoteControllers;
+			sourceTree = "<group>";
+		};
 		18F050FC1B837971008EF87D /* Managers */ = {
 			isa = PBXGroup;
 			children = (
@@ -497,6 +525,7 @@
 		CE0A895F1B85AE8300BA1F5F /* FunctionControllers */ = {
 			isa = PBXGroup;
 			children = (
+				186F6B1C1B991F9200894496 /* StudyNoteControllers */,
 				CE905AE81B8DAA4E00E72515 /* ExamInfomationControllers */,
 				CE328FA21B86C849001018AE /* SystemSettingControllers */,
 				CE328F9B1B86C825001018AE /* MockExamControllers */,
@@ -556,6 +585,9 @@
 				CE3B27E11B8C0D28005EAE6F /* YHSAAnswerQuestionTableViewCell.h */,
 				CE3B27E21B8C0D28005EAE6F /* YHSAAnswerQuestionTableViewCell.m */,
 				CE3B27E31B8C0D28005EAE6F /* YHSAAnswerQuestionTableViewCell.xib */,
+				186F6B231B992DAA00894496 /* YHSAStudyNoteListTableViewCell.h */,
+				186F6B241B992DAA00894496 /* YHSAStudyNoteListTableViewCell.m */,
+				186F6B251B992DAA00894496 /* YHSAStudyNoteListTableViewCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -801,6 +833,8 @@
 				CEE651CB1B94479300A3E74C /* YHSAMockExamMainListModel.m */,
 				CEE651CC1B94479300A3E74C /* YHSARequestGetDataModel.h */,
 				CEE651CD1B94479300A3E74C /* YHSARequestGetDataModel.m */,
+				186F6B201B9928C100894496 /* YHSAGetStudyNotelListModel.h */,
+				186F6B211B9928C100894496 /* YHSAGetStudyNotelListModel.m */,
 			);
 			path = RequestModels;
 			sourceTree = "<group>";
@@ -1116,6 +1150,7 @@
 				CEEAFE161B81A8BF00795B27 /* main_wdsc.png in Resources */,
 				CEEAFE0A1B81A8BF00795B27 /* login_pwdico.png in Resources */,
 				CEEAFDFB1B81A8BF00795B27 /* guanbi.png in Resources */,
+				187C4D6B1B9A7EC90060A055 /* YHSAEditStudyNoteViewController.xib in Resources */,
 				CEEAFE2B1B81A8BF00795B27 /* sjym_tab_syt_ico1.png in Resources */,
 				CEEAFDF11B81A8BF00795B27 /* dtk_ywc_dui.png in Resources */,
 				CEEAFDFC1B81A8BF00795B27 /* h_line.9.png in Resources */,
@@ -1183,6 +1218,7 @@
 				CEEAFDFE1B81A8BF00795B27 /* jiantoudown.jpg in Resources */,
 				CEDA4E311B85629400D64C44 /* YHSAReFoundViewController.xib in Resources */,
 				CEEAFE251B81A8BF00795B27 /* sjym_tab_jj_ico1.png in Resources */,
+				186F6B271B992DAA00894496 /* YHSAStudyNoteListTableViewCell.xib in Resources */,
 				CEEAFDF61B81A8BF00795B27 /* dtym_menuset_yjmsico1.png in Resources */,
 				CEEAFD631B8167DA00795B27 /* Images.xcassets in Resources */,
 				CEEAFE151B81A8BF00795B27 /* main_wdbj.png in Resources */,
@@ -1291,6 +1327,7 @@
 				CE924A1B1B84868300F7B647 /* YHBaseModel.m in Sources */,
 				CEEAFD7E1B816C5200795B27 /* YHSALoginViewController.m in Sources */,
 				CE4BC2B31B8AFB8B005BDD20 /* YHBaseGeometryTools.m in Sources */,
+				186F6B261B992DAA00894496 /* YHSAStudyNoteListTableViewCell.m in Sources */,
 				CEEAFD5B1B8167D900795B27 /* AppDelegate.m in Sources */,
 				CEE651D01B94479300A3E74C /* YHSAExamInfoListModel.m in Sources */,
 				183571171B89F999007AEF18 /* YHSAMockExamDetailsViewController.m in Sources */,
@@ -1303,6 +1340,7 @@
 				18F050FF1B8379C2008EF87D /* YHSAHttpManager.m in Sources */,
 				1898773B1B8F44EA00E8CAA0 /* YHBaseHtmlView.m in Sources */,
 				CEE6517B1B93E9E800A3E74C /* YHBaseListView.m in Sources */,
+				186F6B221B9928C100894496 /* YHSAGetStudyNotelListModel.m in Sources */,
 				CE905B0A1B8DBB6600E72515 /* YHSAExamListTableViewCell.m in Sources */,
 				CE3B27E41B8C0D28005EAE6F /* YHSAAnswerQuestionTableViewCell.m in Sources */,
 				1834917F1B84CC4400A0F322 /* YHBaseManager.m in Sources */,
@@ -1321,11 +1359,13 @@
 				CEEAFD581B8167D900795B27 /* main.m in Sources */,
 				CE0A89621B85AF9A00BA1F5F /* YHBaseTableView.m in Sources */,
 				CE924A171B84868300F7B647 /* YHBaseErrorCenter.m in Sources */,
+				186F6B1F1B991FC000894496 /* YHSAStudyNoteViewController.m in Sources */,
 				CE924A141B84868300F7B647 /* YHBaseNavigationController.m in Sources */,
 				CE924A181B84868300F7B647 /* YHBaseCecheCenter.m in Sources */,
 				CEE651AF1B94304B00A3E74C /* YHSAAnswerPagerViewController.m in Sources */,
 				CE924A161B84868300F7B647 /* YHBaseError.m in Sources */,
 				CE905AE61B8D84A800E72515 /* YHSAAboutUsViewController.m in Sources */,
+				187C4D6A1B9A7EC90060A055 /* YHSAEditStudyNoteViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

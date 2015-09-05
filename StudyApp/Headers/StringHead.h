@@ -130,6 +130,14 @@
 #define EXAM_ANSWER_PAGER_CONTROLLER_TITLE @"答题卡"
 #define EXAM_ANSWER_PAGER_CERTAIN_BTN_TEXT @"确定交卷"
 
+
+//=================================我的笔记=====================//
+#define STUDY_NOTE_CONTROLLER_TITLE @"我的笔记"
+#define STUDY_NOTE_TITLE_TEXT_FIELD_PLACEHOLDER @"请输入标题"
+#define STUDY_NOTE_CONTENT_TEXT_VIEW_PLACEHOLDER @"请输入内容"
+#define STUDY_NOTE_NEW_BUTTON_TITLE @"添加"
+#define STUDY_NOTE_EDIT_BUTTON_TITLE @"修改"
+
 //=============================接口字段==========================//
 //注册
 #define INTERFACE_FIELD_REGIST_COLLEAGE @"college"
@@ -176,6 +184,11 @@
 #define INTERFACE_FIELD_POST_EXAM_ANSWER @"answer"
 #define INTERFACE_FIELD_POST_EXAM_SORCE @"score"
 
+//我的笔记
+#define INTERFACE_FIELD_POST_GET_STUDY_NOTES_PHONECODE @"phonecode"
+#define INTERFACE_FIELD_POST_STUDY_NOTES_STATUS @"status"
+//参数类型
+#define INTERFACE_FIELD_POST_GET_STUDY_NOTES_STATUS @"list"
 //============================接口返回字段========================//
 
 #define INTERFACE_RETURN_REGIST_SUCCESS @"8"
@@ -202,9 +215,13 @@
 
 #define INTERFACE_RETURN_EXAM_INFO_SUCCESS @"8"
 #define INTERFACE_RETURN_EXAM_INFO_FAILED @"2"
+
+#define INTERFACE_RETURN_GET_STUDY_NOTE_LIST_SUCCESS @"8"
+#define INTERFACE_RETURN_GET_STUDY_NOTE_LIST_FAILED @"2"
 //============================tableViewCell ID================//
 #define TABLEVIEW_CELL_ID_MOCK_EXAM_FIRST @"moceExamFirst"
 #define TABLEVIEW_CELL_ID_SYSTEM_SETTING @"systemSetting"
 #define TABLEVIEW_CELL_ID_ANSWER_QUESTION  @"answerQuestion"
 #define TABLEVIEW_CELL_ID_EXAM_INFO @"enamInfo"
+#define TABLEVIEW_CELL_ID_STUDY_NOTE_LIST @"YHSAStudyNoteListTableViewCell"
 #endif
