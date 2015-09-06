@@ -8,7 +8,7 @@
 
 #import "YHSAStudyPlanViewController.h"
 
-@interface YHSAStudyPlanViewController ()
+@interface YHSAStudyPlanViewController ()<YHBaseCalendarViewDelegate>
 @property (weak, nonatomic) IBOutlet YHBaseCalendarView *calendarView;
 @property (weak, nonatomic) IBOutlet UIView *funcView;
 @property (weak, nonatomic) IBOutlet UILabel *throughLabel;
@@ -32,7 +32,9 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
+-(void)YHCreatView{
+    _calendarView.delegate=self;
+}
 /*
 #pragma mark - Navigation
 
@@ -42,5 +44,18 @@
     // Pass the selected object to the new view controller.
 }
 */
+#pragma mark - delegate 
+-(void)YHBaseCalendarViewSelectAtDateModel:(YHBaseDateModel *)dateModel{
+    //展示数据
+}
+
+
+
+
+
+
+
+
+
 
 @end

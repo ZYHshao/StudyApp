@@ -19,6 +19,8 @@
     //滑动功能的支持
     UIScrollView * _scrollView;
     NSDate * _today;
+    
+    YHBaseDateModel * _selectModel;
 }
 @end
 @implementation YHBaseCalendarView
@@ -33,6 +35,10 @@
 -(void)reloadView{
     _currentDate = [NSDate date];
     _today = [NSDate date];
+    _selectModel = [[YHBaseDateModel alloc]init];
+    _selectModel.year = [NSString stringWithFormat:@"%d",[_today getYear]];
+    _selectModel.month =[NSString stringWithFormat:@"%d",[_today getMonth]];
+    _selectModel.day = [NSString stringWithFormat:@"%d",[_today getDay]];
     _scrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 30, self.frame.size.width, self.frame.size.height)];
     _scrollView.contentSize = CGSizeMake(3*self.frame.size.width, 0);
     _scrollView.contentOffset = CGPointMake(self.frame.size.width, 0);
@@ -128,17 +134,29 @@
                 [bodyView addSubview:btn];
             }
             //将今天的日期标出
-            if ([currentDate getYear]==[_today getYear]&&[currentDate getMonth]==[_today getMonth]&&[btn.titleLabel.text intValue]==[_today getDay]) {
+            if ([currentDate getYear]==[_today getYear]&&[currentDate getMonth]==[_today getMonth]&&[btn.titleLabel.text intValue]==[_today getDay]&&!CGColorEqualToColor([btn.titleLabel.textColor CGColor], [[UIColor grayColor] CGColor])) {
                 [btn setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
             }
-            //是否标记
+            //是否进行自定义标记
+            /**
+             *if中的颜色比较 是为了让上月与下月的余日不产生bug
+             */
             if (_markArray!=nil) {
                 for (int i=0; i<_markArray.count; i++) {
                     YHBaseDateModel * model = _markArray[i];
-                    if ([currentDate getYear]==[model.year intValue]&&[currentDate getMonth]==[model.month intValue]&&[btn.titleLabel.text intValue]==[model.day intValue]) {
-                        btn.backgroundColor = [UIColor cyanColor];
+                    if ([currentDate getYear]==[model.year intValue]&&[currentDate getMonth]==[model.month intValue]&&[btn.titleLabel.text intValue]==[model.day intValue]&&!CGColorEqualToColor([btn.titleLabel.textColor CGColor], [[UIColor grayColor] CGColor])) {
+                        btn.layer.borderColor = [[UIColor grayColor]CGColor];
+                        btn.layer.borderWidth=1;
                     }
                 }
+            }
+            //是否进行选中标记
+            if ([_selectModel.year intValue]==[currentDate getYear]&&[_selectModel.month intValue]==[currentDate getMonth]&&[_selectModel.day intValue]==[btn.titleLabel.text intValue]&&!CGColorEqualToColor([btn.titleLabel.textColor CGColor], [[UIColor grayColor] CGColor])) {
+                btn.backgroundColor = [UIColor cyanColor];
+            }
+            if (!CGColorEqualToColor([btn.titleLabel.textColor CGColor], [[UIColor grayColor] CGColor])) {
+                //添加点击事件
+                [btn addTarget:self action:@selector(clickBtn:) forControlEvents:UIControlEventTouchUpInside];
             }
            
         }
@@ -173,6 +191,18 @@
     scrollView.userInteractionEnabled=NO;
 }
 
-
+//点击事件
+-(void)clickBtn:(UIButton *)btn{
+    _selectModel.year = [NSString stringWithFormat:@"%d",[_currentDate getYear]];
+    _selectModel.month = [NSString stringWithFormat:@"%d",[_currentDate getMonth]];
+    _selectModel.day = btn.titleLabel.text;
+    [self creatViewWithData:_currentDate onView:_bodyViewM];
+    [self creatViewWithData:[YHBaseDateTools getPreviousframDate:_currentDate] onView:_bodyViewL];
+    [self creatViewWithData:[YHBaseDateTools getNextMonthframDate:_currentDate] onView:_bodyViewR];
+    if ([self.delegate respondsToSelector:@selector(YHBaseCalendarViewSelectAtDateModel:)]) {
+        [self.delegate YHBaseCalendarViewSelectAtDateModel:_selectModel];
+    }
+    
+}
 
 @end
