@@ -13,4 +13,6 @@ __PROPERTY_NO_STRONG__(NSNumber *, id);
 __PROPERTY_NO_STRONG__(NSString *, title);
 __PROPERTY_NO_STRONG__(NSString *, date);
 __PROPERTY_NO_STRONG__(NSString *, questionid);
+__PROPERTY_NO_STRONG__(NSString *, content);
 @end
+

@@ -7,11 +7,13 @@
 //
 
 #import "YHBaseViewController.h"
+#import "YHSAGetStudyNotelListModel.h"
 typedef enum {
     YHSAEditStudyNoteViewControllerTypeNew,
     YHSAEditStudyNoteViewControllerTypeEdit
 }YHSAEditStudyNoteViewControllerType;
 @interface YHSAEditStudyNoteViewController : YHBaseViewController
 __PROPERTY_NO_ASSIGN__(YHSAEditStudyNoteViewControllerType, type);
-__PROPERTY_NO_STRONG__(NSNumber *, noteId);
+__PROPERTY_NO_STRONG__(YHSAGetStudyNotelListModel *, dataModel);
+__PROPERTY_NO_STRONG__(NSString *, questionid);
 @end

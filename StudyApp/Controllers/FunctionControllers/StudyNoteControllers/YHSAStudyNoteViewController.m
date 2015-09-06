@@ -14,6 +14,7 @@
 #import "YHSAGetStudyNotelListModel.h"
 #import "YHSAStudyNoteListTableViewCell.h"
 #import "YHSAEditStudyNoteViewController.h"
+#import "YHSAStudyNoteDetailsViewController.h"
 @interface YHSAStudyNoteViewController ()<UITableViewDelegate,UITableViewDataSource,YHSAStudyNoteListTableViewCellDelegate>
 {
     YHBaseTableView * _tableView;
@@ -28,11 +29,13 @@
     // Do any additional setup after loading the view.
     
 }
-
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [self downData];
+}
 -(void)YHCreatDate{
     //下载数据
     _dataArray = [[NSMutableArray alloc]init];
-    [self downData];
 }
 -(void)downData{
     NSDictionary * dic = @{INTERFACE_FIELD_POST_GET_STUDY_NOTES_PHONECODE:[YHSAUserManager sharedTheSingletion].userName,INTERFACE_FIELD_POST_STUDY_NOTES_STATUS:INTERFACE_FIELD_POST_GET_STUDY_NOTES_STATUS};
@@ -72,12 +75,6 @@
         [__self downData];
     }];
     [self.view addSubview:_tableView];
-    //创建导航新建按钮
-    UIBarButtonItem * newItem = [[UIBarButtonItem alloc]init];
-    newItem.image = [[UIImage imageNamed:STUDY_NOTE_NEW_IMAGE] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    newItem.target=self;
-    newItem.action=@selector(newNote);
-    self.navigationItem.rightBarButtonItem= newItem;
 }
 -(void)useYHTopicToCreatViewWithModel{
     YHTopicColorManager * manager = [YHTopicColorManager sharedTheSingletion];
@@ -89,12 +86,7 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-//新建笔记
--(void)newNote{
-    YHSAEditStudyNoteViewController * con = [[YHSAEditStudyNoteViewController alloc]init];
-    con.type=YHSAEditStudyNoteViewControllerTypeNew;
-    [self.navigationController pushViewController:con animated:YES];
-}
+
 
 #pragma mark - tableView delegate
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
@@ -120,16 +112,47 @@
     return cell;
 }
 
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    YHSAGetStudyNotelListModel * model = _dataArray[indexPath.row];
+    YHSAStudyNoteDetailsViewController * con = [[YHSAStudyNoteDetailsViewController alloc]init];
+    con.requestModel = model;
+    [self.navigationController pushViewController:con animated:YES];
+}
+
+
 #pragma mark - 删除与修改笔记操作
 -(void)YHSAStudyNoteListTableViewCellClickRevise:(int)indexRow{
     YHSAGetStudyNotelListModel * model = _dataArray[indexRow];
     YHSAEditStudyNoteViewController * con = [[YHSAEditStudyNoteViewController alloc]init];
     con.type=YHSAEditStudyNoteViewControllerTypeEdit;
-    con.noteId=model.id;
+    con.dataModel=model;
     [self.navigationController pushViewController:con animated:YES];
 
 }
+-(void)YHSAStudyNoteListTableViewCellClickDelete:(int)indexRow{
+    __BLOCK__WEAK__SELF__(__self);
+    YHSAGetStudyNotelListModel * model = _dataArray[indexRow];
+    [YHBaseAlertView showWithStyle:YHBaseAlertViewNormal title:PUBLIC_PART_ALERT_TITLE text:@"您确定要删除这条笔记么?" cancleBtn:PUBLIC_PART_ALERT_CANCLE_BTN selectBtn:PUBLIC_PART_ALERT_SELECT_BTN andSelectFunc:^{
+        //进行删除的操作
+        NSDictionary * dic = @{INTERFACE_FIELD_POST_GET_STUDY_NOTES_PHONECODE:[YHSAUserManager sharedTheSingletion].userName,INTERFACE_FIELD_POST_STUDY_NOTES_ID:model.id,INTERFACE_FIELD_POST_STUDY_NOTES_QUESTION_ID:model.questionid,INTERFACE_FIELD_POST_STUDY_NOTES_STATUS:INTERFACE_FIELD_POST_DELETE_STUDY_NOTES_STATUS} ;
+        [[YHSAActivityIndicatorView sharedTheSingletion]show];
+        [YHSAHttpManager YHSARequestPost:YHSARequestTypeDeleteStudyNote infoDic:dic Succsee:^(NSData *data) {
+            [[YHSAActivityIndicatorView  sharedTheSingletion]unShow];
+            NSDictionary * dataDic = [YHBaseJOSNAnalytical dictionaryWithJSData:data];
+            YHSARequestGetDataModel * dataModel = [[YHSARequestGetDataModel alloc]init];
+            [dataModel creatModelWithDic:dataDic];
+            if ([dataModel.resultCode intValue]==[INTERFACE_RETURN_DELETE_STUDY_NOTE_SUCCESS intValue]) {
+                [__self downData];
+            }else if ([dataModel.resultCode intValue]==[INTERFACE_RETURN_DELETE_STUDY_NOTE_FAILED intValue]){
+                [YHBaseAlertView showWithStyle:YHBaseAlertViewSimple title:PUBLIC_PART_ALERT_TITLE text:@"删除失败!" cancleBtn:PUBLIC_PART_ALERT_SELECT_BTN selectBtn:nil andSelectFunc:nil];
+            }
+        } andFail:^(YHBaseError *error) {
+            [[YHSAActivityIndicatorView  sharedTheSingletion]unShow];
+        } isbuffer:NO];
 
+    }];
+    
+}
 
 /*
 #pragma mark - Navigation

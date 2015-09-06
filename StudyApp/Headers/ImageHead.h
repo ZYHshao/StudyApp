@@ -39,9 +39,11 @@
 #define MOCK_EXAM_MORE_TOOLS_HAND_TEST_IMAGE @"sjym_tab_jj_ico1.png"
 #define MOCK_EXAM_MORE_TOOLS_COLLECT_IMAGE @"pupwin_soucico.png"
 #define MOCK_EXAM_MORE_TOOLS_ANSWER_PAGER_IMAGE @"pupwin_datika.png"
+#define MOCK_EXAM_MORE_TOOLS_SETTING @"pupwin_settingico.png"
 #warning 没有素材 需要替换
 #define MOCK_EXAM_MORE_TOOLS_DRAFT_IMAGE @"pupwin_datika.png"
-#define MOCK_EXAM_MORE_TOOLS_SETTING @"pupwin_settingico.png"
+#define MOCK_EXAM_MORE_TOOLS_NOTE_IMAGE @"pupwin_datika.png"
+
 
 //======================我的笔记===================//
 #define STUDY_NOTE_NEW_IMAGE @"bijieditico.jpg"

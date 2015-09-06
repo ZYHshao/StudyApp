@@ -49,6 +49,8 @@
 		CE4BC2AD1B8AC121005BDD20 /* YHSAMockExamAnswerQuestionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE4BC2AC1B8AC121005BDD20 /* YHSAMockExamAnswerQuestionViewController.m */; };
 		CE4BC2B31B8AFB8B005BDD20 /* YHBaseGeometryTools.m in Sources */ = {isa = PBXBuildFile; fileRef = CE4BC2B21B8AFB8B005BDD20 /* YHBaseGeometryTools.m */; };
 		CE4BC2B61B8B07EC005BDD20 /* YHBaseTypesettingEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = CE4BC2B51B8B07EC005BDD20 /* YHBaseTypesettingEngine.m */; };
+		CE59B7A11B9BDC7400859361 /* YHSAStudyNoteDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE59B79F1B9BDC7400859361 /* YHSAStudyNoteDetailsViewController.m */; };
+		CE59B7A21B9BDC7400859361 /* YHSAStudyNoteDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE59B7A01B9BDC7400859361 /* YHSAStudyNoteDetailsViewController.xib */; };
 		CE7C5A5A1B96D2E300E35DB7 /* NSDictionary+YHBaseJson.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7C5A591B96D2E300E35DB7 /* NSDictionary+YHBaseJson.m */; };
 		CE7C5A5D1B96D64400E35DB7 /* NSArray+YHBaseJson.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7C5A5C1B96D64400E35DB7 /* NSArray+YHBaseJson.m */; };
 		CE8095651B81EC9000730610 /* YHSARegistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8095631B81EC9000730610 /* YHSARegistViewController.m */; };
@@ -270,6 +272,9 @@
 		CE4BC2B21B8AFB8B005BDD20 /* YHBaseGeometryTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YHBaseGeometryTools.m; sourceTree = "<group>"; };
 		CE4BC2B41B8B07EC005BDD20 /* YHBaseTypesettingEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHBaseTypesettingEngine.h; sourceTree = "<group>"; };
 		CE4BC2B51B8B07EC005BDD20 /* YHBaseTypesettingEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YHBaseTypesettingEngine.m; sourceTree = "<group>"; };
+		CE59B79E1B9BDC7400859361 /* YHSAStudyNoteDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHSAStudyNoteDetailsViewController.h; sourceTree = "<group>"; };
+		CE59B79F1B9BDC7400859361 /* YHSAStudyNoteDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YHSAStudyNoteDetailsViewController.m; sourceTree = "<group>"; };
+		CE59B7A01B9BDC7400859361 /* YHSAStudyNoteDetailsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YHSAStudyNoteDetailsViewController.xib; sourceTree = "<group>"; };
 		CE7C5A581B96D2E300E35DB7 /* NSDictionary+YHBaseJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+YHBaseJson.h"; sourceTree = "<group>"; };
 		CE7C5A591B96D2E300E35DB7 /* NSDictionary+YHBaseJson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+YHBaseJson.m"; sourceTree = "<group>"; };
 		CE7C5A5B1B96D64400E35DB7 /* NSArray+YHBaseJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+YHBaseJson.h"; sourceTree = "<group>"; };
@@ -500,6 +505,9 @@
 				187C4D671B9A7EC90060A055 /* YHSAEditStudyNoteViewController.h */,
 				187C4D681B9A7EC90060A055 /* YHSAEditStudyNoteViewController.m */,
 				187C4D691B9A7EC90060A055 /* YHSAEditStudyNoteViewController.xib */,
+				CE59B79E1B9BDC7400859361 /* YHSAStudyNoteDetailsViewController.h */,
+				CE59B79F1B9BDC7400859361 /* YHSAStudyNoteDetailsViewController.m */,
+				CE59B7A01B9BDC7400859361 /* YHSAStudyNoteDetailsViewController.xib */,
 			);
 			path = StudyNoteControllers;
 			sourceTree = "<group>";
@@ -1191,6 +1199,7 @@
 				CEEAFE121B81A8BF00795B27 /* main_setting.png in Resources */,
 				CEEAFDF41B81A8BF00795B27 /* dtym_menuset_qpico1.png in Resources */,
 				CEEAFDEC1B81A8BF00795B27 /* dakai.png in Resources */,
+				CE59B7A21B9BDC7400859361 /* YHSAStudyNoteDetailsViewController.xib in Resources */,
 				CEEAFE291B81A8BF00795B27 /* sjym_tab_showda_ico1.png in Resources */,
 				CEEAFD661B8167DA00795B27 /* LaunchScreen.xib in Resources */,
 				CEEAFDEE1B81A8BF00795B27 /* dian2.png in Resources */,
@@ -1371,6 +1380,7 @@
 				CEE651AF1B94304B00A3E74C /* YHSAAnswerPagerViewController.m in Sources */,
 				CE924A161B84868300F7B647 /* YHBaseError.m in Sources */,
 				CE905AE61B8D84A800E72515 /* YHSAAboutUsViewController.m in Sources */,
+				CE59B7A11B9BDC7400859361 /* YHSAStudyNoteDetailsViewController.m in Sources */,
 				187C4D6A1B9A7EC90060A055 /* YHSAEditStudyNoteViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

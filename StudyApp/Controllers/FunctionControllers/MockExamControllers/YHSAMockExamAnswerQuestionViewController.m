@@ -13,6 +13,8 @@
 #import "YHSAAnswerPagerViewController.h"
 #import "YHSAAnswerQuestionManager.h"
 #import "YHSAAnswerStateModel.h"
+#import "YHSAEditStudyNoteViewController.h"
+#import "YHSAUserManager.h"
 @interface YHSAMockExamAnswerQuestionViewController ()<YHSACoreAnswerQuestionScrollViewDelegate,YHBaseListViewDelegate>
 {
     //核心的滑动视图
@@ -54,12 +56,14 @@
                         MOCK_EXAM_ANSWER_QUESTION_TOOLS_COLLECT,
                         MOCK_EXAM_ANSWER_QUESTION_TOOLS_ANSWER_PAGER,
                         MOCK_EXAM_ANSWER_QUESTION_TOOLS_DRAFT,
+                         MOCK_EXAM_ANSWER_QUESTION_TOOLS_NOTE,
                         MOCK_EXAM_ANSWER_QUESTION_TOOLS_MORE];
     _toolsImageArray = @[MOCK_EXAM_MORE_TOOLS_LOOK_ANSWER_IMAGE,
                          MOCK_EXAM_MORE_TOOLS_HAND_TEST_IMAGE,
                          MOCK_EXAM_MORE_TOOLS_COLLECT_IMAGE,
                          MOCK_EXAM_MORE_TOOLS_ANSWER_PAGER_IMAGE,
                          MOCK_EXAM_MORE_TOOLS_DRAFT_IMAGE,
+                         MOCK_EXAM_MORE_TOOLS_NOTE_IMAGE,
                          MOCK_EXAM_MORE_TOOLS_SETTING];
     YHSAAnswerQuestionManager * manager = [YHSAAnswerQuestionManager sharedTheSingletion];
     //进行初始化 所有题都是未答题状态
@@ -89,7 +93,7 @@
     _listView.delegate =self;
     //创建按钮
     NSMutableArray * array = [[NSMutableArray alloc]init];
-    for (int i=0; i<6; i++) {
+    for (int i=0; i<7; i++) {
         YHBaseListViewItem * item = [[YHBaseListViewItem alloc]initWithTitle:_toolsTitleArray[i] titleImage:_toolsImageArray[i]];
         [array addObject:item];
     }
@@ -239,8 +243,22 @@
             [_listView closeList];
         }
             break;
-        case 5:
+        case 5://天加笔记
         {
+            //判断登陆
+            if (![YHSAUserManager sharedTheSingletion].isLogin) {
+                [YHBaseAlertView showWithStyle:YHBaseAlertViewSimple title:PUBLIC_PART_ALERT_TITLE text:@"本功能必须登录才能使用!" cancleBtn:PUBLIC_PART_ALERT_SELECT_BTN selectBtn:nil andSelectFunc:nil];
+            }else{
+                YHSAEditStudyNoteViewController * con = [[YHSAEditStudyNoteViewController alloc]init];
+                con.questionid = [_coreScrollView.dataArray[_coreScrollView.currentPage] id];
+                [self.navigationController pushViewController:con animated:YES];
+            }
+            [_listView closeList];
+        }
+            break;
+        case 6://天加笔记
+        {
+            
             [_listView closeList];
         }
             break;

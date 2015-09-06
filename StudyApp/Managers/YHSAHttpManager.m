@@ -112,6 +112,16 @@
             return YHSA_EDIT_STUDT_NOTE_POST_PATH;
         }
             break;
+        case YHSARequestTypeDeleteStudyNote:
+        {
+            return YHSA_DELETE_STUDT_NOTE_POST_PATH;
+        }
+            break;
+        case YHSARequestTypeDetailsStudyNote:
+        {
+            return YHSA_DETAILS_STUDT_NOTE_POST_PATH;
+        }
+            break;
         default:
             return @"";
             break;
@@ -182,6 +192,16 @@
         case YHSARequestTypeEditStudyNote:
         {
             return YHSA_REQUEST_TYPE_EDIT_STUDY_NOTE_POST;
+        }
+            break;
+        case YHSARequestTypeDeleteStudyNote:
+        {
+            return YHSA_REQUEST_TYPE_DELETE_STUDY_NOTE_POST;
+        }
+            break;
+        case YHSARequestTypeDetailsStudyNote:
+        {
+            return YHSA_REQUEST_TYPE_DETAILS_STUDY_NOTE_POST;
         }
             break;
         default:
