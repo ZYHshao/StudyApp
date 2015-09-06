@@ -15,4 +15,22 @@
     NSString * time = [formatter stringFromDate:[NSDate date]];
     return time;
 }
++(NSDate *)getNextMonthframDate:(NSDate*)date{
+    NSCalendar *  _gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+    NSCalendarUnit _dayInfoUnits  = NSEraCalendarUnit | NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit;
+    NSDateComponents *components = [_gregorian components:_dayInfoUnits fromDate:date];
+    components.day = 1;
+    components.month ++;
+    NSDate * nextMonthDate =[_gregorian dateFromComponents:components];
+    return nextMonthDate;
+}
++(NSDate *)getPreviousframDate:(NSDate *)date{
+    NSCalendar *  _gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+    NSCalendarUnit _dayInfoUnits  = NSEraCalendarUnit | NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit;
+    NSDateComponents *components = [_gregorian components:_dayInfoUnits fromDate:date];
+    components.day = 1;
+    components.month --;
+    NSDate * previousMonthDate =[_gregorian dateFromComponents:components];
+    return previousMonthDate;
+}
 @end

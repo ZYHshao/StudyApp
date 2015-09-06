@@ -13,4 +13,12 @@
  *获取当前系统时间
  */
 +(NSString *)getCurrentTime;
+/**
+ *获取当前月的下个月一号的date
+ */
++(NSDate *)getNextMonthframDate:(NSDate*)date;
+/**
+ *获取当前月上个月一号的date
+ */
++(NSDate *)getPreviousframDate:(NSDate *)date;
 @end

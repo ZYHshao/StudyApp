@@ -70,6 +70,7 @@
     [page2 addSubview:next];
     [page2 addSubview:regist];
     [_loaderScorllView  addSubview:page2];
+    
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

@@ -22,4 +22,5 @@
 #import "YHBaseHtmlView.h"
 #import "YHBaseListView.h"
 #import "YHBaseListViewItem.h"
+#import "YHBaseCalendarView.h"
 #endif

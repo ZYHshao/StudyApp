@@ -25,7 +25,14 @@
     }
     return self;
 }
-
+- (instancetype)initWithCoder:(NSCoder *)coder
+{
+    self = [super initWithCoder:coder];
+    if (self) {
+         [self reloadView];
+    }
+    return self;
+}
 -(void)reloadView{
     
 }

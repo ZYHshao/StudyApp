@@ -51,8 +51,13 @@
 		CE4BC2B61B8B07EC005BDD20 /* YHBaseTypesettingEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = CE4BC2B51B8B07EC005BDD20 /* YHBaseTypesettingEngine.m */; };
 		CE59B7A11B9BDC7400859361 /* YHSAStudyNoteDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE59B79F1B9BDC7400859361 /* YHSAStudyNoteDetailsViewController.m */; };
 		CE59B7A21B9BDC7400859361 /* YHSAStudyNoteDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE59B7A01B9BDC7400859361 /* YHSAStudyNoteDetailsViewController.xib */; };
-		CE7C5A5A1B96D2E300E35DB7 /* NSDictionary+YHBaseJson.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7C5A591B96D2E300E35DB7 /* NSDictionary+YHBaseJson.m */; };
-		CE7C5A5D1B96D64400E35DB7 /* NSArray+YHBaseJson.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7C5A5C1B96D64400E35DB7 /* NSArray+YHBaseJson.m */; };
+		CE59B7A61B9C073100859361 /* YHBaseCalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE59B7A51B9C073100859361 /* YHBaseCalendarView.m */; };
+		CE75B10D1B9C44F3003DD946 /* YHBaseDateModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CE75B10C1B9C44F3003DD946 /* YHBaseDateModel.m */; };
+		CE75B1151B9C478A003DD946 /* NSArray+YHBaseJson.m in Sources */ = {isa = PBXBuildFile; fileRef = CE75B1101B9C478A003DD946 /* NSArray+YHBaseJson.m */; };
+		CE75B1161B9C478A003DD946 /* NSDate+YHBaseCalendar.m in Sources */ = {isa = PBXBuildFile; fileRef = CE75B1121B9C478A003DD946 /* NSDate+YHBaseCalendar.m */; };
+		CE75B1171B9C478A003DD946 /* NSDictionary+YHBaseJson.m in Sources */ = {isa = PBXBuildFile; fileRef = CE75B1141B9C478A003DD946 /* NSDictionary+YHBaseJson.m */; };
+		CE75B1221B9C4C5C003DD946 /* YHSAStudyPlanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE75B1201B9C4C5C003DD946 /* YHSAStudyPlanViewController.m */; };
+		CE75B1231B9C4C5C003DD946 /* YHSAStudyPlanViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE75B1211B9C4C5C003DD946 /* YHSAStudyPlanViewController.xib */; };
 		CE8095651B81EC9000730610 /* YHSARegistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8095631B81EC9000730610 /* YHSARegistViewController.m */; };
 		CE905ADD1B8D5CA700E72515 /* YHBaseTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE905ADC1B8D5CA700E72515 /* YHBaseTextView.m */; };
 		CE905AE11B8D617100E72515 /* YHSAOptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE905ADF1B8D617100E72515 /* YHSAOptionsViewController.m */; };
@@ -275,10 +280,19 @@
 		CE59B79E1B9BDC7400859361 /* YHSAStudyNoteDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHSAStudyNoteDetailsViewController.h; sourceTree = "<group>"; };
 		CE59B79F1B9BDC7400859361 /* YHSAStudyNoteDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YHSAStudyNoteDetailsViewController.m; sourceTree = "<group>"; };
 		CE59B7A01B9BDC7400859361 /* YHSAStudyNoteDetailsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YHSAStudyNoteDetailsViewController.xib; sourceTree = "<group>"; };
-		CE7C5A581B96D2E300E35DB7 /* NSDictionary+YHBaseJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+YHBaseJson.h"; sourceTree = "<group>"; };
-		CE7C5A591B96D2E300E35DB7 /* NSDictionary+YHBaseJson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+YHBaseJson.m"; sourceTree = "<group>"; };
-		CE7C5A5B1B96D64400E35DB7 /* NSArray+YHBaseJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+YHBaseJson.h"; sourceTree = "<group>"; };
-		CE7C5A5C1B96D64400E35DB7 /* NSArray+YHBaseJson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+YHBaseJson.m"; sourceTree = "<group>"; };
+		CE59B7A41B9C073100859361 /* YHBaseCalendarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YHBaseCalendarView.h; path = ../YHBaseCalendarView.h; sourceTree = "<group>"; };
+		CE59B7A51B9C073100859361 /* YHBaseCalendarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YHBaseCalendarView.m; path = ../YHBaseCalendarView.m; sourceTree = "<group>"; };
+		CE75B10B1B9C44F3003DD946 /* YHBaseDateModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHBaseDateModel.h; sourceTree = "<group>"; };
+		CE75B10C1B9C44F3003DD946 /* YHBaseDateModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YHBaseDateModel.m; sourceTree = "<group>"; };
+		CE75B10F1B9C478A003DD946 /* NSArray+YHBaseJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+YHBaseJson.h"; sourceTree = "<group>"; };
+		CE75B1101B9C478A003DD946 /* NSArray+YHBaseJson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+YHBaseJson.m"; sourceTree = "<group>"; };
+		CE75B1111B9C478A003DD946 /* NSDate+YHBaseCalendar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+YHBaseCalendar.h"; sourceTree = "<group>"; };
+		CE75B1121B9C478A003DD946 /* NSDate+YHBaseCalendar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+YHBaseCalendar.m"; sourceTree = "<group>"; };
+		CE75B1131B9C478A003DD946 /* NSDictionary+YHBaseJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+YHBaseJson.h"; sourceTree = "<group>"; };
+		CE75B1141B9C478A003DD946 /* NSDictionary+YHBaseJson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+YHBaseJson.m"; sourceTree = "<group>"; };
+		CE75B11F1B9C4C5C003DD946 /* YHSAStudyPlanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHSAStudyPlanViewController.h; sourceTree = "<group>"; };
+		CE75B1201B9C4C5C003DD946 /* YHSAStudyPlanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YHSAStudyPlanViewController.m; sourceTree = "<group>"; };
+		CE75B1211B9C4C5C003DD946 /* YHSAStudyPlanViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YHSAStudyPlanViewController.xib; sourceTree = "<group>"; };
 		CE8095611B81DE5300730610 /* StringHead.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StringHead.h; sourceTree = "<group>"; };
 		CE8095621B81EC9000730610 /* YHSARegistViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHSARegistViewController.h; sourceTree = "<group>"; };
 		CE8095631B81EC9000730610 /* YHSARegistViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YHSARegistViewController.m; sourceTree = "<group>"; };
@@ -536,6 +550,7 @@
 		CE0A895F1B85AE8300BA1F5F /* FunctionControllers */ = {
 			isa = PBXGroup;
 			children = (
+				CE75B11E1B9C4BDB003DD946 /* StudyPlanControllers */,
 				186F6B1C1B991F9200894496 /* StudyNoteControllers */,
 				CE905AE81B8DAA4E00E72515 /* ExamInfomationControllers */,
 				CE328FA21B86C849001018AE /* SystemSettingControllers */,
@@ -614,16 +629,43 @@
 			path = BaseSelfDrawView;
 			sourceTree = "<group>";
 		};
-		CE7C5A571B96D24A00E35DB7 /* BaseCategory */ = {
+		CE59B7A31B9C045900859361 /* BaseSorce */ = {
 			isa = PBXGroup;
 			children = (
-				CE7C5A581B96D2E300E35DB7 /* NSDictionary+YHBaseJson.h */,
-				CE7C5A591B96D2E300E35DB7 /* NSDictionary+YHBaseJson.m */,
-				CE7C5A5B1B96D64400E35DB7 /* NSArray+YHBaseJson.h */,
-				CE7C5A5C1B96D64400E35DB7 /* NSArray+YHBaseJson.m */,
 			);
-			name = BaseCategory;
-			path = BaseViews/BaseCategory;
+			path = BaseSorce;
+			sourceTree = "<group>";
+		};
+		CE75B10E1B9C478A003DD946 /* BaseCategory */ = {
+			isa = PBXGroup;
+			children = (
+				CE75B10F1B9C478A003DD946 /* NSArray+YHBaseJson.h */,
+				CE75B1101B9C478A003DD946 /* NSArray+YHBaseJson.m */,
+				CE75B1111B9C478A003DD946 /* NSDate+YHBaseCalendar.h */,
+				CE75B1121B9C478A003DD946 /* NSDate+YHBaseCalendar.m */,
+				CE75B1131B9C478A003DD946 /* NSDictionary+YHBaseJson.h */,
+				CE75B1141B9C478A003DD946 /* NSDictionary+YHBaseJson.m */,
+			);
+			path = BaseCategory;
+			sourceTree = "<group>";
+		};
+		CE75B1181B9C4796003DD946 /* BaseCalendarView */ = {
+			isa = PBXGroup;
+			children = (
+				CE59B7A41B9C073100859361 /* YHBaseCalendarView.h */,
+				CE59B7A51B9C073100859361 /* YHBaseCalendarView.m */,
+			);
+			path = BaseCalendarView;
+			sourceTree = "<group>";
+		};
+		CE75B11E1B9C4BDB003DD946 /* StudyPlanControllers */ = {
+			isa = PBXGroup;
+			children = (
+				CE75B11F1B9C4C5C003DD946 /* YHSAStudyPlanViewController.h */,
+				CE75B1201B9C4C5C003DD946 /* YHSAStudyPlanViewController.m */,
+				CE75B1211B9C4C5C003DD946 /* YHSAStudyPlanViewController.xib */,
+			);
+			path = StudyPlanControllers;
 			sourceTree = "<group>";
 		};
 		CE8095671B81ECCB00730610 /* Xibs */ = {
@@ -650,6 +692,8 @@
 		CE9249E61B84861C00F7B647 /* YHBase */ = {
 			isa = PBXGroup;
 			children = (
+				CE75B10E1B9C478A003DD946 /* BaseCategory */,
+				CE59B7A31B9C045900859361 /* BaseSorce */,
 				CEC8EB8A1B90631700C5D148 /* BaseAVFoundation */,
 				CE9249E71B84868300F7B647 /* BaseController */,
 				CE9249EC1B84868300F7B647 /* BaseHeader */,
@@ -657,7 +701,6 @@
 				CE9249FD1B84868300F7B647 /* BaseModel */,
 				CE924A001B84868300F7B647 /* BaseProcotols */,
 				CE924A061B84868300F7B647 /* BaseTools */,
-				CE7C5A571B96D24A00E35DB7 /* BaseCategory */,
 				CE924A0B1B84868300F7B647 /* BaseViews */,
 			);
 			path = YHBase;
@@ -724,6 +767,8 @@
 			children = (
 				CE9249FE1B84868300F7B647 /* YHBaseModel.h */,
 				CE9249FF1B84868300F7B647 /* YHBaseModel.m */,
+				CE75B10B1B9C44F3003DD946 /* YHBaseDateModel.h */,
+				CE75B10C1B9C44F3003DD946 /* YHBaseDateModel.m */,
 			);
 			path = BaseModel;
 			sourceTree = "<group>";
@@ -764,6 +809,7 @@
 		CE924A0B1B84868300F7B647 /* BaseViews */ = {
 			isa = PBXGroup;
 			children = (
+				CE75B1181B9C4796003DD946 /* BaseCalendarView */,
 				CE3B27EC1B8C62CD005EAE6F /* BaseSelfDrawView */,
 				CE924A261B84875100F7B647 /* YHKit.h */,
 				CE4BC2A51B8AB458005BDD20 /* YHBaseView.h */,
@@ -1210,6 +1256,7 @@
 				1867693D1B92A98F001BD7F2 /* stopbutton.png in Resources */,
 				CEEAFE271B81A8BF00795B27 /* sjym_tab_next_ico1.png in Resources */,
 				1867693C1B92A98F001BD7F2 /* playbutton.png in Resources */,
+				CE75B1231B9C4C5C003DD946 /* YHSAStudyPlanViewController.xib in Resources */,
 				CEEAFE011B81A8BF00795B27 /* liebiaoxuanzejiantou.png in Resources */,
 				CEEAFE2A1B81A8BF00795B27 /* sjym_tab_syt_ico.jpg in Resources */,
 				CEEAFE041B81A8BF00795B27 /* loading_2.png in Resources */,
@@ -1307,25 +1354,26 @@
 			files = (
 				1834918B1B84D18C00A0F322 /* YHSASystemSettingManager.m in Sources */,
 				CEDA4E301B85629400D64C44 /* YHSAReFoundViewController.m in Sources */,
-				CE7C5A5D1B96D64400E35DB7 /* NSArray+YHBaseJson.m in Sources */,
 				CE8095651B81EC9000730610 /* YHSARegistViewController.m in Sources */,
 				CE905ADD1B8D5CA700E72515 /* YHBaseTextView.m in Sources */,
 				CEE651D21B94479300A3E74C /* YHSAMockExamMainListModel.m in Sources */,
 				CEE651D31B94479300A3E74C /* YHSARequestGetDataModel.m in Sources */,
-				CE7C5A5A1B96D2E300E35DB7 /* NSDictionary+YHBaseJson.m in Sources */,
 				CEE651CF1B94479300A3E74C /* YHSAExamInfoDetailModel.m in Sources */,
 				CE328FA11B86C825001018AE /* YHSAMockExamSubjectViewController.m in Sources */,
+				CE59B7A61B9C073100859361 /* YHBaseCalendarView.m in Sources */,
 				1834918C1B84D18C00A0F322 /* YHSAUserManager.m in Sources */,
 				CE3B27E81B8C52EE005EAE6F /* YHBaseCoreGraphicsTools.m in Sources */,
 				CE3B27EF1B8C62CD005EAE6F /* YHBaseSelfServiceDrawView.m in Sources */,
 				CE924A1F1B84868300F7B647 /* YHBaseAlertView.m in Sources */,
 				CE2B70EC1B82B9A300040C3C /* YHSAMainToolsViewController.m in Sources */,
 				CE924A1C1B84868300F7B647 /* YHBaseJOSNAnalytical.m in Sources */,
+				CE75B1161B9C478A003DD946 /* NSDate+YHBaseCalendar.m in Sources */,
 				CEE651CE1B94479300A3E74C /* YHSAAnswerQuestionModel.m in Sources */,
 				CEC8EB8D1B90634700C5D148 /* YHBaseAVPlayer.m in Sources */,
 				CEE651B51B9434B000A3E74C /* YHSAAnswerQuestionManager.m in Sources */,
 				CEE651C01B943C3500A3E74C /* YHBaseTimerManager.m in Sources */,
 				CE924A2F1B84888F00F7B647 /* YHSAErrorCenter.m in Sources */,
+				CE75B10D1B9C44F3003DD946 /* YHBaseDateModel.m in Sources */,
 				CE924A211B84868300F7B647 /* YHBaseLabel.m in Sources */,
 				CE4BC2AD1B8AC121005BDD20 /* YHSAMockExamAnswerQuestionViewController.m in Sources */,
 				CEE6517E1B93EA6F00A3E74C /* YHBaseListViewItem.m in Sources */,
@@ -1356,6 +1404,7 @@
 				1898773B1B8F44EA00E8CAA0 /* YHBaseHtmlView.m in Sources */,
 				CEE6517B1B93E9E800A3E74C /* YHBaseListView.m in Sources */,
 				186F6B221B9928C100894496 /* YHSAGetStudyNotelListModel.m in Sources */,
+				CE75B1221B9C4C5C003DD946 /* YHSAStudyPlanViewController.m in Sources */,
 				CE905B0A1B8DBB6600E72515 /* YHSAExamListTableViewCell.m in Sources */,
 				CE3B27E41B8C0D28005EAE6F /* YHSAAnswerQuestionTableViewCell.m in Sources */,
 				1834917F1B84CC4400A0F322 /* YHBaseManager.m in Sources */,
@@ -1363,6 +1412,7 @@
 				CE905B0F1B8DC66C00E72515 /* YHSAExamInfoDetailViewController.m in Sources */,
 				CE328FA01B86C825001018AE /* YHSAMockExamController.m in Sources */,
 				CE924A1D1B84868300F7B647 /* YHBaseStringTools.m in Sources */,
+				CE75B1151B9C478A003DD946 /* NSArray+YHBaseJson.m in Sources */,
 				CE4BC2A41B8AB3AA005BDD20 /* YHSACoreAnswerQuestionScrollView.m in Sources */,
 				CE4BC2A71B8AB458005BDD20 /* YHBaseView.m in Sources */,
 				CEE651BD1B943BE800A3E74C /* YHBaseTimerNode.m in Sources */,
@@ -1379,6 +1429,7 @@
 				CE924A181B84868300F7B647 /* YHBaseCecheCenter.m in Sources */,
 				CEE651AF1B94304B00A3E74C /* YHSAAnswerPagerViewController.m in Sources */,
 				CE924A161B84868300F7B647 /* YHBaseError.m in Sources */,
+				CE75B1171B9C478A003DD946 /* NSDictionary+YHBaseJson.m in Sources */,
 				CE905AE61B8D84A800E72515 /* YHSAAboutUsViewController.m in Sources */,
 				CE59B7A11B9BDC7400859361 /* YHSAStudyNoteDetailsViewController.m in Sources */,
 				187C4D6A1B9A7EC90060A055 /* YHSAEditStudyNoteViewController.m in Sources */,
