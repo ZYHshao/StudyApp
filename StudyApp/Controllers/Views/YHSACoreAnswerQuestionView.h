@@ -16,4 +16,6 @@
 __PROPERTY_NO_ASSIGN__(int, index);
 //清空数据
 -(void)clearData;
+//刷新
+-(void)updataView;
 @end

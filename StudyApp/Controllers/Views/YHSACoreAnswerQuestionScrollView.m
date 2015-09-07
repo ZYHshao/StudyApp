@@ -191,7 +191,10 @@
     }
 }
 -(void)updataView{
-    [self reloadViewData];
+//都是tableView
+    [_leftView updataView];
+    [_middleView updataView];
+    [_rightView updataView];
 }
 
 //通过答题卡切换题目

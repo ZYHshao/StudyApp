@@ -72,6 +72,12 @@
     if ([YHSAAnswerQuestionManager sharedTheSingletion].hadHeanIn) {
         [self.view addSubview:_headView2];
     }else{
+        //创建确定交卷的
+        UIBarButtonItem * cetttainItem = [[UIBarButtonItem alloc]init];
+        cetttainItem.title = EXAM_ANSWER_PAGER_CERTAIN_BTN_TEXT;
+        [cetttainItem setTarget:self];
+        [cetttainItem setAction:@selector(certainClick)];
+        self.navigationItem.rightBarButtonItem = cetttainItem;
         [self.view addSubview:_headView1];
     }
    
@@ -80,12 +86,7 @@
     //创建按钮
     [self creatBtn];
     [self.view addSubview:_bodyView];
-    //创建确定交卷的
-    UIBarButtonItem * cetttainItem = [[UIBarButtonItem alloc]init];
-    cetttainItem.title = EXAM_ANSWER_PAGER_CERTAIN_BTN_TEXT;
-    [cetttainItem setTarget:self];
-    [cetttainItem setAction:@selector(certainClick)];
-    self.navigationItem.rightBarButtonItem = cetttainItem;
+    
 }
 
 

@@ -362,12 +362,6 @@
         }else{
              cell.indexLabel.backgroundColor = [UIColor grayColor];
         }
-        //处理交互
-        if ([YHSAAnswerQuestionManager sharedTheSingletion].hadHeanIn||stateModel.hadLookAnswer) {
-            cell.userInteractionEnabled=NO;
-        }else{
-             cell.userInteractionEnabled=YES;
-        }
         return cell;
     }
 }
@@ -387,6 +381,11 @@
 #pragma mark - 这里做答题的处理
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    //处理交互
+     YHSAAnswerStateModel * stateModel = [YHSAAnswerQuestionManager sharedTheSingletion].dataArray[_index-1];
+    if ([YHSAAnswerQuestionManager sharedTheSingletion].hadHeanIn||stateModel.hadLookAnswer) {
+        return;
+    }
     //进行数据的存储
     //判断题目的类型
     if (_questionType==1) {//单选题
@@ -480,7 +479,9 @@
     return YES;
 }
 
-
+-(void)updataView{
+    [_answerTableView reloadData];
+}
 
 
 

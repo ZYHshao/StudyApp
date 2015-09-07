@@ -15,6 +15,10 @@
 #import "YHSAAnswerStateModel.h"
 #import "YHSAEditStudyNoteViewController.h"
 #import "YHSAUserManager.h"
+#import "YHSAActivityIndicatorView.h"
+#import "YHSAHttpManager.h"
+#import "YHSARecordsModel.h"
+#import "YHSARecordsViewController.h"
 @interface YHSAMockExamAnswerQuestionViewController ()<YHSACoreAnswerQuestionScrollViewDelegate,YHBaseListViewDelegate>
 {
     //核心的滑动视图
@@ -41,7 +45,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 }
-
+-(void)viewWillAppear:(BOOL)animated{
+    [_coreScrollView updataView];
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -214,13 +220,42 @@
 -(void)YHBaseListViewClickAtIndex:(int)index{
     NSLog(@"%d",index);
     switch (index) {
-        case 0:
+        case 0://查看答案
         {
             [_listView closeList];
+            [[[YHSAAnswerQuestionManager sharedTheSingletion].dataArray objectAtIndex:_coreScrollView.currentPage] setHadLookAnswer:YES];
+            [_coreScrollView updataView];
         }
             break;
-        case 1:
+        case 1://交卷
         {
+            //
+            
+            if (![YHSAUserManager sharedTheSingletion].isLogin) {
+                [YHBaseAlertView showWithStyle:YHBaseAlertViewSimple title:PUBLIC_PART_ALERT_TITLE text:@"该功能需要您登陆方可使用" cancleBtn:PUBLIC_PART_ALERT_CANCLE_BTN selectBtn:nil andSelectFunc:nil];
+                return ;
+                
+            }
+            
+            
+            YHSAAnswerQuestionManager * manager = [YHSAAnswerQuestionManager sharedTheSingletion];
+            __BLOCK__WEAK__SELF__(__self);
+            [YHBaseAlertView  showWithStyle:YHBaseAlertViewNormal title:PUBLIC_PART_ALERT_TITLE text:@"是否确定提交试卷" cancleBtn:PUBLIC_PART_ALERT_CANCLE_BTN selectBtn:PUBLIC_PART_ALERT_SELECT_BTN andSelectFunc:^{
+                //提交试卷
+                for (int i=0; i<manager.dataArray.count; i++) {
+                    YHSAAnswerStateModel * model = manager.dataArray[i];
+                    if (model.hadAnswer==NO) {
+                        [YHBaseAlertView showWithStyle:YHBaseAlertViewSimple title:PUBLIC_PART_ALERT_TITLE text:@"请您答完所有的题目后再提交哦" cancleBtn:PUBLIC_PART_ALERT_SELECT_BTN selectBtn:nil andSelectFunc:nil];
+                        return ;
+                    }
+                }
+                //进行数据的提交
+                [__self postExam];
+                //关计时
+                [[YHSAAnswerQuestionManager sharedTheSingletion]stopTimer];
+                
+            }];
+            
             [_listView closeList];
         }
             break;
@@ -230,7 +265,7 @@
             
         }
             break;
-        case 3:
+        case 3://答题卡
         {
             [_listView closeList];
             YHSAAnswerPagerViewController * con = [[YHSAAnswerPagerViewController alloc]init];
@@ -256,7 +291,7 @@
             [_listView closeList];
         }
             break;
-        case 6://天加笔记
+        case 6://更多设置
         {
             
             [_listView closeList];
@@ -265,6 +300,49 @@
         default:
             break;
     }
+}
+-(void)postExam{
+    //进行遍历取数据
+    YHSAAnswerQuestionManager * manager = [YHSAAnswerQuestionManager sharedTheSingletion];
+    NSArray * dataArray = manager.dataArray;
+    NSMutableArray * postArray = [[NSMutableArray alloc]init];
+    for (int i = 0; i<dataArray.count; i++) {
+        YHSAAnswerStateModel * model = (YHSAAnswerStateModel *)dataArray[i];
+        NSString * answerStr;
+        if ([[model.info objectForKey:@"type"]intValue]==2) {
+            answerStr=YHBaseInsertCharater(@",", [model.info objectForKey:@"ans"]);
+        }else{
+            answerStr= [model.info objectForKey:@"ans"];
+        }
+        NSDictionary * dic = @{INTERFACE_FIELD_POST_EXAM_PHONECODE:[YHSAUserManager sharedTheSingletion].userName,INTERFACE_FIELD_POST_EXAM_EXAM_ID:manager.examID,INTERFACE_FIELD_POST_EXAM_QUESTION_ID:model.questionID,INTERFACE_FIELD_POST_EXAM_ANSWER:answerStr,INTERFACE_FIELD_POST_EXAM_SORCE:model.sccore};
+        [postArray addObject:dic];
+    }
+    NSDictionary * dic = @{INTERFACE_FIELD_POST_EXAM_MAIN:[postArray transToJsonString:YHBaseJosnStyleNoneSpace|YHBaseJosnStyleNoneWarp|YHBaseJosnStyleSinglequotationMark|YHBaseJosnStyleNoneKeyMark]};
+    
+    //进行提交网络请求
+    [[YHSAActivityIndicatorView sharedTheSingletion]show];
+    __BLOCK__WEAK__SELF__(__self);
+    [YHSAHttpManager YHSARequestPost:YHSARequestTypeExamPost infoDic:dic Succsee:^(NSData *data) {
+        [[YHSAActivityIndicatorView sharedTheSingletion]unShow];
+        NSDictionary * info = [YHBaseJOSNAnalytical dictionaryWithJSData:data];
+        YHSARecordsModel * model = [[YHSARecordsModel alloc]init];
+        [model creatModelWithDic:info];
+        if ([model.resultCode intValue] == [INTERFACE_RETURN_POST_RECORD_SUCCESS intValue]) {
+            //提交成功
+            //创建成绩单
+            YHSARecordsViewController * con = [[YHSARecordsViewController alloc]init];
+            con.time = [YHSAAnswerQuestionManager sharedTheSingletion].currentTime;
+            con.sorce = [model.score intValue];
+            [YHSAAnswerQuestionManager sharedTheSingletion].hadHeanIn=YES;
+            [__self presentViewController:con animated:YES completion:nil];
+        }else if ([model.resultCode intValue]==[INTERFACE_RETURN_POST_RECORD_FAILED intValue]){
+            [YHBaseAlertView showWithStyle:YHBaseAlertViewSimple title:PUBLIC_PART_ALERT_TITLE text:@"抱歉，提交失败" cancleBtn:PUBLIC_PART_ALERT_SELECT_BTN selectBtn:nil andSelectFunc:nil];
+        }
+    } andFail:^(YHBaseError *error) {
+        [[YHSAActivityIndicatorView sharedTheSingletion]unShow];
+    } isbuffer:NO];
+    
+    
 }
 
 
