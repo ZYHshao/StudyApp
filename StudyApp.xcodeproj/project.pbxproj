@@ -65,6 +65,7 @@
 		CE89DC131B9D7E780006B123 /* YHSAStudyPlanListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CE89DC121B9D7E780006B123 /* YHSAStudyPlanListModel.m */; };
 		CE89DC171B9D8E6A0006B123 /* YHSAStudyPlanEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE89DC151B9D8E6A0006B123 /* YHSAStudyPlanEditViewController.m */; };
 		CE89DC181B9D8E6A0006B123 /* YHSAStudyPlanEditViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE89DC161B9D8E6A0006B123 /* YHSAStudyPlanEditViewController.xib */; };
+		CE89DC1B1B9D98100006B123 /* YHSAStudyPlanDetailsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CE89DC1A1B9D98100006B123 /* YHSAStudyPlanDetailsModel.m */; };
 		CE905ADD1B8D5CA700E72515 /* YHBaseTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE905ADC1B8D5CA700E72515 /* YHBaseTextView.m */; };
 		CE905AE11B8D617100E72515 /* YHSAOptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE905ADF1B8D617100E72515 /* YHSAOptionsViewController.m */; };
 		CE905AE21B8D617100E72515 /* YHSAOptionsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE905AE01B8D617100E72515 /* YHSAOptionsViewController.xib */; };
@@ -312,6 +313,8 @@
 		CE89DC141B9D8E6A0006B123 /* YHSAStudyPlanEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHSAStudyPlanEditViewController.h; sourceTree = "<group>"; };
 		CE89DC151B9D8E6A0006B123 /* YHSAStudyPlanEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YHSAStudyPlanEditViewController.m; sourceTree = "<group>"; };
 		CE89DC161B9D8E6A0006B123 /* YHSAStudyPlanEditViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YHSAStudyPlanEditViewController.xib; sourceTree = "<group>"; };
+		CE89DC191B9D98100006B123 /* YHSAStudyPlanDetailsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHSAStudyPlanDetailsModel.h; sourceTree = "<group>"; };
+		CE89DC1A1B9D98100006B123 /* YHSAStudyPlanDetailsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YHSAStudyPlanDetailsModel.m; sourceTree = "<group>"; };
 		CE905ADB1B8D5CA700E72515 /* YHBaseTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHBaseTextView.h; sourceTree = "<group>"; };
 		CE905ADC1B8D5CA700E72515 /* YHBaseTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YHBaseTextView.m; sourceTree = "<group>"; };
 		CE905ADE1B8D617100E72515 /* YHSAOptionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHSAOptionsViewController.h; sourceTree = "<group>"; };
@@ -920,6 +923,8 @@
 				CE89DA841B9D22410006B123 /* YHSARecordsModel.m */,
 				CE89DC111B9D7E780006B123 /* YHSAStudyPlanListModel.h */,
 				CE89DC121B9D7E780006B123 /* YHSAStudyPlanListModel.m */,
+				CE89DC191B9D98100006B123 /* YHSAStudyPlanDetailsModel.h */,
+				CE89DC1A1B9D98100006B123 /* YHSAStudyPlanDetailsModel.m */,
 			);
 			path = RequestModels;
 			sourceTree = "<group>";
@@ -1392,6 +1397,7 @@
 				1834918C1B84D18C00A0F322 /* YHSAUserManager.m in Sources */,
 				CE3B27E81B8C52EE005EAE6F /* YHBaseCoreGraphicsTools.m in Sources */,
 				CE3B27EF1B8C62CD005EAE6F /* YHBaseSelfServiceDrawView.m in Sources */,
+				CE89DC1B1B9D98100006B123 /* YHSAStudyPlanDetailsModel.m in Sources */,
 				CE924A1F1B84868300F7B647 /* YHBaseAlertView.m in Sources */,
 				CE2B70EC1B82B9A300040C3C /* YHSAMainToolsViewController.m in Sources */,
 				CE924A1C1B84868300F7B647 /* YHBaseJOSNAnalytical.m in Sources */,
