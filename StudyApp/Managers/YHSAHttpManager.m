@@ -127,6 +127,16 @@
             return YHSA_STUDY_PLAN_LIST_POST_PATH;
         }
             break;
+        case YHSARequestTypeStudyPlanDetails:
+        {
+            return YHSA_STUDY_PLAN_DETAILS_POST_PATH;
+        }
+            break;
+        case YHSARequestTypeStudyPlanAdd:
+        {
+            return YHSA_STUDY_PLAN_ADD_POST_PATH;
+        }
+            break;
         default:
             return @"";
             break;
@@ -212,6 +222,16 @@
         case YHSARequestTypeStudyPlanList:
         {
             return YHSA_REQUEST_TYPE_STUDY_PLAN_LIST;
+        }
+            break;
+        case YHSARequestTypeStudyPlanDetails:
+        {
+            return YHSA_REQUEST_TYPE_STUDY_PLAN_DETAILS;
+        }
+            break;
+        case YHSARequestTypeStudyPlanAdd:
+        {
+            return YHSA_REQUEST_TYPE_STUDY_PLAN_ADD;
         }
             break;
         default:

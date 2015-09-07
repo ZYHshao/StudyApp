@@ -12,11 +12,14 @@
 #import "YHSARequestGetDataModel.h"
 #import "YHSAStudyPlanListModel.h"
 #import "YHSAStudyPlanEditViewController.h"
+#import "YHSAActivityIndicatorView.h"
 @interface YHSAStudyPlanViewController ()<YHBaseCalendarViewDelegate>
 {
     NSMutableArray * _dataArray;
     //当前的计划模型
     __strong YHSAStudyPlanListModel * _currentModel;
+    
+    __strong YHBaseDateModel *_currentDateModel;
 }
 @property (weak, nonatomic) IBOutlet YHBaseCalendarView *calendarView;
 @property (weak, nonatomic) IBOutlet UIView *funcView;
@@ -32,10 +35,43 @@
 
 @implementation YHSAStudyPlanViewController
 - (IBAction)deleteClick:(UIButton *)sender {
+    __BLOCK__WEAK__SELF__(__self);
+    //进行提示
+    [YHBaseAlertView showWithStyle:YHBaseAlertViewNormal title:PUBLIC_PART_ALERT_TITLE text:@"是否确定删除计划" cancleBtn:PUBLIC_PART_ALERT_CANCLE_BTN selectBtn:PUBLIC_PART_ALERT_SELECT_BTN andSelectFunc:^{
+        NSDictionary * dic = @{INTERFACE_FIELD_POST_STUDY_PLAN_ID:_currentModel.id,INTERFACE_FIELD_POST_STUDY_PLAN_STATUS:INTERFACE_FIELD_POST_DELETE_STUDY_PLAN_STATUS};
+        [[YHSAActivityIndicatorView sharedTheSingletion]show];
+        [YHSAHttpManager YHSARequestPost:YHSARequestTypeStudyPlanAdd infoDic:dic Succsee:^(NSData *data) {
+            [[YHSAActivityIndicatorView sharedTheSingletion]unShow];
+            NSDictionary * dataDic = [YHBaseJOSNAnalytical dictionaryWithJSData:data];
+            YHSARequestGetDataModel * model = [[YHSARequestGetDataModel alloc]init];
+            [model creatModelWithDic:dataDic];
+            if ([model.resultCode intValue]==[INTERFACE_RETURN_POST_STUDY_PLAN_ADD_SUCCESS intValue]) {
+                [YHBaseAlertView showWithStyle:YHBaseAlertViewSimple title:PUBLIC_PART_ALERT_TITLE text:@"删除成功" cancleBtn:PUBLIC_PART_ALERT_SELECT_BTN selectBtn:nil andSelectFunc:nil];
+                _currentDateModel =nil;
+                [__self update];
+            }else if ([model.resultCode intValue]==[INTERFACE_RETURN_POST_STUDY_PLAN_ADD_FAILED intValue]){
+                [__self update];
+            }
+            
+        } andFail:^(YHBaseError *error) {
+            [[YHSAActivityIndicatorView sharedTheSingletion]unShow];
+        } isbuffer:NO];
+
+    }];
+
+    
 }
 - (IBAction)reviseClick:(UIButton *)sender {
+    YHSAStudyPlanEditViewController * con = [[YHSAStudyPlanEditViewController alloc]init];
+    con.style = YHSAStudyPlanEditViewControllerStyleEdit;
+    con.planId = _currentModel.id;
+    [self.navigationController pushViewController:con animated:YES];
 }
 - (IBAction)newClick:(UIButton *)sender {
+    YHSAStudyPlanEditViewController * con = [[YHSAStudyPlanEditViewController alloc]init];
+    con.style = YHSAStudyPlanEditViewControllerStyleAdd;
+    con.dateStr = [NSString stringWithFormat:@"%@-%@-%@",_currentDateModel.year,_currentDateModel.month,_currentDateModel.day];
+    [self.navigationController pushViewController:con animated:YES];
 }
 - (IBAction)detailesClick:(UIButton *)sender {
     YHSAStudyPlanEditViewController * con = [[YHSAStudyPlanEditViewController alloc]init];
@@ -53,7 +89,10 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [self update];
+}
 -(void)useYHTopicToCreatViewWithModel{
     YHTopicColorManager * manager = [YHTopicColorManager sharedTheSingletion];
     [manager getTopicModel];
@@ -90,6 +129,7 @@
             model.year = [NSString stringWithFormat:@"%d",[_calendarView.currentDate getYear]];
             model.month = [NSString stringWithFormat:@"%02d",[_calendarView.currentDate getMonth]];
             model.day = [NSString stringWithFormat:@"%02d",[_calendarView.currentDate getDay]];
+            _currentDateModel = model;
             [self updateViewWithDate:model];
         }else if ([tmpModel.resultCode intValue]==[INTERFACE_RETURN_POST_STUDY_PLAN_LIST_FAILED intValue]){
             
@@ -99,11 +139,38 @@
     } isbuffer:NO];
     
 }
+-(void)update{
+    NSDictionary * dic = @{INTERFACE_FIELD_POST_STUDY_PLAN_LIST_PLONECODE:[YHSAUserManager sharedTheSingletion].userName,INTERFACE_FIELD_POST_STUDY_PLAN_STATUS:INTERFACE_FIELD_POST_GET_STUDY_PLAN_STATUS};
+    //这里进行静默加载 不要有提示
+    [YHSAHttpManager YHSARequestPost:YHSARequestTypeStudyPlanList infoDic:dic Succsee:^(NSData *data) {
+        [_dataArray removeAllObjects];
+        NSDictionary * dataDic = [YHBaseJOSNAnalytical dictionaryWithJSData:data];
+        YHSARequestGetDataModel * tmpModel = [[YHSARequestGetDataModel alloc]init];
+        [tmpModel creatModelWithDic:dataDic];
+        if ([tmpModel.resultCode intValue]==[INTERFACE_RETURN_POST_STUDY_PLAN_LIST_SUCCESS intValue]) {
+            
+            for (int i=0; i<[tmpModel.data count]; i++) {
+                YHSAStudyPlanListModel * model = [[YHSAStudyPlanListModel alloc]init];
+                [model creatModelWithDic:[tmpModel.data objectAtIndex:i]];
+                [_dataArray addObject:model];
+            }
+            [self updateViewWithDate:_currentDateModel];
+        }else if ([tmpModel.resultCode intValue]==[INTERFACE_RETURN_POST_STUDY_PLAN_LIST_FAILED intValue]){
+             [self updateViewWithDate:_currentDateModel];
+        }
+    } andFail:^(YHBaseError *error) {
+        
+    } isbuffer:NO];
 
+}
 -(void)YHCreatView{
     _calendarView.delegate=self;
     self.title = [NSString stringWithFormat:@"%d年%d月",[_calendarView.currentDate getYear],[_calendarView.currentDate getMonth]];
-    
+    YHBaseDateModel * model = [[YHBaseDateModel alloc]init];
+    model.year = [NSString stringWithFormat:@"%d",[_calendarView.currentDate getYear]];
+    model.month = [NSString stringWithFormat:@"%02d",[_calendarView.currentDate getMonth]];
+    model.day = [NSString stringWithFormat:@"%02d",[[NSDate date] getDay]];
+    _currentDateModel = model;
     _detailsButton.layer.masksToBounds=YES;
     _detailsButton.layer.cornerRadius=6;
     _deleteButton.layer.masksToBounds=YES;
@@ -112,6 +179,12 @@
     _reviseButton.layer.cornerRadius=6;
     _theNewBtn.layer.masksToBounds=YES;
     _theNewBtn.layer.cornerRadius=6;
+    _throughLabel.text = @"今日没有计划哦~";
+    _theNewBtn.hidden=NO;
+    _deleteButton.hidden=YES;
+    _reviseButton.hidden=YES;
+    _detailsButton.hidden=YES;
+   
     //
 }
 /*
@@ -126,6 +199,11 @@
 
 
 -(void)updateViewWithDate:(YHBaseDateModel *)dateModel{
+    _throughLabel.text = @"今日没有计划哦~";
+    _theNewBtn.hidden=NO;
+    _deleteButton.hidden=YES;
+    _reviseButton.hidden=YES;
+    _detailsButton.hidden=YES;
     for (YHSAStudyPlanListModel * model in _dataArray) {
         if ([model.date isEqualToString:[NSString stringWithFormat:@"%@-%@-%@",dateModel.year,dateModel.month,dateModel.day]]) {
             _currentModel = model;
@@ -134,6 +212,7 @@
             _deleteButton.hidden=NO;
             _reviseButton.hidden=NO;
             _detailsButton.hidden=NO;
+            return;
         }else{
             _throughLabel.text = @"今日没有计划哦~";
             _theNewBtn.hidden=NO;
@@ -144,10 +223,11 @@
     }
 }
 
-#pragma mark - delegate 
+#pragma mark - delegate
 -(void)YHBaseCalendarViewSelectAtDateModel:(YHBaseDateModel *)dateModel{
     //展示数据
     [self updateViewWithDate:dateModel];
+    _currentDateModel = dateModel;
 }
 
 -(void)YHBaseCalendarViewScrollEndToDate:(YHBaseDateModel *)dateModel{
