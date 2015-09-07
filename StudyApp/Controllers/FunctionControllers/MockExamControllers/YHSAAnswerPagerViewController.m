@@ -12,6 +12,9 @@
 #import "YHSAUserManager.h"
 #import "YHSALoginViewController.h"
 #import "YHSAHttpManager.h"
+#import "YHSARecordsModel.h"
+#import "YHSAActivityIndicatorView.h"
+#import "YHSARecordsViewController.h"
 @interface YHSAAnswerPagerViewController ()
 {
     //标头视图
@@ -19,6 +22,7 @@
     YHBaseView * _headView2;//已经交卷
     
     YHBaseLabel * _headView1InfoLabel;
+    YHBaseLabel * _headView2InfoLabel;
     
     //主体视图
     YHBaseScrollView * _bodyView;
@@ -89,6 +93,14 @@
     _headView1InfoLabel = [[YHBaseLabel alloc]initWithFrame:CGRectMake(self.view.frame.size.width/2-100, 5, 200, 40)];
     _headView1InfoLabel.textAlignment = NSTextAlignmentCenter;
     [_headView1 addSubview:_headView1InfoLabel];
+    
+    _headView2InfoLabel = [[YHBaseLabel alloc]initWithFrame:CGRectMake(self.view.frame.size.width/2-100, 5, 200, 40)];
+    _headView2InfoLabel.text = [NSString stringWithFormat:@"您的用时:%d分%d秒", [YHSAAnswerQuestionManager sharedTheSingletion].currentTime/60, [YHSAAnswerQuestionManager sharedTheSingletion].currentTime%60];
+    _headView1InfoLabel.textAlignment = NSTextAlignmentCenter;
+    [_headView2 addSubview:_headView2InfoLabel];
+   
+    
+    
 }
 
 
@@ -102,6 +114,8 @@
     _headView2.backgroundColor=manager.bgColor;
     _headView1InfoLabel.backgroundColor=manager.bgColor;
     _headView1InfoLabel.textColor=manager.textColor;
+    _headView2InfoLabel.backgroundColor=manager.bgColor;
+    _headView2InfoLabel.textColor=manager.textColor;
 }
 
 
@@ -129,6 +143,7 @@
         [_btnArray addObject:btn];
     }
     _bodyView.contentSize=CGSizeMake(_bodyView.frame.size.width, 5+60*(answerManager.dataArray.count/5)+50);
+    [self reloadBtnColor];
 }
 
 -(void)click:(YHBaseButton *)btn{
@@ -145,20 +160,52 @@
 }
 -(void)reloadBtnColor{
     YHSAAnswerQuestionManager * answerManager = [YHSAAnswerQuestionManager sharedTheSingletion];
-    for (int i=0; i<_btnArray.count; i++) {
-        YHSAAnswerStateModel * model = answerManager.dataArray[i];
-        YHBaseButton * btn = (YHBaseButton*)_btnArray[i];
-        if (model.hadAnswer) {
-            [btn setBackgroundColor:[UIColor cyanColor]];
-        }else{
-            [btn setBackgroundColor:[UIColor whiteColor]];
+    if (!answerManager.hadHeanIn) {
+        for (int i=0; i<_btnArray.count; i++) {
+            YHSAAnswerStateModel * model = answerManager.dataArray[i];
+            YHBaseButton * btn = (YHBaseButton*)_btnArray[i];
+            if (model.hadAnswer) {
+                [btn setBackgroundColor:[UIColor cyanColor]];
+            }else{
+                [btn setBackgroundColor:[UIColor whiteColor]];
+            }
+            if (answerManager.currentIndex==i) {
+                [btn setBackgroundColor:[UIColor blueColor]];
+            }
+            
         }
-        if (answerManager.currentIndex==i) {
-            [btn setBackgroundColor:[UIColor blueColor]];
+    }else{//已经交卷
+        for (int i=0; i<_btnArray.count; i++) {
+            YHSAAnswerStateModel * model = answerManager.dataArray[i];
+            YHBaseButton * btn = (YHBaseButton*)_btnArray[i];
+            if (model.isCorrect) {
+                [btn setBackgroundColor:[UIColor greenColor]];
+            }else{
+                [btn setBackgroundColor:[UIColor redColor]];
+            }
+            if (answerManager.currentIndex==i) {
+                [btn setBackgroundColor:[UIColor blueColor]];
+            }
+            
         }
+    }
+    
+}
 
+-(void)reloadHeadView{
+    if ([YHSAAnswerQuestionManager sharedTheSingletion].hadHeanIn) {
+        if ([_headView1.superview isKindOfClass:[self class]]) {
+            [_headView1 removeFromSuperview];
+        }
+        [self.view addSubview:_headView2];
+    }else{
+        if ([_headView2.superview isKindOfClass:[self class]]) {
+            [_headView2 removeFromSuperview];
+        }
+        [self.view addSubview:_headView1];
     }
 }
+
 #pragma mark - 提交试卷
 -(void)certainClick{
     if (![YHSAUserManager sharedTheSingletion].isLogin) {
@@ -181,6 +228,8 @@
         }
         //进行数据的提交
         [__self postExam];
+        //关计时
+        [[YHSAAnswerQuestionManager sharedTheSingletion]stopTimer];
         
     }];
 }
@@ -203,12 +252,30 @@
     NSDictionary * dic = @{INTERFACE_FIELD_POST_EXAM_MAIN:[postArray transToJsonString:YHBaseJosnStyleNoneSpace|YHBaseJosnStyleNoneWarp|YHBaseJosnStyleSinglequotationMark|YHBaseJosnStyleNoneKeyMark]};
     
     //进行提交网络请求
+    [[YHSAActivityIndicatorView sharedTheSingletion]show];
+    __BLOCK__WEAK__SELF__(__self);
     [YHSAHttpManager YHSARequestPost:YHSARequestTypeExamPost infoDic:dic Succsee:^(NSData *data) {
+        [[YHSAActivityIndicatorView sharedTheSingletion]unShow];
         NSDictionary * info = [YHBaseJOSNAnalytical dictionaryWithJSData:data];
-        NSLog(@"%@",info);
-#warning 这里服务端有问题 等测
+        YHSARecordsModel * model = [[YHSARecordsModel alloc]init];
+        [model creatModelWithDic:info];
+        if ([model.resultCode intValue] == [INTERFACE_RETURN_POST_RECORD_SUCCESS intValue]) {
+            //提交成功
+            //创建成绩单
+            YHSARecordsViewController * con = [[YHSARecordsViewController alloc]init];
+            con.time = [YHSAAnswerQuestionManager sharedTheSingletion].currentTime;
+            con.sorce = [model.score intValue];
+            [YHSAAnswerQuestionManager sharedTheSingletion].hadHeanIn=YES;
+            [__self presentViewController:con animated:YES completion:^{
+                //进行界面的重构等操作
+                [__self reloadBtnColor];
+                [__self reloadHeadView];
+            }];
+        }else if ([model.resultCode intValue]==[INTERFACE_RETURN_POST_RECORD_FAILED intValue]){
+            [YHBaseAlertView showWithStyle:YHBaseAlertViewSimple title:PUBLIC_PART_ALERT_TITLE text:@"抱歉，提交失败" cancleBtn:PUBLIC_PART_ALERT_SELECT_BTN selectBtn:nil andSelectFunc:nil];
+        }
     } andFail:^(YHBaseError *error) {
-        
+        [[YHSAActivityIndicatorView sharedTheSingletion]unShow];
     } isbuffer:NO];
     
 

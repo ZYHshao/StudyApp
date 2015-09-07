@@ -27,6 +27,10 @@
     //tableView的头视图
     YHBaseHtmlView * _tableViewHeaderLabel;
     UIView * _tableViewHeadView;
+    //tableView的尾视图
+    YHBaseHtmlView * _tableViewFooterLabel;
+    UIView * _tableViewFootView;
+    UIImageView * _tableViewFootImageView;
     //手势视图
     UIView * _gestureView;
     //手势
@@ -63,6 +67,10 @@
     [_tableViewDataArray removeAllObjects];
     [_answerTableView reloadData];
 }
+
+
+
+
 //把数据的读取和加载部分放在这个方法中
 -(void)creatViewWithData:(id)data{
     YHSAAnswerQuestionModel * model = data;
@@ -164,7 +172,16 @@
         _tableViewHeaderLabel = [[YHBaseHtmlView alloc]initWithFrame:CGRectMake(0, 20,_answerTableView.frame.size.width,0)];
         _tableViewHeaderLabel.delegate=self;
     }
+    if (_tableViewFooterLabel==nil) {
+        _tableViewFooterLabel = [[YHBaseHtmlView alloc]initWithFrame:CGRectMake(0, 20,_answerTableView.frame.size.width,0)];
+        _tableViewFooterLabel.delegate=self;
+    }
     _tableViewHeadView = [[UIView alloc]init];
+    _tableViewFootView = [[UIView alloc]init];
+    
+    _tableViewFootImageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 70, 20)];
+    [_tableViewFootView addSubview:_tableViewFootImageView];
+    [_tableViewFootView addSubview:_tableViewFooterLabel];
     [_tableViewHeadView addSubview:_tableViewHeaderLabel];
     //对透视图的手势控制
     [self creatGesture];
@@ -221,6 +238,44 @@
     }
    
 }
+//=====================如果已经交卷 或者这道题查看过答案的话 进行尾视图的显示=====================
+-(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
+    YHSAAnswerQuestionManager * manager = [YHSAAnswerQuestionManager sharedTheSingletion];
+    if (_index<1) {
+        return 0;
+    }
+    if (manager.hadHeanIn||[manager.dataArray[_index-1] hadLookAnswer]) {
+        //计算文字高度
+        [_tableViewFooterLabel reSetHtmlStr:[NSString stringWithFormat:@"答案:%@\n解析:%@",_currentModel.Answer,(_currentModel.discription.length>0?_currentModel.discription:@"无")]];
+        return _tableViewFooterLabel.frame.size.height+20;
+    }else{
+        return 0;
+    }
+}
+
+-(UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
+     YHSAAnswerQuestionManager * manager = [YHSAAnswerQuestionManager sharedTheSingletion];
+    if (_index<1) {
+        return nil;
+    }
+    if (manager.hadHeanIn||[manager.dataArray[_index-1] hadLookAnswer]) {
+        [_tableViewFooterLabel reSetHtmlStr:[NSString stringWithFormat:@"答案:%@\n解析:%@",_currentModel.Answer,(_currentModel.discription.length>0?_currentModel.discription:@"无")]];
+         _tableViewFootView.frame=CGRectMake(0, 0, tableView.frame.size.width, _tableViewFooterLabel.frame.size.height+20);
+        if ([manager.dataArray[_index-1] isCorrect]) {
+            _tableViewFootImageView.image = [UIImage imageNamed:MOCK_EXAM_ANSWER_CURRECT_IMAGE];
+        }else{
+             _tableViewFootImageView.image = [UIImage imageNamed:MOCK_EXAM_ANSWER_WRONG_IMAGE];
+        }
+        return _tableViewFootView;
+    }else{
+        return nil;
+    }
+
+}
+
+//=======================================================================================
+
+
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
     if (_tableViewDataArray.count>1&&[_tableViewDataArray[0] length]>0) {
         //计算文字高度
@@ -273,6 +328,12 @@
         }else{
             _answerTextView.text=@"";
         }
+        //已经交卷 或者这道题已经查看过答案 则关闭交互
+        if ([YHSAAnswerQuestionManager sharedTheSingletion].hadHeanIn||stateModel.hadLookAnswer) {
+            _answerTextView.editable=NO;
+        }else{
+             _answerTextView.editable=YES;
+        }
         return cell;
         
     }else{
@@ -300,6 +361,12 @@
             }
         }else{
              cell.indexLabel.backgroundColor = [UIColor grayColor];
+        }
+        //处理交互
+        if ([YHSAAnswerQuestionManager sharedTheSingletion].hadHeanIn||stateModel.hadLookAnswer) {
+            cell.userInteractionEnabled=NO;
+        }else{
+             cell.userInteractionEnabled=YES;
         }
         return cell;
     }

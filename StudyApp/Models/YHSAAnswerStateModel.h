@@ -29,6 +29,8 @@ __PROPERTY_NO_STRONG__(NSString *, questionID);
  *题目的分值
  */
 __PROPERTY_NO_STRONG__(NSNumber *, sccore);
+//是否已经查看过答案
+__PROPERTY_NO_ASSIGN__(BOOL, hadLookAnswer);
 /**
  *数据字典 可以根据需求存答题信息 
  *字典按照如下数据结构

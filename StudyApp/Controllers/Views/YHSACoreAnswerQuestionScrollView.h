@@ -27,6 +27,8 @@ __PROPERTY_NO_WEAK__(id<YHSACoreAnswerQuestionScrollViewDelegate>,dataDelegate);
 //考虑到切换主题 在这类想外提供一个设置主题的接口
 -(void)setTopic;
 
+//刷新
+-(void)updataView;
 
 __PROPERTY_NO_STRONG__(YHSAMockExamDetailsModel *, dataModel);
 

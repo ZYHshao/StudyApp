@@ -240,6 +240,10 @@
 
 #define INTERFACE_RETURN_DETAILS_STUDY_NOTE_SUCCESS @"8"
 #define INTERFACE_RETURN_DETAILS_STUDY_NOTE_FAILED @"2"
+
+
+#define INTERFACE_RETURN_POST_RECORD_SUCCESS @"8"
+#define INTERFACE_RETURN_POST_RECORD_FAILED @"2"
 //============================tableViewCell ID================//
 #define TABLEVIEW_CELL_ID_MOCK_EXAM_FIRST @"moceExamFirst"
 #define TABLEVIEW_CELL_ID_SYSTEM_SETTING @"systemSetting"

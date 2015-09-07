@@ -190,7 +190,9 @@
         
     }
 }
-
+-(void)updataView{
+    [self reloadViewData];
+}
 
 //通过答题卡切换题目
 -(void)answerPagerNotification:(NSNotification *)noti{

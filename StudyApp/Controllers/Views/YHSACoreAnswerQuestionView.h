@@ -12,6 +12,7 @@
 @interface YHSACoreAnswerQuestionView : YHBaseView
 //主题部分
 -(void)setTopic;
+//从1开始
 __PROPERTY_NO_ASSIGN__(int, index);
 //清空数据
 -(void)clearData;

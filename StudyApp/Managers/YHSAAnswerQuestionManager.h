@@ -29,6 +29,10 @@ __PROPERTY_NO_ASSIGN__(int, currentTime);
 
 __PROPERTY_NO_WEAK__(id<YHSAAnswerQuestionManagerDelegate>, delegate);
 
+
+
+
+
 //开始进行计时
 -(void)startTimer;
 //停止计时

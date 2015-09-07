@@ -40,6 +40,12 @@
 #define MOCK_EXAM_MORE_TOOLS_COLLECT_IMAGE @"pupwin_soucico.png"
 #define MOCK_EXAM_MORE_TOOLS_ANSWER_PAGER_IMAGE @"pupwin_datika.png"
 #define MOCK_EXAM_MORE_TOOLS_SETTING @"pupwin_settingico.png"
+
+#define MOCK_EXAM_ANSWER_CURRECT_IMAGE @"sjym_da_success.jpg"
+#define MOCK_EXAM_ANSWER_WRONG_IMAGE @"sjym_da_error.jpg"
+
+
+
 #warning 没有素材 需要替换
 #define MOCK_EXAM_MORE_TOOLS_DRAFT_IMAGE @"pupwin_datika.png"
 #define MOCK_EXAM_MORE_TOOLS_NOTE_IMAGE @"pupwin_datika.png"

@@ -59,6 +59,9 @@
 		CE75B1221B9C4C5C003DD946 /* YHSAStudyPlanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE75B1201B9C4C5C003DD946 /* YHSAStudyPlanViewController.m */; };
 		CE75B1231B9C4C5C003DD946 /* YHSAStudyPlanViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE75B1211B9C4C5C003DD946 /* YHSAStudyPlanViewController.xib */; };
 		CE8095651B81EC9000730610 /* YHSARegistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8095631B81EC9000730610 /* YHSARegistViewController.m */; };
+		CE89DA851B9D22410006B123 /* YHSARecordsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CE89DA841B9D22410006B123 /* YHSARecordsModel.m */; };
+		CE89DA891B9D25010006B123 /* YHSARecordsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE89DA871B9D25010006B123 /* YHSARecordsViewController.m */; };
+		CE89DA8C1B9D25980006B123 /* YHSARecordsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE89DA8B1B9D25980006B123 /* YHSARecordsViewController.xib */; };
 		CE905ADD1B8D5CA700E72515 /* YHBaseTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE905ADC1B8D5CA700E72515 /* YHBaseTextView.m */; };
 		CE905AE11B8D617100E72515 /* YHSAOptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE905ADF1B8D617100E72515 /* YHSAOptionsViewController.m */; };
 		CE905AE21B8D617100E72515 /* YHSAOptionsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE905AE01B8D617100E72515 /* YHSAOptionsViewController.xib */; };
@@ -296,6 +299,11 @@
 		CE8095611B81DE5300730610 /* StringHead.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StringHead.h; sourceTree = "<group>"; };
 		CE8095621B81EC9000730610 /* YHSARegistViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHSARegistViewController.h; sourceTree = "<group>"; };
 		CE8095631B81EC9000730610 /* YHSARegistViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YHSARegistViewController.m; sourceTree = "<group>"; };
+		CE89DA831B9D22410006B123 /* YHSARecordsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHSARecordsModel.h; sourceTree = "<group>"; };
+		CE89DA841B9D22410006B123 /* YHSARecordsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YHSARecordsModel.m; sourceTree = "<group>"; };
+		CE89DA861B9D25010006B123 /* YHSARecordsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHSARecordsViewController.h; sourceTree = "<group>"; };
+		CE89DA871B9D25010006B123 /* YHSARecordsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YHSARecordsViewController.m; sourceTree = "<group>"; };
+		CE89DA8B1B9D25980006B123 /* YHSARecordsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YHSARecordsViewController.xib; sourceTree = "<group>"; };
 		CE905ADB1B8D5CA700E72515 /* YHBaseTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHBaseTextView.h; sourceTree = "<group>"; };
 		CE905ADC1B8D5CA700E72515 /* YHBaseTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YHBaseTextView.m; sourceTree = "<group>"; };
 		CE905ADE1B8D617100E72515 /* YHSAOptionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHSAOptionsViewController.h; sourceTree = "<group>"; };
@@ -516,6 +524,7 @@
 			isa = PBXGroup;
 			children = (
 				183571191B8A1152007AEF18 /* YHSAMockExamDetailsViewController.xib */,
+				CE89DA8B1B9D25980006B123 /* YHSARecordsViewController.xib */,
 			);
 			path = Xibs;
 			sourceTree = "<group>";
@@ -582,6 +591,8 @@
 				CE4BC2AC1B8AC121005BDD20 /* YHSAMockExamAnswerQuestionViewController.m */,
 				CEE651AD1B94304B00A3E74C /* YHSAAnswerPagerViewController.h */,
 				CEE651AE1B94304B00A3E74C /* YHSAAnswerPagerViewController.m */,
+				CE89DA861B9D25010006B123 /* YHSARecordsViewController.h */,
+				CE89DA871B9D25010006B123 /* YHSARecordsViewController.m */,
 			);
 			path = MockExamControllers;
 			sourceTree = "<group>";
@@ -894,6 +905,8 @@
 				CEE651CD1B94479300A3E74C /* YHSARequestGetDataModel.m */,
 				186F6B201B9928C100894496 /* YHSAGetStudyNotelListModel.h */,
 				186F6B211B9928C100894496 /* YHSAGetStudyNotelListModel.m */,
+				CE89DA831B9D22410006B123 /* YHSARecordsModel.h */,
+				CE89DA841B9D22410006B123 /* YHSARecordsModel.m */,
 			);
 			path = RequestModels;
 			sourceTree = "<group>";
@@ -1216,6 +1229,7 @@
 				CEEAFDFA1B81A8BF00795B27 /* dtym_menuset_zihaojianico.png in Resources */,
 				CE3B27E51B8C0D28005EAE6F /* YHSAAnswerQuestionTableViewCell.xib in Resources */,
 				CEEAFDE81B81A8BF00795B27 /* cj_xz_xingxing.jpg in Resources */,
+				CE89DA8C1B9D25980006B123 /* YHSARecordsViewController.xib in Resources */,
 				CEEAFE131B81A8BF00795B27 /* main_studyjh.png in Resources */,
 				CEEAFE211B81A8BF00795B27 /* sjym_dx_wxz1.png in Resources */,
 				CEEAFE0F1B81A8BF00795B27 /* main_kszx.png in Resources */,
@@ -1359,6 +1373,7 @@
 				CEE651D21B94479300A3E74C /* YHSAMockExamMainListModel.m in Sources */,
 				CEE651D31B94479300A3E74C /* YHSARequestGetDataModel.m in Sources */,
 				CEE651CF1B94479300A3E74C /* YHSAExamInfoDetailModel.m in Sources */,
+				CE89DA851B9D22410006B123 /* YHSARecordsModel.m in Sources */,
 				CE328FA11B86C825001018AE /* YHSAMockExamSubjectViewController.m in Sources */,
 				1834918C1B84D18C00A0F322 /* YHSAUserManager.m in Sources */,
 				CE3B27E81B8C52EE005EAE6F /* YHBaseCoreGraphicsTools.m in Sources */,
@@ -1417,6 +1432,7 @@
 				CE4BC2A71B8AB458005BDD20 /* YHBaseView.m in Sources */,
 				CEE651BD1B943BE800A3E74C /* YHBaseTimerNode.m in Sources */,
 				CE4BC2AA1B8AC046005BDD20 /* YHSACoreAnswerQuestionView.m in Sources */,
+				CE89DA891B9D25010006B123 /* YHSARecordsViewController.m in Sources */,
 				CEE651D11B94479300A3E74C /* YHSAMockExamDetailsModel.m in Sources */,
 				CE4BC2A11B8AB316005BDD20 /* YHBaseScrollView.m in Sources */,
 				189877411B8F529800E8CAA0 /* YHBaseData.m in Sources */,

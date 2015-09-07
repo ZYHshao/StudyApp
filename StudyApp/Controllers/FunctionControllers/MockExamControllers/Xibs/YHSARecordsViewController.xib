@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="15A178w" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="YHSARecordsViewController">
+            <connections>
+                <outlet property="clickBtn" destination="CRA-YF-IeS" id="IqW-72-Bu7"/>
+                <outlet property="sreceLabel" destination="BPy-Ho-Bv5" id="hNP-ka-iXq"/>
+                <outlet property="timeLabel" destination="fW0-bu-HU5" id="wMf-Tn-XRm"/>
+                <outlet property="titleLabel" destination="x1t-F3-gB9" id="CFT-mr-H0i"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="splashscreenbg.png" translatesAutoresizingMaskIntoConstraints="NO" id="cdk-zx-udm">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <animations/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="考试成绩单" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x1t-F3-gB9">
+                    <rect key="frame" x="60" y="109" width="201" height="51"/>
+                    <animations/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="201" id="4el-bp-vJk"/>
+                        <constraint firstAttribute="height" constant="51" id="Dkf-oY-oLS"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="31"/>
+                    <color key="textColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="您的分数" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BPy-Ho-Bv5">
+                    <rect key="frame" x="20" y="261" width="280" height="33"/>
+                    <animations/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="33" id="HDQ-Tq-Mou"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="你的用时" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fW0-bu-HU5">
+                    <rect key="frame" x="20" y="302" width="280" height="33"/>
+                    <animations/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="33" id="dnH-bi-rb2"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CRA-YF-IeS">
+                    <rect key="frame" x="20" y="497" width="280" height="30"/>
+                    <animations/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="ZD6-gQ-6wX"/>
+                    </constraints>
+                    <state key="normal" title="Button">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="clickBtn:" destination="-1" eventType="touchUpInside" id="E1W-NK-Y3Z"/>
+                    </connections>
+                </button>
+            </subviews>
+            <animations/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="cdk-zx-udm" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="76Y-Ia-Xmr"/>
+                <constraint firstItem="CRA-YF-IeS" firstAttribute="trailing" secondItem="cdk-zx-udm" secondAttribute="trailing" constant="-20" id="ALm-rn-BC5"/>
+                <constraint firstItem="CRA-YF-IeS" firstAttribute="bottom" secondItem="cdk-zx-udm" secondAttribute="bottom" constant="-41" id="Ap3-uB-GvF"/>
+                <constraint firstItem="fW0-bu-HU5" firstAttribute="leading" secondItem="cdk-zx-udm" secondAttribute="leading" constant="20" id="DWB-5N-KjL"/>
+                <constraint firstItem="cdk-zx-udm" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="EOP-JM-kEd"/>
+                <constraint firstItem="fW0-bu-HU5" firstAttribute="trailing" secondItem="cdk-zx-udm" secondAttribute="trailing" constant="-20" id="EWc-LN-ki9"/>
+                <constraint firstItem="cdk-zx-udm" firstAttribute="trailing" secondItem="BPy-Ho-Bv5" secondAttribute="trailing" constant="20" id="HMc-NY-lxS"/>
+                <constraint firstItem="cdk-zx-udm" firstAttribute="leading" secondItem="BPy-Ho-Bv5" secondAttribute="leading" constant="-20" id="NTI-YZ-RDS"/>
+                <constraint firstItem="fW0-bu-HU5" firstAttribute="top" secondItem="cdk-zx-udm" secondAttribute="top" constant="302" id="Okc-uf-BM3"/>
+                <constraint firstItem="CRA-YF-IeS" firstAttribute="leading" secondItem="cdk-zx-udm" secondAttribute="leading" constant="20" id="U63-Ux-aaa"/>
+                <constraint firstItem="cdk-zx-udm" firstAttribute="top" secondItem="x1t-F3-gB9" secondAttribute="bottom" constant="-160" id="VnV-tb-6dz"/>
+                <constraint firstAttribute="bottom" secondItem="cdk-zx-udm" secondAttribute="bottom" id="lNE-U8-cjJ"/>
+                <constraint firstItem="x1t-F3-gB9" firstAttribute="leading" secondItem="cdk-zx-udm" secondAttribute="trailing" constant="-260" id="ljd-Mk-bfy"/>
+                <constraint firstAttribute="trailing" secondItem="cdk-zx-udm" secondAttribute="trailing" id="mh1-Mj-ID7"/>
+                <constraint firstItem="cdk-zx-udm" firstAttribute="top" secondItem="BPy-Ho-Bv5" secondAttribute="top" constant="-261" id="qUQ-cQ-811"/>
+            </constraints>
+            <point key="canvasLocation" x="319" y="288"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="splashscreenbg.png" width="640" height="1138"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>
