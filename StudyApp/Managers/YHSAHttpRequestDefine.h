@@ -24,7 +24,8 @@ typedef enum {
     YHSARequestTypeAddStudyNote,
     YHSARequestTypeEditStudyNote,
     YHSARequestTypeDeleteStudyNote,
-    YHSARequestTypeDetailsStudyNote
+    YHSARequestTypeDetailsStudyNote,
+    YHSARequestTypeStudyPlanList
 }YHSARequestType;
 //=========================测试地址=============================//
 #ifdef TEXT
@@ -49,6 +50,7 @@ typedef enum {
 #define YHSA_EDIT_STUDT_NOTE_POST_PATH @"http://app.vipexam.org/interface/myNotes.ashx"
 #define YHSA_DELETE_STUDT_NOTE_POST_PATH @"http://app.vipexam.org/interface/myNotes.ashx"
 #define YHSA_DETAILS_STUDT_NOTE_POST_PATH @"http://app.vipexam.org/interface/myNotes.ashx"
+#define YHSA_STUDY_PLAN_LIST_POST_PATH @"http://app.vipexam.org/interface/Learningplan.ashx"
 #endif
 
 //==========================请求id的定义========================//
@@ -67,4 +69,5 @@ typedef enum {
 #define YHSA_REQUEST_TYPE_EDIT_STUDY_NOTE_POST @"13"
 #define YHSA_REQUEST_TYPE_DELETE_STUDY_NOTE_POST @"14"
 #define YHSA_REQUEST_TYPE_DETAILS_STUDY_NOTE_POST @"15"
+#define YHSA_REQUEST_TYPE_STUDY_PLAN_LIST @"16"
 #endif

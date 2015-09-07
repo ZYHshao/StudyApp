@@ -184,6 +184,13 @@
         [self creatViewWithData:[YHBaseDateTools getNextMonthframDate:_currentDate] onView:_bodyViewR];
     }
     scrollView.userInteractionEnabled=YES;
+    if ([self.delegate respondsToSelector:@selector(YHBaseCalendarViewScrollEndToDate:)]) {
+        YHBaseDateModel * model = [[YHBaseDateModel alloc]init];
+        model.year = [NSString stringWithFormat:@"%d",[_currentDate getYear]];
+        model.month = [NSString stringWithFormat:@"%02d",[_currentDate getMonth]];
+        model.day = [NSString stringWithFormat:@"%02d",[_currentDate getDay]];
+        [self.delegate YHBaseCalendarViewScrollEndToDate:model];
+    }
 }
 
 
@@ -194,8 +201,8 @@
 //点击事件
 -(void)clickBtn:(UIButton *)btn{
     _selectModel.year = [NSString stringWithFormat:@"%d",[_currentDate getYear]];
-    _selectModel.month = [NSString stringWithFormat:@"%d",[_currentDate getMonth]];
-    _selectModel.day = btn.titleLabel.text;
+    _selectModel.month = [NSString stringWithFormat:@"%02d",[_currentDate getMonth]];
+    _selectModel.day = [NSString stringWithFormat:@"%02d",[btn.titleLabel.text intValue]];
     [self creatViewWithData:_currentDate onView:_bodyViewM];
     [self creatViewWithData:[YHBaseDateTools getPreviousframDate:_currentDate] onView:_bodyViewL];
     [self creatViewWithData:[YHBaseDateTools getNextMonthframDate:_currentDate] onView:_bodyViewR];

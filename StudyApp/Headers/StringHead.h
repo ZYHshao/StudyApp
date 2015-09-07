@@ -140,6 +140,12 @@
 #define STUDY_NOTE_EDIT_BUTTON_TITLE @"修改"
 #define STUDY_NOTE_DETAILS_CONTROLLER_TITLE @"笔记详情"
 
+//=================================我的计划====================//
+#define STUDY_PLAN_ADD_CONTROLLER_TITLE @"添加计划"
+#define STUDY_PLAN_REVISE_CONTROLLER_TITLE @"修改计划"
+#define STUDY_PLAN_DETAILS_CONTROLLER_TITLE @"计划详情"
+
+
 //=============================接口字段==========================//
 //注册
 #define INTERFACE_FIELD_REGIST_COLLEAGE @"college"
@@ -193,12 +199,22 @@
 #define INTERFACE_FIELD_POST_STUDY_NOTES_CONTENT @"content"
 #define INTERFACE_FIELD_POST_STUDY_NOTES_QUESTION_ID @"questionid"
 #define INTERFACE_FIELD_POST_STUDY_NOTES_ID @"id"
+
+//我的学习计划
+#define INTERFACE_FIELD_POST_STUDY_PLAN_LIST_PLONECODE @"phonecode"
+#define INTERFACE_FIELD_POST_STUDY_PLAN_STATUS @"status"
+#define INTERFACE_FIELD_POST_STUDY_PLAN_ID @"id"
+
 //参数类型
+//笔记
 #define INTERFACE_FIELD_POST_GET_STUDY_NOTES_STATUS @"list"
 #define INTERFACE_FIELD_POST_ADD_STUDY_NOTES_STATUS @"add"
 #define INTERFACE_FIELD_POST_EDIT_STUDY_NOTES_STATUS @"update"
 #define INTERFACE_FIELD_POST_DELETE_STUDY_NOTES_STATUS @"delete"
 #define INTERFACE_FIELD_POST_DETAILS_STUDY_NOTES_STATUS @"query"
+//计划
+#define INTERFACE_FIELD_POST_GET_STUDY_PLAN_STATUS @"list"
+#define INTERFACE_FIELD_POST_DETAILS_STUDY_PLAN_STATUS @"query"
 //============================接口返回字段========================//
 
 #define INTERFACE_RETURN_REGIST_SUCCESS @"8"
@@ -244,6 +260,9 @@
 
 #define INTERFACE_RETURN_POST_RECORD_SUCCESS @"8"
 #define INTERFACE_RETURN_POST_RECORD_FAILED @"2"
+
+#define INTERFACE_RETURN_POST_STUDY_PLAN_LIST_SUCCESS @"8"
+#define INTERFACE_RETURN_POST_STUDY_PLAN_LIST_FAILED @"2"
 //============================tableViewCell ID================//
 #define TABLEVIEW_CELL_ID_MOCK_EXAM_FIRST @"moceExamFirst"
 #define TABLEVIEW_CELL_ID_SYSTEM_SETTING @"systemSetting"

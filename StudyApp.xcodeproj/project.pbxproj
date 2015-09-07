@@ -62,6 +62,9 @@
 		CE89DA851B9D22410006B123 /* YHSARecordsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CE89DA841B9D22410006B123 /* YHSARecordsModel.m */; };
 		CE89DA891B9D25010006B123 /* YHSARecordsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE89DA871B9D25010006B123 /* YHSARecordsViewController.m */; };
 		CE89DA8C1B9D25980006B123 /* YHSARecordsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE89DA8B1B9D25980006B123 /* YHSARecordsViewController.xib */; };
+		CE89DC131B9D7E780006B123 /* YHSAStudyPlanListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CE89DC121B9D7E780006B123 /* YHSAStudyPlanListModel.m */; };
+		CE89DC171B9D8E6A0006B123 /* YHSAStudyPlanEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE89DC151B9D8E6A0006B123 /* YHSAStudyPlanEditViewController.m */; };
+		CE89DC181B9D8E6A0006B123 /* YHSAStudyPlanEditViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE89DC161B9D8E6A0006B123 /* YHSAStudyPlanEditViewController.xib */; };
 		CE905ADD1B8D5CA700E72515 /* YHBaseTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE905ADC1B8D5CA700E72515 /* YHBaseTextView.m */; };
 		CE905AE11B8D617100E72515 /* YHSAOptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE905ADF1B8D617100E72515 /* YHSAOptionsViewController.m */; };
 		CE905AE21B8D617100E72515 /* YHSAOptionsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE905AE01B8D617100E72515 /* YHSAOptionsViewController.xib */; };
@@ -304,6 +307,11 @@
 		CE89DA861B9D25010006B123 /* YHSARecordsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHSARecordsViewController.h; sourceTree = "<group>"; };
 		CE89DA871B9D25010006B123 /* YHSARecordsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YHSARecordsViewController.m; sourceTree = "<group>"; };
 		CE89DA8B1B9D25980006B123 /* YHSARecordsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YHSARecordsViewController.xib; sourceTree = "<group>"; };
+		CE89DC111B9D7E780006B123 /* YHSAStudyPlanListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHSAStudyPlanListModel.h; sourceTree = "<group>"; };
+		CE89DC121B9D7E780006B123 /* YHSAStudyPlanListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YHSAStudyPlanListModel.m; sourceTree = "<group>"; };
+		CE89DC141B9D8E6A0006B123 /* YHSAStudyPlanEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHSAStudyPlanEditViewController.h; sourceTree = "<group>"; };
+		CE89DC151B9D8E6A0006B123 /* YHSAStudyPlanEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YHSAStudyPlanEditViewController.m; sourceTree = "<group>"; };
+		CE89DC161B9D8E6A0006B123 /* YHSAStudyPlanEditViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YHSAStudyPlanEditViewController.xib; sourceTree = "<group>"; };
 		CE905ADB1B8D5CA700E72515 /* YHBaseTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHBaseTextView.h; sourceTree = "<group>"; };
 		CE905ADC1B8D5CA700E72515 /* YHBaseTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YHBaseTextView.m; sourceTree = "<group>"; };
 		CE905ADE1B8D617100E72515 /* YHSAOptionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHSAOptionsViewController.h; sourceTree = "<group>"; };
@@ -675,6 +683,9 @@
 				CE75B11F1B9C4C5C003DD946 /* YHSAStudyPlanViewController.h */,
 				CE75B1201B9C4C5C003DD946 /* YHSAStudyPlanViewController.m */,
 				CE75B1211B9C4C5C003DD946 /* YHSAStudyPlanViewController.xib */,
+				CE89DC141B9D8E6A0006B123 /* YHSAStudyPlanEditViewController.h */,
+				CE89DC151B9D8E6A0006B123 /* YHSAStudyPlanEditViewController.m */,
+				CE89DC161B9D8E6A0006B123 /* YHSAStudyPlanEditViewController.xib */,
 			);
 			path = StudyPlanControllers;
 			sourceTree = "<group>";
@@ -907,6 +918,8 @@
 				186F6B211B9928C100894496 /* YHSAGetStudyNotelListModel.m */,
 				CE89DA831B9D22410006B123 /* YHSARecordsModel.h */,
 				CE89DA841B9D22410006B123 /* YHSARecordsModel.m */,
+				CE89DC111B9D7E780006B123 /* YHSAStudyPlanListModel.h */,
+				CE89DC121B9D7E780006B123 /* YHSAStudyPlanListModel.m */,
 			);
 			path = RequestModels;
 			sourceTree = "<group>";
@@ -1247,6 +1260,7 @@
 				CEEAFDF01B81A8BF00795B27 /* dtk_wwc_yd.png in Resources */,
 				CEEAFE111B81A8BF00795B27 /* main_right_ico.png in Resources */,
 				CEEAFDF51B81A8BF00795B27 /* dtym_menuset_yjmsico.png in Resources */,
+				CE89DC181B9D8E6A0006B123 /* YHSAStudyPlanEditViewController.xib in Resources */,
 				CEEAFDF71B81A8BF00795B27 /* dtym_menuset_zdico.png in Resources */,
 				CEEAFDE91B81A8BF00795B27 /* contenttitlebar_jiantoushang.png in Resources */,
 				CEEAFE221B81A8BF00795B27 /* sjym_dx_wxz2.png in Resources */,
@@ -1391,6 +1405,7 @@
 				CE924A211B84868300F7B647 /* YHBaseLabel.m in Sources */,
 				CE4BC2AD1B8AC121005BDD20 /* YHSAMockExamAnswerQuestionViewController.m in Sources */,
 				CEE6517E1B93EA6F00A3E74C /* YHBaseListViewItem.m in Sources */,
+				CE89DC131B9D7E780006B123 /* YHSAStudyPlanListModel.m in Sources */,
 				CE4BC2B61B8B07EC005BDD20 /* YHBaseTypesettingEngine.m in Sources */,
 				CEEAFD5E1B8167D900795B27 /* ViewController.m in Sources */,
 				CE924A201B84868300F7B647 /* YHBaseButton.m in Sources */,
@@ -1423,6 +1438,7 @@
 				CE3B27E41B8C0D28005EAE6F /* YHSAAnswerQuestionTableViewCell.m in Sources */,
 				1834917F1B84CC4400A0F322 /* YHBaseManager.m in Sources */,
 				1898773E1B8F456000E8CAA0 /* RCLabel.m in Sources */,
+				CE89DC171B9D8E6A0006B123 /* YHSAStudyPlanEditViewController.m in Sources */,
 				CE905B0F1B8DC66C00E72515 /* YHSAExamInfoDetailViewController.m in Sources */,
 				CE328FA01B86C825001018AE /* YHSAMockExamController.m in Sources */,
 				18023D5C1B9C729A0007F9FE /* YHBaseCalendarView.m in Sources */,

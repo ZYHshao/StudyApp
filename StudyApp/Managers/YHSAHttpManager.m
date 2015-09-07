@@ -122,6 +122,11 @@
             return YHSA_DETAILS_STUDT_NOTE_POST_PATH;
         }
             break;
+        case YHSARequestTypeStudyPlanList:
+        {
+            return YHSA_STUDY_PLAN_LIST_POST_PATH;
+        }
+            break;
         default:
             return @"";
             break;
@@ -202,6 +207,11 @@
         case YHSARequestTypeDetailsStudyNote:
         {
             return YHSA_REQUEST_TYPE_DETAILS_STUDY_NOTE_POST;
+        }
+            break;
+        case YHSARequestTypeStudyPlanList:
+        {
+            return YHSA_REQUEST_TYPE_STUDY_PLAN_LIST;
         }
             break;
         default:
