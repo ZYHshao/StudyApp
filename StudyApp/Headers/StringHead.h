@@ -132,6 +132,12 @@
 #define EXAM_ANSWER_PAGER_CERTAIN_BTN_TEXT @"确定交卷"
 
 
+
+//===============================成绩分析=========================//
+#define ACHIEVEMENT_ANALYES_CONTROLLER_TITLE @"成绩分析"
+
+
+
 //=================================我的笔记=====================//
 #define STUDY_NOTE_CONTROLLER_TITLE @"我的笔记"
 #define STUDY_NOTE_TITLE_TEXT_FIELD_PLACEHOLDER @"请输入标题"
@@ -191,6 +197,13 @@
 #define INTERFACE_FIELD_POST_EXAM_QUESTION_ID @"questionid"
 #define INTERFACE_FIELD_POST_EXAM_ANSWER @"answer"
 #define INTERFACE_FIELD_POST_EXAM_SORCE @"score"
+
+
+//成绩分析
+#define INTERFACE_FIELD_POST_ACHIEVEMENT_ANALYSE_LIST_PHONECODE @"phonecode"
+
+#define INTERFACE_FIELD_POST_REPORT_CARD_EXAMID @"examid"
+
 
 //我的笔记
 #define INTERFACE_FIELD_POST_GET_STUDY_NOTES_PHONECODE @"phonecode"
@@ -275,10 +288,18 @@
 
 #define INTERFACE_RETURN_POST_STUDY_PLAN_ADD_SUCCESS @"8"
 #define INTERFACE_RETURN_POST_STUDY_PLAN_ADD_FAILED @"2"
+
+#define INTERFACE_RETURN_POST_ACHIEVEMENT_ANALYSE_SUCCESS @"8"
+#define INTERFACE_RETURN_POST_ACHIEVEMENT_ANALYSE_FAILED @"2"
+
+#define INTERFACE_RETURN_POST_REPORT_CARD_SUCCESS @"8"
+#define INTERFACE_RETURN_POST_REPORT_CARD_FAILED @"2"
 //============================tableViewCell ID================//
 #define TABLEVIEW_CELL_ID_MOCK_EXAM_FIRST @"moceExamFirst"
 #define TABLEVIEW_CELL_ID_SYSTEM_SETTING @"systemSetting"
 #define TABLEVIEW_CELL_ID_ANSWER_QUESTION  @"answerQuestion"
 #define TABLEVIEW_CELL_ID_EXAM_INFO @"enamInfo"
 #define TABLEVIEW_CELL_ID_STUDY_NOTE_LIST @"YHSAStudyNoteListTableViewCell"
+#define TABLEVIEW_CELL_ID_ACHIEVEMENT_ANALYSE @"YHSAAchievementAnalyseTableViewCell"
+#define TABLEVIEW_CELL_ID_REPORT_CAED @"YHSAReportCardTableViewCell"
 #endif

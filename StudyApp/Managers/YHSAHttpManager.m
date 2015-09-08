@@ -137,6 +137,16 @@
             return YHSA_STUDY_PLAN_ADD_POST_PATH;
         }
             break;
+        case YHSARequestTypeAchievementAnalyse:
+        {
+            return YHSA_Achievement_ANALYSE_POST_PATH;
+        }
+            break;
+        case YHSARequestTypeReportCard:
+        {
+            return YHSA_REPORT_CARD_POST_PATH;
+        }
+            break;
         default:
             return @"";
             break;
@@ -232,6 +242,16 @@
         case YHSARequestTypeStudyPlanAdd:
         {
             return YHSA_REQUEST_TYPE_STUDY_PLAN_ADD;
+        }
+            break;
+        case YHSARequestTypeAchievementAnalyse:
+        {
+            return YHSA_REQUEST_TYPE_ACHIEVEMENT_ANALYSE;
+        }
+            break;
+        case YHSARequestTypeReportCard:
+        {
+            return YHSA_REQUEST_TYPE_REPORT_CARD;
         }
             break;
         default:

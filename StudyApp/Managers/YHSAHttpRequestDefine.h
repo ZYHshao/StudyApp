@@ -27,7 +27,9 @@ typedef enum {
     YHSARequestTypeDetailsStudyNote,
     YHSARequestTypeStudyPlanList,
     YHSARequestTypeStudyPlanDetails,
-    YHSARequestTypeStudyPlanAdd
+    YHSARequestTypeStudyPlanAdd,
+    YHSARequestTypeAchievementAnalyse,
+    YHSARequestTypeReportCard
 }YHSARequestType;
 //=========================测试地址=============================//
 #ifdef TEXT
@@ -55,6 +57,8 @@ typedef enum {
 #define YHSA_STUDY_PLAN_LIST_POST_PATH @"http://app.vipexam.org/interface/Learningplan.ashx"
 #define YHSA_STUDY_PLAN_DETAILS_POST_PATH @"http://app.vipexam.org/interface/Learningplan.ashx"
 #define YHSA_STUDY_PLAN_ADD_POST_PATH @"http://app.vipexam.org/interface/Learningplan.ashx"
+#define YHSA_Achievement_ANALYSE_POST_PATH @"http://app.vipexam.org/interface/ExamResult.ashx"
+#define YHSA_REPORT_CARD_POST_PATH @"http://app.vipexam.org/interface/ExamResult.ashx"
 #endif
 
 //==========================请求id的定义========================//
@@ -76,4 +80,6 @@ typedef enum {
 #define YHSA_REQUEST_TYPE_STUDY_PLAN_LIST @"16"
 #define YHSA_REQUEST_TYPE_STUDY_PLAN_DETAILS @"17"
 #define YHSA_REQUEST_TYPE_STUDY_PLAN_ADD @"18"
+#define YHSA_REQUEST_TYPE_ACHIEVEMENT_ANALYSE @"19"
+#define YHSA_REQUEST_TYPE_REPORT_CARD @"20"
 #endif
