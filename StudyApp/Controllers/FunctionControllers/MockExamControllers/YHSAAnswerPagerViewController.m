@@ -209,6 +209,10 @@
 
 #pragma mark - 提交试卷
 -(void)certainClick{
+    if (_isNotExam) {
+        [YHBaseAlertView showWithStyle:YHBaseAlertViewSimple title:PUBLIC_PART_ALERT_TITLE text:@"次模式下不可交卷" cancleBtn:PUBLIC_PART_ALERT_CANCLE_BTN selectBtn:nil andSelectFunc:nil];
+        return ;
+    }
     if (![YHSAUserManager sharedTheSingletion].isLogin) {
         [YHBaseAlertView showWithStyle:YHBaseAlertViewSimple title:PUBLIC_PART_ALERT_TITLE text:@"该功能需要您登陆方可使用" cancleBtn:PUBLIC_PART_ALERT_CANCLE_BTN selectBtn:nil andSelectFunc:nil];
         return ;

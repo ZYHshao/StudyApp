@@ -109,6 +109,10 @@
 		CEE5C5BA1B9FCFA100B9AD22 /* UIView+Responder.m in Sources */ = {isa = PBXBuildFile; fileRef = CEE5C5B91B9FCFA100B9AD22 /* UIView+Responder.m */; };
 		CEE5C5C01B9FD21200B9AD22 /* YHBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEE5C5BF1B9FD21200B9AD22 /* YHBaseTableViewController.m */; };
 		CEE5C5C81B9FDE1A00B9AD22 /* QuestionCollectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEE5C5C71B9FDE1A00B9AD22 /* QuestionCollectViewController.m */; };
+		CEE5C6081BA028C800B9AD22 /* YHSAWrongRecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEE5C6071BA028C800B9AD22 /* YHSAWrongRecordViewController.m */; };
+		CEE5C60C1BA02DB800B9AD22 /* YHSAWrongRecordModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CEE5C60B1BA02DB800B9AD22 /* YHSAWrongRecordModel.m */; };
+		CEE5C6121BA02E9100B9AD22 /* YHSASubWrongRecordModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CEE5C6111BA02E9100B9AD22 /* YHSASubWrongRecordModel.m */; };
+		CEE5C6151BA03BE300B9AD22 /* YHSAWrongRecordPostModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CEE5C6141BA03BE300B9AD22 /* YHSAWrongRecordPostModel.m */; };
 		CEE6517B1B93E9E800A3E74C /* YHBaseListView.m in Sources */ = {isa = PBXBuildFile; fileRef = CEE6517A1B93E9E800A3E74C /* YHBaseListView.m */; };
 		CEE6517E1B93EA6F00A3E74C /* YHBaseListViewItem.m in Sources */ = {isa = PBXBuildFile; fileRef = CEE6517D1B93EA6F00A3E74C /* YHBaseListViewItem.m */; };
 		CEE651AF1B94304B00A3E74C /* YHSAAnswerPagerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEE651AE1B94304B00A3E74C /* YHSAAnswerPagerViewController.m */; };
@@ -414,6 +418,14 @@
 		CEE5C5BF1B9FD21200B9AD22 /* YHBaseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YHBaseTableViewController.m; sourceTree = "<group>"; };
 		CEE5C5C61B9FDE1A00B9AD22 /* QuestionCollectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionCollectViewController.h; sourceTree = "<group>"; };
 		CEE5C5C71B9FDE1A00B9AD22 /* QuestionCollectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionCollectViewController.m; sourceTree = "<group>"; };
+		CEE5C6061BA028C800B9AD22 /* YHSAWrongRecordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHSAWrongRecordViewController.h; sourceTree = "<group>"; };
+		CEE5C6071BA028C800B9AD22 /* YHSAWrongRecordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YHSAWrongRecordViewController.m; sourceTree = "<group>"; };
+		CEE5C60A1BA02DB800B9AD22 /* YHSAWrongRecordModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHSAWrongRecordModel.h; sourceTree = "<group>"; };
+		CEE5C60B1BA02DB800B9AD22 /* YHSAWrongRecordModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YHSAWrongRecordModel.m; sourceTree = "<group>"; };
+		CEE5C6101BA02E9100B9AD22 /* YHSASubWrongRecordModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHSASubWrongRecordModel.h; sourceTree = "<group>"; };
+		CEE5C6111BA02E9100B9AD22 /* YHSASubWrongRecordModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YHSASubWrongRecordModel.m; sourceTree = "<group>"; };
+		CEE5C6131BA03BE300B9AD22 /* YHSAWrongRecordPostModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHSAWrongRecordPostModel.h; sourceTree = "<group>"; };
+		CEE5C6141BA03BE300B9AD22 /* YHSAWrongRecordPostModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YHSAWrongRecordPostModel.m; sourceTree = "<group>"; };
 		CEE651791B93E9E800A3E74C /* YHBaseListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHBaseListView.h; sourceTree = "<group>"; };
 		CEE6517A1B93E9E800A3E74C /* YHBaseListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YHBaseListView.m; sourceTree = "<group>"; };
 		CEE6517C1B93EA6F00A3E74C /* YHBaseListViewItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHBaseListViewItem.h; sourceTree = "<group>"; };
@@ -615,6 +627,7 @@
 		CE0A895F1B85AE8300BA1F5F /* FunctionControllers */ = {
 			isa = PBXGroup;
 			children = (
+				CEE5C6051BA0289900B9AD22 /* WrongRecordController */,
 				CEE5C5C51B9FDE1500B9AD22 /* QuestionCollectConreollers */,
 				CE2919B31B9E794800A54241 /* AchievementAnalyseControllers */,
 				CE75B11E1B9C4BDB003DD946 /* StudyPlanControllers */,
@@ -981,6 +994,28 @@
 			path = QuestionCollectConreollers;
 			sourceTree = "<group>";
 		};
+		CEE5C6051BA0289900B9AD22 /* WrongRecordController */ = {
+			isa = PBXGroup;
+			children = (
+				CEE5C6061BA028C800B9AD22 /* YHSAWrongRecordViewController.h */,
+				CEE5C6071BA028C800B9AD22 /* YHSAWrongRecordViewController.m */,
+			);
+			path = WrongRecordController;
+			sourceTree = "<group>";
+		};
+		CEE5C6091BA02D9300B9AD22 /* WrongRecordModel */ = {
+			isa = PBXGroup;
+			children = (
+				CEE5C60A1BA02DB800B9AD22 /* YHSAWrongRecordModel.h */,
+				CEE5C60B1BA02DB800B9AD22 /* YHSAWrongRecordModel.m */,
+				CEE5C6101BA02E9100B9AD22 /* YHSASubWrongRecordModel.h */,
+				CEE5C6111BA02E9100B9AD22 /* YHSASubWrongRecordModel.m */,
+				CEE5C6131BA03BE300B9AD22 /* YHSAWrongRecordPostModel.h */,
+				CEE5C6141BA03BE300B9AD22 /* YHSAWrongRecordPostModel.m */,
+			);
+			path = WrongRecordModel;
+			sourceTree = "<group>";
+		};
 		CEE651BA1B943BE800A3E74C /* YHBaseTimerEngine */ = {
 			isa = PBXGroup;
 			children = (
@@ -1110,6 +1145,7 @@
 		CEEAFD861B8171A200795B27 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				CEE5C6091BA02D9300B9AD22 /* WrongRecordModel */,
 				CE2919B71B9E852D00A54241 /* AchievementAnalyseModel */,
 				CEE651C11B94479300A3E74C /* RequestModels */,
 				CEE651D41B9447C500A3E74C /* YHSAAnswerStateModel.h */,
@@ -1479,6 +1515,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEE5C6121BA02E9100B9AD22 /* YHSASubWrongRecordModel.m in Sources */,
 				1834918B1B84D18C00A0F322 /* YHSASystemSettingManager.m in Sources */,
 				CEDA4E301B85629400D64C44 /* YHSAReFoundViewController.m in Sources */,
 				CE8095651B81EC9000730610 /* YHSARegistViewController.m in Sources */,
@@ -1507,11 +1544,13 @@
 				CEE6517E1B93EA6F00A3E74C /* YHBaseListViewItem.m in Sources */,
 				CE89DC131B9D7E780006B123 /* YHSAStudyPlanListModel.m in Sources */,
 				CE4BC2B61B8B07EC005BDD20 /* YHBaseTypesettingEngine.m in Sources */,
+				CEE5C6151BA03BE300B9AD22 /* YHSAWrongRecordPostModel.m in Sources */,
 				CE2919BE1B9E902900A54241 /* YHSAAchievementAnalyseTableViewCell.m in Sources */,
 				CEEAFD5E1B8167D900795B27 /* ViewController.m in Sources */,
 				CE924A201B84868300F7B647 /* YHBaseButton.m in Sources */,
 				CE2919C71B9EC1B100A54241 /* YHSAReportCardModel.m in Sources */,
 				CE2919C31B9EB40C00A54241 /* YHSAReportCardViewController.m in Sources */,
+				CEE5C6081BA028C800B9AD22 /* YHSAWrongRecordViewController.m in Sources */,
 				CE328FA61B86C908001018AE /* YHTopicColorManager.m in Sources */,
 				CE924A1A1B84868300F7B647 /* YHBaseHttpRequestObject.m in Sources */,
 				CE924A1E1B84868300F7B647 /* YHBaseActivityIndicatorView.m in Sources */,
@@ -1575,6 +1614,7 @@
 				CE905AE61B8D84A800E72515 /* YHSAAboutUsViewController.m in Sources */,
 				CE59B7A11B9BDC7400859361 /* YHSAStudyNoteDetailsViewController.m in Sources */,
 				187C4D6A1B9A7EC90060A055 /* YHSAEditStudyNoteViewController.m in Sources */,
+				CEE5C60C1BA02DB800B9AD22 /* YHSAWrongRecordModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -42,10 +42,10 @@ typedef enum {
 @property(nonatomic,strong)NSArray * dataArray;
 /**
  *cell的类型 
- *注意这里cell的id 必须和类名相同 不然会影响复用
+ *注意这里cell的id 如果不设置 默认和类名相同 不然会影响复用
  */
 @property(nonatomic,strong)Class cellClass;
-
+@property(nonatomic,strong)NSString * boundleID;
 @property(nonatomic,strong)YHBaseTableViewControllerLoadCellFunc cellFunc;
 /**
  *行高

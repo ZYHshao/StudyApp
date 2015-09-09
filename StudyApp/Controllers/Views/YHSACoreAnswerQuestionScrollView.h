@@ -8,6 +8,7 @@
 
 #import "YHBaseScrollView.h"
 #import "YHSAMockExamDetailsModel.h"
+#import "YHSAWrongRecordPostModel.h"
 //将音频的处理放在外面
 @class YHSACoreAnswerQuestionScrollView;
 @protocol YHSACoreAnswerQuestionScrollViewDelegate <NSObject>
@@ -31,5 +32,8 @@ __PROPERTY_NO_WEAK__(id<YHSACoreAnswerQuestionScrollViewDelegate>,dataDelegate);
 -(void)updataView;
 
 __PROPERTY_NO_STRONG__(YHSAMockExamDetailsModel *, dataModel);
+
+__PROPERTY_NO_STRONG__(YHSAWrongRecordPostModel *, subDataModel);
+__PROPERTY_NO_ASSIGN__(BOOL, isNotExam);
 
 @end

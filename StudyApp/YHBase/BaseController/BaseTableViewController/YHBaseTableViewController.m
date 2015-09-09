@@ -92,8 +92,15 @@
     return _headArray[section];
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass(_cellClass)];
-    if (cell==nil) {
+    UITableViewCell * cell;
+    if (_boundleID==nil) {
+      cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass(_cellClass)];
+
+    }else{
+      cell = [tableView dequeueReusableCellWithIdentifier:_boundleID];
+
+    }
+        if (cell==nil) {
         if (_cellLoadStyle==YHBaseTableViewControllerCellLoadStyleFromNib) {
             cell = [[_cellClass alloc]init];
         }else{
@@ -171,11 +178,11 @@
     }
     //为头视图加添手势
     //默认有效
+    for (UITapGestureRecognizer* tap in _clickHeadArray) {
+        [tap.view removeGestureRecognizer:tap];
+    }
+    [_clickHeadArray removeAllObjects];
     for (UIView * view in _headArray) {
-        if (_clickHeadArray.count<_headArray.count) {
-            for (UITapGestureRecognizer* tap in _clickHeadArray) {
-                [tap.view removeGestureRecognizer:tap];
-            }
             [_clickHeadArray removeAllObjects];
             UITapGestureRecognizer * _clickHead = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(openOrCloseSecetion:)];
             [view addGestureRecognizer:_clickHead];
@@ -184,7 +191,7 @@
                 _clickHead.enabled=NO;
             }
 
-        }
+        
     }
 
     [_tableView reloadData];

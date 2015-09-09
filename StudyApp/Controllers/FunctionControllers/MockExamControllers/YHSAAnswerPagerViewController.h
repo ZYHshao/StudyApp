@@ -10,5 +10,5 @@
 
 
 @interface YHSAAnswerPagerViewController : YHBaseViewController
-
+__PROPERTY_NO_ASSIGN__(BOOL, isNotExam);
 @end

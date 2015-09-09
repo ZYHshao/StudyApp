@@ -147,6 +147,16 @@
             return YHSA_REPORT_CARD_POST_PATH;
         }
             break;
+        case YHSARequestTypeWrongRecord:
+        {
+            return YHSA_WRONG_RECORD_POST_PATH;
+        }
+            break;
+        case YHSARequestTypeWrongRecordQuestion:
+        {
+            return YHSA_WRONG_RECORD_QUESTION_POST_PATH;
+        }
+            break;
         default:
             return @"";
             break;
@@ -252,6 +262,16 @@
         case YHSARequestTypeReportCard:
         {
             return YHSA_REQUEST_TYPE_REPORT_CARD;
+        }
+            break;
+        case YHSARequestTypeWrongRecord:
+        {
+            return YHSA_REQUEST_TYPE_WRONG_RECORD;
+        }
+            break;
+        case YHSARequestTypeWrongRecordQuestion:
+        {
+            return YHSA_REQUEST_TYPE_WRONG_RECORD_QUESTION;
         }
             break;
         default:

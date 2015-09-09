@@ -29,7 +29,9 @@ typedef enum {
     YHSARequestTypeStudyPlanDetails,
     YHSARequestTypeStudyPlanAdd,
     YHSARequestTypeAchievementAnalyse,
-    YHSARequestTypeReportCard
+    YHSARequestTypeReportCard,
+    YHSARequestTypeWrongRecord,
+    YHSARequestTypeWrongRecordQuestion
 }YHSARequestType;
 //=========================测试地址=============================//
 #ifdef TEXT
@@ -59,6 +61,8 @@ typedef enum {
 #define YHSA_STUDY_PLAN_ADD_POST_PATH @"http://app.vipexam.org/interface/Learningplan.ashx"
 #define YHSA_Achievement_ANALYSE_POST_PATH @"http://app.vipexam.org/interface/ExamResult.ashx"
 #define YHSA_REPORT_CARD_POST_PATH @"http://app.vipexam.org/interface/ExamResult.ashx"
+#define YHSA_WRONG_RECORD_POST_PATH @"http://app.vipexam.org/interface/CreateErr.ashx"
+#define YHSA_WRONG_RECORD_QUESTION_POST_PATH @"http://app.vipexam.org/interface/Errorlist.ashx"
 #endif
 
 //==========================请求id的定义========================//
@@ -82,4 +86,6 @@ typedef enum {
 #define YHSA_REQUEST_TYPE_STUDY_PLAN_ADD @"18"
 #define YHSA_REQUEST_TYPE_ACHIEVEMENT_ANALYSE @"19"
 #define YHSA_REQUEST_TYPE_REPORT_CARD @"20"
+#define YHSA_REQUEST_TYPE_WRONG_RECORD @"21"
+#define YHSA_REQUEST_TYPE_WRONG_RECORD_QUESTION @"22"
 #endif

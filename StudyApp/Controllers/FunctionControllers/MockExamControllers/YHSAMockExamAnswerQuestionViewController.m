@@ -74,11 +74,21 @@
     YHSAAnswerQuestionManager * manager = [YHSAAnswerQuestionManager sharedTheSingletion];
     //进行初始化 所有题都是未答题状态
     [manager clearData];
-    manager.examID = _dataModel.examid;
-    for (int i=0; i<[_dataModel.questioncount intValue]; i++) {
-        YHSAAnswerStateModel * model = [[YHSAAnswerStateModel alloc]init];
-        model.hadAnswer=NO;
-        [manager.dataArray addObject:model];
+    if (_isNotExam) {
+        for (int i=0; i<[_subDataModel.count intValue]; i++) {
+            YHSAAnswerStateModel * model = [[YHSAAnswerStateModel alloc]init];
+            model.hadAnswer=NO;
+            [manager.dataArray addObject:model];
+        }
+
+    }else{
+        manager.examID = _dataModel.examid;
+        for (int i=0; i<[_dataModel.questioncount intValue]; i++) {
+            YHSAAnswerStateModel * model = [[YHSAAnswerStateModel alloc]init];
+            model.hadAnswer=NO;
+            [manager.dataArray addObject:model];
+        }
+       
     }
     manager.testTime=3600;
     [manager startTimer];
@@ -88,7 +98,12 @@
     _coreScrollView = [[YHSACoreAnswerQuestionScrollView alloc]initWithFrame:self.view.frame];
     _coreScrollView.dataDelegate=self;
     _coreScrollView.viewClass = [YHSACoreAnswerQuestionView class];
-    _coreScrollView.dataModel=_dataModel;
+    _coreScrollView.isNotExam=_isNotExam;
+    if (_isNotExam) {
+        _coreScrollView.subDataModel=_subDataModel;
+    }else{
+        _coreScrollView.dataModel=_dataModel;
+    }
     [_coreScrollView reloadView];
     [self.view addSubview:_coreScrollView];
     //创建导航按钮
@@ -224,13 +239,17 @@
         {
             [_listView closeList];
             [[[YHSAAnswerQuestionManager sharedTheSingletion].dataArray objectAtIndex:_coreScrollView.currentPage] setHadLookAnswer:YES];
+            [[[YHSAAnswerQuestionManager sharedTheSingletion].dataArray objectAtIndex:_coreScrollView.currentPage] setHadAnswer:YES];
             [_coreScrollView updataView];
         }
             break;
         case 1://交卷
         {
             //
-            
+            if (_isNotExam) {
+                [YHBaseAlertView showWithStyle:YHBaseAlertViewSimple title:PUBLIC_PART_ALERT_TITLE text:@"此模式下不可交卷" cancleBtn:PUBLIC_PART_ALERT_CANCLE_BTN selectBtn:nil andSelectFunc:nil];
+                return ;
+            }
             if (![YHSAUserManager sharedTheSingletion].isLogin) {
                 [YHBaseAlertView showWithStyle:YHBaseAlertViewSimple title:PUBLIC_PART_ALERT_TITLE text:@"该功能需要您登陆方可使用" cancleBtn:PUBLIC_PART_ALERT_CANCLE_BTN selectBtn:nil andSelectFunc:nil];
                 return ;
@@ -270,6 +289,7 @@
         {
             [_listView closeList];
             YHSAAnswerPagerViewController * con = [[YHSAAnswerPagerViewController alloc]init];
+            con.isNotExam=_isNotExam;
             [self.navigationController pushViewController:con animated:YES];
         }
             break;
