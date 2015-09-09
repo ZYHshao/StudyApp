@@ -106,6 +106,9 @@
 		CEC8EB8D1B90634700C5D148 /* YHBaseAVPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = CEC8EB8C1B90634700C5D148 /* YHBaseAVPlayer.m */; };
 		CEDA4E301B85629400D64C44 /* YHSAReFoundViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEDA4E2E1B85629400D64C44 /* YHSAReFoundViewController.m */; };
 		CEDA4E311B85629400D64C44 /* YHSAReFoundViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEDA4E2F1B85629400D64C44 /* YHSAReFoundViewController.xib */; };
+		CEE5C5BA1B9FCFA100B9AD22 /* UIView+Responder.m in Sources */ = {isa = PBXBuildFile; fileRef = CEE5C5B91B9FCFA100B9AD22 /* UIView+Responder.m */; };
+		CEE5C5C01B9FD21200B9AD22 /* YHBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEE5C5BF1B9FD21200B9AD22 /* YHBaseTableViewController.m */; };
+		CEE5C5C81B9FDE1A00B9AD22 /* QuestionCollectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEE5C5C71B9FDE1A00B9AD22 /* QuestionCollectViewController.m */; };
 		CEE6517B1B93E9E800A3E74C /* YHBaseListView.m in Sources */ = {isa = PBXBuildFile; fileRef = CEE6517A1B93E9E800A3E74C /* YHBaseListView.m */; };
 		CEE6517E1B93EA6F00A3E74C /* YHBaseListViewItem.m in Sources */ = {isa = PBXBuildFile; fileRef = CEE6517D1B93EA6F00A3E74C /* YHBaseListViewItem.m */; };
 		CEE651AF1B94304B00A3E74C /* YHSAAnswerPagerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEE651AE1B94304B00A3E74C /* YHSAAnswerPagerViewController.m */; };
@@ -405,6 +408,12 @@
 		CEDA4E2D1B85629400D64C44 /* YHSAReFoundViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YHSAReFoundViewController.h; path = Xibs/YHSAReFoundViewController.h; sourceTree = "<group>"; };
 		CEDA4E2E1B85629400D64C44 /* YHSAReFoundViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YHSAReFoundViewController.m; path = Xibs/YHSAReFoundViewController.m; sourceTree = "<group>"; };
 		CEDA4E2F1B85629400D64C44 /* YHSAReFoundViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YHSAReFoundViewController.xib; sourceTree = "<group>"; };
+		CEE5C5B81B9FCFA100B9AD22 /* UIView+Responder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Responder.h"; sourceTree = "<group>"; };
+		CEE5C5B91B9FCFA100B9AD22 /* UIView+Responder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Responder.m"; sourceTree = "<group>"; };
+		CEE5C5BE1B9FD21200B9AD22 /* YHBaseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHBaseTableViewController.h; sourceTree = "<group>"; };
+		CEE5C5BF1B9FD21200B9AD22 /* YHBaseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YHBaseTableViewController.m; sourceTree = "<group>"; };
+		CEE5C5C61B9FDE1A00B9AD22 /* QuestionCollectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionCollectViewController.h; sourceTree = "<group>"; };
+		CEE5C5C71B9FDE1A00B9AD22 /* QuestionCollectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionCollectViewController.m; sourceTree = "<group>"; };
 		CEE651791B93E9E800A3E74C /* YHBaseListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHBaseListView.h; sourceTree = "<group>"; };
 		CEE6517A1B93E9E800A3E74C /* YHBaseListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YHBaseListView.m; sourceTree = "<group>"; };
 		CEE6517C1B93EA6F00A3E74C /* YHBaseListViewItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHBaseListViewItem.h; sourceTree = "<group>"; };
@@ -606,6 +615,7 @@
 		CE0A895F1B85AE8300BA1F5F /* FunctionControllers */ = {
 			isa = PBXGroup;
 			children = (
+				CEE5C5C51B9FDE1500B9AD22 /* QuestionCollectConreollers */,
 				CE2919B31B9E794800A54241 /* AchievementAnalyseControllers */,
 				CE75B11E1B9C4BDB003DD946 /* StudyPlanControllers */,
 				186F6B1C1B991F9200894496 /* StudyNoteControllers */,
@@ -735,6 +745,8 @@
 				CE75B1121B9C478A003DD946 /* NSDate+YHBaseCalendar.m */,
 				CE75B1131B9C478A003DD946 /* NSDictionary+YHBaseJson.h */,
 				CE75B1141B9C478A003DD946 /* NSDictionary+YHBaseJson.m */,
+				CEE5C5B81B9FCFA100B9AD22 /* UIView+Responder.h */,
+				CEE5C5B91B9FCFA100B9AD22 /* UIView+Responder.m */,
 			);
 			path = BaseCategory;
 			sourceTree = "<group>";
@@ -793,6 +805,7 @@
 		CE9249E71B84868300F7B647 /* BaseController */ = {
 			isa = PBXGroup;
 			children = (
+				CEE5C5B71B9FCF4800B9AD22 /* BaseTableViewController */,
 				CE9249E81B84868300F7B647 /* YHBaseNavigationController.h */,
 				CE9249E91B84868300F7B647 /* YHBaseNavigationController.m */,
 				CE9249EA1B84868300F7B647 /* YHBaseViewController.h */,
@@ -948,6 +961,24 @@
 				CEC8EB8C1B90634700C5D148 /* YHBaseAVPlayer.m */,
 			);
 			path = BaseAVFoundation;
+			sourceTree = "<group>";
+		};
+		CEE5C5B71B9FCF4800B9AD22 /* BaseTableViewController */ = {
+			isa = PBXGroup;
+			children = (
+				CEE5C5BE1B9FD21200B9AD22 /* YHBaseTableViewController.h */,
+				CEE5C5BF1B9FD21200B9AD22 /* YHBaseTableViewController.m */,
+			);
+			path = BaseTableViewController;
+			sourceTree = "<group>";
+		};
+		CEE5C5C51B9FDE1500B9AD22 /* QuestionCollectConreollers */ = {
+			isa = PBXGroup;
+			children = (
+				CEE5C5C61B9FDE1A00B9AD22 /* QuestionCollectViewController.h */,
+				CEE5C5C71B9FDE1A00B9AD22 /* QuestionCollectViewController.m */,
+			);
+			path = QuestionCollectConreollers;
 			sourceTree = "<group>";
 		};
 		CEE651BA1B943BE800A3E74C /* YHBaseTimerEngine */ = {
@@ -1487,6 +1518,7 @@
 				CE924A251B8486C800F7B647 /* YHSAActivityIndicatorView.m in Sources */,
 				CE924A151B84868300F7B647 /* YHBaseViewController.m in Sources */,
 				CE924A191B84868300F7B647 /* YHBaseHttpManager.m in Sources */,
+				CEE5C5C01B9FD21200B9AD22 /* YHBaseTableViewController.m in Sources */,
 				CE924A1B1B84868300F7B647 /* YHBaseModel.m in Sources */,
 				CEEAFD7E1B816C5200795B27 /* YHSALoginViewController.m in Sources */,
 				CE4BC2B31B8AFB8B005BDD20 /* YHBaseGeometryTools.m in Sources */,
@@ -1497,10 +1529,12 @@
 				183571171B89F999007AEF18 /* YHSAMockExamDetailsViewController.m in Sources */,
 				CE2B70F21B82BD7600040C3C /* YHSANavigationViewController.m in Sources */,
 				CE2919B61B9E798D00A54241 /* YHSAAchievementAnalyseViewController.m in Sources */,
+				CEE5C5BA1B9FCFA100B9AD22 /* UIView+Responder.m in Sources */,
 				18A232D31B9205AF00733E88 /* AudioStreamer.m in Sources */,
 				CE905AE11B8D617100E72515 /* YHSAOptionsViewController.m in Sources */,
 				187EDADC1B9B23B600BFAF2F /* YHBaseDateTools.m in Sources */,
 				CEE651D61B9447C500A3E74C /* YHSAAnswerStateModel.m in Sources */,
+				CEE5C5C81B9FDE1A00B9AD22 /* QuestionCollectViewController.m in Sources */,
 				CE328FA91B86D285001018AE /* YHSASystemSettingViewController.m in Sources */,
 				CE905AEB1B8DAB1800E72515 /* YHSAExamInfoViewController.m in Sources */,
 				18F050FF1B8379C2008EF87D /* YHSAHttpManager.m in Sources */,

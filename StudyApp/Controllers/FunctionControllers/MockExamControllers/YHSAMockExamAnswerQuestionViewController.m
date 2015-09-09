@@ -259,9 +259,10 @@
             [_listView closeList];
         }
             break;
-        case 2:
+        case 2://进行添加收藏
         {
             [_listView closeList];
+            
             
         }
             break;

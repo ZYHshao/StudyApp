@@ -40,7 +40,7 @@
                         MAIN_MY_COLLECT_TEXT,MAIN_MY_ANALYSE_TEXT,MAIN_STUDY_PIAN_TEXT,
                         MAIN_MY_NOTES_TEXT,MAIN_TEXT_INFOMATION_TEXT,MAIN_SYSTEMSET_TEXT];
     _titleLabelArray = [[NSMutableArray alloc]init];
-    _controllersArray = @[@"YHSAMockExamController",@"",@"",@"",@"YHSAAchievementAnalyseViewController",@"YHSAStudyPlanViewController",@"YHSAStudyNoteViewController",@"YHSAExamInfoViewController",@"YHSASystemSettingViewController"];
+    _controllersArray = @[@"YHSAMockExamController",@"",@"",@"QuestionCollectViewController",@"YHSAAchievementAnalyseViewController",@"YHSAStudyPlanViewController",@"YHSAStudyNoteViewController",@"YHSAExamInfoViewController",@"YHSASystemSettingViewController"];
 }
 
 -(void)YHCreatView{
