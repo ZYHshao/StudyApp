@@ -82,7 +82,8 @@
     if (_isNotExam) {
         [self subRequestData:1];
     }else{
-          [self requestData:1];
+        
+        [self requestData:1];
     }
   
 }
@@ -283,14 +284,22 @@
     [_middleView clearData];
     [_rightView clearData];
     //如果数组中数据不够，进行下载 注意page是从0开始 参数是从1开始
-    if (_currentPage+1>_dataArray.count&&_currentPage+1<=[_subDataModel.count intValue]) {
-        [self subRequestData:_currentPage+1 ];
+    if (!_isNotExam) {
+        if (_currentPage+1>_dataArray.count) {
+            [self requestData:_currentPage+1 ];
+        }else{
+            
+            [self showData];
+        }
     }else{
-       
-        [self showData];
-    
-        
+        if (_currentPage+1>_dataArray.count) {
+            [self subRequestData:_currentPage+1 ];
+        }else{
+            
+            [self showData];
+        }
     }
+    
 }
 -(void)updataView{
 //都是tableView

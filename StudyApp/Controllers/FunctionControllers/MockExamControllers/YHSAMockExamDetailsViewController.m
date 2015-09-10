@@ -104,6 +104,9 @@ __PROPERTY_NO_STRONG__(YHSAMockExamDetailsModel *, dataModel);
         YHSAMockExamAnswerQuestionViewController * con = [[YHSAMockExamAnswerQuestionViewController alloc]init];
         con.dataModel = _dataModel;
         [self.navigationController pushViewController:con animated:YES];
+    }else if (sender==_collectExamButton){
+        [YHBaseAlertView showWithStyle:YHBaseAlertViewSimple title:PUBLIC_PART_ALERT_TITLE text:@"本功能暂不可用,期待您的支持，我们将继续开发" cancleBtn:PUBLIC_PART_ALERT_SELECT_BTN selectBtn:nil andSelectFunc:nil];
+        return ;
     }
 }
 

@@ -65,6 +65,7 @@
     self.view.backgroundColor = model.bgColor;
     _tableView.backgroundColor = model.bgColor;
     _searchBar.barTintColor = model.bgColor;
+    
 }
 
 #pragma mark - request
