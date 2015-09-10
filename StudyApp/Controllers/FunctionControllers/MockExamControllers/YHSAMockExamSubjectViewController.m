@@ -125,15 +125,19 @@
 
 #pragma mark - 创建视图
 -(void)YHCreatView{
-    self.title = _dataModel.typename;
+    if (!_isSearch) {
+        self.title = _dataModel.typename;
+    }
     _tableView = [[YHBaseTableView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT-64) style:UITableViewStyleGrouped];
     _tableView.delegate = self;
     _tableView.dataSource = self;
     //刷新和加载都打开
-    [_tableView shouldRefresh:^{
-        //进行数据刷新
-        [self reDownData];
-    }];
+    if (!_isSearch) {
+        [_tableView shouldRefresh:^{
+            //进行数据刷新
+            [self reDownData];
+        }];
+    }
     //是否可以进行上拉加载
     if (_status==0&&_dataArray.count<_examCount) {
         [_tableView shouldReload:^{

@@ -100,6 +100,7 @@
 #define MOCK_EXAM_ANSWER_QUESTION_TOOLS_NOTE @"添加笔记"
 #define MOCK_EXAM_ANSWER_QUESTION_TOOLS_MORE @"更多"
 
+
 //===============================系统设置界面=====================//
 #define SYSTEM_SETTING_CONTROLLER_TITLE @"系统设置"
 #define SYSTEM_SETTING_SWITCH_TOPIC @"切换夜间模式"
@@ -175,6 +176,8 @@
 #define INTERFACE_FIELD_MOCKEXAM_CODE @"Code"
 #define INTERFACE_FIELD_MOCKEXAM_PAGEINDEX @"PageIndex"
 #define INTERFACE_FIELD_MOCKEXAM_PAGESIZE @"PageSize"
+
+#define INTERFACE_FIELD_SEARCH_KEY @"word"
 
 //试卷详情
 #define INTERFACE_FIELD_MOCKEXAM_EXAMID @"examid"
@@ -302,6 +305,9 @@
 
 #define INTERFACE_RETURN_POST_WRONG_RECORD_SUCCESS @"8"
 #define INTERFACE_RETURN_POST_WRONG_RECORD_FAILED @"2"
+
+#define INTERFACE_RETURN_POST_SEARCH_KEY_SUCCESS @"8"
+#define INTERFACE_RETURN_POST_SEARCH_KEY_FAILED @"2"
 //============================tableViewCell ID================//
 #define TABLEVIEW_CELL_ID_MOCK_EXAM_FIRST @"moceExamFirst"
 #define TABLEVIEW_CELL_ID_SYSTEM_SETTING @"systemSetting"

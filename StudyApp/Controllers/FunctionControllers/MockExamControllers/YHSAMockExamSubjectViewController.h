@@ -17,4 +17,6 @@ __PROPERTY_NO_STRONG__(NSMutableArray *, dataArray);
 __PROPERTY_NO_ASSIGN__(int, examCount);
 //分类级别的状态
 __PROPERTY_NO_ASSIGN__(int, status);
+
+__PROPERTY_NO_ASSIGN__(BOOL, isSearch);
 @end

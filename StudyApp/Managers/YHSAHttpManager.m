@@ -157,6 +157,11 @@
             return YHSA_WRONG_RECORD_QUESTION_POST_PATH;
         }
             break;
+        case YHSARequestTypeSearchKey:
+        {
+            return YHAS_SEARCH_KEY_POST_PATH;
+        }
+            break;
         default:
             return @"";
             break;
@@ -272,6 +277,11 @@
         case YHSARequestTypeWrongRecordQuestion:
         {
             return YHSA_REQUEST_TYPE_WRONG_RECORD_QUESTION;
+        }
+            break;
+        case YHSARequestTypeSearchKey:
+        {
+            return YHSA_REQUEST_TYPE_SEARCH_KEY;
         }
             break;
         default:

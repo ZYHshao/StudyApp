@@ -193,7 +193,28 @@
 
 #pragma mark - scarchBar Delegate
 -(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar{
-    NSLog(@"查找");
+    //请求数据 进行跳转
+    NSDictionary * dic = @{INTERFACE_FIELD_SEARCH_KEY:searchBar.text};
+    [[YHSAActivityIndicatorView sharedTheSingletion]show];
+    [YHSAHttpManager YHSARequestPost:YHSARequestTypeSearchKey infoDic:dic Succsee:^(NSData *data) {
+        [[YHSAActivityIndicatorView  sharedTheSingletion]unShow];
+        YHSARequestGetDataModel * model = [[YHSARequestGetDataModel alloc]init];
+        [model creatModelWithData:data];
+        YHSAMockExamSubjectViewController * con = [[YHSAMockExamSubjectViewController alloc]init];
+        NSMutableArray * temArray = [[NSMutableArray alloc]init];
+        for (int i=0; i<[model.data count]; i++) {
+            YHSAMockExamMainListDataModel * dataModel = [[YHSAMockExamMainListDataModel alloc]init];
+            [dataModel creatModelWithDic:[model.data objectAtIndex:i]];
+            [temArray addObject:dataModel];
+        }
+        con.title = searchBar.text;
+        con.dataArray = [NSMutableArray arrayWithArray:temArray];
+        con.status=1;
+        con.isSearch=YES;
+        [self.navigationController  pushViewController:con animated:YES];
+    } andFail:^(YHBaseError *error) {
+        [[YHSAActivityIndicatorView  sharedTheSingletion]unShow];
+    } isbuffer:NO];
 }
 
 /*
