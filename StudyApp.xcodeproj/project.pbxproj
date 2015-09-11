@@ -69,6 +69,10 @@
 		CE75B1221B9C4C5C003DD946 /* YHSAStudyPlanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE75B1201B9C4C5C003DD946 /* YHSAStudyPlanViewController.m */; };
 		CE75B1231B9C4C5C003DD946 /* YHSAStudyPlanViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE75B1211B9C4C5C003DD946 /* YHSAStudyPlanViewController.xib */; };
 		CE8095651B81EC9000730610 /* YHSARegistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8095631B81EC9000730610 /* YHSARegistViewController.m */; };
+		CE86101B1BA2C46800B7D6FD /* YHSAWrongExamViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8610191BA2C46800B7D6FD /* YHSAWrongExamViewController.m */; };
+		CE86101C1BA2C46800B7D6FD /* YHSAWrongExamViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE86101A1BA2C46800B7D6FD /* YHSAWrongExamViewController.xib */; };
+		CE8610201BA2C67900B7D6FD /* YHSAWrongExamTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CE86101E1BA2C67900B7D6FD /* YHSAWrongExamTableViewCell.m */; };
+		CE8610211BA2C67900B7D6FD /* YHSAWrongExamTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE86101F1BA2C67900B7D6FD /* YHSAWrongExamTableViewCell.xib */; };
 		CE89DA851B9D22410006B123 /* YHSARecordsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CE89DA841B9D22410006B123 /* YHSARecordsModel.m */; };
 		CE89DA891B9D25010006B123 /* YHSARecordsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE89DA871B9D25010006B123 /* YHSARecordsViewController.m */; };
 		CE89DA8C1B9D25980006B123 /* YHSARecordsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE89DA8B1B9D25980006B123 /* YHSARecordsViewController.xib */; };
@@ -337,6 +341,12 @@
 		CE8095611B81DE5300730610 /* StringHead.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StringHead.h; sourceTree = "<group>"; };
 		CE8095621B81EC9000730610 /* YHSARegistViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHSARegistViewController.h; sourceTree = "<group>"; };
 		CE8095631B81EC9000730610 /* YHSARegistViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YHSARegistViewController.m; sourceTree = "<group>"; };
+		CE8610181BA2C46800B7D6FD /* YHSAWrongExamViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHSAWrongExamViewController.h; sourceTree = "<group>"; };
+		CE8610191BA2C46800B7D6FD /* YHSAWrongExamViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YHSAWrongExamViewController.m; sourceTree = "<group>"; };
+		CE86101A1BA2C46800B7D6FD /* YHSAWrongExamViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YHSAWrongExamViewController.xib; sourceTree = "<group>"; };
+		CE86101D1BA2C67900B7D6FD /* YHSAWrongExamTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHSAWrongExamTableViewCell.h; sourceTree = "<group>"; };
+		CE86101E1BA2C67900B7D6FD /* YHSAWrongExamTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YHSAWrongExamTableViewCell.m; sourceTree = "<group>"; };
+		CE86101F1BA2C67900B7D6FD /* YHSAWrongExamTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YHSAWrongExamTableViewCell.xib; sourceTree = "<group>"; };
 		CE89DA831B9D22410006B123 /* YHSARecordsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHSARecordsModel.h; sourceTree = "<group>"; };
 		CE89DA841B9D22410006B123 /* YHSARecordsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YHSARecordsModel.m; sourceTree = "<group>"; };
 		CE89DA861B9D25010006B123 /* YHSARecordsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHSARecordsViewController.h; sourceTree = "<group>"; };
@@ -727,6 +737,9 @@
 				CE2919CB1B9ECDFB00A54241 /* YHSAReportCardTableViewCell.h */,
 				CE2919CC1B9ECDFB00A54241 /* YHSAReportCardTableViewCell.m */,
 				CE2919CD1B9ECDFB00A54241 /* YHSAReportCardTableViewCell.xib */,
+				CE86101D1BA2C67900B7D6FD /* YHSAWrongExamTableViewCell.h */,
+				CE86101E1BA2C67900B7D6FD /* YHSAWrongExamTableViewCell.m */,
+				CE86101F1BA2C67900B7D6FD /* YHSAWrongExamTableViewCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -999,6 +1012,9 @@
 			children = (
 				CEE5C6061BA028C800B9AD22 /* YHSAWrongRecordViewController.h */,
 				CEE5C6071BA028C800B9AD22 /* YHSAWrongRecordViewController.m */,
+				CE8610181BA2C46800B7D6FD /* YHSAWrongExamViewController.h */,
+				CE8610191BA2C46800B7D6FD /* YHSAWrongExamViewController.m */,
+				CE86101A1BA2C46800B7D6FD /* YHSAWrongExamViewController.xib */,
 			);
 			path = WrongRecordController;
 			sourceTree = "<group>";
@@ -1390,10 +1406,12 @@
 				CE2919BF1B9E902900A54241 /* YHSAAchievementAnalyseTableViewCell.xib in Resources */,
 				CE905B101B8DC66C00E72515 /* YHSAExamInfoDetailViewController.xib in Resources */,
 				CEEAFE2C1B81A8BF00795B27 /* splashscreenbg.png in Resources */,
+				CE86101C1BA2C46800B7D6FD /* YHSAWrongExamViewController.xib in Resources */,
 				CEEAFDF01B81A8BF00795B27 /* dtk_wwc_yd.png in Resources */,
 				CEEAFE111B81A8BF00795B27 /* main_right_ico.png in Resources */,
 				CEEAFDF51B81A8BF00795B27 /* dtym_menuset_yjmsico.png in Resources */,
 				CE89DC181B9D8E6A0006B123 /* YHSAStudyPlanEditViewController.xib in Resources */,
+				CE8610211BA2C67900B7D6FD /* YHSAWrongExamTableViewCell.xib in Resources */,
 				CEEAFDF71B81A8BF00795B27 /* dtym_menuset_zdico.png in Resources */,
 				CEEAFDE91B81A8BF00795B27 /* contenttitlebar_jiantoushang.png in Resources */,
 				CEEAFE221B81A8BF00795B27 /* sjym_dx_wxz2.png in Resources */,
@@ -1516,6 +1534,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEE5C6121BA02E9100B9AD22 /* YHSASubWrongRecordModel.m in Sources */,
+				CE8610201BA2C67900B7D6FD /* YHSAWrongExamTableViewCell.m in Sources */,
 				1834918B1B84D18C00A0F322 /* YHSASystemSettingManager.m in Sources */,
 				CEDA4E301B85629400D64C44 /* YHSAReFoundViewController.m in Sources */,
 				CE8095651B81EC9000730610 /* YHSARegistViewController.m in Sources */,
@@ -1577,6 +1596,7 @@
 				CE328FA91B86D285001018AE /* YHSASystemSettingViewController.m in Sources */,
 				CE905AEB1B8DAB1800E72515 /* YHSAExamInfoViewController.m in Sources */,
 				18F050FF1B8379C2008EF87D /* YHSAHttpManager.m in Sources */,
+				CE86101B1BA2C46800B7D6FD /* YHSAWrongExamViewController.m in Sources */,
 				1898773B1B8F44EA00E8CAA0 /* YHBaseHtmlView.m in Sources */,
 				CEE6517B1B93E9E800A3E74C /* YHBaseListView.m in Sources */,
 				186F6B221B9928C100894496 /* YHSAGetStudyNotelListModel.m in Sources */,
