@@ -167,6 +167,11 @@
             return YHSA_EXAM_COLLECT_LIST_POST_PATH;
         }
             break;
+        case YHSARequestTypeWrongExamReloadList:
+        {
+            return YHSA_WRONG_EXAM_RELOAD_LIST_POST_PATH;
+        }
+            break;
         default:
             return @"";
             break;
@@ -292,6 +297,11 @@
         case YHSARequestTypeExamCollectList:
         {
             return YHSA_REQUEST_TYPE_EXAM_COLLECT_LIST;
+        }
+            break;
+        case YHSARequestTypeWrongExamReloadList:
+        {
+            return YHSA_REQUEST_TYPE_WRONG_EXAM_RELOAD_LIST;
         }
             break;
         default:

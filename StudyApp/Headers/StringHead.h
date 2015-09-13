@@ -137,6 +137,7 @@
 
 //===============================错题记录界面========================//
 #define WRONG_RECORD_CONTROLLER_TITLE @"错题记录"
+#define WRONG_EXAM_RELOAD_CONTROLLER_TITLE @"错题组卷"
 
 //===============================成绩分析=========================//
 #define ACHIEVEMENT_ANALYES_CONTROLLER_TITLE @"成绩分析"
@@ -209,6 +210,8 @@
 #define INTERFACE_FIELD_POST_WRONG_RECORD_EXAMID @"examid"
 #define INTERFACE_FIELD_POST_WRONG_RECORD_TXCODE @"txcode"
 #define INTERFACE_FIELD_POST_WRONG_RECODE_PAGEINDEX @"pageIndex"
+
+#define INTERFACE_FIELD_POST_WRONG_EXAM_RELOAD_PHONECODE @"phonecode"
 
 //成绩分析
 #define INTERFACE_FIELD_POST_ACHIEVEMENT_ANALYSE_LIST_PHONECODE @"phonecode"
@@ -315,6 +318,9 @@
 
 #define INTERFACE_RETURN_POST_EXAM_COLLECT_LIST_SUCCESS @"8"
 #define INTERFACE_RETURN_POST_EXAM_COLLECT_LIST_FAILED @"2"
+
+#define INTERFACE_RETURN_POST_WRONG_EXAM_RELOAD_SUCCESS @"8"
+#define INTERFACE_RETURN_POST_WRONG_EXAM_RELOAD_FAILED @"2"
 //============================tableViewCell ID================//
 #define TABLEVIEW_CELL_ID_MOCK_EXAM_FIRST @"moceExamFirst"
 #define TABLEVIEW_CELL_ID_SYSTEM_SETTING @"systemSetting"

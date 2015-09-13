@@ -33,7 +33,8 @@ typedef enum {
     YHSARequestTypeWrongRecord,
     YHSARequestTypeWrongRecordQuestion,
     YHSARequestTypeSearchKey,
-    YHSARequestTypeExamCollectList
+    YHSARequestTypeExamCollectList,
+    YHSARequestTypeWrongExamReloadList
 }YHSARequestType;
 //=========================测试地址=============================//
 #ifdef TEXT
@@ -67,6 +68,7 @@ typedef enum {
 #define YHSA_WRONG_RECORD_QUESTION_POST_PATH @"http://app.vipexam.org/interface/Errorlist.ashx"
 #define YHAS_SEARCH_KEY_POST_PATH @"http://app.vipexam.org/interface/Search.ashx"
 #define YHSA_EXAM_COLLECT_LIST_POST_PATH @"http://app.vipexam.org/interface/mycollect.ashx"
+#define YHSA_WRONG_EXAM_RELOAD_LIST_POST_PATH @"http://app.vipexam.org/interface/ErrorResetList.ashx"
 #endif
 
 //==========================请求id的定义========================//
@@ -94,4 +96,5 @@ typedef enum {
 #define YHSA_REQUEST_TYPE_WRONG_RECORD_QUESTION @"22"
 #define YHSA_REQUEST_TYPE_SEARCH_KEY @"23"
 #define YHSA_REQUEST_TYPE_EXAM_COLLECT_LIST @"24"
+#define YHSA_REQUEST_TYPE_WRONG_EXAM_RELOAD_LIST @"24"
 #endif
