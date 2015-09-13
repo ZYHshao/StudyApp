@@ -132,6 +132,9 @@
 #define EXAM_ANSWER_PAGER_CONTROLLER_TITLE @"答题卡"
 #define EXAM_ANSWER_PAGER_CERTAIN_BTN_TEXT @"确定交卷"
 
+//===============================试卷收藏界面=====================//
+#define EXAM_COLLECT_CONTROLLER_TITLE @"试卷收藏"
+
 //===============================错题记录界面========================//
 #define WRONG_RECORD_CONTROLLER_TITLE @"错题记录"
 
@@ -211,7 +214,8 @@
 #define INTERFACE_FIELD_POST_ACHIEVEMENT_ANALYSE_LIST_PHONECODE @"phonecode"
 
 #define INTERFACE_FIELD_POST_REPORT_CARD_EXAMID @"examid"
-
+//我的收藏
+#define INTERFACE_FIELD_POST_EXAM_COLLECT_LIST_PHONECODE @"phonecode"
 
 //我的笔记
 #define INTERFACE_FIELD_POST_GET_STUDY_NOTES_PHONECODE @"phonecode"
@@ -308,6 +312,9 @@
 
 #define INTERFACE_RETURN_POST_SEARCH_KEY_SUCCESS @"8"
 #define INTERFACE_RETURN_POST_SEARCH_KEY_FAILED @"2"
+
+#define INTERFACE_RETURN_POST_EXAM_COLLECT_LIST_SUCCESS @"8"
+#define INTERFACE_RETURN_POST_EXAM_COLLECT_LIST_FAILED @"2"
 //============================tableViewCell ID================//
 #define TABLEVIEW_CELL_ID_MOCK_EXAM_FIRST @"moceExamFirst"
 #define TABLEVIEW_CELL_ID_SYSTEM_SETTING @"systemSetting"

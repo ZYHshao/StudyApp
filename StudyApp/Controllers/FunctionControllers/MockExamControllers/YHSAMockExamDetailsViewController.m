@@ -12,6 +12,7 @@
 #import "YHSAMockExamDetailsModel.h"
 #import "YHSAMockExamAnswerQuestionViewController.h"
 #import "YHSAActivityIndicatorView.h"
+#import "YHSAUserManager.h"
 @interface YHSAMockExamDetailsViewController ()
 @property (weak, nonatomic) IBOutlet YHBaseLabel *examTitleLabel;
 @property (weak, nonatomic) IBOutlet YHBaseButton *startExamButton;
@@ -105,8 +106,28 @@ __PROPERTY_NO_STRONG__(YHSAMockExamDetailsModel *, dataModel);
         con.dataModel = _dataModel;
         [self.navigationController pushViewController:con animated:YES];
     }else if (sender==_collectExamButton){
-        [YHBaseAlertView showWithStyle:YHBaseAlertViewSimple title:PUBLIC_PART_ALERT_TITLE text:@"本功能暂不可用,期待您的支持，我们将继续开发" cancleBtn:PUBLIC_PART_ALERT_SELECT_BTN selectBtn:nil andSelectFunc:nil];
-        return ;
+        //进行试卷的收藏
+        //判断是否登录
+        if ([YHSAUserManager sharedTheSingletion].isLogin) {
+            NSDictionary * dic = @{INTERFACE_FIELD_POST_EXAM_COLLECT_LIST_PHONECODE:[YHSAUserManager sharedTheSingletion].userName,INTERFACE_FIELD_POST_EXAM_EXAM_ID:_dataModel.examid};
+            [[YHSAActivityIndicatorView sharedTheSingletion]show];
+            [YHSAHttpManager  YHSARequestPost:YHSARequestTypeExamCollectList infoDic:dic Succsee:^(NSData *data) {
+                [[YHSAActivityIndicatorView sharedTheSingletion]unShow];
+                YHSARequestGetDataModel * model = [[YHSARequestGetDataModel alloc]init];
+                [model creatModelWithData:data];
+                if ([model.resultCode intValue]==[INTERFACE_RETURN_POST_EXAM_COLLECT_LIST_SUCCESS intValue]) {
+                    [YHBaseAlertView showWithStyle:YHBaseAlertViewSimple title:PUBLIC_PART_ALERT_TITLE text:@"添加收藏成功，您可以在我的收藏中查看" cancleBtn:PUBLIC_PART_ALERT_SELECT_BTN selectBtn:nil andSelectFunc:nil];
+                }else if ([model.resultCode intValue]==[INTERFACE_RETURN_POST_EXAM_COLLECT_LIST_FAILED intValue]){
+                    
+                }
+            } andFail:^(YHBaseError *error) {
+                [[YHSAActivityIndicatorView sharedTheSingletion]unShow];
+            } isbuffer:NO];
+        }else{
+            [YHBaseAlertView showWithStyle:YHBaseAlertViewSimple title:PUBLIC_PART_ALERT_TITLE text:@"此功能需要登录方可使用" cancleBtn:PUBLIC_PART_ALERT_SELECT_BTN selectBtn:nil andSelectFunc:nil];
+            return;
+        }
+       
     }
 }
 

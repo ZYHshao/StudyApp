@@ -40,7 +40,7 @@
                         MAIN_MY_COLLECT_TEXT,MAIN_MY_ANALYSE_TEXT,MAIN_STUDY_PIAN_TEXT,
                         MAIN_MY_NOTES_TEXT,MAIN_TEXT_INFOMATION_TEXT,MAIN_SYSTEMSET_TEXT];
     _titleLabelArray = [[NSMutableArray alloc]init];
-    _controllersArray = @[@"YHSAMockExamController",@"YHSAWrongRecordViewController",@"",@"QuestionCollectViewController",@"YHSAAchievementAnalyseViewController",@"YHSAStudyPlanViewController",@"YHSAStudyNoteViewController",@"YHSAExamInfoViewController",@"YHSASystemSettingViewController"];
+    _controllersArray = @[@"YHSAMockExamController",@"YHSAWrongRecordViewController",@"",@"YHSAExamCollectListViewController",@"YHSAAchievementAnalyseViewController",@"YHSAStudyPlanViewController",@"YHSAStudyNoteViewController",@"YHSAExamInfoViewController",@"YHSASystemSettingViewController"];
 }
 
 -(void)YHCreatView{
@@ -49,13 +49,9 @@
     __BLOCK__WEAK__SELF__(__self);
     for (int i = 0; i < 9; i++) {
         YHBaseButton * btn = [[YHBaseButton alloc]initWithFrame:CGRectMake(LAYOUT_OFFSET_LEFT+10+i%3*(btnWid+20), 40+i/3*(btnWid+50), btnWid, btnWid) backgroundImage:[UIImage imageNamed:_imageArray[i]] backgroundColor:nil textColor:nil titleText:nil andClickBlock:^(YHBaseButton *btn) {
-            if (i==3) {
-                 [YHBaseAlertView showWithStyle:YHBaseAlertViewSimple title:PUBLIC_PART_ALERT_TITLE text:@"本功能暂不可用,期待您的支持，我们将继续开发" cancleBtn:PUBLIC_PART_ALERT_SELECT_BTN selectBtn:nil andSelectFunc:nil];
-                return ;
-            }
             //界面跳转处理
             //判断是否是登陆必须项
-            if ( (i>=1)&&(i<=6)&&i!=3) {
+            if ( (i>=1)&&(i<=6)) {
                 if (![YHSAUserManager sharedTheSingletion].isLogin) {
                     [YHBaseAlertView showWithStyle:YHBaseAlertViewNormal title:PUBLIC_PART_ALERT_TITLE text:@"该功能需要您登陆方可使用" cancleBtn:PUBLIC_PART_ALERT_CANCLE_BTN selectBtn:@"登陆" andSelectFunc:^{
                        //跳转登陆

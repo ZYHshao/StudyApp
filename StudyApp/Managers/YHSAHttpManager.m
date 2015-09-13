@@ -162,6 +162,11 @@
             return YHAS_SEARCH_KEY_POST_PATH;
         }
             break;
+        case YHSARequestTypeExamCollectList:
+        {
+            return YHSA_EXAM_COLLECT_LIST_POST_PATH;
+        }
+            break;
         default:
             return @"";
             break;
@@ -282,6 +287,11 @@
         case YHSARequestTypeSearchKey:
         {
             return YHSA_REQUEST_TYPE_SEARCH_KEY;
+        }
+            break;
+        case YHSARequestTypeExamCollectList:
+        {
+            return YHSA_REQUEST_TYPE_EXAM_COLLECT_LIST;
         }
             break;
         default:

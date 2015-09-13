@@ -29,6 +29,7 @@
 		1898773E1B8F456000E8CAA0 /* RCLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1898773D1B8F456000E8CAA0 /* RCLabel.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		189877411B8F529800E8CAA0 /* YHBaseData.m in Sources */ = {isa = PBXBuildFile; fileRef = 189877401B8F529800E8CAA0 /* YHBaseData.m */; };
 		18A232D31B9205AF00733E88 /* AudioStreamer.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A232D21B9205AF00733E88 /* AudioStreamer.m */; };
+		18EB33451BA40B4700160883 /* YHSAExamCollectListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18EB33441BA40B4700160883 /* YHSAExamCollectListViewController.m */; };
 		18F050FF1B8379C2008EF87D /* YHSAHttpManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F050FE1B8379C2008EF87D /* YHSAHttpManager.m */; };
 		23715322364E505FF9CADA86 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6888E6FF2F5B53851F13B1DE /* libPods.a */; };
 		CE0A89621B85AF9A00BA1F5F /* YHBaseTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE0A89611B85AF9A00BA1F5F /* YHBaseTableView.m */; };
@@ -112,7 +113,6 @@
 		CEDA4E311B85629400D64C44 /* YHSAReFoundViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEDA4E2F1B85629400D64C44 /* YHSAReFoundViewController.xib */; };
 		CEE5C5BA1B9FCFA100B9AD22 /* UIView+Responder.m in Sources */ = {isa = PBXBuildFile; fileRef = CEE5C5B91B9FCFA100B9AD22 /* UIView+Responder.m */; };
 		CEE5C5C01B9FD21200B9AD22 /* YHBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEE5C5BF1B9FD21200B9AD22 /* YHBaseTableViewController.m */; };
-		CEE5C5C81B9FDE1A00B9AD22 /* QuestionCollectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEE5C5C71B9FDE1A00B9AD22 /* QuestionCollectViewController.m */; };
 		CEE5C6081BA028C800B9AD22 /* YHSAWrongRecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEE5C6071BA028C800B9AD22 /* YHSAWrongRecordViewController.m */; };
 		CEE5C60C1BA02DB800B9AD22 /* YHSAWrongRecordModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CEE5C60B1BA02DB800B9AD22 /* YHSAWrongRecordModel.m */; };
 		CEE5C6121BA02E9100B9AD22 /* YHSASubWrongRecordModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CEE5C6111BA02E9100B9AD22 /* YHSASubWrongRecordModel.m */; };
@@ -266,6 +266,8 @@
 		189877401B8F529800E8CAA0 /* YHBaseData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YHBaseData.m; sourceTree = "<group>"; };
 		18A232D11B9205AF00733E88 /* AudioStreamer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioStreamer.h; sourceTree = "<group>"; };
 		18A232D21B9205AF00733E88 /* AudioStreamer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioStreamer.m; sourceTree = "<group>"; };
+		18EB33431BA40B4700160883 /* YHSAExamCollectListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHSAExamCollectListViewController.h; sourceTree = "<group>"; };
+		18EB33441BA40B4700160883 /* YHSAExamCollectListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YHSAExamCollectListViewController.m; sourceTree = "<group>"; };
 		18F050FD1B8379C2008EF87D /* YHSAHttpManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YHSAHttpManager.h; path = StudyApp/Managers/YHSAHttpManager.h; sourceTree = SOURCE_ROOT; };
 		18F050FE1B8379C2008EF87D /* YHSAHttpManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YHSAHttpManager.m; path = StudyApp/Managers/YHSAHttpManager.m; sourceTree = SOURCE_ROOT; };
 		6888E6FF2F5B53851F13B1DE /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -426,8 +428,6 @@
 		CEE5C5B91B9FCFA100B9AD22 /* UIView+Responder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Responder.m"; sourceTree = "<group>"; };
 		CEE5C5BE1B9FD21200B9AD22 /* YHBaseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHBaseTableViewController.h; sourceTree = "<group>"; };
 		CEE5C5BF1B9FD21200B9AD22 /* YHBaseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YHBaseTableViewController.m; sourceTree = "<group>"; };
-		CEE5C5C61B9FDE1A00B9AD22 /* QuestionCollectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionCollectViewController.h; sourceTree = "<group>"; };
-		CEE5C5C71B9FDE1A00B9AD22 /* QuestionCollectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionCollectViewController.m; sourceTree = "<group>"; };
 		CEE5C6061BA028C800B9AD22 /* YHSAWrongRecordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHSAWrongRecordViewController.h; sourceTree = "<group>"; };
 		CEE5C6071BA028C800B9AD22 /* YHSAWrongRecordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YHSAWrongRecordViewController.m; sourceTree = "<group>"; };
 		CEE5C60A1BA02DB800B9AD22 /* YHSAWrongRecordModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHSAWrongRecordModel.h; sourceTree = "<group>"; };
@@ -613,6 +613,15 @@
 			path = StudyNoteControllers;
 			sourceTree = "<group>";
 		};
+		18EB33421BA40B2500160883 /* ExamCollectList */ = {
+			isa = PBXGroup;
+			children = (
+				18EB33431BA40B4700160883 /* YHSAExamCollectListViewController.h */,
+				18EB33441BA40B4700160883 /* YHSAExamCollectListViewController.m */,
+			);
+			path = ExamCollectList;
+			sourceTree = "<group>";
+		};
 		18F050FC1B837971008EF87D /* Managers */ = {
 			isa = PBXGroup;
 			children = (
@@ -637,8 +646,8 @@
 		CE0A895F1B85AE8300BA1F5F /* FunctionControllers */ = {
 			isa = PBXGroup;
 			children = (
+				18EB33421BA40B2500160883 /* ExamCollectList */,
 				CEE5C6051BA0289900B9AD22 /* WrongRecordController */,
-				CEE5C5C51B9FDE1500B9AD22 /* QuestionCollectConreollers */,
 				CE2919B31B9E794800A54241 /* AchievementAnalyseControllers */,
 				CE75B11E1B9C4BDB003DD946 /* StudyPlanControllers */,
 				186F6B1C1B991F9200894496 /* StudyNoteControllers */,
@@ -996,15 +1005,6 @@
 				CEE5C5BF1B9FD21200B9AD22 /* YHBaseTableViewController.m */,
 			);
 			path = BaseTableViewController;
-			sourceTree = "<group>";
-		};
-		CEE5C5C51B9FDE1500B9AD22 /* QuestionCollectConreollers */ = {
-			isa = PBXGroup;
-			children = (
-				CEE5C5C61B9FDE1A00B9AD22 /* QuestionCollectViewController.h */,
-				CEE5C5C71B9FDE1A00B9AD22 /* QuestionCollectViewController.m */,
-			);
-			path = QuestionCollectConreollers;
 			sourceTree = "<group>";
 		};
 		CEE5C6051BA0289900B9AD22 /* WrongRecordController */ = {
@@ -1574,6 +1574,7 @@
 				CE924A1A1B84868300F7B647 /* YHBaseHttpRequestObject.m in Sources */,
 				CE924A1E1B84868300F7B647 /* YHBaseActivityIndicatorView.m in Sources */,
 				CE924A251B8486C800F7B647 /* YHSAActivityIndicatorView.m in Sources */,
+				18EB33451BA40B4700160883 /* YHSAExamCollectListViewController.m in Sources */,
 				CE924A151B84868300F7B647 /* YHBaseViewController.m in Sources */,
 				CE924A191B84868300F7B647 /* YHBaseHttpManager.m in Sources */,
 				CEE5C5C01B9FD21200B9AD22 /* YHBaseTableViewController.m in Sources */,
@@ -1592,7 +1593,6 @@
 				CE905AE11B8D617100E72515 /* YHSAOptionsViewController.m in Sources */,
 				187EDADC1B9B23B600BFAF2F /* YHBaseDateTools.m in Sources */,
 				CEE651D61B9447C500A3E74C /* YHSAAnswerStateModel.m in Sources */,
-				CEE5C5C81B9FDE1A00B9AD22 /* QuestionCollectViewController.m in Sources */,
 				CE328FA91B86D285001018AE /* YHSASystemSettingViewController.m in Sources */,
 				CE905AEB1B8DAB1800E72515 /* YHSAExamInfoViewController.m in Sources */,
 				18F050FF1B8379C2008EF87D /* YHSAHttpManager.m in Sources */,
