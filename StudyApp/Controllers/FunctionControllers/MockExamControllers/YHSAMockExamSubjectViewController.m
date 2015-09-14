@@ -155,6 +155,7 @@
     [model getTopicModel];
     self.view.backgroundColor = model.bgColor;
     _tableView.backgroundColor = model.bgColor;
+    [_tableView reloadData];
 }
 
 
@@ -173,6 +174,10 @@
     if (cell==nil) {
         cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:TABLEVIEW_CELL_ID_MOCK_EXAM_FIRST];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        YHTopicColorManager * manager = [YHTopicColorManager sharedTheSingletion];
+        [manager getTopicModel];
+        cell.backgroundColor = manager.cellColor;
+        cell.textLabel.textColor=manager.cellTextColor;
     }
     YHSAMockExamMainListDataModel * model = _dataArray[indexPath.row];
     if (_status==1) {

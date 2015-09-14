@@ -41,6 +41,8 @@
             _borderLineColor = [UIColor colorWithRed:160/255.0 green:160/255.0 blue:160/255.0 alpha:1];
             _greyBgColor = [UIColor colorWithRed:220/255.0 green:220/255.0 blue:220/255.0 alpha:1];
             _listBgColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.7];
+            _cellColor = [UIColor whiteColor];
+            _cellTextColor = [UIColor blackColor];
         }
             break;
         case nightTime://夜间模式
@@ -53,7 +55,9 @@
             _navTextColor= [UIColor whiteColor];
             _borderLineColor = [UIColor colorWithRed:240/255.0 green:240/255.0 blue:240/255.0 alpha:1];
             _greyBgColor = [UIColor colorWithRed:35/255.0 green:35/255.0 blue:35/255.0 alpha:1];
-            _listBgColor = [UIColor colorWithRed:1 green:1 blue:1 alpha:0.7];
+            _listBgColor = [UIColor colorWithRed:0.5 green:0.5 blue:0.5 alpha:0.7];
+            _cellColor = [UIColor colorWithRed:100/255.0 green:100/255.0 blue:100/255.0 alpha:1];
+            _cellTextColor = [UIColor whiteColor];
         }
             break;
         default:

@@ -81,6 +81,7 @@
     [manager getTopicModel];
     self.view.backgroundColor = manager.bgColor;
     _tableView.backgroundColor = manager.bgColor;
+    [_tableView reloadData];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -104,6 +105,11 @@
         cell = [[[NSBundle mainBundle]loadNibNamed:TABLEVIEW_CELL_ID_STUDY_NOTE_LIST owner:self options:nil]lastObject];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         cell.YHDelegate=self;
+        YHTopicColorManager * manager = [YHTopicColorManager sharedTheSingletion];
+        [manager getTopicModel];
+        cell.backgroundColor = manager.cellColor;
+        cell.theTitleLabel.textColor = manager.cellTextColor;
+        cell.dateLabel.textColor = manager.cellTextColor;
     }
     cell.indexRow = (int)indexPath.row;
     YHSAGetStudyNotelListModel * model = _dataArray[indexPath.row];

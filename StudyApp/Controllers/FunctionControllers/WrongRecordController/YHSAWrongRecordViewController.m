@@ -97,6 +97,14 @@
     } isbuffer:NO];
     
 }
+-(void)useYHTopicToCreatViewWithModel{
+    YHTopicColorManager * manager = [YHTopicColorManager sharedTheSingletion];
+    [manager getTopicModel];
+    self.view.backgroundColor = manager.bgColor;
+    self.tableView.backgroundColor= manager.bgColor;
+    [self reloadData];
+}
+
 -(UIView *)creatHeadView:(NSString *)title{
     UIView * view = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 60)];
     UILabel * label = [[UILabel alloc]initWithFrame:view.frame];

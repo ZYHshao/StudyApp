@@ -23,6 +23,8 @@
 @property(nonatomic,readonly)UIColor * borderLineColor;
 @property(nonatomic,readonly)UIColor * greyBgColor;
 @property(nonatomic,readonly)UIColor * listBgColor;
+@property(nonatomic,readonly)UIColor * cellColor;
+@property(nonatomic,readonly)UIColor * cellTextColor;
 /**
  *使用之前需先调用这个方法进行设置主题
  */

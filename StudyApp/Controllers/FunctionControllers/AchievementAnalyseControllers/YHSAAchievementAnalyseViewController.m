@@ -72,7 +72,13 @@
     [self.view addSubview:_tableView];
 }
 
-
+-(void)useYHTopicToCreatViewWithModel{
+    YHTopicColorManager * manager = [YHTopicColorManager sharedTheSingletion];
+    [manager getTopicModel];
+    self.view.backgroundColor = manager.bgColor;
+    _tableView.backgroundColor = manager.bgColor;
+    [_tableView reloadData];
+}
 #pragma mark - tableView delegate
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return 100;
@@ -88,6 +94,10 @@
     if (cell==nil) {
         cell = [[[NSBundle mainBundle]loadNibNamed:TABLEVIEW_CELL_ID_ACHIEVEMENT_ANALYSE owner:self options:nil]lastObject];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        YHTopicColorManager * manager = [YHTopicColorManager sharedTheSingletion];
+        cell.backgroundColor = manager.cellColor;
+        cell.examTitleLabel.textColor = manager.cellTextColor;
+        cell.dateLabel.textColor = manager.cellTextColor;
     }
     cell.examTitleLabel.text = [_dataArray[indexPath.row] examname];
     cell.dateLabel.text = [NSString stringWithFormat:@"答卷日期:%@",[_dataArray[indexPath.row] examdate]];

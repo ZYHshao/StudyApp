@@ -114,8 +114,10 @@
     _headView.backgroundColor = manager.bgColor;
     _footView.backgroundColor = manager.bgColor;
     _headLabel.backgroundColor = manager.bgColor;
+    _headLabel.textColor = manager.textColor;
     _footBtn.backgroundColor = manager.btnColor;
     [_footBtn setTitleColor:manager.btnTextColor forState:UIControlStateNormal];
+    [_tableView reloadData];
 }
 
 #pragma mark - tableView delegate
@@ -145,6 +147,10 @@
     YHSAReportCardTableViewCell * cell = [_tableView dequeueReusableCellWithIdentifier:TABLEVIEW_CELL_ID_REPORT_CAED];
     if (cell==nil) {
         cell = [[[NSBundle mainBundle]loadNibNamed:TABLEVIEW_CELL_ID_REPORT_CAED owner:self options:nil] lastObject];
+        YHTopicColorManager * manager = [YHTopicColorManager sharedTheSingletion];
+        cell.backgroundColor = manager.bgColor;
+        cell.theTitleLabel.textColor=manager.cellTextColor;
+        cell.contentLabel.textColor=manager.cellTextColor;
     }
     YHSAReportCardSubModel * model = _dataArray[indexPath.row];
     cell.theTitleLabel.text = model.txname;

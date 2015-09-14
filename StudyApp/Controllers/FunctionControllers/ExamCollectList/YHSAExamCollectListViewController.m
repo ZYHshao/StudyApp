@@ -53,7 +53,13 @@
     _tableView.dataSource=self;
     [self.view addSubview:_tableView];
 }
-
+-(void)useYHTopicToCreatViewWithModel{
+    YHTopicColorManager * manager = [YHTopicColorManager sharedTheSingletion];
+    [manager getTopicModel];
+    self.view.backgroundColor = manager.bgColor;
+    _tableView.backgroundColor = manager.bgColor;
+    [_tableView reloadData];
+}
 
 
 
@@ -70,6 +76,10 @@
     if (cell==nil) {
         cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        YHTopicColorManager * manager = [YHTopicColorManager sharedTheSingletion];
+        [manager getTopicModel];
+        cell.backgroundColor = manager.cellColor;
+        cell.textLabel.textColor=manager.textColor;
     }
     cell.textLabel.text = [_dataArray[indexPath.row] examname];
     return cell;

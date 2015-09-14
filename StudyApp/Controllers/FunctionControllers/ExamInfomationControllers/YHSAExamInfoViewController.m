@@ -54,6 +54,7 @@
     [manager getTopicModel];
     self.view.backgroundColor = manager.bgColor;
     _tableView.backgroundColor = manager.bgColor;
+    [_tableView reloadData];
 }
 
 //刷新数据
@@ -169,6 +170,11 @@
     if (cell==nil) {
         cell = [[[NSBundle mainBundle]loadNibNamed:@"YHSAExamListTableViewCell" owner:self options:nil]lastObject];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        YHTopicColorManager *manager = [YHTopicColorManager sharedTheSingletion];
+        [manager getTopicModel];
+        cell.backgroundColor = manager.cellColor;
+        cell.titleLabel.textColor = manager.cellTextColor;
+        cell.dateLabel.textColor = manager.cellTextColor;
     }
     YHSAExamInfoListDataModel * model = _dataArray[indexPath.row];
     cell.titleLabel.text = model.title;

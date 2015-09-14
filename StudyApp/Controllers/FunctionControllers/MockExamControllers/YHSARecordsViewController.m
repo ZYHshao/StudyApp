@@ -39,7 +39,17 @@
     _clickBtn.layer.masksToBounds = YES;
     _clickBtn.layer.cornerRadius = 6;
 }
-
+-(void)useYHTopicToCreatViewWithModel{
+    YHTopicColorManager * manager = [YHTopicColorManager sharedTheSingletion];
+    [manager getTopicModel];
+    self.view.backgroundColor = manager.bgColor;
+    self.titleLabel.backgroundColor= manager.labelColor;
+    self.titleLabel.textColor = manager.textColor;
+    _sreceLabel.backgroundColor = manager.bgColor;
+    _sreceLabel.textColor = manager.textColor;
+    _clickBtn.backgroundColor = manager.btnColor;
+    [_clickBtn setTitleColor:manager.btnTextColor forState:UIControlStateNormal];
+}
 
 /*
 #pragma mark - Navigation

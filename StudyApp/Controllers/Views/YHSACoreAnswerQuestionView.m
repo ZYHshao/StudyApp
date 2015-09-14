@@ -220,10 +220,11 @@
     [manager getTopicModel];
     self.backgroundColor = manager.bgColor;
     _titleScrollView.backgroundColor = manager.greyBgColor;
-    _titleView.backgroundColor = manager.greyBgColor;
+    _titleView.backgroundColor = manager.cellColor;
     _answerTableView.backgroundColor = manager.bgColor;
     _tableViewHeaderLabel.backgroundColor = manager.bgColor;
     _tableViewHeadView.backgroundColor =manager.bgColor;
+    [_answerTableView reloadData];
 }
 
 
@@ -300,6 +301,7 @@
     }
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
     //计算cell大小
     if (_questionType==3||_questionType==4) {
         return 70;
@@ -317,6 +319,8 @@
     }
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    YHTopicColorManager * manager = [YHTopicColorManager sharedTheSingletion];
+    [manager getTopicModel];
     YHSAAnswerStateModel * stateModel = [YHSAAnswerQuestionManager sharedTheSingletion].dataArray[_index-1];
     if (_questionType==3||_questionType==4) {
         UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"normalCell"];
@@ -354,6 +358,7 @@
         cell.indexLabel.font = [UIFont systemFontOfSize:_fontSize];
        [cell.theContentView reSetHtmlStr:_tableViewDataArray[indexPath.row+1]];
        [cell.theContentView setFontSize:_fontSize];
+        cell.theContentView.backgroundColor=manager.cellColor;
         //判断是否已经答过
         if (stateModel.hadAnswer) {
             NSString * ansStr = [stateModel.info objectForKey:@"ans"];
@@ -370,6 +375,9 @@
         }else{
              cell.indexLabel.backgroundColor = [UIColor grayColor];
         }
+       
+        cell.backgroundColor = manager.cellColor;
+        cell.textLabel.textColor=manager.cellTextColor;
         return cell;
     }
 }

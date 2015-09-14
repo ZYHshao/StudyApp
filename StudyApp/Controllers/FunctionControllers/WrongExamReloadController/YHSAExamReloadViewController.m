@@ -51,7 +51,12 @@
     } isbuffer:NO];
 }
 
-
+-(void)useYHTopicToCreatViewWithModel{
+    YHTopicColorManager * manager = [YHTopicColorManager sharedTheSingletion];
+    self.view.backgroundColor = manager.bgColor;
+    _tableView.backgroundColor = manager.bgColor;
+    [_tableView reloadData];
+}
 
 -(void)YHCreatView{
     self.title = WRONG_EXAM_RELOAD_CONTROLLER_TITLE;
@@ -81,6 +86,9 @@
     if (cell==nil) {
         cell = [[YHSAWrongExamReloadTableViewCell alloc]init];
         cell.delegate=self;
+        YHTopicColorManager * manager = [YHTopicColorManager sharedTheSingletion];
+        cell.backgroundColor = manager.cellColor;
+        cell.textLabel.backgroundColor = manager.cellTextColor;
     }
     cell.indexRow = (int)indexPath.row;
     cell.theTitle = [_dataArray[indexPath.row] typename];
