@@ -141,7 +141,11 @@
         //拼接字典
         [[YHSAActivityIndicatorView sharedTheSingletion]show];
         NSDictionary * dic = @{@"phonecode":[YHSAUserManager sharedTheSingletion].userName,@"typecode":_typecode,@"pageIndex":[NSString stringWithFormat:@"%d",index],@"pageData":_pageDataArray};
-        [YHSAHttpManager YHSARequestPost:YHSARequestTypeWrongReload infoDic:dic Succsee:^(NSData *data) {
+        NSArray * tmpArray = @[dic];
+        NSString * dicStr = [tmpArray transToJsonString:YHBaseJosnStyleNoneSpace|YHBaseJosnStyleSinglequotationMark|YHBaseJosnStyleNoneWarp];
+        NSDictionary * postDic = @{@"jsonData":dicStr};
+        NSLog(@"%@",postDic);
+        [YHSAHttpManager YHSARequestPost:YHSARequestTypeWrongReload infoDic:postDic Succsee:^(NSData *data) {
             NSDictionary * temDic = [YHBaseJOSNAnalytical dictionaryWithJSData:data];
             YHSARequestGetDataModel * tmpModel = [[YHSARequestGetDataModel alloc]init];
             [tmpModel creatModelWithDic:temDic];
