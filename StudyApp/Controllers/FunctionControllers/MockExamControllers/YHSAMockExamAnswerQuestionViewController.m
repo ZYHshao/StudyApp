@@ -33,6 +33,12 @@
     YHBaseListView * _listView;
     NSArray * _toolsTitleArray;
     NSArray * _toolsImageArray;
+    
+    //字体更改视图
+    YHBaseView * _fontView;
+    //当前的字体大小
+    int _fontsize;
+    
 }
 @end
 
@@ -54,6 +60,7 @@
 }
 
 -(void)YHCreatDate{
+    _fontsize=14;
     //创建播放器
     _avPlayer = [[YHBaseAVPlayer alloc]init];
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(changePlayer:) name:YHBASE_AVFOUNDATION_PLAYER_STATE object:nil];
@@ -149,6 +156,29 @@
     [_draftView setDrawViewBackgroundColor:[UIColor colorWithRed:155/255.0 green:155/255.0 blue:155/255.0 alpha:0.3]];
     _draftView.alpha=0;
     [self.view addSubview:_draftView];
+    
+    
+    _fontView = [[YHBaseView alloc]initWithFrame:CGRectMake(self.view.frame.size.width/2-100, (self.view.frame.size.height-64)/2-50, 200, 100)];
+    _fontView.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.5];
+    for (int i=0; i<2; i++) {
+        YHBaseButton * btn = [[YHBaseButton alloc]initWithFrame:CGRectMake(0+i*100, 0, 100, 100) backgroundImage:nil backgroundColor:[UIColor clearColor] textColor:[UIColor whiteColor] titleText:i==0?@"A+":@"A-" andClickBlock:^(YHBaseButton *btn) {
+            if ([btn.titleLabel.text isEqualToString:@"A+"]) {
+                if (_fontsize<25) {
+                    _fontsize++;
+                }
+            }else{
+                if (_fontsize>8) {
+                    _fontsize--;
+                }
+            }
+            _fontView.hidden=YES;
+             [_coreScrollView setFontSize:_fontsize];
+        }];
+        btn.titleLabel.font = [UIFont boldSystemFontOfSize:25];
+        [_fontView addSubview:btn];
+    }
+    _fontView.hidden=YES;
+    [self.view addSubview:_fontView];
 }
 
 
@@ -336,6 +366,7 @@
             break;
         case 6://更多设置
         {
+            _fontView.hidden=NO;
             
             [_listView closeList];
         }
@@ -388,7 +419,9 @@
     
 }
 
-
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
+    _fontView.hidden=YES;
+}
 
 /*
 #pragma mark - Navigation

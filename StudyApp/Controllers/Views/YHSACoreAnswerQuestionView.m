@@ -42,6 +42,8 @@
     
     //当前题目的模型
     __strong YHSAAnswerQuestionModel * _currentModel;
+    
+    int _fontSize;
 }
 @end
 
@@ -60,6 +62,7 @@
 }
 
 -(void)clearData{
+   
     _answerTableView.frame=CGRectMake(0,(self.frame.size.height-64)/4*3-60, self.frame.size.width, (self.frame.size.height-64)/4+60);
     _titleScrollView.contentOffset=CGPointMake(0, 0);
     [_tableViewHeaderLabel reSetHtmlStr:@""];
@@ -302,8 +305,8 @@
         return 70;
     }else{
         YHBaseHtmlView * temView = [[YHBaseHtmlView alloc]initWithFrame:CGRectMake(0, 0, tableView.frame.size.width-60, 100)];
+        [temView setFontSize:_fontSize];
         [temView reSetHtmlStr:_tableViewDataArray[indexPath.row+1]];
-        
         CGFloat cellH = temView.frame.size.height+20;
         if (cellH<44) {
             return 44;
@@ -345,7 +348,12 @@
             cell.theContentView.delegate=self;
         }
         cell.indexLabel.text = [NSString stringWithFormat:@"%c",(int)indexPath.row+'A'];
-        [cell.theContentView reSetHtmlStr:_tableViewDataArray[indexPath.row+1]];
+        if (_fontSize==0) {
+            _fontSize=14;
+        }
+        cell.indexLabel.font = [UIFont systemFontOfSize:_fontSize];
+       [cell.theContentView reSetHtmlStr:_tableViewDataArray[indexPath.row+1]];
+       [cell.theContentView setFontSize:_fontSize];
         //判断是否已经答过
         if (stateModel.hadAnswer) {
             NSString * ansStr = [stateModel.info objectForKey:@"ans"];
@@ -483,6 +491,11 @@
     [_answerTableView reloadData];
 }
 
-
+-(void)setFontSize:(int)size{
+    _fontSize = size;
+    [_titleView setFontSize:size];
+    [_tableViewHeaderLabel setFontSize:size];
+    [_tableViewFooterLabel setFontSize:size];
+}
 
 @end

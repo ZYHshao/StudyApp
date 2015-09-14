@@ -478,6 +478,11 @@
     [self scrollViewDidEndDecelerating:self];
 }
 
-
+-(void)setFontSize:(int)size{
+    [(YHSACoreAnswerQuestionView*)_leftView setFontSize:size];
+    [(YHSACoreAnswerQuestionView*)_middleView setFontSize:size];
+    [(YHSACoreAnswerQuestionView*)_rightView setFontSize:size];
+    
+}
 
 @end

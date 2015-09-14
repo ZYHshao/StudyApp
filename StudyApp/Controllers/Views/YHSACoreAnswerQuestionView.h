@@ -18,4 +18,7 @@ __PROPERTY_NO_ASSIGN__(int, index);
 -(void)clearData;
 //刷新
 -(void)updataView;
+
+
+-(void)setFontSize:(int)size;
 @end
