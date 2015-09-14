@@ -209,7 +209,7 @@
 
 #pragma mark - 提交试卷
 -(void)certainClick{
-    if (_isNotExam) {
+    if (_isNotExam||_isWrongReload) {
         [YHBaseAlertView showWithStyle:YHBaseAlertViewSimple title:PUBLIC_PART_ALERT_TITLE text:@"次模式下不可交卷" cancleBtn:PUBLIC_PART_ALERT_CANCLE_BTN selectBtn:nil andSelectFunc:nil];
         return ;
     }

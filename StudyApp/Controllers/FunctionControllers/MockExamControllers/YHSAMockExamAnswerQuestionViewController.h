@@ -25,4 +25,14 @@ __PROPERTY_NO_STRONG__(YHSAWrongRecordPostModel  *, subDataModel);
  *这个参数用于确定是否是答卷模式
  */
 __PROPERTY_NO_ASSIGN__(BOOL, isNotExam);
+
+
+
+__PROPERTY_NO_ASSIGN__(BOOL, isWrongReload);
+
+
+//错题组卷的pagedata数组
+__PROPERTY_NO_STRONG__(NSArray * , pageDataArray);
+//科目代码
+__PROPERTY_NO_STRONG__(NSString *, typecode);
 @end

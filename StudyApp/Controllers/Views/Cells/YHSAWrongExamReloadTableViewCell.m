@@ -13,11 +13,24 @@
 - (void)awakeFromNib {
     // Initialization code
 }
+
+
+
+
 -(void)setDataArray:(NSMutableArray *)dataArray{
     _dataArray = dataArray;
     [self creatView];
 }
 -(void)creatView{
+    if (_userDic==nil) {
+        _userDic = [[NSMutableDictionary alloc]init];
+    }
+    [_userDic removeAllObjects];
+    //初始化
+    for (YHSASubWrongRecordModel * model in _dataArray) {
+        [_userDic setObject:@"0" forKey:model.txcode];
+    }
+    
     [self.contentView removeAllSubviews];
     UILabel * titleLabel = [[UILabel alloc]initWithFrame:CGRectMake(10, 5, self.frame.size.width-20,40)];
     titleLabel.text = _theTitle;
@@ -41,15 +54,34 @@
     button.backgroundColor = [UIColor blueColor];
     [button setTitle:@"开始组卷" forState:UIControlStateNormal];
     [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [button addTarget:self action:@selector(click) forControlEvents:UIControlEventTouchUpInside];
     [self.contentView addSubview:button];
     
 }
-
+-(void)click{
+    [self.delegate clickBtn:self];
+}
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField{
     [textField resignFirstResponder];
     return YES;
 }
+
+-(BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string{
+    if (string.length>0&&([string characterAtIndex:0]<'1'||[string characterAtIndex:0]>'9')) {
+        return NO;
+    }
+    for (int i=0; i<_dataArray.count; i++) {
+        if (i==textField.tag-801) {
+            if ([[NSString stringWithFormat:@"%@%@",textField.text,string] intValue]>[[(YHSASubWrongRecordModel *)_dataArray[i] count] intValue]) {
+                return NO;
+            }
+            [_userDic setObject:[NSString stringWithFormat:@"%@%@",textField.text,string] forKey:[_dataArray[i] txcode]];
+        }
+    }
+    return YES;
+}
+
 
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

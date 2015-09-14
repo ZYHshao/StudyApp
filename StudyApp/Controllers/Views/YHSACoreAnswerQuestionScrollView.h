@@ -36,4 +36,13 @@ __PROPERTY_NO_STRONG__(YHSAMockExamDetailsModel *, dataModel);
 __PROPERTY_NO_STRONG__(YHSAWrongRecordPostModel *, subDataModel);
 __PROPERTY_NO_ASSIGN__(BOOL, isNotExam);
 
+
+//这里分的逻辑比较混乱 开始接口的设计没有考虑周全
+
+//错题组卷
+__PROPERTY_NO_ASSIGN__(BOOL, isWrongReload);
+//错题组卷的pagedata数组
+__PROPERTY_NO_STRONG__(NSArray * , pageDataArray);
+//科目代码
+__PROPERTY_NO_STRONG__(NSString *, typecode);
 @end

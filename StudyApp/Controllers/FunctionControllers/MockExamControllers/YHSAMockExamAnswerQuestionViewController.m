@@ -74,6 +74,23 @@
     YHSAAnswerQuestionManager * manager = [YHSAAnswerQuestionManager sharedTheSingletion];
     //进行初始化 所有题都是未答题状态
     [manager clearData];
+    
+    if (_isWrongReload) {
+        int wrong = 0;
+        for (int i=0; i<_pageDataArray.count; i++) {
+           wrong=wrong+[[_pageDataArray[i] objectForKey:@"count"] intValue];
+        }
+        for (int i=0; i<wrong; i++) {
+            YHSAAnswerStateModel * model = [[YHSAAnswerStateModel alloc]init];
+            model.hadAnswer=NO;
+            [manager.dataArray addObject:model];
+        }
+        
+        manager.testTime=3600;
+        [manager startTimer];
+        return;
+    }
+    
     if (_isNotExam) {
         for (int i=0; i<[_subDataModel.count intValue]; i++) {
             YHSAAnswerStateModel * model = [[YHSAAnswerStateModel alloc]init];
@@ -99,6 +116,10 @@
     _coreScrollView.dataDelegate=self;
     _coreScrollView.viewClass = [YHSACoreAnswerQuestionView class];
     _coreScrollView.isNotExam=_isNotExam;
+    
+    _coreScrollView.isWrongReload = _isWrongReload;
+    _coreScrollView.pageDataArray=_pageDataArray;
+    _coreScrollView.typecode=_typecode;
     if (_isNotExam) {
         _coreScrollView.subDataModel=_subDataModel;
     }else{
@@ -246,7 +267,7 @@
         case 1://交卷
         {
             //
-            if (_isNotExam) {
+            if (_isNotExam||_isWrongReload) {
                 [YHBaseAlertView showWithStyle:YHBaseAlertViewSimple title:PUBLIC_PART_ALERT_TITLE text:@"此模式下不可交卷" cancleBtn:PUBLIC_PART_ALERT_CANCLE_BTN selectBtn:nil andSelectFunc:nil];
                 return ;
             }
@@ -290,6 +311,7 @@
             [_listView closeList];
             YHSAAnswerPagerViewController * con = [[YHSAAnswerPagerViewController alloc]init];
             con.isNotExam=_isNotExam;
+            con.isWrongReload=_isWrongReload;
             [self.navigationController pushViewController:con animated:YES];
         }
             break;

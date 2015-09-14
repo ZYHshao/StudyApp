@@ -13,7 +13,8 @@
 #import "YHSARequestGetDataModel.h"
 #import "YHSAWrongExamReloadModel.h"
 #import "YHSAWrongExamReloadTableViewCell.h"
-@interface YHSAExamReloadViewController ()<UITableViewDataSource,UITableViewDelegate>
+#import "YHSAMockExamAnswerQuestionViewController.h"
+@interface YHSAExamReloadViewController ()<UITableViewDataSource,UITableViewDelegate,YHSAWrongExamReloadCellDelegate>
 {
     NSMutableArray * _dataArray;
     YHBaseTableView * _tableView;
@@ -79,8 +80,9 @@
     YHSAWrongExamReloadTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:cellID];
     if (cell==nil) {
         cell = [[YHSAWrongExamReloadTableViewCell alloc]init];
-       
+        cell.delegate=self;
     }
+    cell.indexRow = (int)indexPath.row;
     cell.theTitle = [_dataArray[indexPath.row] typename];
     NSMutableArray * array = [[NSMutableArray alloc]init];
     for (int i=0; i<[_dataArray[indexPath.row] txlist].count; i++) {
@@ -92,6 +94,21 @@
     return cell;
 }
 
+
+-(void)clickBtn:(YHSAWrongExamReloadTableViewCell *)cell{
+    //跳转答题界面
+    YHSAMockExamAnswerQuestionViewController * con = [[YHSAMockExamAnswerQuestionViewController alloc]init];
+    con.typecode = [_dataArray[cell.indexRow] typecode];
+    con.isWrongReload=YES;
+    NSMutableArray * pageArray = [[NSMutableArray alloc]init];
+    for (int i=0; i<cell.dataArray.count; i++) {
+        YHSASubWrongExamReloadModel * model = cell.dataArray[i];
+        NSDictionary * dic = @{@"txcode":model.txcode,@"count":[cell.userDic objectForKey:model.txcode]};
+        [pageArray addObject:dic];
+    }
+    con.pageDataArray=pageArray;
+    [self.navigationController pushViewController:con animated:YES];
+}
 /*
 #pragma mark - Navigation
 

@@ -21,4 +21,6 @@ __PROPERTY_NO_STRONG__(NSMutableArray *, dataArray);
 __PROPERTY_NO_STRONG__(NSMutableDictionary *,userDic);
 __PROPERTY_NO_STRONG__(NSString *, theTitle);
 __PROPERTY_NO_WEAK__(id<YHSAWrongExamReloadCellDelegate>, delegate);
+//标记当前的cell index
+__PROPERTY_NO_ASSIGN__(int, indexRow);
 @end

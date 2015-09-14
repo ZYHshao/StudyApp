@@ -14,6 +14,7 @@
 #import "YHSACoreAnswerQuestionView.h"
 #import "YHSAAnswerQuestionManager.h"
 #import "YHSAAnswerStateModel.h"
+#import "YHSAUserManager.h"
 #define WIDTH self.frame.size.width
 #define HIGHT self.frame.size.height
 @interface YHSACoreAnswerQuestionScrollView()<UIScrollViewDelegate>
@@ -22,6 +23,8 @@
     id _leftView;
     id _middleView;
     id _rightView;
+    //错题组卷时用户设置的总题目量
+    int _wrongCount;
 }
 @end
 @implementation YHSACoreAnswerQuestionScrollView
@@ -41,6 +44,31 @@
 
 //加载视图的方法
 -(void)reloadView{
+    //这里添加上错题组卷
+    if (_isWrongReload&&_typecode!=nil) {
+        _wrongCount=0;
+        for (int i=0; i<_pageDataArray.count; i++) {
+            _wrongCount=_wrongCount+[[_pageDataArray[i] objectForKey:@"count"] intValue];
+        }
+        
+        //添加通知
+        [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(answerPagerNotification:) name:YHSAAnswerQuestionManagerNotication object:nil];
+        _leftView = [[_viewClass alloc]initWithFrame:CGRectMake(0, 0, WIDTH, HIGHT)];
+        _middleView = [[_viewClass alloc]initWithFrame:CGRectMake(WIDTH, 0, WIDTH, HIGHT)];
+        _rightView  = [[_viewClass alloc]initWithFrame:CGRectMake(WIDTH*2, 0, WIDTH, HIGHT)];
+        [self addSubview:_leftView];
+        [self addSubview:_middleView];
+        [self addSubview:_rightView];
+        [self creatData];
+        
+        return;
+    }else if (_isWrongReload&&_typecode==nil){
+        return;
+    }
+    
+    
+    
+    
     if (_dataModel==nil&&!_isNotExam) {
         return;
     }
@@ -59,6 +87,23 @@
 }
 
 -(void)creatData{
+    if (_isWrongReload) {
+        
+         _dataArray = [[NSMutableArray alloc]init];
+        self.contentSize = CGSizeMake(_wrongCount*WIDTH, HIGHT);
+        
+        //进行scrollView的相关属性配置
+        self.showsHorizontalScrollIndicator = NO;
+        self.showsVerticalScrollIndicator = NO;
+        self.bounces = NO;
+        self.delegate = self;
+        self.pagingEnabled = YES;
+        [self requestWrongData:1];
+        return;
+    }
+    
+    
+    
     if (_dataModel==nil&&!_isNotExam) {
         return;
     }
@@ -87,6 +132,35 @@
     }
   
 }
+
+
+
+-(void)requestWrongData:(int)index{
+     __BLOCK__WEAK__SELF__(__self);
+    if (index<=_wrongCount) {
+        //拼接字典
+        [[YHSAActivityIndicatorView sharedTheSingletion]show];
+        NSDictionary * dic = @{@"phonecode":[YHSAUserManager sharedTheSingletion].userName,@"typecode":_typecode,@"pageIndex":[NSString stringWithFormat:@"%d",index],@"pageData":_pageDataArray};
+        [YHSAHttpManager YHSARequestPost:YHSARequestTypeWrongReload infoDic:dic Succsee:^(NSData *data) {
+            NSDictionary * temDic = [YHBaseJOSNAnalytical dictionaryWithJSData:data];
+            YHSARequestGetDataModel * tmpModel = [[YHSARequestGetDataModel alloc]init];
+            [tmpModel creatModelWithDic:temDic];
+            YHSAAnswerQuestionModel * model = [[YHSAAnswerQuestionModel alloc]init];
+            [model creatModelWithDic:[[tmpModel.data objectForKey:@"pageData"] firstObject]];
+            [_dataArray addObject:model];
+            [[YHSAActivityIndicatorView sharedTheSingletion]unShow];
+            //进行数据展示
+            [__self showData];
+            //设置数据
+            YHSAAnswerStateModel * stateModel =  [[YHSAAnswerQuestionManager sharedTheSingletion].dataArray objectAtIndex:index-1];
+            stateModel.hadLoadDown=YES;
+        } andFail:^(YHBaseError *error) {
+            [[YHSAActivityIndicatorView sharedTheSingletion]unShow];
+        } isbuffer:NO];
+    }
+
+}
+
 
 -(void)subRequestData:(int)index{
     __BLOCK__WEAK__SELF__(__self);
@@ -144,6 +218,39 @@
 //进行数据的展示
 
 -(void)showData{
+    if (_isWrongReload) {
+        if ([self.dataDelegate respondsToSelector:@selector(YHSACoreAnswerQuestionScrollViewEndScroll)]) {
+            [self.dataDelegate YHSACoreAnswerQuestionScrollViewEndScroll];
+        }
+        if (_currentPage==0&&_dataArray.count==1) {
+            [_leftView setIndex:1];
+            [_leftView creatViewWithData:_dataArray[0]];
+        }else if (_dataArray.count==2&&_currentPage==1){
+            [_leftView setIndex:1];
+            [_middleView setIndex:2];
+            [_leftView creatViewWithData:_dataArray[0]];
+            [_middleView creatViewWithData:_dataArray[1]];
+        }else if (_currentPage>=2&&_dataArray.count==_currentPage+1&&_currentPage!=_wrongCount-1){
+            [_leftView setIndex:_currentPage];
+            [_middleView setIndex:_currentPage+1];
+            [_leftView creatViewWithData:_dataArray[_currentPage-1]];
+            [_middleView creatViewWithData:_dataArray[_currentPage]];
+        }else if (_dataArray.count>=2&&_dataArray.count>_currentPage+1&&_currentPage!=_wrongCount-1){
+            [_leftView setIndex:_currentPage];
+            [_middleView setIndex:_currentPage+1];
+            [_rightView setIndex:_currentPage+2];
+            [_leftView creatViewWithData:_dataArray[_currentPage-1]];
+            [_middleView creatViewWithData:_dataArray[_currentPage]];
+            [_rightView creatViewWithData:_dataArray[_currentPage+1]];
+        }else if (_currentPage==_wrongCount-1){
+            [_rightView setIndex:_currentPage+1];
+            [_rightView creatViewWithData:_dataArray[_currentPage]];
+        }
+        return;
+
+    }
+    
+    
     if (_isNotExam) {
         if ([self.dataDelegate respondsToSelector:@selector(YHSACoreAnswerQuestionScrollViewEndScroll)]) {
             [self.dataDelegate YHSACoreAnswerQuestionScrollViewEndScroll];
@@ -222,6 +329,35 @@
     //进行View和数据的重构
     CGFloat  offset = scrollView.contentOffset.x;
     _currentPage = offset/WIDTH;
+    
+    
+    if (_isWrongReload) {
+        if (offset==0) {
+            //回到第一页，不需要做任何重构
+            _currentPage=0;
+        }else if(offset==(_wrongCount-1)*WIDTH){
+            //到达最后一页，不需要做任何重构
+            _currentPage=_wrongCount-1;
+            if (_currentPage+1>_dataArray.count&&_currentPage+1<=_wrongCount) {
+                [self requestWrongData:_currentPage+1 ];
+            }else{
+                
+                [self showData];
+                
+            }
+            
+        }else{
+            //不是起始与结束页  进行重构
+            [self reloadViewData];
+        }
+        
+        scrollView.userInteractionEnabled = YES;
+        //数据处理
+        [YHSAAnswerQuestionManager sharedTheSingletion].currentIndex=_currentPage;
+        return;
+
+    }
+    
     if (_isNotExam) {
         if (offset==0) {
             //回到第一页，不需要做任何重构
@@ -284,6 +420,17 @@
     [_middleView clearData];
     [_rightView clearData];
     //如果数组中数据不够，进行下载 注意page是从0开始 参数是从1开始
+    if (_isWrongReload) {
+        if (_currentPage+1>_dataArray.count) {
+            [self requestWrongData:_currentPage+1 ];
+        }else{
+            
+            [self showData];
+        }
+        return;
+    }
+    
+    
     if (!_isNotExam) {
         if (_currentPage+1>_dataArray.count) {
             [self requestData:_currentPage+1 ];
