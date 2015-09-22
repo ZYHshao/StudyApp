@@ -12,4 +12,7 @@
 @interface YHSAAnswerPagerViewController : YHBaseViewController
 __PROPERTY_NO_ASSIGN__(BOOL, isNotExam);
 __PROPERTY_NO_ASSIGN__(BOOL, isWrongReload);
+__PROPERTY_NO_STRONG__(NSNumber *, allQuestion);
+__PROPERTY_NO_STRONG__(NSNumber *, currectQuestion);
+__PROPERTY_NO_STRONG__(NSString *, precent);
 @end

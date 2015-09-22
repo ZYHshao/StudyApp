@@ -11,10 +11,10 @@
 
 //==================引导页=========================//
 #define LOADER_ONE_BG_IMAGE @"yandaoye1.png"
-#define LOADER_TWO_BG_IMAGE @"splashscreenbg.png"
+#define LOADER_TWO_BG_IMAGE @"splashscreenbg版本A.jpg"
 #define LOADER_LOGO_IMAGE @"aboutme_logo.png"
 
-//================登陆界面==========================//
+//================登录界面==========================//
 #define LOGININ_USER_NAME_IMAGE @"login_user.png"
 #define LOGININ_USER_SECRET_IMAGE @"login_pwdico.png"
 

@@ -11,7 +11,7 @@
 @interface YHSASystemSettingManager : YHBaseManager
 
 
-//登陆信息记录等可以在这里扩展
+//登录信息记录等可以在这里扩展
 __PROPERTY_NO_ASSIGN__(BOOL, isMemorizePasswd);
 __PROPERTY_NO_STRONG__(NSString *, defaultUserName);
 __PROPERTY_NO_STRONG__(NSString *, defaultUserSecret);

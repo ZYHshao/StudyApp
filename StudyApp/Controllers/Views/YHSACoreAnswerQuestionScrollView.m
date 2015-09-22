@@ -127,8 +127,30 @@
     if (_isNotExam) {
         [self subRequestData:1];
     }else{
-        
-        [self requestData:1];
+        //进行所有试题的请求
+        [[YHSAActivityIndicatorView sharedTheSingletion]show];
+        __BLOCK__WEAK__SELF__(__self);
+        NSDictionary * dic = @{@"examid":_dataModel.examid};
+        [YHSAHttpManager YHSARequestPost:YHSARequestTypeAllQuestion infoDic:dic Succsee:^(NSData *data) {
+            NSDictionary * temDic = [YHBaseJOSNAnalytical dictionaryWithJSData:data];
+            YHSARequestGetDataModel * tmpModel = [[YHSARequestGetDataModel alloc]init];
+            [tmpModel creatModelWithDic:temDic];
+            for (int i=0; i<[(NSArray *)[tmpModel.data objectForKey:@"pageData"] count]; i++) {
+                YHSAAnswerQuestionModel * model = [[YHSAAnswerQuestionModel alloc]init];
+                [model creatModelWithDic:[[tmpModel.data objectForKey:@"pageData"] objectAtIndex:i]];
+                [_dataArray addObject:model];
+                //设置数据
+                YHSAAnswerStateModel * stateModel =  [[YHSAAnswerQuestionManager sharedTheSingletion].dataArray objectAtIndex:i];
+                stateModel.hadLoadDown=YES;
+            }
+            
+            [[YHSAActivityIndicatorView sharedTheSingletion]unShow];
+            //进行数据展示
+            [__self showData];
+
+        } andFail:^(YHBaseError *error) {
+            [[YHSAActivityIndicatorView  sharedTheSingletion]unShow];
+        } isbuffer:NO];
     }
   
 }
@@ -288,28 +310,22 @@
         if ([self.dataDelegate respondsToSelector:@selector(YHSACoreAnswerQuestionScrollViewEndScroll)]) {
             [self.dataDelegate YHSACoreAnswerQuestionScrollViewEndScroll];
         }
-        if (_currentPage==0&&_dataArray.count==1) {
+        if (_currentPage==0) {
             [_leftView setIndex:1];
             [_leftView creatViewWithData:_dataArray[0]];
-        }else if (_dataArray.count==2&&_currentPage==1){
-            [_leftView setIndex:1];
-            [_middleView setIndex:2];
-            [_leftView creatViewWithData:_dataArray[0]];
-            [_middleView creatViewWithData:_dataArray[1]];
-        }else if (_currentPage>=2&&_dataArray.count==_currentPage+1&&_currentPage!=[_dataModel.questioncount intValue]-1){
-            [_leftView setIndex:_currentPage];
-            [_middleView setIndex:_currentPage+1];
-            [_leftView creatViewWithData:_dataArray[_currentPage-1]];
-            [_middleView creatViewWithData:_dataArray[_currentPage]];
-        }else if (_dataArray.count>=2&&_dataArray.count>_currentPage+1&&_currentPage!=[_dataModel.questioncount intValue]-1){
+        }else if (_currentPage>0&&_currentPage<[_dataModel.questioncount intValue]-1){
             [_leftView setIndex:_currentPage];
             [_middleView setIndex:_currentPage+1];
             [_rightView setIndex:_currentPage+2];
             [_leftView creatViewWithData:_dataArray[_currentPage-1]];
             [_middleView creatViewWithData:_dataArray[_currentPage]];
             [_rightView creatViewWithData:_dataArray[_currentPage+1]];
-        }else if (_currentPage==[_dataModel.questioncount intValue]-1){
+        }else{
+            [_leftView setIndex:_currentPage-1];
+            [_middleView setIndex:_currentPage];
             [_rightView setIndex:_currentPage+1];
+            [_leftView creatViewWithData:_dataArray[_currentPage-2]];
+            [_middleView creatViewWithData:_dataArray[_currentPage-1]];
             [_rightView creatViewWithData:_dataArray[_currentPage]];
         }
 

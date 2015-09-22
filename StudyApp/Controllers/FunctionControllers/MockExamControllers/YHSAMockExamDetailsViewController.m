@@ -116,7 +116,7 @@ __PROPERTY_NO_STRONG__(YHSAMockExamDetailsModel *, dataModel);
                 YHSARequestGetDataModel * model = [[YHSARequestGetDataModel alloc]init];
                 [model creatModelWithData:data];
                 if ([model.resultCode intValue]==[INTERFACE_RETURN_POST_EXAM_COLLECT_LIST_SUCCESS intValue]) {
-                    [YHBaseAlertView showWithStyle:YHBaseAlertViewSimple title:PUBLIC_PART_ALERT_TITLE text:@"添加收藏成功，您可以在我的收藏中查看" cancleBtn:PUBLIC_PART_ALERT_SELECT_BTN selectBtn:nil andSelectFunc:nil];
+                    [YHBaseAlertView showWithStyle:YHBaseAlertViewSimple title:PUBLIC_PART_ALERT_TITLE text:@"收藏成功!您可以在\"我的收藏\"中查看" cancleBtn:PUBLIC_PART_ALERT_SELECT_BTN selectBtn:nil andSelectFunc:nil];
                 }else if ([model.resultCode intValue]==[INTERFACE_RETURN_POST_EXAM_COLLECT_LIST_FAILED intValue]){
                     
                 }

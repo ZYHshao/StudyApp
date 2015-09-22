@@ -45,7 +45,7 @@
     _userNameImageView.image = [UIImage imageNamed:LOGININ_USER_NAME_IMAGE];
     [self.view addSubview:_userNameImageView];
     
-    _userNameLabel = [[UILabel alloc]initWithFrame:CGRectMake(LAYOUT_OFFSET_LEFT+25, 40, 60, 20)];
+    _userNameLabel = [[UILabel alloc]initWithFrame:CGRectMake(LAYOUT_OFFSET_LEFT+25, 40, 160, 20)];
     _userNameLabel.font = [UIFont systemFontOfSize:TEXT_FONT_SIZE_NORMAL];
     _userNameLabel.text = LOGIN_USERNAME_LABEL;
     _userNameLabel.textAlignment=NSTextAlignmentLeft;
@@ -55,7 +55,7 @@
     _userNameTestField.placeholder = LOGIN_USERNAME_TEXTFIELD_PlACEHOLDER_TEXT;
     _userNameTestField.borderStyle = UITextBorderStyleRoundedRect;
     _userNameTestField.keyboardType = UIKeyboardTypePhonePad;
-    //获取最近登陆的用户名
+    //获取最近登录的用户名
     _userNameTestField.text = [YHSASystemSettingManager sharedTheSingletion].defaultUserName;
     [self.view addSubview:_userNameTestField];
     
@@ -169,7 +169,7 @@
         [YHBaseAlertView showWithStyle:YHBaseAlertViewSimple title:PUBLIC_PART_ALERT_TITLE text:@"请输入正确的通行证号!" cancleBtn:PUBLIC_PART_ALERT_SELECT_BTN selectBtn:nil andSelectFunc:nil];
         return;
     }
-    //进行登陆请求
+    //进行登录请求
     [self creatRequest];
     
 }
@@ -191,10 +191,10 @@
             [YHSASystemSettingManager sharedTheSingletion].defaultUserName = _userNameTestField.text;
             [YHSASystemSettingManager sharedTheSingletion].defaultUserSecret = _userSecretTestField.text;
             
-            //跳转登陆界面
+            //跳转登录界面
             __BLOCK__WEAK__SELF__(__self);
-            [YHBaseAlertView showWithStyle:YHBaseAlertViewNormal title:PUBLIC_PART_ALERT_TITLE text:@"恭喜您登陆成功!" cancleBtn:@"切换账号" selectBtn:@"开始使用" andSelectFunc:^{
-                //登陆状态的切换
+            [YHBaseAlertView showWithStyle:YHBaseAlertViewNormal title:PUBLIC_PART_ALERT_TITLE text:@"恭喜您登录成功!" cancleBtn:@"切换账号" selectBtn:@"开始使用" andSelectFunc:^{
+                //登录状态的切换
                 YHSAUserManager * userManager =  [YHSAUserManager sharedTheSingletion];
                 userManager.userName = _userNameTestField.text;
                 userManager.userSecret = _userSecretTestField.text;
@@ -204,7 +204,7 @@
             }];
             
         }else if ([model.resultCode intValue] ==[INTERFACE_RETURN_LOGIN_FAILED intValue]){
-            [YHBaseAlertView showWithStyle:YHBaseAlertViewSimple title:PUBLIC_PART_ALERT_TITLE text:@"登陆失败:账号或密码错误" cancleBtn:PUBLIC_PART_ALERT_SELECT_BTN selectBtn:nil andSelectFunc:nil];
+            [YHBaseAlertView showWithStyle:YHBaseAlertViewSimple title:PUBLIC_PART_ALERT_TITLE text:@"登录失败:账号或密码错误" cancleBtn:PUBLIC_PART_ALERT_SELECT_BTN selectBtn:nil andSelectFunc:nil];
         }
     } andFail:^(YHBaseError *error) {
         [[YHSAActivityIndicatorView sharedTheSingletion]unShow];

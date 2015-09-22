@@ -50,11 +50,11 @@
     for (int i = 0; i < 9; i++) {
         YHBaseButton * btn = [[YHBaseButton alloc]initWithFrame:CGRectMake(LAYOUT_OFFSET_LEFT+10+i%3*(btnWid+20), 40+i/3*(btnWid+50), btnWid, btnWid) backgroundImage:[UIImage imageNamed:_imageArray[i]] backgroundColor:nil textColor:nil titleText:nil andClickBlock:^(YHBaseButton *btn) {
             //界面跳转处理
-            //判断是否是登陆必须项
+            //判断是否是登录必须项
             if ( (i>=1)&&(i<=6)) {
                 if (![YHSAUserManager sharedTheSingletion].isLogin) {
-                    [YHBaseAlertView showWithStyle:YHBaseAlertViewNormal title:PUBLIC_PART_ALERT_TITLE text:@"该功能需要您登陆方可使用" cancleBtn:PUBLIC_PART_ALERT_CANCLE_BTN selectBtn:@"登陆" andSelectFunc:^{
-                       //跳转登陆
+                    [YHBaseAlertView showWithStyle:YHBaseAlertViewNormal title:PUBLIC_PART_ALERT_TITLE text:@"该功能需要您登录方可使用" cancleBtn:PUBLIC_PART_ALERT_CANCLE_BTN selectBtn:@"登录" andSelectFunc:^{
+                       //跳转登录
                         [[__self navigationController]pushViewController:[[YHSALoginViewController alloc]init] animated:YES];
                     }];
                     return ;

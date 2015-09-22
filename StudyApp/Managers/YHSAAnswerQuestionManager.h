@@ -29,7 +29,10 @@ __PROPERTY_NO_ASSIGN__(int, currentTime);
 
 __PROPERTY_NO_WEAK__(id<YHSAAnswerQuestionManagerDelegate>, delegate);
 
-
+//成绩单信息
+__PROPERTY_NO_STRONG__(NSNumber *, pageCount);
+__PROPERTY_NO_STRONG__(NSNumber *, correctCount);
+__PROPERTY_NO_STRONG__(NSString *, precent);
 
 
 

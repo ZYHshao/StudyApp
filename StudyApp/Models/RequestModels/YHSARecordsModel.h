@@ -13,4 +13,7 @@ __PROPERTY_NO_STRONG__(NSNumber *, resultCode);
 __PROPERTY_NO_STRONG__(NSString *, score);
 __PROPERTY_NO_STRONG__(NSString *, mag);
 __PROPERTY_NO_STRONG__(NSString *, resultMsg);
+__PROPERTY_NO_STRONG__(NSNumber *, pageCount);
+__PROPERTY_NO_STRONG__(NSNumber *, correctCount);
+__PROPERTY_NO_STRONG__(NSString *, percent);
 @end

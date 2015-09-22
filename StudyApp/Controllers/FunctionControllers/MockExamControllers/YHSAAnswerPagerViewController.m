@@ -95,9 +95,11 @@
     _headView1InfoLabel.textAlignment = NSTextAlignmentCenter;
     [_headView1 addSubview:_headView1InfoLabel];
     
-    _headView2InfoLabel = [[YHBaseLabel alloc]initWithFrame:CGRectMake(self.view.frame.size.width/2-100, 5, 200, 40)];
-    _headView2InfoLabel.text = [NSString stringWithFormat:@"您的用时:%d分%d秒", [YHSAAnswerQuestionManager sharedTheSingletion].currentTime/60, [YHSAAnswerQuestionManager sharedTheSingletion].currentTime%60];
-    _headView1InfoLabel.textAlignment = NSTextAlignmentCenter;
+    _headView2InfoLabel = [[YHBaseLabel alloc]initWithFrame:CGRectMake(0, 0, _headView2.frame.size.width, 50)];
+    _headView2InfoLabel.text = [NSString stringWithFormat:@"共有试题%@道，您答对%@道，正确率为%@\n您可以点击题号来查看试题和答案",[YHSAAnswerQuestionManager sharedTheSingletion].pageCount,[YHSAAnswerQuestionManager sharedTheSingletion].correctCount,[YHSAAnswerQuestionManager sharedTheSingletion].precent];
+    _headView2InfoLabel.numberOfLines=2;
+    _headView2InfoLabel.textColor = [UIColor blueColor];
+    _headView2InfoLabel.textAlignment = NSTextAlignmentCenter;
     [_headView2 addSubview:_headView2InfoLabel];
    
     
@@ -116,7 +118,7 @@
     _headView1InfoLabel.backgroundColor=manager.bgColor;
     _headView1InfoLabel.textColor=manager.textColor;
     _headView2InfoLabel.backgroundColor=manager.bgColor;
-    _headView2InfoLabel.textColor=manager.textColor;
+    //_headView2InfoLabel.textColor=manager.textColor;
 }
 
 
@@ -145,6 +147,7 @@
     }
     _bodyView.contentSize=CGSizeMake(_bodyView.frame.size.width, 5+60*(answerManager.dataArray.count/5)+50);
     [self reloadBtnColor];
+
 }
 
 -(void)click:(YHBaseButton *)btn{
@@ -156,8 +159,9 @@
     NSNotification * noti = [[NSNotification alloc]initWithName:YHSAAnswerQuestionManagerNotication object:nil userInfo:info];
     //发送通知
     [[NSNotificationCenter defaultCenter]postNotification:noti];
+    [self.navigationController popViewControllerAnimated:YES];
     //调整按钮颜色
-    [self reloadBtnColor];
+   // [self reloadBtnColor];
 }
 -(void)reloadBtnColor{
     YHSAAnswerQuestionManager * answerManager = [YHSAAnswerQuestionManager sharedTheSingletion];
@@ -205,16 +209,17 @@
         }
         [self.view addSubview:_headView1];
     }
+     _headView2InfoLabel.text = [NSString stringWithFormat:@"共有试题%@道，您答对%@道，正确率为%@\n您可以点击题号来查看试题和答案",[YHSAAnswerQuestionManager sharedTheSingletion].pageCount,[YHSAAnswerQuestionManager sharedTheSingletion].correctCount,[YHSAAnswerQuestionManager sharedTheSingletion].precent];
 }
 
 #pragma mark - 提交试卷
 -(void)certainClick{
     if (_isNotExam||_isWrongReload) {
-        [YHBaseAlertView showWithStyle:YHBaseAlertViewSimple title:PUBLIC_PART_ALERT_TITLE text:@"次模式下不可交卷" cancleBtn:PUBLIC_PART_ALERT_CANCLE_BTN selectBtn:nil andSelectFunc:nil];
+        [YHBaseAlertView showWithStyle:YHBaseAlertViewSimple title:PUBLIC_PART_ALERT_TITLE text:@"此模式下不可交卷" cancleBtn:PUBLIC_PART_ALERT_CANCLE_BTN selectBtn:nil andSelectFunc:nil];
         return ;
     }
     if (![YHSAUserManager sharedTheSingletion].isLogin) {
-        [YHBaseAlertView showWithStyle:YHBaseAlertViewSimple title:PUBLIC_PART_ALERT_TITLE text:@"该功能需要您登陆方可使用" cancleBtn:PUBLIC_PART_ALERT_CANCLE_BTN selectBtn:nil andSelectFunc:nil];
+        [YHBaseAlertView showWithStyle:YHBaseAlertViewSimple title:PUBLIC_PART_ALERT_TITLE text:@"该功能需要您登录方可使用" cancleBtn:PUBLIC_PART_ALERT_CANCLE_BTN selectBtn:nil andSelectFunc:nil];
         return ;
         
     }
@@ -222,15 +227,15 @@
     
     YHSAAnswerQuestionManager * manager = [YHSAAnswerQuestionManager sharedTheSingletion];
     __BLOCK__WEAK__SELF__(__self);
-    [YHBaseAlertView  showWithStyle:YHBaseAlertViewNormal title:PUBLIC_PART_ALERT_TITLE text:@"是否确定提交试卷" cancleBtn:PUBLIC_PART_ALERT_CANCLE_BTN selectBtn:PUBLIC_PART_ALERT_SELECT_BTN andSelectFunc:^{
+    [YHBaseAlertView  showWithStyle:YHBaseAlertViewNormal title:PUBLIC_PART_ALERT_TITLE text:@"确定交卷么?" cancleBtn:PUBLIC_PART_ALERT_CANCLE_BTN selectBtn:PUBLIC_PART_ALERT_SELECT_BTN andSelectFunc:^{
         //提交试卷
-        for (int i=0; i<manager.dataArray.count; i++) {
-            YHSAAnswerStateModel * model = manager.dataArray[i];
-            if (model.hadAnswer==NO) {
-                [YHBaseAlertView showWithStyle:YHBaseAlertViewSimple title:PUBLIC_PART_ALERT_TITLE text:@"请您答完所有的题目后再提交哦" cancleBtn:PUBLIC_PART_ALERT_SELECT_BTN selectBtn:nil andSelectFunc:nil];
-                return ;
-            }
-        }
+//        for (int i=0; i<manager.dataArray.count; i++) {
+//            YHSAAnswerStateModel * model = manager.dataArray[i];
+//            if (model.hadAnswer==NO) {
+//                [YHBaseAlertView showWithStyle:YHBaseAlertViewSimple title:PUBLIC_PART_ALERT_TITLE text:@"请您答完所有的题目后再提交哦" cancleBtn:PUBLIC_PART_ALERT_SELECT_BTN selectBtn:nil andSelectFunc:nil];
+//                return ;
+//            }
+//        }
         //进行数据的提交
         [__self postExam];
         //关计时
@@ -245,16 +250,21 @@
     NSMutableArray * postArray = [[NSMutableArray alloc]init];
     for (int i = 0; i<dataArray.count; i++) {
         YHSAAnswerStateModel * model = (YHSAAnswerStateModel *)dataArray[i];
+        if (model.hadAnswer==NO) {
+            continue;
+        }
         NSString * answerStr;
         if ([[model.info objectForKey:@"type"]intValue]==2) {
             answerStr=YHBaseInsertCharater(@",", [model.info objectForKey:@"ans"]);
         }else{
             answerStr= [model.info objectForKey:@"ans"];
         }
-        NSDictionary * dic = @{INTERFACE_FIELD_POST_EXAM_PHONECODE:[YHSAUserManager sharedTheSingletion].userName,INTERFACE_FIELD_POST_EXAM_EXAM_ID:manager.examID,INTERFACE_FIELD_POST_EXAM_QUESTION_ID:model.questionID,INTERFACE_FIELD_POST_EXAM_ANSWER:answerStr,INTERFACE_FIELD_POST_EXAM_SORCE:model.sccore};
+        NSDictionary * dic = @{INTERFACE_FIELD_POST_EXAM_QUESTION_ID:model.questionID,INTERFACE_FIELD_POST_EXAM_ANSWER:answerStr==nil?@"":answerStr,INTERFACE_FIELD_POST_EXAM_SORCE:model.sccore};
         [postArray addObject:dic];
     }
-    NSDictionary * dic = @{INTERFACE_FIELD_POST_EXAM_MAIN:[postArray transToJsonString:YHBaseJosnStyleNoneSpace|YHBaseJosnStyleNoneWarp|YHBaseJosnStyleSinglequotationMark|YHBaseJosnStyleNoneKeyMark]};
+    NSDictionary * tmp = @{INTERFACE_FIELD_POST_EXAM_PHONECODE:[YHSAUserManager sharedTheSingletion].userName,INTERFACE_FIELD_POST_EXAM_EXAM_ID:manager.examID,@"pageData":postArray};
+    NSArray * finArr = @[tmp];
+    NSDictionary * dic = @{INTERFACE_FIELD_POST_EXAM_MAIN:[finArr transToJsonString:YHBaseJosnStyleNoneSpace|YHBaseJosnStyleNoneWarp|YHBaseJosnStyleSinglequotationMark|YHBaseJosnStyleNoneKeyMark]};
     
     //进行提交网络请求
     [[YHSAActivityIndicatorView sharedTheSingletion]show];
@@ -267,15 +277,13 @@
         if ([model.resultCode intValue] == [INTERFACE_RETURN_POST_RECORD_SUCCESS intValue]) {
             //提交成功
             //创建成绩单
-            YHSARecordsViewController * con = [[YHSARecordsViewController alloc]init];
-            con.time = [YHSAAnswerQuestionManager sharedTheSingletion].currentTime;
-            con.sorce = [model.score intValue];
             [YHSAAnswerQuestionManager sharedTheSingletion].hadHeanIn=YES;
-            [__self presentViewController:con animated:YES completion:^{
-                //进行界面的重构等操作
+            [YHSAAnswerQuestionManager sharedTheSingletion].pageCount = model.pageCount;
+            [YHSAAnswerQuestionManager sharedTheSingletion].correctCount=model.correctCount;
+            [YHSAAnswerQuestionManager sharedTheSingletion].precent=model.percent;
                 [__self reloadBtnColor];
                 [__self reloadHeadView];
-            }];
+        
         }else if ([model.resultCode intValue]==[INTERFACE_RETURN_POST_RECORD_FAILED intValue]){
             [YHBaseAlertView showWithStyle:YHBaseAlertViewSimple title:PUBLIC_PART_ALERT_TITLE text:@"抱歉，提交失败" cancleBtn:PUBLIC_PART_ALERT_SELECT_BTN selectBtn:nil andSelectFunc:nil];
         }

@@ -1523,7 +1523,7 @@ CGFloat MyGetWidthCallback( void* refCon ){
                                              [[rcLabel imageDelegate] YHRTLabelImageSuccess:rcLabel];
                                         });
                             
-                                    }
+                                }
                                    
                                 }
                                 

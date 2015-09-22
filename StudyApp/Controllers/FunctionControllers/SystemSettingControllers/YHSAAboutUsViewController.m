@@ -37,9 +37,11 @@
     _textfield1.text = ABOUT_US_WEB;
     _textfield2.text = ABOUT_US_WEIBO;
     _textfield3.text = ABOUT_US_QQ;
-    _textfield4.text = ABOUT_US_PHONE;
-    _textfield5.text = ABOUT_US_TEL;
-    _textfield6.text = ABOUT_US_ADRESS;
+    //_textfield4.text = ABOUT_US_PHONE;
+    _textfield4.text = ABOUT_US_TEL;
+   // _textfield6.text = ABOUT_US_ADRESS;
+    _textfield5.hidden=YES;
+    _textfield6.hidden=YES;
     _textLabel.text = ABOUT_US_ABOUT_US;
 }
 -(void)useYHTopicToCreatViewWithModel{

@@ -177,6 +177,11 @@
             return YHSA_WRONG_EXAM_RELOAD_POST_PATH;
         }
             break;
+        case YHSARequestTypeAllQuestion:
+        {
+            return YHSA_MOCK_EXAM_ALL_QUESTION_POST_PATH;
+        }
+            break;
         default:
             return @"";
             break;
@@ -312,6 +317,11 @@
         case YHSARequestTypeWrongReload:
         {
             return YHSA_REQUEST_TYPE_WRONG_EXAM_RELOAD;
+        }
+            break;
+        case YHSARequestTypeAllQuestion:
+        {
+            return YHSA_REQUEST_TYPE_ALL_QUESTION;
         }
             break;
         default:

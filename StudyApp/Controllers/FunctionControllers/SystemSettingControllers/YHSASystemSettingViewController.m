@@ -125,13 +125,13 @@
     switch (indexPath.row) {
         case 2://联系我们
         {
-            //判断是否登陆
+            //判断是否登录
             if ([YHSAUserManager sharedTheSingletion].isLogin) {
                 [self.navigationController pushViewController:[[YHSAOptionsViewController alloc]init] animated:YES];
             }else{
                 __BLOCK__WEAK__SELF__(__self);
-                [YHBaseAlertView showWithStyle:YHBaseAlertViewNormal title:PUBLIC_PART_ALERT_TITLE text:@"该功能需要您登陆方可使用" cancleBtn:PUBLIC_PART_ALERT_CANCLE_BTN selectBtn:@"登陆" andSelectFunc:^{
-                    //跳转登陆
+                [YHBaseAlertView showWithStyle:YHBaseAlertViewNormal title:PUBLIC_PART_ALERT_TITLE text:@"该功能需要您登录方可使用" cancleBtn:PUBLIC_PART_ALERT_CANCLE_BTN selectBtn:@"登录" andSelectFunc:^{
+                    //跳转登录
                     [[__self navigationController]pushViewController:[[YHSALoginViewController alloc]init] animated:YES];
                 }];
 

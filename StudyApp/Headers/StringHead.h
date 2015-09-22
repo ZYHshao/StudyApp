@@ -21,28 +21,28 @@
 #define LOADER_NEXT_BUTTON_TEXT @"跳过"
 #define LOADER_LOGIN_BUTTON_TEXT @"已有账号，立即登录"
 
-//=============================登陆界面=========================//
-#define LOGIN_CONTROLLER_TITLE @"登陆"
-#define LOGIN_USERNAME_LABEL @"通行证:"
+//=============================登录界面=========================//
+#define LOGIN_CONTROLLER_TITLE @"登录"
+#define LOGIN_USERNAME_LABEL @"手机号码(账号):"
 #define LOGIN_USERNAME_TEXTFIELD_PlACEHOLDER_TEXT @"请输入您的通行证:"
 #define LOGIN_SECERT_LABEL @"密码:"
 #define LOGIN_SECRET_TEXTFIELD_PLACEHOLDER_TEXT @"请输入您的密码:"
 #define LOGIN_SHOULD_AUTO_MEMORY_TEXT @"记住密码"
-#define LOGIN_BTN_TEXT @"登陆"
+#define LOGIN_BTN_TEXT @"登录"
 #define LOGIN_REGIST_BTN_TEXT @"立即注册"
 #define LOGIN_REFIND_SECERT_TEXT @"找回密码"
 //==============================注册界面========================//
 #define REGIST_CONTROLLER_TITLE @"注册"
 #define REGIST_SCHOOL_TEXT @"所在院校:"
-#define REGIST_SCHOOL_FIELD_PLACEHOLDER_TEXT @"请选择您的所在院校"
+#define REGIST_SCHOOL_FIELD_PLACEHOLDER_TEXT @"请输入您的所在院校名称"
 #define REGIST_PHONE_TEXT @"手机号码:"
-#define REGIST_PHONE_FIELD_PLACEHOLDER_TEXT @"请输入您的手机号码"
+#define REGIST_PHONE_FIELD_PLACEHOLDER_TEXT @"请输入您的手机号码(相当于您的账号)"
 #define REGIST_SECERT_TEXT @"设定密码:"
-#define REGIST_SRCERT_FIELD_PLACEHOLDER_TEXT @"请输入您的密码"
+#define REGIST_SRCERT_FIELD_PLACEHOLDER_TEXT @"请输入您的密码(3-12位数字或字母)"
 #define REGIST_SECERT_REWRITE_TEXT @"重复密码:"
 #define REGIST_SECERT_REWRITE_FIELD_PLACEHOLDER_TEXT @"请再次输入您的密码"
 #define REGIST_QUESTION_TEXT @"密码提示问题:"
-#define REGIST_QUESTION_FIELD_PLACEHOLDER_TEXT @"请选择您的提示问题"
+#define REGIST_QUESTION_FIELD_PLACEHOLDER_TEXT @"请选择您的提示问题，便于您找回密码"
 #define REGIST_ANSWER_TEXT @"提示问题答案:"
 #define REGIST_ANSWER_FIELD_PLACEHOLDER_TEXT @"请输入您的提示问题答案"
 #define REGIST_BUTTON_TEXT @"注册"
@@ -116,12 +116,11 @@
 //===============================关于我们界面=====================//
 #define ABOUT_US_CONTROLLER_TITLE @"关于我们"
 #define ABOUT_US_WEB @"官方网站: www.VIPExam.com"
-#define ABOUT_US_WEIBO @"官方微博: @VIPExam"
-#define ABOUT_US_QQ @"用户Q群: 123456789"
-#define ABOUT_US_PHONE @"联系电话: 12345677890"
-#define ABOUT_US_TEL @"客服电话: 122-232-221"
-#define ABOUT_US_ADRESS @"联系地址: 地址地址地址地址"
-#define ABOUT_US_ABOUT_US @"    VIPExam考试库专业的手机考试平台，绝对实用的手机考试软件！涵盖工程类、金融类、财会类、资格类、医药类、计算机类、外贸类共7大类100多种考试。"
+#define ABOUT_US_WEIBO @"官方微信:cnsciedu(中科教育股份)"
+#define ABOUT_US_QQ @"客服QQ:3592588"
+#define ABOUT_US_TEL @"客服电话: 400-6666-246"
+
+#define ABOUT_US_ABOUT_US @"    VIPExam考试库涵盖外语、计算机、职业资格、财经、工程、公务员、考研、专升本等12大类1500余小类考试科目，是您复习备考各项考试的最佳工具!"
 
 //===============================考试资讯界面======================//
 #define EXAM_INFO_CONTROLLER_TITLE @"考试资讯"
@@ -166,7 +165,7 @@
 #define INTERFACE_FIELD_REGIST_QUESTION @"question"
 #define INTERFACE_FIELD_REGIST_ANSWER @"answer"
 
-//登陆
+//登录
 #define INTERFACE_FIELD_LOGIN_PHONECODE @"phonecode"
 #define INTERFACE_FIELD_LOGIN_PASSWORD @"password"
 

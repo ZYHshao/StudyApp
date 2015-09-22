@@ -43,16 +43,16 @@
     //创建logo和按钮
     UIImageView * logo = [[UIImageView alloc]initWithFrame:CGRectMake(SCREEN_WIDTH/2-100, 100, 200, 100)];
     logo.image = [UIImage imageNamed:LOADER_LOGO_IMAGE];
-    [page2 addSubview:logo];
+    //[page2 addSubview:logo];
     __BLOCK__WEAK__SELF__(tmpCon);
-    YHBaseButton * regist = [[YHBaseButton alloc]initWithFrame:CGRectMake(SCREEN_WIDTH/2-100, 320, 200, 60) backgroundImage:nil backgroundColor:[UIColor colorWithRed:10/255.0 green:85/255.0 blue:160/255.0 alpha:1] textColor:[UIColor whiteColor] titleText:LOADER_REGIST_BUTTON_TEXT andClickBlock:^(YHBaseButton *btn) {
+    YHBaseButton * regist = [[YHBaseButton alloc]initWithFrame:CGRectMake(SCREEN_WIDTH/2-80, 280, 160, 60) backgroundImage:nil backgroundColor:[UIColor colorWithRed:10/255.0 green:85/255.0 blue:160/255.0 alpha:1] textColor:[UIColor whiteColor] titleText:LOADER_REGIST_BUTTON_TEXT andClickBlock:^(YHBaseButton *btn) {
         //跳转注册
         YHSANavigationViewController * nav = [[YHSANavigationViewController alloc]initWithRootViewController:[[YHSAMainToolsViewController alloc]init]];
         [nav pushViewController:[[YHSARegistViewController alloc]init] animated:NO];
         [tmpCon presentViewController:nav animated:YES completion:nil];
     }];
-    regist.titleLabel.font= [UIFont boldSystemFontOfSize:TEXT_FONT_SIZE_BIG_TITLE];
-    [regist setCornerRaidus:30];
+    regist.titleLabel.font= [UIFont boldSystemFontOfSize:18];
+    [regist setCornerRaidus:10];
     
     YHBaseButton * next = [[YHBaseButton alloc]initWithFrame:CGRectMake(SCREEN_WIDTH-70, 40, 60, 30) backgroundImage:nil backgroundColor:nil textColor:[UIColor grayColor] titleText:LOADER_NEXT_BUTTON_TEXT andClickBlock:^(YHBaseButton *btn) {
         //跳转功能
@@ -60,12 +60,16 @@
         [self presentViewController:nav animated:YES completion:nil];
     }];
     next.titleLabel.font = [UIFont boldSystemFontOfSize:20];
-    YHBaseButton * login = [[YHBaseButton alloc]initWithFrame:CGRectMake(SCREEN_WIDTH/2-90, SCREEN_HEIGHT-50, 180, 20) backgroundImage:nil backgroundColor:nil textColor:[UIColor colorWithRed:10/255.0 green:85/255.0 blue:160/255.0 alpha:1] titleText:LOADER_LOGIN_BUTTON_TEXT andClickBlock:^(YHBaseButton *btn) {
-        //跳转登陆
+    YHBaseButton * login = [[YHBaseButton alloc]initWithFrame:CGRectMake(SCREEN_WIDTH/2-90, 360, 180, 20) backgroundImage:nil backgroundColor:nil textColor:[UIColor colorWithRed:10/255.0 green:85/255.0 blue:160/255.0 alpha:1] titleText:LOADER_LOGIN_BUTTON_TEXT andClickBlock:^(YHBaseButton *btn) {
+        //跳转登录
         YHSANavigationViewController * nav = [[YHSANavigationViewController alloc]initWithRootViewController:[[YHSAMainToolsViewController alloc]init]];
         [nav pushViewController:[[YHSALoginViewController alloc]init] animated:NO];
         [tmpCon presentViewController:nav animated:YES completion:nil];
     }];
+    
+    UIImageView * companyLogo = [[UIImageView alloc]initWithFrame:CGRectMake(SCREEN_WIDTH/2-70, SCREEN_HEIGHT-50, 140, 40)];
+    companyLogo.image = [UIImage imageNamed:@"公司LOGO副本.jpg"];
+    //[page2 addSubview:companyLogo];
     [page2 addSubview:login];
     [page2 addSubview:next];
     [page2 addSubview:regist];

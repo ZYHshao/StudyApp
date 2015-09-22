@@ -121,9 +121,9 @@
         YHSARequestGetDataModel * model = [[YHSARequestGetDataModel alloc]init];
         [model creatModelWithDic:dataDic];
         if ([model.resultCode intValue]==[INTERFACE_RETURN_REGIST_SUCCESS intValue]) {
-            //跳转登陆界面
+            //跳转登录界面
             __BLOCK__WEAK__SELF__(__self);
-            [YHBaseAlertView showWithStyle:YHBaseAlertViewNormal title:PUBLIC_PART_ALERT_TITLE text:@"恭喜您注册成功!" cancleBtn:@"返回" selectBtn:@"立即登陆" andSelectFunc:^{
+            [YHBaseAlertView showWithStyle:YHBaseAlertViewNormal title:PUBLIC_PART_ALERT_TITLE text:@"恭喜您注册成功!" cancleBtn:@"返回" selectBtn:@"立即登录" andSelectFunc:^{
                 [[__self navigationController] pushViewController:[[YHSALoginViewController alloc]init] animated:YES];
             }];
             
