@@ -24,6 +24,7 @@
 		187C4D6A1B9A7EC90060A055 /* YHSAEditStudyNoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 187C4D681B9A7EC90060A055 /* YHSAEditStudyNoteViewController.m */; };
 		187C4D6B1B9A7EC90060A055 /* YHSAEditStudyNoteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 187C4D691B9A7EC90060A055 /* YHSAEditStudyNoteViewController.xib */; };
 		187EDADC1B9B23B600BFAF2F /* YHBaseDateTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 187EDADB1B9B23B600BFAF2F /* YHBaseDateTools.m */; };
+		1893063E1BB2CF120077ADD7 /* 书本.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1893063D1BB2CF120077ADD7 /* 书本.jpg */; };
 		18974F171BB19145009D2797 /* splashscreenbg版本B.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 18974F161BB19145009D2797 /* splashscreenbg版本B.jpg */; };
 		18974F191BB1922A009D2797 /* splashscreenbg版本A.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 18974F181BB1922A009D2797 /* splashscreenbg版本A.jpg */; };
 		189833C21B8C9C0F00ABC49E /* sjym_tab_jj_ico2.png in Resources */ = {isa = PBXBuildFile; fileRef = 189833C11B8C9C0F00ABC49E /* sjym_tab_jj_ico2.png */; };
@@ -264,6 +265,7 @@
 		187C4D691B9A7EC90060A055 /* YHSAEditStudyNoteViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YHSAEditStudyNoteViewController.xib; sourceTree = "<group>"; };
 		187EDADA1B9B23B600BFAF2F /* YHBaseDateTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHBaseDateTools.h; sourceTree = "<group>"; };
 		187EDADB1B9B23B600BFAF2F /* YHBaseDateTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YHBaseDateTools.m; sourceTree = "<group>"; };
+		1893063D1BB2CF120077ADD7 /* 书本.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "书本.jpg"; sourceTree = "<group>"; };
 		18974F161BB19145009D2797 /* splashscreenbg版本B.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "splashscreenbg版本B.jpg"; sourceTree = "<group>"; };
 		18974F181BB1922A009D2797 /* splashscreenbg版本A.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "splashscreenbg版本A.jpg"; sourceTree = "<group>"; };
 		189833C11B8C9C0F00ABC49E /* sjym_tab_jj_ico2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sjym_tab_jj_ico2.png; sourceTree = "<group>"; };
@@ -1223,6 +1225,7 @@
 		CEEAFD921B81A8BF00795B27 /* drawable-hdpi */ = {
 			isa = PBXGroup;
 			children = (
+				1893063D1BB2CF120077ADD7 /* 书本.jpg */,
 				18974F181BB1922A009D2797 /* splashscreenbg版本A.jpg */,
 				18974F161BB19145009D2797 /* splashscreenbg版本B.jpg */,
 				18CADE271BB02C4900912CA5 /* 公司LOGO副本.jpg */,
@@ -1491,6 +1494,7 @@
 				CE2919CF1B9ECDFB00A54241 /* YHSAReportCardTableViewCell.xib in Resources */,
 				CEEAFE281B81A8BF00795B27 /* sjym_tab_showda_ico.jpg in Resources */,
 				CEEAFE231B81A8BF00795B27 /* sjym_dx_xz.jpg in Resources */,
+				1893063E1BB2CF120077ADD7 /* 书本.jpg in Resources */,
 				1835711A1B8A1152007AEF18 /* YHSAMockExamDetailsViewController.xib in Resources */,
 				CEEAFDED1B81A8BF00795B27 /* dian1.png in Resources */,
 				CEEAFE1F1B81A8BF00795B27 /* sjym_da_error.jpg in Resources */,
